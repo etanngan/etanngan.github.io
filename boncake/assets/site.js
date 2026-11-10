@@ -10,15 +10,15 @@
 
   /* ---------- cake slice art ---------- */
   var FLAV = {
-    taro:   { sponge: '#b99ad8', side: '#9c7cc0', cream: '#efe4f8', top: '#e3d2f2', dot: '#8f68c2', tint: '#f3ecfb' },
-    sesame: { sponge: '#8d8582', side: '#736c69', cream: '#e4ddd9', top: '#d6cdc8', dot: '#2f2a2b', tint: '#f1eeec' },
-    oval:   { sponge: '#a4744c', side: '#8a5d3a', cream: '#efdcc6', top: '#7a4a2a', dot: '#d9a15a', tint: '#f8efe4' },
-    mochi:  { sponge: '#dcc8ea', side: '#c3acd6', cream: '#faf5fd', top: '#efe3f7', dot: '#ffffff', tint: '#f6f1fa' }
+    taro:   { sponge: '#cdb8ea', side: '#b9a2dd', cream: '#f8f2fd', top: '#eee4f9', dot: '#b393dd', tint: '#f1eafa' },
+    sesame: { sponge: '#bdb4b1', side: '#a79d9a', cream: '#f5f1ef', top: '#ebe5e2', dot: '#4a4040', tint: '#f3f0ee' },
+    oval:   { sponge: '#cfa688', side: '#b98f72', cream: '#f8ebde', top: '#a87b5d', dot: '#ecc999', tint: '#fdf0e6' },
+    mochi:  { sponge: '#e9daf3', side: '#d6c3e8', cream: '#fffafd', top: '#f6eefb', dot: '#ffffff', tint: '#fdeef2' }
   };
   function slice(key) {
     var f = FLAV[key];
     var s = '<g>' +
-      '<ellipse cx="88" cy="206" rx="74" ry="10" fill="#ffffff" stroke="#e6dde9"/>' +
+      '<ellipse cx="88" cy="206" rx="74" ry="10" fill="#ffffff" stroke="#f0dfe4"/>' +
       // side face
       '<path d="M130 60 L150 48 L150 188 L130 200 Z" fill="' + f.side + '"/>' +
       // front face layers
@@ -58,14 +58,14 @@
     if (hero && !hero.firstChild) {
       hero.innerHTML =
         '<svg viewBox="0 0 560 520" role="img" focusable="false" aria-label="' + T('art.aria') + '">' +
-        '<ellipse cx="280" cy="470" rx="250" ry="22" fill="#e9def3"/>' +
+        '<ellipse cx="280" cy="470" rx="250" ry="22" fill="#f6dfe6"/>' +
         '<g transform="translate(150 70) scale(1.75)"><g class="float">' + slice('taro') + '</g></g>' +
         '<g transform="translate(24 230) scale(1.05)"><g class="float b">' + slice('sesame') + '</g></g>' +
         '<g transform="translate(392 214) scale(1.05)"><g class="float c">' + slice('oval') + '</g></g>' +
         '<g transform="translate(2 18) scale(.8)"><g class="float c">' + slice('mochi') + '</g></g>' +
         // coffee cup
-        '<g transform="translate(430 66)"><ellipse cx="44" cy="96" rx="52" ry="9" fill="#ffffff" stroke="#e6dde9"/><path d="M8 34h72l-8 56c-1 5-5 8-10 8H26c-5 0-9-3-10-8z" fill="#ffffff" stroke="#2e2440" stroke-width="4"/><path d="M80 46c22 0 22 30 -4 30" fill="none" stroke="#2e2440" stroke-width="4"/><path d="M14 46h60" stroke="#e8a33d" stroke-width="7"/>' +
-        '<g class="steam" fill="none" stroke="#b9a7c9" stroke-width="3.5" stroke-linecap="round"><path d="M32 24c-6-8 6-12 0-22"/><path d="M52 24c-6-8 6-12 0-22"/></g></g>' +
+        '<g transform="translate(430 66)"><ellipse cx="44" cy="96" rx="52" ry="9" fill="#ffffff" stroke="#f0dfe4"/><path d="M8 34h72l-8 56c-1 5-5 8-10 8H26c-5 0-9-3-10-8z" fill="#ffffff" stroke="#5a3a2c" stroke-width="4"/><path d="M80 46c22 0 22 30 -4 30" fill="none" stroke="#5a3a2c" stroke-width="4"/><path d="M14 46h60" stroke="#f6c1cc" stroke-width="7"/>' +
+        '<g class="steam" fill="none" stroke="#d9b9c3" stroke-width="3.5" stroke-linecap="round"><path d="M32 24c-6-8 6-12 0-22"/><path d="M52 24c-6-8 6-12 0-22"/></g></g>' +
         '</svg>';
     }
   }
