@@ -4,374 +4,238 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../shared/i18n.js"></script>
-<script src="assets/i18n-dict.js"></script>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect x='2' y='2' width='44' height='44' rx='11' fill='%231E3FD8'/%3E%3Cpath d='M24 7l2 4.6 3.4-1.6-.8 4.6 4.6-.8-2.6 3.4 2 1-6 2.6-.6 3.2h-2l-.6-3.2-6-2.6 2-1-2.6-3.4 4.6.8-.8-4.6 3.4 1.6z' fill='%23FFC62E'/%3E%3Cpath d='M7 31h34M10 40c4-9 8-12 14-12s10 3 14 12' fill='none' stroke='%23fff' stroke-width='3.4' stroke-linecap='round'/%3E%3C/svg%3E">
-<meta name="theme-color" content="#1E3FD8">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Maple Bridge Learning Centre">
+<title data-i18n="home.title">Maple Bridge Learning Centre | After-school tutoring in Markham</title>
+<meta name="description" content="Small-group tutoring in math, English, science, French and Mandarin for Grades 1 to 12, near Kennedy Rd and Bur Oak Ave in Markham. Free assessment. Call (905) 555-0162." data-i18n-attr="content:home.desc">
+<meta property="og:title" content="Maple Bridge Learning Centre, Markham" data-i18n-attr="content:og.title">
+<meta property="og:description" content="After-school tutoring for Grades 1 to 12 near Kennedy Rd and Bur Oak Ave. Classes of six or fewer." data-i18n-attr="content:og.desc">
+<meta property="og:image" content="assets/img/girl-class.jpg">
+<meta name="theme-color" content="#ffc629">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23ffc629'/%3E%3Cpath d='M10 44h44M16 44V36a16 16 0 0 1 32 0v8' fill='none' stroke='%23262a31' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Caveat:wght@600;700&family=Figtree:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
-<title data-i18n="home.title">Maple Bridge Learning Centre — small-group tutoring, Grades 1–12, Markham</title>
-<meta name="description" data-i18n-attr="content:home.desc" content="After-school tutoring in Markham for Grades 1–12, Ontario curriculum. Six students per class at most, Ontario-certified teachers, and a written progress note every month in English or Chinese.">
-<meta property="og:title" content="Maple Bridge Learning Centre — small-group tutoring, Grades 1–12">
-<meta property="og:description" content="Six students per class at most, Ontario-certified teachers, and a written progress note every month.">
+<script src="assets/i18n-dict.js"></script>
 </head>
 <body>
-<a class="skip" href="#main" data-i18n="skip">Skip to main content</a>
-<header class="site-header">
-  <div class="wrap">
-    <a class="logo" href="index.html" data-i18n-attr="aria-label:brand.home" aria-label="Maple Bridge Learning Centre — home">
-      <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="11" fill="#1E3FD8" stroke="#131B45" stroke-width="2"/><path d="M24 7l2 4.6 3.4-1.6-.8 4.6 4.6-.8-2.6 3.4 2 1-6 2.6-.6 3.2h-2l-.6-3.2-6-2.6 2-1-2.6-3.4 4.6.8-.8-4.6 3.4 1.6z" fill="#FFC62E" stroke="#131B45" stroke-width="1" stroke-linejoin="round"/><path d="M7 31h34M10 40c4-9 8-12 14-12s10 3 14 12M17 31v-0M31 31v0" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/></svg>
-      <span class="logo__text"><span class="logo__name" data-i18n="brand.name">Maple Bridge</span><span class="logo__sub" data-lang-neutral data-i18n="brand.sub">Learning Centre</span></span>
+<a class="skip" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="index.html" aria-label="Maple Bridge Learning Centre, home page" data-i18n-attr="aria-label:brand.aria">
+      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="12" fill="#ffc629"/><path d="M10 44h44M16 44V36a16 16 0 0 1 32 0v8" fill="none" stroke="#262a31" stroke-width="5" stroke-linecap="round"/></svg>
+      <span class="brand-text"><b data-i18n="brand.name">Maple Bridge Learning Centre</b></span>
     </a>
-    <nav id="site-nav" class="nav" data-i18n-attr="aria-label:nav.label" aria-label="Main navigation">
-      <a href="index.html#programs" data-i18n="nav.programs">Programs</a>
-      <a href="index.html#teachers" data-i18n="nav.teachers">Teachers</a>
-      <a href="index.html#fees" data-i18n="nav.fees">Fees</a>
-      <a href="index.html#faq" data-i18n="nav.faq">FAQ</a>
-      <a href="schedule.html"  data-i18n="nav.schedule">Timetable</a>
-      <a href="inquiry.html"  data-i18n="nav.inquiry">Inquiry</a>
-      <a class="btn btn--primary" href="inquiry.html?topic=assessment" data-i18n="nav.cta">Book a free assessment</a>
+    <nav class="nav" id="nav" aria-label="Main" data-i18n-attr="aria-label:nav.aria">
+      <a href="#fees" data-i18n="nav.fees">Classes and fees</a>
+      <a href="schedule.html" data-i18n="nav.schedule">Timetable</a>
+      <a href="#teachers" data-i18n="nav.teachers">Teachers</a>
+      <a href="#parents" data-i18n="nav.parents">For parents</a>
+      <a href="#visit" data-i18n="nav.contact">Contact</a>
     </nav>
-    <div class="lang" role="group" data-i18n-attr="aria-label:lang.label" aria-label="Language">
-      <button type="button" data-set-lang="en" lang="en">EN</button><button type="button" data-set-lang="zh-Hant" lang="zh-Hant">繁體</button><button type="button" data-set-lang="zh-Hans" lang="zh-Hans">简体</button>
+    <div class="head-tools">
+      <div class="lang" role="group" aria-label="Language" data-i18n-attr="aria-label:lang.aria">
+        <button type="button" data-set-lang="en" lang="en">EN</button>
+        <button type="button" data-set-lang="zh-Hant" lang="zh-Hant">繁</button>
+        <button type="button" data-set-lang="zh-Hans" lang="zh-Hans">简</button>
+      </div>
+      <a class="btn btn-yellow head-cta" href="inquiry.html?topic=assessment" data-i18n="nav.cta">Free assessment</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu" data-i18n-attr="aria-label:nav.open"><span></span><span></span><span></span></button>
     </div>
-    <button class="burger" type="button" aria-expanded="false" aria-controls="site-nav" data-i18n-attr="aria-label:nav.open" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </header>
+
 <main id="main">
-
-<section class="hero scene" aria-labelledby="hero-h">
-  <div class="stage" aria-hidden="true">
-    <div class="layer depth-0" data-depth="0"><div class="sheet"></div><div class="sun"></div></div>
-    <div class="layer depth-1" data-depth="1">
-      <svg class="arch" viewBox="0 0 300 150"><path d="M60 58v40M100 58v8M200 58v8M240 58v40" stroke="#131B45" stroke-width="5"/><path d="M20 152Q150-50 280 152" fill="none" stroke="#131B45" stroke-width="12" stroke-linecap="round"/><path d="M20 152Q150-50 280 152" fill="none" stroke="#C2401C" stroke-width="6" stroke-linecap="round"/><rect x="2" y="44" width="296" height="16" rx="3" fill="#1E3FD8" stroke="#131B45" stroke-width="3"/></svg>
-      <div class="mini-tt"><b></b><i class="a"></i><i></i><i class="b"></i><i></i><i class="a"></i><i></i><i class="c"></i><i class="a"></i><i class="b"></i><i class="e"></i><i class="b"></i><i class="a"></i><i></i><i class="c"></i><i class="e"></i></div>
-    </div>
-    <div class="layer depth-2" data-depth="2">
-      <div class="sticky" data-i18n="hero.sticky">6 seats max</div>
-      <svg class="plus" viewBox="0 0 30 30"><path d="M15 3v24M3 15h24" stroke="#E5432D" stroke-width="5" stroke-linecap="round"/></svg>
-    </div>
-    <div class="layer depth-3" data-depth="3">
-      <div class="ws">
-        <div class="ws__head"><span data-i18n="hero.ws">Show your steps</span><span>Q3</span></div>
-        <div class="ws__math q"><span class="frac"><i>2</i><i>3</i></span>+<span class="frac"><i>1</i><i>4</i></span>= ?</div>
-        <div class="ws__math">=<span class="frac"><i>8</i><i>12</i></span>+<span class="frac"><i>3</i><i>12</i></span></div>
-        <div class="ws__math">=<span class="ringed"><span class="frac"><i>11</i><i>12</i></span>
-          <svg class="ws__ring" viewBox="0 0 62 36" preserveAspectRatio="none"><path class="draw" data-delay=".9" d="M40 4C22 0 4 8 5 19s22 15 38 12 17-14 8-22C46 5 36 3 28 5" fill="none" stroke="#E5432D" stroke-width="2.6" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span>
-          <svg class="ws__check" viewBox="0 0 20 20"><path class="draw" data-delay="1.3" d="M2 11l5 6L18 2" fill="none" stroke="#E5432D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <h1 data-i18n-html="hero.h1">After-school tutoring for <span class="nw">Grades 1 to 12</span> in Markham</h1>
+        <p class="hero-p" data-i18n="hero.p">Math, English, science, French and Mandarin, in classes of six students or fewer. Most of our teachers are Ontario certified.</p>
+        <ul class="hero-facts">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span data-i18n-html="hero.hours">Monday to Friday 3:30 – 8:30 pm<br>Saturday 9:00 am – 3:30 pm</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.3-7-12a7 7 0 0 1 14 0c0 5.7-7 12-7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9" r="2.5" fill="currentColor"/></svg><span data-i18n="hero.addr">Suite 205, 88 Fernbrook Gate, near Kennedy Rd and Bur Oak Ave</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 17V7h3.5a3 3 0 0 1 0 6H9" fill="none" stroke="currentColor" stroke-width="2"/></svg><span data-i18n="hero.park">Free parking at the door</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5l2.7 4.2-1.8 1.9c1.1 2.5 3.3 4.7 5.8 5.8l1.9-1.8 4.2 2.7-.6 2.6c-.2.9-1 1.5-1.9 1.5C10.2 20.4 3.6 13.8 3.5 6c0-.9.6-1.7 1.5-1.9z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><a href="tel:+19055550162" data-lang-neutral>(905) 555-0162</a></li>
+        </ul>
+        <div class="btns">
+          <a class="btn btn-yellow" href="inquiry.html?topic=assessment" data-i18n="hero.cta1">Book a free assessment</a>
+          <a class="btn btn-line" href="schedule.html" data-i18n="hero.cta2">See the timetable</a>
         </div>
-        <p class="ws__pen" data-i18n="hero.pen">Clear steps!</p>
+      </div>
+      <img class="hero-img" src="assets/img/girl-class.jpg" width="1400" height="789" alt="A student writing in her notebook during class" data-i18n-attr="alt:hero.alt" fetchpriority="high">
+    </div>
+  </section>
+
+  <section class="facts" aria-label="Hours and location" data-i18n-attr="aria-label:fact.hours">
+    <div class="wrap facts-grid">
+      <div>
+        <h2 data-i18n="fact.hours">Hours</h2>
+        <table class="hours">
+          <tbody>
+            <tr data-days="1,2,3,4,5"><th scope="row" data-i18n="d.weekdays">Monday to Friday</th><td data-i18n="h.weekdays">3:30 – 8:30 pm</td></tr>
+            <tr data-days="6"><th scope="row" data-i18n="d.sat">Saturday</th><td data-i18n="h.sat">9:00 am – 3:30 pm</td></tr>
+            <tr data-days="0"><th scope="row" data-i18n="d.sun">Sunday</th><td data-i18n="h.closed">Closed</td></tr>
+          </tbody>
+        </table>
+        <p class="small" data-i18n="fact.office">The front desk answers the phone from 1:00 pm on weekdays.</p>
+      </div>
+      <div>
+        <h2 data-i18n="fact.addr">Address and parking</h2>
+        <p class="strong" data-lang-neutral>Suite 205, 88 Fernbrook Gate<br>Markham, ON L6C 9Z9</p>
+        <p class="small" data-i18n="addr.near">Near Kennedy Rd and Bur Oak Ave, second floor. There is an elevator in the lobby.</p>
+        <p class="small" data-i18n="fact.park">Free parking in front of the building. For pick-up, use the 10-minute spots by the main door.</p>
+        <p class="small"><a href="#visit" data-i18n="fact.directions">Get directions</a></p>
+      </div>
+      <div>
+        <h2 data-i18n="fact.contact">Phone and email</h2>
+        <p class="big-phone"><a href="tel:+19055550162" data-lang-neutral>(905) 555-0162</a></p>
+        <p><a href="mailto:office@maplebridge.example" data-lang-neutral>office@maplebridge.example</a></p>
+        <p class="small" data-i18n="fact.lang">We answer in English, Cantonese and Mandarin.</p>
       </div>
     </div>
-    <div class="layer depth-5" data-depth="5">
-      <svg class="pencil" viewBox="0 0 220 32"><path d="M40 4h150v24H40z" fill="#FFC62E" stroke="#131B45" stroke-width="3"/><path d="M40 16h150" stroke="#E0A400" stroke-width="2"/><path d="M190 4h12v24h-12z" fill="#B8BCCB" stroke="#131B45" stroke-width="3"/><path d="M202 4h12a2 2 0 012 2v20a2 2 0 01-2 2h-12z" fill="#E5432D" stroke="#131B45" stroke-width="3"/><path d="M40 4L6 16l34 12z" fill="#F4D9A8" stroke="#131B45" stroke-width="3" stroke-linejoin="round"/><path d="M6 16l12-4.3v8.6z" fill="#131B45"/></svg>
-      <svg class="leaf-float" viewBox="14 5 20 20"><path d="M24 7l2 4.6 3.4-1.6-.8 4.6 4.6-.8-2.6 3.4 2 1-6 2.6-.6 3.2h-2l-.6-3.2-6-2.6 2-1-2.6-3.4 4.6.8-.8-4.6 3.4 1.6z" fill="#C2401C" stroke="#131B45" stroke-width=".8" stroke-linejoin="round"/></svg>
-    </div>
-  </div>
-  <div class="layer depth-4" data-depth="4">
+  </section>
+
+  <section class="sec" id="fees" aria-labelledby="fees-h">
     <div class="wrap">
-      <div class="hero__copy">
-        <p class="hero__eyebrow" data-i18n="hero.eyebrow">Grades 1–12 · Ontario curriculum · Markham</p>
-        <h1 id="hero-h" data-i18n-html="hero.h1"><span class="line"><span>After-school</span></span> <span class="line"><span>tutoring that</span></span> <span class="line"><span><mark class="hl">shows its work.</mark></span></span></h1>
-        <p class="hero__lead" data-i18n="hero.lead">Six students per class at most, taught by Ontario-certified teachers. Every month you get a written progress note — in English or Chinese — on what your child covered, what’s solid, and what comes next.</p>
-        <div class="hero__cta">
-          <a class="btn btn--primary" href="inquiry.html?topic=assessment"><span data-i18n="hero.cta1">Book a free assessment</span><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <a class="btn" href="schedule.html" data-i18n="hero.cta2">See the winter timetable</a>
-        </div>
-        <p class="hero__note" data-i18n="hero.note">Now enrolling: Winter Term 2027, Jan 4 – Mar 27</p>
+      <h2 id="fees-h" data-i18n="fees.h">Classes and fees</h2>
+      <p class="lead" data-i18n="fees.p">Winter term runs from January 4 to March 27, 2027: 11 weeks, one class a week. Fees include all worksheets and books.</p>
+      <div class="table-wrap">
+        <table class="fees">
+          <thead>
+            <tr><th scope="col" data-i18n="fees.c.prog">Program</th><th scope="col" data-i18n="fees.c.grades">Grades</th><th scope="col" data-i18n="fees.c.len">Class length</th><th scope="col" data-i18n="fees.c.fee">Fee</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row" data-i18n="fees.r1">Math or English</th><td data-i18n="fees.r1g">1 to 6</td><td data-i18n="len.60">60 min</td><td class="fee" data-i18n="fee.440">$440 a term</td></tr>
+            <tr><th scope="row" data-i18n="fees.r2">Math, English, science or French</th><td data-i18n="fees.r2g">7 and 8</td><td data-i18n="len.90">90 min</td><td class="fee" data-i18n="fee.550">$550 a term</td></tr>
+            <tr><th scope="row" data-i18n="fees.r3">High school courses: math (MTH1W to MCV4U), English, science and chemistry</th><td data-i18n="fees.r3g">9 to 12</td><td data-i18n="len.90">90 min</td><td class="fee" data-i18n="fee.660">$660 a term</td></tr>
+            <tr><th scope="row" data-i18n="fees.r4">OSSLT prep, 8 weeks</th><td data-i18n="fees.r4g">10</td><td data-i18n="len.90">90 min</td><td class="fee" data-i18n="fee.400">$400</td></tr>
+            <tr><th scope="row" data-i18n="fees.r5">Mandarin, Saturdays</th><td data-i18n="fees.r5g">1 to 8</td><td data-i18n="len.60">60 min</td><td class="fee" data-i18n="fee.330">$330 a term</td></tr>
+            <tr><th scope="row" data-i18n="fees.r6">Homework Club, weekdays 3:30 to 6:30 pm</th><td data-i18n="fees.r6g">1 to 8</td><td data-i18n="len.club">Up to 3 hours</td><td class="fee" data-i18n="fee.club">$420 a month for 5 days a week, $280 for 3 days</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small" data-i18n="fees.notes">Registration is $40 per family each school year. A second child in the same family gets 10% off.</p>
+      <p><a class="link-strong" href="schedule.html" data-i18n="fees.link">See the days and times for each class</a></p>
+    </div>
+  </section>
+
+  <section class="sec sec-tint" aria-labelledby="start-h">
+    <div class="wrap start-grid">
+      <div>
+        <h2 id="start-h" data-i18n="start.h">How to start</h2>
+        <ol class="steps">
+          <li><h3 data-i18n="start.1h">Call us or send an inquiry</h3><p data-i18n="start.1p">Tell us your child’s grade and what they need help with.</p></li>
+          <li><h3 data-i18n="start.2h">Free assessment, about 40 minutes</h3><p data-i18n="start.2p">Your child does a short test with a teacher. Bring their latest report card if you can.</p></li>
+          <li><h3 data-i18n="start.3h">Try one class for $30</h3><p data-i18n="start.3p">If it is a good fit, register for the rest of the term. We take the $30 off your first payment.</p></li>
+        </ol>
+        <a class="btn btn-yellow" href="inquiry.html?topic=assessment" data-i18n="hero.cta1">Book a free assessment</a>
+      </div>
+      <div class="photo-pair">
+        <img src="assets/img/reading.jpg" width="1400" height="1142" loading="lazy" alt="A teacher reading a book with a student" data-i18n-attr="alt:alt.reading">
+        <img src="assets/img/worksheet.jpg" width="1000" height="1333" loading="lazy" alt="A multiplication worksheet and a pencil" data-i18n-attr="alt:alt.worksheet">
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="facts" data-i18n-attr="aria-label:facts.aria" aria-label="Key facts">
-  <div class="wrap">
-    <ul>
-      <li><b data-i18n="fact.1a">6</b><span data-i18n="fact.1b">students per class, at most</span></li>
-      <li><b data-i18n="fact.2a">1–12</b><span data-i18n="fact.2b">grades, Ontario curriculum</span></li>
-      <li><b data-i18n="fact.3a">$0</b><span data-i18n="fact.3b">placement assessment</span></li>
-      <li><b data-i18n="fact.4a">1 page</b><span data-i18n="fact.4b">progress note, every month</span></li>
-    </ul>
-  </div>
-</section>
-
-<section class="section" id="different" aria-labelledby="diff-h">
-  <div class="wrap diff__grid">
-    <div>
-      <div class="section__head">
-        <p class="kicker" data-i18n="diff.kicker">What makes us different</p>
-        <h2 id="diff-h" data-i18n-html="diff.h2">Five things we do that <span class="ul">you can check.</span></h2>
-      </div>
-      <ol class="diff__list">
-        <li class="reveal"><h3 data-i18n="diff.1h">Six seats per class. Really.</h3><p data-i18n="diff.1p">Every group class is capped at six. When the sixth seat goes, the timetable shows “waitlist” — we open a second section rather than squeeze in a seventh chair.</p></li>
-        <li class="reveal"><h3 data-i18n="diff.2h">Lead teachers are Ontario-certified.</h3><p data-i18n="diff.2p">Each class is planned and taught by an Ontario-certified teacher who has taught that grade in a school classroom. Assistants help in the homework club; they don’t lead lessons.</p></li>
-        <li class="reveal"><h3 data-i18n="diff.3h">A progress note every month, in your language.</h3><p data-i18n="diff.3p">One page, first week of the month: topics covered, a quick-check score, what’s secure, what needs work, and one thing to try at home. English, Traditional or Simplified Chinese — you choose.</p></li>
-        <li class="reveal"><h3 data-i18n="diff.4h">We follow the Ontario classroom — not ahead of it for show.</h3><p data-i18n="diff.4p">We ask for your child’s course outline and follow the curriculum strand by strand, including de-streamed Grade 9 math (MTH1W). Enrichment comes once the school material is secure, not instead of it.</p></li>
-        <li class="reveal"><h3 data-i18n="diff.5h">A homework club with a real sign-out sheet.</h3><p data-i18n="diff.5p">Doors open at 3:15. Homework first, then reading. Pick up any time from 5:30 to 6:30 pm; children are signed out only to an adult on your list.</p></li>
-      </ol>
-      <div class="promise reveal"><p data-i18n-html="diff.promise"><strong>What we won’t promise:</strong> a guaranteed mark. <strong>What we will:</strong> you’ll always know exactly where your child stands.</p></div>
-    </div>
-    <div class="note-wrap">
-      <figure class="pnote settle" role="img" data-i18n-attr="aria-label:note.aria" aria-label="Illustration of a sample one-page monthly progress note">
-        <span class="pnote__tag" data-i18n="note.tag">Sample — not a real student</span>
-        <h3 data-i18n="note.title">Monthly progress note</h3>
-        <p class="pnote__meta" data-i18n="note.meta">February · Junior Math (Gr 4–6) · Ms. Zhao</p>
-        <ul class="pnote__rows">
-          <li><span data-i18n="note.r1">Equivalent fractions</span><span class="tag tag--ok" data-i18n="note.s1">Secure</span></li>
-          <li><span data-i18n="note.r2">Adding unlike denominators</span><span class="tag tag--mid" data-i18n="note.s2">Getting there</span></li>
-          <li><span data-i18n="note.r3">Multi-step word problems</span><span class="tag tag--work" data-i18n="note.s3">Needs practice</span></li>
-        </ul>
-        <div class="pnote__quick"><span data-i18n="note.quick">Quick check</span><b>8/10<svg viewBox="0 0 100 50" preserveAspectRatio="none" aria-hidden="true"><path class="draw" d="M70 6C40 0 6 8 5 25s40 22 66 18 26-24 6-34C64 4 50 4 40 6" fill="none" stroke="#E5432D" stroke-width="2.6" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></b></div>
-        <p class="pnote__home" data-i18n="note.home">Try at home</p>
-        <p class="pnote__hand" data-i18n="note.hand">Now writes out each step without being asked. This weekend: halve a recipe together.</p>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<section class="section section--tint" id="programs" aria-labelledby="prog-h">
-  <div class="wrap">
-    <div class="section__head">
-      <p class="kicker" data-i18n="prog.kicker">Programs</p>
-      <h2 id="prog-h" data-i18n="prog.h2">Find your child’s grade.</h2>
-      <p data-i18n="prog.lead">Four grade bands, one approach: small groups, the school’s own curriculum, and work a parent can flip through.</p>
-    </div>
-    <div class="bands">
-      <article class="band band--p settle">
-        <span class="band__tab" data-i18n="prog.p.tab">Primary</span>
-        <h3 data-i18n="prog.p.gr">Grades 1–3</h3>
-        <p class="band__len"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 4.5V8l2.5 1.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span data-i18n="prog.p.len">60-minute classes</span></p>
-        <ul><li data-i18n="prog.p.1">Reading &amp; phonics, read-aloud fluency</li><li data-i18n="prog.p.2">Writing: sentences to short paragraphs</li><li data-i18n="prog.p.3">Number sense, addition &amp; subtraction, early multiplication</li><li data-i18n="prog.p.4">Mandarin for beginners (Saturdays)</li><li data-i18n="prog.p.5">Homework club, Mon–Fri</li></ul>
-        <a class="band__link" href="schedule.html?band=P"><span data-i18n="prog.p.link">Grades 1–3 on the timetable</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      </article>
-      <article class="band band--j settle">
-        <span class="band__tab" data-i18n="prog.j.tab">Junior</span>
-        <h3 data-i18n="prog.j.gr">Grades 4–6</h3>
-        <p class="band__len"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 4.5V8l2.5 1.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span data-i18n="prog.j.len">60-minute classes</span></p>
-        <ul><li data-i18n="prog.j.1">Math: fractions, decimals, multi-step word problems</li><li data-i18n="prog.j.2">Reading comprehension &amp; paragraph writing</li><li data-i18n="prog.j.3">Science lab (Fridays): hands-on, with a lab notebook</li><li data-i18n="prog.j.4">French basics — support for Core French</li><li data-i18n="prog.j.5">Mandarin · Homework club</li></ul>
-        <a class="band__link" href="schedule.html?band=J"><span data-i18n="prog.j.link">Grades 4–6 on the timetable</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      </article>
-      <article class="band band--i settle">
-        <span class="band__tab" data-i18n="prog.i.tab">Intermediate</span>
-        <h3 data-i18n="prog.i.gr">Grades 7–8</h3>
-        <p class="band__len"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 4.5V8l2.5 1.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span data-i18n="prog.i.len">90-minute classes</span></p>
-        <ul><li data-i18n="prog.i.1">Math: proportional reasoning, integers, algebra readiness</li><li data-i18n="prog.i.2">English: essay structure, reading &amp; response</li><li data-i18n="prog.i.3">Science: fair-test design, lab reports</li><li data-i18n="prog.i.4">French basics, Grades 7–8</li><li data-i18n="prog.i.5">Bridge to Grade 9: getting ready for de-streamed math</li></ul>
-        <a class="band__link" href="schedule.html?band=I"><span data-i18n="prog.i.link">Grades 7–8 on the timetable</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      </article>
-      <article class="band band--h settle">
-        <span class="band__tab" data-i18n="prog.h.tab">High school</span>
-        <h3 data-i18n="prog.h.gr">Grades 9–12</h3>
-        <p class="band__len"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 4.5V8l2.5 1.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span data-i18n="prog.h.len">90-minute classes</span></p>
-        <ul><li data-i18n="prog.h.1">Grade 9 de-streamed math (MTH1W) · Grade 10 (MPM2D)</li><li data-i18n="prog.h.2">Functions (MCR3U) · Advanced Functions (MHF4U) · Calculus &amp; Vectors (MCV4U)</li><li data-i18n="prog.h.3">English, Grades 9–12: essays, literary analysis</li><li data-i18n="prog.h.4">Science (SNC1W / SNC2D) · Chemistry (SCH3U)</li><li data-i18n="prog.h.5">OSSLT prep — Ontario’s Grade 10 literacy test</li></ul>
-        <a class="band__link" href="schedule.html?band=H"><span data-i18n="prog.h.link">Grades 9–12 on the timetable</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      </article>
-    </div>
-
-    <div class="sess reveal">
-      <h3 data-i18n="sess.h3">What a 90-minute class looks like</h3>
-      <div class="sess__bar">
-        <div class="sess__seg"><b data-i18n="sess.1t">10 min</b><span data-i18n="sess.1d">Warm-up quiz on last week</span></div>
-        <div class="sess__seg"><b data-i18n="sess.2t">30 min</b><span data-i18n="sess.2d">New concept, taught at the board</span></div>
-        <div class="sess__seg"><b data-i18n="sess.3t">35 min</b><span data-i18n="sess.3d">Guided practice — the teacher gets to every desk</span></div>
-        <div class="sess__seg"><b data-i18n="sess.4t">15 min</b><span data-i18n="sess.4d">Exit question + school homework check</span></div>
-      </div>
-      <p class="sess__note" data-i18n="sess.note">Primary and Junior classes run 60 minutes with the same four parts, shortened.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section section--cobalt" id="how" aria-labelledby="how-h">
-  <div class="wrap">
-    <div class="section__head">
-      <p class="kicker" data-i18n="how.kicker">How it works</p>
-      <h2 id="how-h" data-i18n="how.h2">From first call to first progress note.</h2>
-    </div>
-    <ol class="steps">
-      <li class="step settle"><span class="step__n" aria-hidden="true"></span><h3 data-i18n="how.1h">Free placement assessment</h3><p data-i18n="how.1p">About 40 minutes, by appointment. Your child works through grade-level questions while a teacher watches how they think — not just the score.</p><svg class="step__arrow" viewBox="0 0 46 30" aria-hidden="true"><path class="draw" d="M3 20C14 6 28 4 40 12M32 5l9 7-10 5" fill="none" stroke="#FFC62E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
-      <li class="step settle"><span class="step__n" aria-hidden="true"></span><h3 data-i18n="how.2h">Small-group placement</h3><p data-i18n="how.2p">We suggest a class by level and timetable — and tell you plainly if we don’t have the right group this term.</p><svg class="step__arrow" viewBox="0 0 46 30" aria-hidden="true"><path class="draw" d="M3 20C14 6 28 4 40 12M32 5l9 7-10 5" fill="none" stroke="#FFC62E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
-      <li class="step settle"><span class="step__n" aria-hidden="true"></span><h3 data-i18n="how.3h">Weekly classes</h3><p data-i18n="how.3p">Same teacher, same time, every week. Try one class first if you like: $30, credited to your first month.</p><svg class="step__arrow" viewBox="0 0 46 30" aria-hidden="true"><path class="draw" d="M3 20C14 6 28 4 40 12M32 5l9 7-10 5" fill="none" stroke="#FFC62E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></li>
-      <li class="step settle"><span class="step__n" aria-hidden="true"></span><h3 data-i18n="how.4h">Monthly progress note</h3><p data-i18n="how.4p">First week of each month, in the language you prefer. Questions? Book a 10-minute call with the teacher.</p></li>
-    </ol>
-  </div>
-</section>
-
-<section class="section" id="teachers" aria-labelledby="teach-h">
-  <div class="wrap">
-    <div class="section__head">
-      <p class="kicker" data-i18n="teach.kicker">Meet the teachers</p>
-      <h2 id="teach-h" data-i18n="teach.h2">Four lead teachers. You’ll know which one has your child.</h2>
-    </div>
-    <div class="teachers">
-      <article class="teacher settle">
-        <svg class="teacher__av" viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="40" fill="#1E3FD8" stroke="#131B45" stroke-width="2.5"/><path d="M8 58h68" stroke="#FFC62E" stroke-width="5"/><text x="42" y="50" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="28" fill="#fff">KL</text></svg>
-        <h3 data-i18n="t1.name">Ms. Karen Lau</h3><p class="teacher__role" data-i18n="t1.role">Centre director · Math, Grades 7–12</p>
-        <p class="teacher__bio" data-i18n="t1.bio">Ontario-certified teacher (Intermediate/Senior math). Taught Grade 9–12 math in York Region schools for eleven years before opening Maple Bridge in 2019. Teaches MHF4U and MCV4U herself and writes our Grade 9 placement assessment.</p>
-        <dl class="teacher__lang"><dt data-i18n="teach.speaks">Speaks with parents in</dt><dd data-i18n="t1.lang">English, Cantonese</dd></dl>
-      </article>
-      <article class="teacher settle">
-        <svg class="teacher__av" viewBox="0 0 84 84" aria-hidden="true"><rect x="2" y="2" width="80" height="80" rx="18" fill="#FFC62E" stroke="#131B45" stroke-width="2.5"/><circle cx="66" cy="18" r="7" fill="#E5432D"/><text x="42" y="52" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="28" fill="#131B45">DO</text></svg>
-        <h3 data-i18n="t2.name">Mr. Daniel Okafor</h3><p class="teacher__role" data-i18n="t2.role">English · OSSLT prep · French basics</p>
-        <p class="teacher__bio" data-i18n="t2.bio">Ontario-certified teacher (English; French as a Second Language). Eight years teaching Grade 7–10 English and Core French. Marks every essay against a rubric the student keeps. His progress notes are translated by our office and checked with him.</p>
-        <dl class="teacher__lang"><dt data-i18n="teach.speaks">Speaks with parents in</dt><dd data-i18n="t2.lang">English, French</dd></dl>
-      </article>
-      <article class="teacher settle">
-        <svg class="teacher__av" viewBox="0 0 84 84" aria-hidden="true"><path d="M42 2l40 72H2z" fill="#E5432D" stroke="#131B45" stroke-width="2.5" stroke-linejoin="round" transform="translate(0 4)"/><text x="42" y="64" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="25" fill="#fff">XZ</text></svg>
-        <h3 data-i18n="t3.name">Ms. Zhao Xin</h3><p class="teacher__role" data-i18n="t3.role">Science · Junior math · Mandarin</p>
-        <p class="teacher__bio" data-i18n="t3.bio">Ontario-certified teacher (Science). Trained as a chemist and taught middle-school science in Beijing before qualifying in Ontario. Runs the Friday science lab and the Saturday Mandarin classes — Simplified characters with pinyin, Traditional reading introduced in the upper class.</p>
-        <dl class="teacher__lang"><dt data-i18n="teach.speaks">Speaks with parents in</dt><dd data-i18n="t3.lang">Mandarin, English</dd></dl>
-      </article>
-      <article class="teacher settle">
-        <svg class="teacher__av" viewBox="0 0 84 84" aria-hidden="true"><path d="M2 82V42a40 40 0 0180 0v40z" fill="#131B45"/><path d="M14 82V46a28 28 0 0156 0v36" fill="none" stroke="#FFC62E" stroke-width="3"/><text x="42" y="64" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="26" fill="#fff">EW</text></svg>
-        <h3 data-i18n="t4.name">Ms. Emily Wong</h3><p class="teacher__role" data-i18n="t4.role">Primary &amp; Junior · reading, writing, math</p>
-        <p class="teacher__bio" data-i18n="t4.bio">Ontario-certified teacher (Primary/Junior). Six years in Grade 1–4 classrooms. Believes neat work is a habit, not a talent: her students keep one notebook all term so parents can flip back through it.</p>
-        <dl class="teacher__lang"><dt data-i18n="teach.speaks">Speaks with parents in</dt><dd data-i18n="t4.lang">Cantonese, Mandarin, English</dd></dl>
-      </article>
-    </div>
-    <div class="club-note reveal">
-      <svg viewBox="0 0 34 34" aria-hidden="true"><rect x="3" y="5" width="28" height="26" rx="4" fill="#FFC62E" stroke="#131B45" stroke-width="2"/><path d="M10 2v6M24 2v6M9 19l5 5 11-11" fill="none" stroke="#131B45" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <p data-i18n="teach.club">The homework club is supervised by Mr. Jason Ip with two assistants. Everyone who works here holds a current vulnerable sector check.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section section--tint" id="fees" aria-labelledby="fees-h">
-  <div class="wrap">
-    <div class="section__head">
-      <p class="kicker" data-i18n="fees.kicker">Fees</p>
-      <h2 id="fees-h" data-i18n="fees.h2">Fees, shown plainly.</h2>
-      <p data-i18n="fees.lead">Per student, per month, in Canadian dollars. A month is four classes.</p>
-    </div>
-    <div class="fees__grid">
-      <ul class="feesheet settle">
-        <li><h3 data-i18n="fees.r1">Primary &amp; Junior group class</h3><p data-i18n="fees.r1d">Grades 1–6 · 60 min, once a week</p><span class="fee"><b>$160</b><span data-i18n="fees.per">/ month</span></span></li>
-        <li><h3 data-i18n="fees.r2">Intermediate group class</h3><p data-i18n="fees.r2d">Grades 7–8 · 90 min, once a week</p><span class="fee"><b>$220</b><span data-i18n="fees.per">/ month</span></span></li>
-        <li><h3 data-i18n="fees.r3">High school, Grades 9–10</h3><p data-i18n="fees.r3d">MTH1W, MPM2D, English, science · 90 min</p><span class="fee"><b>$240</b><span data-i18n="fees.per">/ month</span></span></li>
-        <li><h3 data-i18n="fees.r4">High school, Grades 11–12</h3><p data-i18n="fees.r4d">MCR3U, MHF4U, MCV4U, SCH3U, senior English · 90 min</p><span class="fee"><b>$270</b><span data-i18n="fees.per">/ month</span></span></li>
-        <li><h3 data-i18n="fees.r5">Mandarin class</h3><p data-i18n="fees.r5d">Saturdays · 60 min</p><span class="fee"><b>$140</b><span data-i18n="fees.per">/ month</span></span></li>
-        <li><h3 data-i18n="fees.r6">Homework club, 5 days a week</h3><p data-i18n="fees.r6d">Mon–Fri, 3:30–6:30 pm · 3 days a week: $300</p><span class="fee"><b>$460</b><span data-i18n="fees.per">/ month</span></span></li>
-        <li><h3 data-i18n="fees.r7">OSSLT prep</h3><p data-i18n="fees.r7d">One 8-week block · 90 min a week</p><span class="fee"><b>$390</b><span data-i18n="fees.block">/ block</span></span></li>
+  <section class="sec" id="teachers" aria-labelledby="teach-h">
+    <div class="wrap">
+      <h2 id="teach-h" data-i18n="teach.h">Our teachers</h2>
+      <p class="lead" data-i18n="teach.p">Each class has the same teacher for the whole term.</p>
+      <ul class="teachers">
+        <li><h3 data-i18n="t.lau.n">Ms. Lau</h3><p class="role" data-i18n="t.lau.r">Math, Grades 7 to 12</p><p data-i18n="t.lau.p">Ontario Certified Teacher. Taught high school math for 11 years. Speaks English and Cantonese.</p></li>
+        <li><h3 data-i18n="t.oka.n">Mr. Okafor</h3><p class="role" data-i18n="t.oka.r">English, OSSLT and French, Grades 7 to 12</p><p data-i18n="t.oka.p">Ontario Certified Teacher in English and French. Marks practice OSSLT tests the same way the real test is marked. Speaks English and French.</p></li>
+        <li><h3 data-i18n="t.zhao.n">Ms. Zhao</h3><p class="role" data-i18n="t.zhao.r">Science, Grade 4 to 6 math, Mandarin</p><p data-i18n="t.zhao.p">Chemistry degree and 8 years of tutoring. Speaks English and Mandarin.</p></li>
+        <li><h3 data-i18n="t.wong.n">Ms. Wong</h3><p class="role" data-i18n="t.wong.r">Reading, writing and math, Grades 1 to 6</p><p data-i18n="t.wong.p">Ontario Certified Teacher for the primary grades. Speaks English, Cantonese and Mandarin.</p></li>
+        <li><h3 data-i18n="t.ip.n">Mr. Ip</h3><p class="role" data-i18n="t.ip.r">Director and Homework Club</p><p data-i18n="t.ip.p">Opened Maple Bridge in 2012. Runs the Homework Club and the school pick-ups. Speaks English and Cantonese.</p></li>
       </ul>
-      <div class="fineprint reveal">
-        <span class="sticker" aria-hidden="true" data-lang-neutral data-i18n="fees.sticker">No registration fee</span>
-        <h3 data-i18n="fees.n.h">The small print, in normal-size print</h3>
-        <ul>
-          <li data-i18n-html="fees.n1"><strong>Placement assessment:</strong> free.</li>
-          <li data-i18n-html="fees.n2"><strong>Trial class:</strong> $30, credited to your first month if you enrol.</li>
-          <li data-i18n-html="fees.n3"><strong>Registration fee:</strong> none. <strong>Materials:</strong> $25 per student, per term.</li>
-          <li data-i18n-html="fees.n4"><strong>Second class or second child:</strong> 5% off the lower fee.</li>
-          <li data-i18n-html="fees.n5"><strong>Winter Term 2027</strong> has 11 teaching weeks, so March is billed for three classes, not four.</li>
-          <li data-i18n="fees.n6">Due on the 1st by e-transfer, debit or cheque. One month’s notice to withdraw.</li>
-        </ul>
+    </div>
+  </section>
+
+  <section class="sec sec-tint" id="parents" aria-labelledby="par-h">
+    <div class="wrap par-grid">
+      <div class="par-side">
+        <h2 id="par-h" data-i18n="par.h">For parents</h2>
+        <img src="assets/img/girl-pink.jpg" width="1000" height="676" loading="lazy" alt="A student doing her homework" data-i18n-attr="alt:alt.homework">
       </div>
+      <dl class="par-list">
+        <div><dt data-i18n="par.pick.h">Drop-off and pick-up</dt><dd data-i18n="par.pick.p">Use the 10-minute spots by the main door, not the fire lane. An adult signs out students in Grades 1 to 3 at the front desk.</dd></div>
+        <div><dt data-i18n="par.school.h">School pick-up for Homework Club</dt><dd data-i18n="par.school.p">Our staff walk students over from three nearby elementary schools. Call us to check if your child’s school is one of them.</dd></div>
+        <div><dt data-i18n="par.missed.h">Missed classes</dt><dd data-i18n="par.missed.p">Tell us by noon on the day of the class. Your child can join another section of the same course that week. Missed classes are not refunded.</dd></div>
+        <div><dt data-i18n="par.sick.h">Sick days</dt><dd data-i18n="par.sick.p">If your child is sick but well enough to learn, they can join their class by video call. Ask the front desk for the link.</dd></div>
+        <div><dt data-i18n="par.pay.h">Payment</dt><dd data-i18n="par.pay.p">Interac e-Transfer, debit, Visa, Mastercard or cheque. Term fees are due before the first class. Homework Club is paid monthly.</dd></div>
+        <div><dt data-i18n="par.food.h">Snacks and allergies</dt><dd data-i18n="par.food.p">We are a nut-free centre. Homework Club students can bring a snack. Please tell us about any allergies when you register.</dd></div>
+        <div><dt data-i18n="par.report.h">Progress updates</dt><dd data-i18n="par.report.p">You get a short written note every month and a 15-minute meeting with the teacher each term.</dd></div>
+      </dl>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section" id="faq" aria-labelledby="faq-h">
-  <div class="wrap faq__grid">
-    <div class="section__head">
-      <p class="kicker" data-i18n="faq.kicker">Parent FAQ</p>
-      <h2 id="faq-h" data-i18n="faq.h2">Questions parents ask us first.</h2>
-    </div>
-    <div class="acc">
-      <div class="acc__item"><h3><button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-1" id="faq-1-b"><span data-i18n="faq.1q">Do you pick children up from school?</span><span class="acc__ico" aria-hidden="true"></span></button></h3><div class="acc__panel" id="faq-1" role="region" aria-labelledby="faq-1-b" hidden><p data-i18n="faq.1a">No — we don’t operate a vehicle, and we’d rather say so than be vague. Doors open at 3:15 pm on school days, and several families walk over or share a carpool. For the homework club, pick-up is any time between 5:30 and 6:30 pm. We sign children out only to adults on your authorized list. Running late? Call us; after 6:40 pm there is a $10 late fee per 10 minutes.</p></div></div>
-      <div class="acc__item"><h3><button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-2" id="faq-2-b"><span data-i18n="faq.2q">Can we try a class before enrolling?</span><span class="acc__ico" aria-hidden="true"></span></button></h3><div class="acc__panel" id="faq-2" role="region" aria-labelledby="faq-2-b" hidden><p data-i18n="faq.2a">Yes. After the free assessment you can book one trial class, in the group we recommend, for $30. If you enrol, the $30 comes off your first month. If it isn’t a fit, that’s all you pay — no follow-up calls unless you ask for one.</p></div></div>
-      <div class="acc__item"><h3><button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-3" id="faq-3-b"><span data-i18n="faq.3q">What happens if my child misses a class?</span><span class="acc__ico" aria-hidden="true"></span></button></h3><div class="acc__panel" id="faq-3" role="region" aria-labelledby="faq-3-b" hidden><p data-i18n="faq.3a">Tell us by noon on the day. Each student has two make-ups per term: sit in on the same course’s other section that week, or come to the Saturday make-up clinic (3:15–4:15 pm). Classes that fall on a closure — Family Day, Good Friday — are rescheduled by us and never forfeited. Missed classes aren’t refunded.</p></div></div>
-      <div class="acc__item"><h3><button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-4" id="faq-4-b"><span data-i18n="faq.4q">Which language are classes taught in?</span><span class="acc__ico" aria-hidden="true"></span></button></h3><div class="acc__panel" id="faq-4" role="region" aria-labelledby="faq-4-b" hidden><p data-i18n="faq.4a">English — it’s the language of school, tests and report cards. (The exceptions are the Mandarin and French classes.) Teachers who speak Cantonese or Mandarin will explain a word to a newly arrived student when it helps, and they talk with parents in whichever language is easiest. Progress notes come in English, Traditional or Simplified Chinese.</p></div></div>
-      <div class="acc__item"><h3><button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-5" id="faq-5-b"><span data-i18n="faq.5q">Do you look at school report cards?</span><span class="acc__ico" aria-hidden="true"></span></button></h3><div class="acc__panel" id="faq-5" role="region" aria-labelledby="faq-5-b" hidden><p data-i18n="faq.5a">Yes, please bring the most recent one to the assessment, plus any marked tests. We read the teacher’s comments and the learning-skills section, not just the marks, and plan from there. We are not affiliated with any school board and do not grant credits; the school report card remains the official record.</p></div></div>
-      <div class="acc__item"><h3><button class="acc__btn" type="button" aria-expanded="false" aria-controls="faq-6" id="faq-6-b"><span data-i18n="faq.6q">Do you guarantee better marks?</span><span class="acc__ico" aria-hidden="true"></span></button></h3><div class="acc__panel" id="faq-6" role="region" aria-labelledby="faq-6-b" hidden><p data-i18n="faq.6a">No — and we’d be wary of anyone who does. What we commit to is six seats, an Ontario-certified teacher, and a written note every month so you can judge progress for yourself. If you don’t see it after two notes, we sit down together and change the plan — or tell you honestly that we’re not the right fit.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="section section--tint" id="visit" aria-labelledby="visit-h">
-  <div class="wrap">
-    <div class="visit__grid">
+  <section class="sec" id="dates" aria-labelledby="dates-h">
+    <div class="wrap dates-grid">
       <div>
-        <p class="kicker" data-i18n="visit.kicker">Location &amp; hours</p>
-        <h2 class="h2" id="visit-h" data-i18n="visit.h2">Second floor, above the plaza. Elevator on the left.</h2>
-        <address class="addr"><span data-i18n="addr.line1">Suite 205, 150 Inkstone Crescent</span><span data-lang-neutral data-i18n="addr.line2">Markham, ON L3R 0X0</span></address>
-        <p data-i18n="visit.p">Free parking in the plaza lot, a bus stop three minutes’ walk away, and Highway 7 just to the south.</p>
-        <p class="contact-lines"><a href="tel:+19055550162" data-i18n-attr="aria-label:phone.aria" aria-label="Call (905) 555-0162">(905) 555-0162</a><a href="mailto:hello@maplebridge.example">hello@maplebridge.example</a></p>
-        <dl class="hours">
-          <div><dt data-i18n="visit.d1">Monday – Friday</dt><dd data-i18n="visit.t1">3:15 – 8:45 pm</dd></div>
-          <div><dt data-i18n="visit.d2">Saturday</dt><dd data-i18n="visit.t2">9:00 am – 4:30 pm</dd></div>
-          <div><dt data-i18n="visit.d3">Sunday</dt><dd data-i18n="visit.t3">Closed</dd></div>
-        </dl>
-        <p class="small" style="margin-top:10px" data-i18n="visit.office">Phone answered Mon–Fri from 1:00 pm.</p>
+        <h2 id="dates-h" data-i18n="dates.h">Term dates and closures</h2>
+        <p data-i18n="dates.p">We follow the York Region school calendar for PA days.</p>
       </div>
-      <figure class="mapcard settle">
-  <svg class="map" viewBox="0 0 600 380" role="img" data-i18n-attr="aria-label:map.aria" aria-label="Stylised map">
-    <rect width="600" height="380" fill="#FFFDF8"/>
-    <g stroke="rgba(30,63,216,.12)" stroke-width="1"><path d="M0 0V380"/><path d="M30 0V380"/><path d="M60 0V380"/><path d="M90 0V380"/><path d="M120 0V380"/><path d="M150 0V380"/><path d="M180 0V380"/><path d="M210 0V380"/><path d="M240 0V380"/><path d="M270 0V380"/><path d="M300 0V380"/><path d="M330 0V380"/><path d="M360 0V380"/><path d="M390 0V380"/><path d="M420 0V380"/><path d="M450 0V380"/><path d="M480 0V380"/><path d="M510 0V380"/><path d="M540 0V380"/><path d="M570 0V380"/><path d="M600 0V380"/><path d="M0 0H600"/><path d="M0 30H600"/><path d="M0 60H600"/><path d="M0 90H600"/><path d="M0 120H600"/><path d="M0 150H600"/><path d="M0 180H600"/><path d="M0 210H600"/><path d="M0 240H600"/><path d="M0 270H600"/><path d="M0 300H600"/><path d="M0 330H600"/><path d="M0 360H600"/></g>
-    <path d="M-10 300H610" stroke="#131B45" stroke-width="34"/><path d="M-10 300H610" stroke="#FFC62E" stroke-width="2.5" stroke-dasharray="18 14"/>
-    <text x="34" y="340" font-size="15" fill="#131B45" data-i18n="map.hwy">HIGHWAY 7</text>
-    <path d="M420 -10V283" stroke="#B9C3EA" stroke-width="18"/>
-    <path d="M60 283C70 170 170 90 300 90s230 40 240 193" fill="none" stroke="#B9C3EA" stroke-width="18" stroke-linecap="round"/>
-    <text x="96" y="140" font-size="15" fill="#414A75" transform="rotate(-38 96 140)" data-i18n="map.cres">Inkstone Cres.</text>
-    <rect x="200" y="150" width="190" height="62" rx="6" fill="#E3E9FD" stroke="#131B45" stroke-width="2.5"/>
-    <rect x="215" y="222" width="160" height="44" rx="4" fill="none" stroke="#131B45" stroke-width="2" stroke-dasharray="5 5"/>
-    <g stroke="#131B45" stroke-width="1.5"><path d="M235 224v40"/><path d="M255 224v40"/><path d="M275 224v40"/><path d="M295 224v40"/><path d="M315 224v40"/><path d="M335 224v40"/><path d="M355 224v40"/></g>
-    <text x="295" y="252" text-anchor="middle" font-size="13" fill="#131B45" style="paint-order:stroke" stroke="#FFFDF8" stroke-width="5" data-i18n="map.park">Free parking</text>
-    <g transform="translate(296 118)"><path d="M0 34C-14 16-20 8-20 0a20 20 0 0140 0c0 8-6 16-20 34z" fill="#E5432D" stroke="#131B45" stroke-width="2.5"/><circle r="7" fill="#fff" stroke="#131B45" stroke-width="2"/></g>
-    <g transform="translate(296 66)"><rect x="-108" y="-20" width="216" height="32" rx="16" fill="#131B45"/><text y="1" text-anchor="middle" font-size="14" fill="#fff" data-i18n="map.here">We’re here · Suite 205</text></g>
-    <g transform="translate(470 252)"><rect x="-12" y="-14" width="24" height="24" rx="5" fill="#1E3FD8" stroke="#131B45" stroke-width="2"/><text y="4" text-anchor="middle" font-size="13" fill="#fff">B</text><text x="18" y="4" font-size="13" fill="#131B45" data-i18n="map.bus">Bus stop · 3 min</text></g>
-    <g transform="translate(548 52)"><circle r="24" fill="#FFC62E" stroke="#131B45" stroke-width="2.5"/><path d="M0-16l8 20H-8z" fill="#131B45"/><text y="16" text-anchor="middle" font-size="11" fill="#131B45" data-i18n="map.n">N</text></g>
-    <path class="draw" d="M150 236c40 20 80 18 100-6" fill="none" stroke="#E5432D" stroke-width="3" stroke-linecap="round"/><path d="M240 222l12 6-5 12" fill="none" stroke="#E5432D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-  <figcaption data-i18n="map.note">Drawn map, not to scale.</figcaption>
-</figure>
+      <table class="dates">
+        <tbody>
+          <tr><th scope="row" data-i18n="dt.break.d">December 24 to January 3</th><td data-i18n="dt.break">Winter break, closed</td></tr>
+          <tr><th scope="row" data-i18n="dt.start.d">Monday, January 4</th><td data-i18n="dt.start">First day of winter term</td></tr>
+          <tr><th scope="row" data-i18n="dt.family.d">Monday, February 15</th><td data-i18n="dt.family">Family Day, closed</td></tr>
+          <tr><th scope="row" data-i18n="dt.march.d">March 15 to 19</th><td data-i18n="dt.march">March Break: no regular classes, day camp 9:00 am to 4:00 pm</td></tr>
+          <tr><th scope="row" data-i18n="dt.good.d">Friday, March 26</th><td data-i18n="dt.good">Good Friday, closed</td></tr>
+          <tr><th scope="row" data-i18n="dt.end.d">Saturday, March 27</th><td data-i18n="dt.end">Last day of winter term</td></tr>
+          <tr><th scope="row" data-i18n="dt.pa.d">Book by the Friday before</th><td data-i18n="dt.pa">PA days: day camp 8:30 am to 5:30 pm, $75</td></tr>
+        </tbody>
+      </table>
     </div>
-    <div class="cta-band settle">
-      <div>
-        <h2 data-i18n="visit.cta.h">Start with a free 40-minute assessment.</h2>
-        <p data-i18n="visit.cta.p">No obligation, and no child’s full name or school needed to ask.</p>
-      </div>
-      <div class="hero__cta">
-        <a class="btn btn--primary" href="inquiry.html?topic=assessment" data-i18n="visit.cta.b1">Send an inquiry</a>
-        <a class="btn" href="schedule.html" data-i18n="visit.cta.b2">Browse the timetable</a>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
+  <section class="sec sec-yellow" id="visit" aria-labelledby="map-h">
+    <div class="wrap map-grid">
+      <div>
+        <h2 id="map-h" data-i18n="map.h">Find us</h2>
+        <p class="strong" data-lang-neutral>Suite 205, 88 Fernbrook Gate<br>Markham, ON L6C 9Z9</p>
+        <p data-i18n="map.drive">By car: from Kennedy Road, go east on Bur Oak Avenue and turn left onto Fernbrook Gate. We are in the two-storey brick building on the right.</p>
+        <p data-i18n="map.bus">By bus: the stop at Kennedy Rd and Bur Oak Ave is a 4-minute walk away.</p>
+        <p data-i18n="fact.park">Free parking in front of the building. For pick-up, use the 10-minute spots by the main door.</p>
+        <p class="btns"><a class="btn btn-dark" href="https://www.google.com/maps/search/?api=1&amp;query=Kennedy+Rd+and+Bur+Oak+Ave+Markham+ON" target="_blank" rel="noopener" data-i18n="map.open">Open in Google Maps</a><a class="btn btn-line" href="tel:+19055550162" data-lang-neutral>(905) 555-0162</a></p>
+      </div>
+      <div class="map-frame">
+        <iframe data-map-q="Kennedy Rd & Bur Oak Ave, Markham, ON" src="https://maps.google.com/maps?q=Kennedy%20Rd%20%26%20Bur%20Oak%20Ave%2C%20Markham%2C%20ON&amp;z=15&amp;hl=en&amp;output=embed" title="Map of the area around Kennedy Rd and Bur Oak Ave, Markham" data-i18n-attr="title:map.title" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
 </main>
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="foot__grid">
-      <div>
-        <a class="logo" href="index.html" data-i18n-attr="aria-label:brand.home" aria-label="Maple Bridge Learning Centre — home">
-          <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="11" fill="#1E3FD8" stroke="#fff" stroke-width="2"/><path d="M24 7l2 4.6 3.4-1.6-.8 4.6 4.6-.8-2.6 3.4 2 1-6 2.6-.6 3.2h-2l-.6-3.2-6-2.6 2-1-2.6-3.4 4.6.8-.8-4.6 3.4 1.6z" fill="#FFC62E"/><path d="M7 31h34M10 40c4-9 8-12 14-12s10 3 14 12" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/></svg>
-          <span class="logo__text"><span class="logo__name" data-i18n="brand.name">Maple Bridge</span><span class="logo__sub" data-lang-neutral data-i18n="brand.sub">Learning Centre</span></span>
-        </a>
-        <p data-i18n="foot.tag">Small-group after-school tutoring for Grades 1–12, Ontario curriculum.</p>
-      </div>
-      <div>
-        <h2 class="foot__h" data-i18n="foot.visit">Visit</h2>
-        <address><span data-i18n="addr.line1">Suite 205, 150 Inkstone Crescent</span><span data-lang-neutral data-i18n="addr.line2">Markham, ON L3R 0X0</span></address>
-        <h2 class="foot__h" style="margin-top:18px" data-i18n="foot.contact">Contact</h2>
-        <ul><li><a href="tel:+19055550162" data-i18n-attr="aria-label:phone.aria" aria-label="Call (905) 555-0162">(905) 555-0162</a></li><li><a href="mailto:hello@maplebridge.example">hello@maplebridge.example</a></li></ul>
-      </div>
-      <div>
-        <h2 class="foot__h" data-i18n="foot.hours">Hours</h2>
-        <ul><li data-i18n="foot.h1">Mon – Fri · 3:15 – 8:45 pm</li><li data-i18n="foot.h2">Saturday · 9:00 am – 4:30 pm</li><li data-i18n="foot.h3">Sunday · closed</li></ul>
-      </div>
-      <div>
-        <h2 class="foot__h" data-i18n="foot.pages">Pages</h2>
-        <ul><li><a href="index.html" data-i18n="foot.home">Home</a></li><li><a href="schedule.html" data-i18n="nav.schedule">Timetable</a></li><li><a href="inquiry.html" data-i18n="nav.inquiry">Inquiry</a></li><li><a href="index.html#faq" data-i18n="nav.faq">FAQ</a></li></ul>
-      </div>
+
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="foot-brand" data-i18n="brand.name">Maple Bridge Learning Centre</p>
+      <p data-i18n="foot.about">Small-group tutoring for Grades 1 to 12 in Markham since 2012.</p>
     </div>
-    <div class="foot__base">
-      <span data-i18n="foot.copy">© 2026 Maple Bridge Learning Centre. Not affiliated with any school board.</span>
-      <a href="../index.html" data-i18n="foot.demo">Demo site — fictional business</a>
+    <div>
+      <h2 data-i18n="foot.hours">Hours</h2>
+      <p data-i18n-html="foot.hours.p">Monday to Friday 3:30 – 8:30 pm<br>Saturday 9:00 am – 3:30 pm<br>Sunday closed</p>
     </div>
+    <div>
+      <h2 data-i18n="foot.contact">Contact</h2>
+      <p data-lang-neutral>Suite 205, 88 Fernbrook Gate<br>Markham, ON L6C 9Z9</p>
+      <p><a href="tel:+19055550162" data-lang-neutral>(905) 555-0162</a><br><a href="mailto:office@maplebridge.example" data-lang-neutral>office@maplebridge.example</a></p>
+    </div>
+    <div>
+      <h2 data-i18n="foot.pages">Pages</h2>
+      <ul class="foot-links">
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="schedule.html" data-i18n="nav.schedule">Timetable</a></li>
+        <li><a href="inquiry.html" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-base">
+    <span data-i18n="foot.copy">© 2026 Maple Bridge Learning Centre</span>
+    <a href="../index.html" data-i18n="foot.demo">This is a demo website. The tutoring centre is fictional.</a>
   </div>
 </footer>
-<script src="../shared/vendor/gsap.min.js" defer></script>
-<script src="../shared/vendor/ScrollTrigger.min.js" defer></script>
-<script src="assets/site.js" defer></script>
+
+<script src="assets/site.js"></script>
 </body>
 </html>

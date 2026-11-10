@@ -28,13 +28,11 @@
   function render() {
     var L = MPi18n.lang;
     $('tabs').innerHTML = JB.cats.map(function (c) {
-      var zh = L === 'zh-Hans' ? c.name['zh-Hans'] : c.name['zh-Hant'];
-      return '<li><a href="#c-' + c.id + '" data-cat="' + c.id + '"><b' + (L === 'en' ? ' lang="zh-Hant" data-lang-neutral' : '') + '>' + esc(zh) + '</b>' + (L === 'en' ? esc(c.name.en) : '') + '</a></li>';
+      return '<li><a href="#c-' + c.id + '" data-cat="' + c.id + '">' + esc(MPi18n.pick(c.name)) + '</a></li>';
     }).join('');
     $('cats').innerHTML = JB.cats.map(function (c) {
-      var zh = L === 'zh-Hans' ? c.name['zh-Hans'] : c.name['zh-Hant'];
       return '<section class="cat" id="c-' + c.id + '" aria-labelledby="ch-' + c.id + '">' +
-        '<div class="cat-h"><h2 id="ch-' + c.id + '"' + (L === 'en' ? ' lang="zh-Hant" data-lang-neutral' : '') + '>' + esc(zh) + '</h2>' + (L === 'en' ? '<span>' + esc(c.name.en) + '</span>' : '') + '</div>' +
+        '<div class="cat-h"><h2 id="ch-' + c.id + '">' + esc(MPi18n.pick(c.name)) + '</h2></div>' +
         '<p class="cat-note">' + esc(MPi18n.pick(c.note)) + '</p><ul class="items">' +
         JB.items.filter(function (it) { return it.c === c.id; }).map(function (it) {
           var marks = ['g', 'v', 'p', 's'].filter(function (k) { return JB.has(it, k); }).map(function (k) {
@@ -42,8 +40,8 @@
           }).join('');
           var qty = it.q ? '<span class="tag">' + esc(T('menu.pcs').replace('{n}', it.q)) + '</span>' : '';
           return '<li class="item' + (picks[it.id] ? ' is-picked' : '') + '" data-id="' + it.id + '">' +
-            '<div><span class="item-zh"' + (L === 'en' ? ' lang="zh-Hant" data-lang-neutral' : '') + '>' + esc(JB.zhName(it)) + '</span>' +
-            '<span class="item-en"' + (L === 'en' ? '' : ' lang="en" data-lang-neutral') + '>' + esc(it.n[2]) + '</span>' +
+            '<div><span class="item-name">' + esc(JB.name(it)) + '</span>' +
+            '<span class="item-alt"' + (L === 'en' ? ' lang="zh-Hant" data-lang-neutral' : ' lang="en" data-lang-neutral') + '>' + esc(L === 'en' ? it.n[0] : it.n[2]) + '</span>' +
             '<p class="item-d">' + esc(JB.desc(it)) + '</p>' +
             '<div class="item-meta">' + tierChip(it) + marks + qty + '</div></div>' +
             '<div class="qty">' + qtyHtml(it) + '</div></li>';
@@ -112,7 +110,7 @@
     var L = MPi18n.lang;
     $('picks').innerHTML = ids.map(function (id) {
       var it = JB.byId(id);
-      return '<li><div><span class="pk-zh"' + (L === 'en' ? ' lang="zh-Hant" data-lang-neutral' : '') + '>' + esc(JB.zhName(it)) + '</span><span class="pk-en"' + (L === 'en' ? '' : ' lang="en" data-lang-neutral') + '>' + esc(it.n[2]) + ' · ' + (it.t ? esc(MPi18n.pick(JB.tierChar[it.t])) + ' ' : '') + (it.incl ? esc(T('menu.incl')) : JB.money(JB.price(it))) + '</span></div>' +
+      return '<li><div><span class="pk-zh">' + esc(JB.name(it)) + '</span><span class="pk-en"' + (L === 'en' ? ' lang="zh-Hant" data-lang-neutral' : ' lang="en" data-lang-neutral') + '>' + esc(L === 'en' ? it.n[0] : it.n[2]) + '</span><span class="pk-price">' + (it.t ? esc(MPi18n.pick(JB.tierChar[it.t])) + ' ' : '') + (it.incl ? esc(T('menu.incl')) : JB.money(JB.price(it))) + '</span></div>' +
         '<div class="pk-ctl"><button type="button" data-sub="' + id + '" aria-label="' + esc(T('picks.less').replace('{name}', JB.name(it))) + '">−</button><output>' + picks[id] + '</output>' +
         '<button type="button" data-add="' + id + '" aria-label="' + esc(T('picks.more').replace('{name}', JB.name(it))) + '">+</button></div></li>';
     }).join('');

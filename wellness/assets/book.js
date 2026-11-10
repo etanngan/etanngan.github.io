@@ -10,28 +10,29 @@
   /* ---------- data ---------- */
   var PRAC = {
     mc: T('Mei-Ling Cheung, RMT', '張美玲（註冊按摩治療師）', '张美玲（注册按摩治疗师）'),
+    dh: T('Daniel Ho, RMT', '何俊文（註冊按摩治療師）', '何俊文（注册按摩治疗师）'),
     wz: T('Wen Zhao, R.Ac', '趙雯（註冊針灸師）', '赵雯（注册针灸师）'),
     jl: T('Jonathan Lau, Registered Physiotherapist', '劉卓賢（註冊物理治療師）', '刘卓贤（注册物理治疗师）'),
-    sm: T('Sofia Marchetti, DOMP', 'Sofia Marchetti（整骨手法治療師）', 'Sofia Marchetti（整骨手法治疗师）')
+    sm: T('Sofia Marchetti, Osteopathic Manual Practitioner', 'Sofia Marchetti（整骨手法治療師）', 'Sofia Marchetti（整骨手法治疗师）')
   };
   var SERVICES = [
-    { id: 'massage', name: T('Registered massage therapy', '註冊按摩治療', '注册按摩治疗'), prac: ['mc'], lengths: [
+    { id: 'massage', name: T('Registered massage therapy', '註冊按摩治療', '注册按摩治疗'), prac: ['mc', 'dh'], lengths: [
       { id: '30', l: T('30 minutes', '30 分鐘', '30 分钟'), fee: 70 },
       { id: '45', l: T('45 minutes', '45 分鐘', '45 分钟'), fee: 95 },
       { id: '60', l: T('60 minutes', '60 分鐘', '60 分钟'), fee: 120 },
-      { id: '60p', l: T('60 minutes · prenatal', '60 分鐘・產前按摩', '60 分钟・孕期按摩'), fee: 120 },
+      { id: '60p', l: T('60 minutes, prenatal', '60 分鐘（產前按摩）', '60 分钟（孕期按摩）'), fee: 120 },
       { id: '90', l: T('90 minutes', '90 分鐘', '90 分钟'), fee: 165 } ] },
     { id: 'acupuncture', name: T('Acupuncture', '針灸', '针灸'), prac: ['wz'], lengths: [
-      { id: '75f', l: T('75 minutes · first visit', '75 分鐘・首次到診', '75 分钟・初次到访'), fee: 125 },
+      { id: '75f', l: T('First visit, 75 minutes', '首次到診，75 分鐘', '初次，75 分钟'), fee: 125 },
       { id: '45', l: T('45 minutes', '45 分鐘', '45 分钟'), fee: 85 },
       { id: '60', l: T('60 minutes', '60 分鐘', '60 分钟'), fee: 105 },
-      { id: '60c', l: T('60 minutes with cupping', '60 分鐘・加配拔罐', '60 分钟・加拔罐'), fee: 125 } ] },
+      { id: '60c', l: T('60 minutes with cupping', '60 分鐘，加配拔罐', '60 分钟，加拔罐'), fee: 125 } ] },
     { id: 'physio', name: T('Physiotherapy', '物理治療', '物理治疗'), prac: ['jl'], lengths: [
-      { id: '60f', l: T('60 minutes · first assessment', '60 分鐘・首次評估', '60 分钟・初次评估'), fee: 130 },
-      { id: '30', l: T('30 minutes · follow-up', '30 分鐘・覆診', '30 分钟・复诊'), fee: 80 },
-      { id: '45', l: T('45 minutes · follow-up', '45 分鐘・覆診', '45 分钟・复诊'), fee: 105 } ] },
+      { id: '60f', l: T('First assessment, 60 minutes', '首次評估，60 分鐘', '初次评估，60 分钟'), fee: 130 },
+      { id: '30', l: T('Follow-up, 30 minutes', '覆診，30 分鐘', '复诊，30 分钟'), fee: 80 },
+      { id: '45', l: T('Follow-up, 45 minutes', '覆診，45 分鐘', '复诊，45 分钟'), fee: 105 } ] },
     { id: 'osteo', name: T('Osteopathic manual therapy', '整骨手法治療', '整骨手法'), prac: ['sm'], lengths: [
-      { id: '60f', l: T('60 minutes · first visit', '60 分鐘・首次到診', '60 分钟・初次到访'), fee: 125 },
+      { id: '60f', l: T('First visit, 60 minutes', '首次到診，60 分鐘', '初次，60 分钟'), fee: 125 },
       { id: '30', l: T('30 minutes', '30 分鐘', '30 分钟'), fee: 75 },
       { id: '45', l: T('45 minutes', '45 分鐘', '45 分钟'), fee: 100 } ] }
   ];
@@ -114,7 +115,7 @@
       var dt = new Date(y, m, d), ok = selectable(dt), key = ymd(dt);
       var closed = !isOpen(dt);
       h += '<button type="button" class="cal-day' + (closed ? ' is-closed' : '') + '" data-date="' + key + '"' + (ok ? '' : ' disabled') +
-        ' aria-pressed="' + (s.value === key) + '" aria-label="' + fmtDate(dt) + (closed ? ' — ' + t('cal.closed') : '') + '">' + d + '</button>';
+        ' aria-pressed="' + (s.value === key) + '" aria-label="' + fmtDate(dt) + (closed ? (I.lang === 'en' ? ', ' : '，') + t('cal.closed') : '') + '">' + d + '</button>';
     }
     h += '</div><p class="cal-foot">' + t('cal.foot') + '</p>';
     s.cal.innerHTML = h;
@@ -173,7 +174,7 @@
     fLength.disabled = false;
     var keep = s.lengths.some(function (l) { return l.id === cur; });
     fLength.appendChild(opt('', t('bk.length.ph'), !keep, true));
-    s.lengths.forEach(function (l) { fLength.appendChild(opt(l.id, I.pick(l.l) + ' — $' + l.fee, keep && l.id === cur)); });
+    s.lengths.forEach(function (l) { fLength.appendChild(opt(l.id, I.pick(l.l) + (I.lang === 'en' ? ', $' : '，$') + l.fee, keep && l.id === cur)); });
   }
   function renderPrac() {
     var s = svc(fService.value), cur = fPrac.value;
@@ -257,22 +258,22 @@
   var LANGN = { en: 'lg.en', yue: 'lg.yue', cmn: 'lg.cmn' };
   var CONF = { call: 'bk.c.call', text: 'bk.c.text', email: 'bk.c.email' };
   function winText(arr) { return arr.map(function (w) { return t('bk.' + w); }).join(I.lang === 'en' ? ', ' : '、'); }
-  function slotText(s) { return s.date ? fmtDate(parse(s.date)) + (I.lang === 'en' ? ' · ' : '・') + winText(s.wins) : t('ok.none'); }
+  function slotText(s) { return s.date ? fmtDate(parse(s.date)) + (I.lang === 'en' ? ', ' : '，') + winText(s.wins) : t('ok.none'); }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function renderSuccess() {
     if (!lastReq) return;
     var r = lastReq, s = svc(r.service), len = s.lengths.filter(function (l) { return l.id === r.length; })[0];
     doc.getElementById('ok-h').textContent = t('ok.h').replace('{name}', r.name);
-    doc.getElementById('ok-p').innerHTML = t('ok.p.' + r.confirm);
+    doc.getElementById('ok-p').textContent = t('ok.p.' + r.confirm);
     var contact = r.confirm === 'email' ? r.email : r.phone;
     var rows = [
       ['ok.service', I.pick(s.name)],
-      ['ok.length', I.pick(len.l) + ' — $' + len.fee],
+      ['ok.length', I.pick(len.l) + (I.lang === 'en' ? ', $' : '，$') + len.fee],
       ['ok.prac', r.prac === 'any' ? t('bk.prac.any') : I.pick(PRAC[r.prac])],
       ['ok.visitor', t(r.visitor === 'new' ? 'bk.new' : 'bk.returning')],
       ['ok.first', slotText(r.s1)],
       ['ok.second', slotText(r.s2)],
-      ['ok.confirm', t(CONF[r.confirm]) + (I.lang === 'en' ? ' · ' : '・') + contact],
+      ['ok.confirm', t(CONF[r.confirm]) + (I.lang === 'en' ? ', ' : '，') + contact],
       ['ok.lang', t(LANGN[r.lang])]
     ];
     doc.getElementById('ok-sum').innerHTML = rows.map(function (x) { return '<div><dt>' + t(x[0]) + '</dt><dd>' + esc(x[1]) + '</dd></div>'; }).join('');
@@ -300,7 +301,6 @@
     ok.hidden = false;
     ok.scrollIntoView({ block: 'start', behavior: 'smooth' });
     ok.focus({ preventScroll: true });
-    if (window.gsap && !matchMedia('(prefers-reduced-motion: reduce)').matches) window.gsap.fromTo(ok, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 1.2, ease: 'power2.out' });
   });
   doc.getElementById('again').addEventListener('click', function () {
     form.reset(); lastReq = null;

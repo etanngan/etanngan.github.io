@@ -4,291 +4,192 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../shared/i18n.js"></script>
-<title data-i18n="meta.svc.title">Services & fees — Stillwater Wellness Clinic, Markham</title>
-<meta name="description" data-i18n-attr="content:meta.svc.desc" content="What each session involves, session lengths and fees, what to wear, insurance and receipts, and our 24-hour cancellation policy.">
-<meta property="og:title" content="Stillwater Wellness Clinic · 靜水堂">
-<meta property="og:description" content="Unhurried massage therapy, acupuncture, physiotherapy and osteopathic manual therapy in Markham. English, Cantonese and Mandarin.">
-<meta property="og:type" content="website">
-<meta name="theme-color" content="#23423a">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2323423a'/%3E%3Cg fill='none' stroke='%23f4efe6' stroke-width='2.4'%3E%3Cellipse cx='32' cy='40' rx='22' ry='7'/%3E%3Cellipse cx='32' cy='40' rx='12' ry='3.6' opacity='.7'/%3E%3C/g%3E%3Ccircle cx='32' cy='22' r='7' fill='%23d98a66'/%3E%3C/svg%3E">
+<title data-i18n="sv.title">Services and fees | Stillwater Wellness Clinic</title>
+<meta name="description" content="Massage therapy, physiotherapy, acupuncture and osteopathic manual therapy at Stillwater in Markham: session lengths, prices and who you will see." data-i18n-attr="content:sv.desc">
+<meta property="og:title" content="Stillwater Wellness Clinic, Markham" data-i18n-attr="content:og.title">
+<meta property="og:description" content="Physiotherapy, massage therapy, acupuncture and osteopathic manual therapy near Woodbine Ave and 16th Ave. Direct billing." data-i18n-attr="content:og.desc">
+<meta name="theme-color" content="#1d5a80">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%231d5a80'/%3E%3Cpath d='M12 28c5-5 10-5 15 0s10 5 15 0 7-4 10-2M12 40c5-5 10-5 15 0s10 5 15 0 7-4 10-2' fill='none' stroke='%23fff' stroke-width='4.5' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,0..100;1,9..144,300..500,0..100&family=Source+Sans+3:wght@400;500;600&family=Noto+Serif+TC:wght@500;600&family=Noto+Serif+SC:wght@500;600&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
+<script src="assets/i18n-dict.js"></script>
 </head>
-<body data-page="services">
-<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+<body>
+<a class="skip" href="#main" data-i18n="a11y.skip">Skip to content</a>
 
-<header class="site-head" id="top">
-  <div class="wrap">
-    <a class="brand" href="index.html" data-i18n-attr="aria-label:brand.aria" aria-label="Stillwater Wellness Clinic — home">
-      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#23423a"/><g fill="none" stroke="#f4efe6" stroke-width="1.3"><ellipse cx="20" cy="25" rx="13" ry="4.2"/><ellipse cx="20" cy="25" rx="7" ry="2.1" opacity=".7"/></g><circle cx="20" cy="14" r="4.3" fill="#d98a66"/></svg>
-      <span class="brand-name" data-lang-neutral>Stillwater</span>
-      <span class="brand-zh" data-lang-neutral>靜水堂</span>
+<div class="topbar">
+  <div class="wrap topbar-row">
+    <span class="tb-item"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="top.billing">Direct billing to most insurance plans</span></span>
+    <span class="tb-item tb-today" id="tb-today" hidden><span data-i18n="top.today">Today</span> <b id="tb-hours"></b></span>
+    <a class="tb-item tb-phone" href="tel:+19055550117" aria-label="Call Stillwater at (905) 555-0117" data-i18n-attr="aria-label:call.aria">(905) 555-0117</a>
+  </div>
+</div>
+
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="index.html" aria-label="Stillwater Wellness Clinic, home page" data-i18n-attr="aria-label:brand.aria">
+      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="32" fill="#1d5a80"/><path d="M12 28c5-5 10-5 15 0s10 5 15 0 7-4 10-2M12 40c5-5 10-5 15 0s10 5 15 0 7-4 10-2" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/></svg>
+      <span class="brand-text"><b>Stillwater</b><span class="brand-zh" data-i18n="brand.zh" data-lang-neutral>靜水堂</span></span>
     </a>
-    <nav class="nav" id="nav" data-i18n-attr="aria-label:nav.aria" aria-label="Main">
-      <a href="services.html" aria-current="page" data-i18n="nav.services">Services &amp; fees</a>
-      <a href="index.html#team" data-i18n="nav.team">Practitioners</a>
-      <a href="index.html#first-visit" data-i18n="nav.first">First visit</a>
-      <a href="index.html#visit" data-i18n="nav.visit">Hours &amp; location</a>
-      <a class="nav-book" href="book.html" data-i18n="nav.book">Request a booking</a>
-      <p class="nav-extra"><span data-i18n="nav.extra">Prefer to call?</span> <a href="tel:+19055550117">(905) 555-0117</a></p>
+    <nav class="nav" id="nav" aria-label="Main" data-i18n-attr="aria-label:nav.aria">
+      <a href="services.html" aria-current="page" data-i18n="nav.services">Services and fees</a>
+      <a href="index.html#team" data-i18n="nav.team">Our team</a>
+      <a href="index.html#insurance" data-i18n="nav.insurance">Insurance</a>
+      <a href="index.html#visit" data-i18n="nav.visit">Visit us</a>
     </nav>
-    <div class="lang" role="group" data-i18n-attr="aria-label:lang.aria" aria-label="Language">
-      <button type="button" data-set-lang="en" lang="en">EN</button>
-      <button type="button" data-set-lang="zh-Hant" lang="zh-Hant">繁體</button>
-      <button type="button" data-set-lang="zh-Hans" lang="zh-Hans">简体</button>
+    <div class="head-tools">
+      <div class="lang" role="group" aria-label="Language" data-i18n-attr="aria-label:lang.aria">
+        <button type="button" data-set-lang="en" lang="en">EN</button>
+        <button type="button" data-set-lang="zh-Hant" lang="zh-Hant">繁</button>
+        <button type="button" data-set-lang="zh-Hans" lang="zh-Hans">简</button>
+      </div>
+      <a class="btn btn-blue head-book" href="book.html"><span class="long" data-i18n="nav.book">Request an appointment</span><span class="short" data-i18n="nav.book.short">Book</span></a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu" data-i18n-attr="aria-label:nav.open"><span></span><span></span><span></span></button>
     </div>
-    <a class="btn btn--sm head-cta" href="book.html"><span class="dot" aria-hidden="true"></span><span data-i18n="cta.book">Request a booking</span></a>
-    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" data-i18n-attr="aria-label:nav.menu" aria-label="Menu"><span></span></button>
   </div>
 </header>
 
 <main id="main">
-  <section class="scene page-head" aria-labelledby="sp-h">
-    <div class="layer depth-0 wash" data-depth="0" aria-hidden="true"></div>
-    <div class="layer depth-1 rings" data-depth="1" aria-hidden="true"><svg viewBox="0 0 640 640"><circle cx="320" cy="320" r="90"/><circle cx="320" cy="320" r="160"/><circle cx="320" cy="320" r="230"/><circle cx="320" cy="320" r="300"/></svg></div>
-    <div class="layer depth-3 willow" data-depth="3" aria-hidden="true"><img src="assets/img/willow.svg" alt="" width="520" height="760"></div>
+  <div class="page-head">
     <div class="wrap">
-      <p class="crumbs"><a href="index.html" data-i18n="ft.home">Home</a> / <span data-i18n="sp.crumb">Services &amp; fees</span></p>
-      <h1 class="h-xl" id="sp-h" data-line data-i18n-html="sp.h1">Services, session lengths <em>and what they cost.</em></h1>
-      <p class="lede" data-reveal data-i18n="sp.lede">Every service here is one practitioner, one room and your full booked time. Read what a session involves, then send a request for the one you would like.</p>
-    </div>
-  </section>
-
-  <div class="wrap svc-layout">
-    <nav class="subnav" data-i18n-attr="aria-label:sp.nav.aria" aria-label="Sections on this page">
-      <p class="subnav-title" data-i18n="sp.nav.t">On this page</p>
-      <ul>
-        <li><a href="#massage" data-i18n="sp.nav.mas">Massage therapy</a></li>
-        <li><a href="#acupuncture" data-i18n="sp.nav.acu">Acupuncture</a></li>
-        <li><a href="#physio" data-i18n="sp.nav.phy">Physiotherapy</a></li>
-        <li><a href="#osteo" data-i18n="sp.nav.ost">Osteopathic</a></li>
-        <li class="sep" aria-hidden="true"></li>
-        <li><a href="#insurance" data-i18n="sp.nav.ins">Insurance &amp; receipts</a></li>
-        <li><a href="#cancellation" data-i18n="sp.nav.can">Cancellation</a></li>
-        <li><a href="#faq" data-i18n="sp.nav.faq">Questions</a></li>
-      </ul>
-    </nav>
-
-    <div class="svc-body">
-      <!-- MASSAGE -->
-      <section class="svc" id="massage" aria-labelledby="h-mas">
-        <div class="svc-top"><span class="idx" data-i18n="sp.i1">i.</span><h2 class="h-lg" id="h-mas" data-i18n="sv.mas.h">Registered massage therapy</h2></div>
-        <p class="svc-intro" data-i18n="sp.mas.intro">Your therapist asks what you would like worked on and how much pressure you enjoy, then steps out while you settle under the sheet. Only the area being worked on is uncovered. Swedish, deep-tissue and myofascial techniques, with unscented oil unless you ask otherwise.</p>
-        <div class="svc-cols">
-          <div>
-            <h3 data-i18n="sp.h.who">Commonly booked by</h3>
-            <ul class="dash">
-              <li data-i18n="sp.mas.w1">People with neck and shoulder stiffness from long days at a desk</li>
-              <li data-i18n="sp.mas.w2">Runners, badminton players and gym-goers after a hard week</li>
-              <li data-i18n="sp.mas.w3">Anyone who simply wants an hour of quiet</li>
-              <li data-i18n="sp.mas.w4">Expectant mothers — side-lying prenatal positioning is available</li>
-            </ul>
-          </div>
-          <div>
-            <h3 data-i18n="sp.h.fees">Session lengths &amp; fees</h3>
-            <table class="price" data-i18n-attr="aria-label:cap.mas"><tbody>
-              <tr><th scope="row" data-i18n="len.30">30 minutes</th><td>$70</td></tr>
-              <tr><th scope="row" data-i18n="len.45">45 minutes</th><td>$95</td></tr>
-              <tr><th scope="row" data-i18n="len.60">60 minutes</th><td>$120</td></tr>
-              <tr><th scope="row" data-i18n="len.90">90 minutes</th><td>$165</td></tr>
-            </tbody></table>
-            <p class="price-note" data-i18n="sp.mas.pn">Prenatal massage is booked as a 60-minute session at the same fee. Just mention it when we call to confirm.</p>
-          </div>
-        </div>
-        <div class="svc-meta">
-          <div><h3 data-i18n="sp.h.with">With</h3><p data-i18n="sp.mas.with">Mei-Ling Cheung, RMT — Cantonese and English</p></div>
-          <div><h3 data-i18n="sp.h.wear">What to wear &amp; bring</h3><p data-i18n="sp.mas.wear">Nothing special. You undress to the level you are comfortable with and stay draped throughout.</p></div>
-        </div>
-        <div class="svc-cta"><a class="btn" href="book.html?service=massage"><span class="dot" aria-hidden="true"></span><span data-i18n="sp.req">Request this service</span></a><a class="small" href="tel:+19055550117" data-i18n="sp.askcall">or ask a question: (905) 555-0117</a></div>
-      </section>
-
-      <!-- ACUPUNCTURE -->
-      <section class="svc" id="acupuncture" aria-labelledby="h-acu">
-        <div class="svc-top"><span class="idx" data-i18n="sp.i2">ii.</span><h2 class="h-lg" id="h-acu" data-i18n="sv.acu.h">Acupuncture</h2></div>
-        <p class="svc-intro" data-i18n="sp.acu.intro">A first visit starts with an unhurried conversation. Wen then places fine, sterile, single-use needles and you rest for 20 to 30 minutes in a warm, dimly lit room. She tells you what she is doing at each step, and you can ask her to stop at any time.</p>
-        <div class="svc-cols">
-          <div>
-            <h3 data-i18n="sp.h.who">Commonly booked by</h3>
-            <ul class="dash">
-              <li data-i18n="sp.acu.w1">People who carry tension in the shoulders or lower back</li>
-              <li data-i18n="sp.acu.w2">Those who find it hard to switch off at the end of the day</li>
-              <li data-i18n="sp.acu.w3">First-timers who want someone to explain it plainly</li>
-            </ul>
-          </div>
-          <div>
-            <h3 data-i18n="sp.h.fees">Session lengths &amp; fees</h3>
-            <table class="price" data-i18n-attr="aria-label:cap.acu"><tbody>
-              <tr><th scope="row"><span data-i18n="len.75">75 minutes</span><small data-i18n="len.first">First visit</small></th><td>$125</td></tr>
-              <tr><th scope="row" data-i18n="len.45">45 minutes</th><td>$85</td></tr>
-              <tr><th scope="row" data-i18n="len.60">60 minutes</th><td>$105</td></tr>
-              <tr><th scope="row"><span data-i18n="sp.acu.cup">Cupping</span><small data-i18n="sp.acu.cup.s">added to a session if you and Wen agree it suits</small></th><td>+$20</td></tr>
-            </tbody></table>
-            <p class="price-note" data-i18n="sp.acu.note">Cupping usually leaves round marks that fade over several days. Wen will show you what to expect before you decide.</p>
-          </div>
-        </div>
-        <div class="svc-meta">
-          <div><h3 data-i18n="sp.h.with">With</h3><p data-i18n="sp.acu.with">Wen Zhao, R.Ac — Mandarin and English</p></div>
-          <div><h3 data-i18n="sp.h.wear">What to wear &amp; bring</h3><p data-i18n="sp.acu.wear">Loose clothing that rolls up past the elbows and knees. Have something to eat beforehand.</p></div>
-        </div>
-        <div class="svc-cta"><a class="btn" href="book.html?service=acupuncture"><span class="dot" aria-hidden="true"></span><span data-i18n="sp.req">Request this service</span></a><a class="small" href="tel:+19055550117" data-i18n="sp.askcall">or ask a question: (905) 555-0117</a></div>
-      </section>
-
-      <!-- PHYSIO -->
-      <section class="svc" id="physio" aria-labelledby="h-phy">
-        <div class="svc-top"><span class="idx" data-i18n="sp.i3">iii.</span><h2 class="h-lg" id="h-phy" data-i18n="sv.phy.h">Physiotherapy</h2></div>
-        <p class="svc-intro" data-i18n="sp.phy.intro">The first assessment is a full hour, one-on-one with a registered physiotherapist: questions, a look at how you move, hands-on work, then two or three exercises to take home. Follow-ups build from there. You are never handed to an assistant or left alone on a machine.</p>
-        <div class="svc-cols">
-          <div>
-            <h3 data-i18n="sp.h.who">Commonly booked by</h3>
-            <ul class="dash">
-              <li data-i18n="sp.phy.w1">People with aches that come from desk work or a long commute</li>
-              <li data-i18n="sp.phy.w2">Those returning to sport after time away</li>
-              <li data-i18n="sp.phy.w3">People building strength again once their doctor or surgeon has cleared them</li>
-              <li data-i18n="sp.phy.w4">Anyone who wants a clear plan to follow at home</li>
-            </ul>
-          </div>
-          <div>
-            <h3 data-i18n="sp.h.fees">Session lengths &amp; fees</h3>
-            <table class="price" data-i18n-attr="aria-label:cap.phy"><tbody>
-              <tr><th scope="row"><span data-i18n="len.60">60 minutes</span><small data-i18n="len.firstassess">First assessment</small></th><td>$130</td></tr>
-              <tr><th scope="row"><span data-i18n="len.30">30 minutes</span><small data-i18n="len.follow">Follow-up</small></th><td>$80</td></tr>
-              <tr><th scope="row"><span data-i18n="len.45">45 minutes</span><small data-i18n="len.follow">Follow-up</small></th><td>$105</td></tr>
-            </tbody></table>
-          </div>
-        </div>
-        <div class="svc-meta">
-          <div><h3 data-i18n="sp.h.with">With</h3><p data-i18n="sp.phy.with">Jonathan Lau, Registered Physiotherapist — English, Cantonese and Mandarin</p></div>
-          <div><h3 data-i18n="sp.h.wear">What to wear &amp; bring</h3><p data-i18n="sp.phy.wear">Shorts or leggings and a T-shirt. Bring your running shoes if it is about walking or running.</p></div>
-        </div>
-        <div class="svc-cta"><a class="btn" href="book.html?service=physio"><span class="dot" aria-hidden="true"></span><span data-i18n="sp.req">Request this service</span></a><a class="small" href="tel:+19055550117" data-i18n="sp.askcall">or ask a question: (905) 555-0117</a></div>
-      </section>
-
-      <!-- OSTEO -->
-      <section class="svc" id="osteo" aria-labelledby="h-ost">
-        <div class="svc-top"><span class="idx" data-i18n="sp.i4">iv.</span><h2 class="h-lg" id="h-ost" data-i18n="sv.ost.h">Osteopathic manual therapy</h2></div>
-        <p class="svc-intro" data-i18n="sp.ost.intro">Sofia uses slow, gentle hands-on techniques — joint mobilisation, soft-tissue work and assisted stretching — and looks at how the whole body is moving rather than at a single spot. You stay fully clothed. The pace is quiet, and many people find the session restful.</p>
-        <div class="svc-cols">
-          <div>
-            <h3 data-i18n="sp.h.who">Commonly booked by</h3>
-            <ul class="dash">
-              <li data-i18n="sp.ost.w1">People who feel generally stiff after long hours of sitting</li>
-              <li data-i18n="sp.ost.w2">Those who prefer lighter pressure than a massage</li>
-              <li data-i18n="sp.ost.w3">Anyone who likes a whole-body approach</li>
-            </ul>
-          </div>
-          <div>
-            <h3 data-i18n="sp.h.fees">Session lengths &amp; fees</h3>
-            <table class="price" data-i18n-attr="aria-label:cap.ost"><tbody>
-              <tr><th scope="row"><span data-i18n="len.60">60 minutes</span><small data-i18n="len.first">First visit</small></th><td>$125</td></tr>
-              <tr><th scope="row" data-i18n="len.30">30 minutes</th><td>$75</td></tr>
-              <tr><th scope="row" data-i18n="len.45">45 minutes</th><td>$100</td></tr>
-            </tbody></table>
-            <p class="price-note" data-i18n="sp.ost.note">Osteopathic manual practice is not a regulated health profession in Ontario. Sofia holds a diploma in osteopathic manual practice (DOMP) and belongs to a professional association that many insurance plans recognise — please check with your own plan.</p>
-          </div>
-        </div>
-        <div class="svc-meta">
-          <div><h3 data-i18n="sp.h.with">With</h3><p data-i18n="sp.ost.with">Sofia Marchetti, DOMP — English</p></div>
-          <div><h3 data-i18n="sp.h.wear">What to wear &amp; bring</h3><p data-i18n="sp.ost.wear">Soft, stretchy clothing — a T-shirt with leggings or track pants works well.</p></div>
-        </div>
-        <div class="svc-cta"><a class="btn" href="book.html?service=osteo"><span class="dot" aria-hidden="true"></span><span data-i18n="sp.req">Request this service</span></a><a class="small" href="tel:+19055550117" data-i18n="sp.askcall">or ask a question: (905) 555-0117</a></div>
-      </section>
-
-      <!-- INSURANCE -->
-      <section class="info-block" id="insurance" aria-labelledby="h-ins">
-        <h2 class="h-lg" id="h-ins" data-i18n="sp.ins.h">Insurance &amp; receipts</h2>
-        <p data-i18n="sp.ins.p">We bill most extended health plans directly, so at the front desk you pay only what your plan does not cover. If we cannot bill yours, you pay at the visit and we give you a receipt to submit yourself.</p>
-        <div class="two-up">
-          <div><h3 data-i18n="sp.ins.1.h">What is on your receipt</h3><p data-i18n="sp.ins.1.p">Practitioner’s name, credentials and registration number, the date, the session length and the fee. Receipts can be emailed or printed.</p></div>
-          <div><h3 data-i18n="sp.ins.2.h">What only your insurer knows</h3><p data-i18n="sp.ins.2.p">How much each visit is covered and your yearly limit are set by your plan. A quick call to them before your first visit avoids surprises.</p></div>
-          <div><h3 data-i18n="sp.ins.3.h">Paying</h3><p data-i18n="sp.ins.3.p">Debit, credit card or Interac e-Transfer. Fees are listed before HST, which applies to some services.</p></div>
-          <div><h3 data-i18n="sp.ins.4.h">Provincial health card</h3><p data-i18n="sp.ins.4.p">These services are not covered by OHIP, and we will never ask for your health card number.</p></div>
-        </div>
-      </section>
-
-      <!-- CANCELLATION -->
-      <section class="info-block" id="cancellation" aria-labelledby="h-can">
-        <h2 class="h-lg" id="h-can" data-i18n="sp.can.h">Changing or cancelling</h2>
-        <p data-i18n="sp.can.p">Your appointment is held for you alone, so please give us at least 24 hours’ notice if you need to move or cancel it. A call, a text or an email all count.</p>
-        <div class="two-up">
-          <div><h3 data-i18n="sp.can.1.h">More than 24 hours ahead</h3><p data-i18n="sp.can.1.p">No charge, and thank you — someone on the waiting list gets your time.</p></div>
-          <div><h3 data-i18n="sp.can.2.h">Less than 24 hours ahead</h3><p data-i18n="sp.can.2.p">Half of the session fee. Insurance plans do not reimburse this.</p></div>
-          <div><h3 data-i18n="sp.can.3.h">Missed without notice</h3><p data-i18n="sp.can.3.p">The full session fee. We will always try to reach you first.</p></div>
-          <div><h3 data-i18n="sp.can.4.h">Running late</h3><p data-i18n="sp.can.4.p">Come anyway. Your session ends at the booked time so the next person is not kept waiting.</p></div>
-        </div>
-        <div class="callout"><p data-i18n="sp.can.call">Feeling unwell on the day? Please stay home and call us. We waive the fee and find you another time.</p></div>
-      </section>
-
-      <!-- FAQ -->
-      <section class="info-block" id="faq" aria-labelledby="h-faq">
-        <h2 class="h-lg" id="h-faq" data-i18n="sp.faq.h">Questions we hear often</h2>
-        <div class="faq">
-          <div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="fa1" id="fq1"><span data-i18n="fq.1.q">Do I need a doctor’s referral?</span><span class="pm" aria-hidden="true"></span></button></h3><div class="faq-a" id="fa1" role="region" aria-labelledby="fq1" hidden><p data-i18n="fq.1.a">No. You can book any of our services directly. Some insurance plans ask for a doctor’s note before they reimburse, so it is worth checking yours.</p></div></div>
-          <div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="fa2" id="fq2"><span data-i18n="fq.2.q">Can I book for a parent who speaks only Cantonese or Mandarin?</span><span class="pm" aria-hidden="true"></span></button></h3><div class="faq-a" id="fa2" role="region" aria-labelledby="fq2" hidden><p data-i18n="fq.2.a">Yes, and many families do. Put their name and preferred language on the request, with whichever phone number you would like us to call. At the visit, your parent and the practitioner can speak directly.</p></div></div>
-          <div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="fa3" id="fq3"><span data-i18n="fq.3.q">Why doesn’t the booking form ask about my health?</span><span class="pm" aria-hidden="true"></span></button></h3><div class="faq-a" id="fa3" role="region" aria-labelledby="fq3" hidden><p data-i18n="fq.3.a">Because that conversation belongs in a private room, not in a web form. We ask only for what we need to arrange a time. Your practitioner will ask about your health in person at your first visit.</p></div></div>
-          <div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="fa4" id="fq4"><span data-i18n="fq.4.q">Is my appointment confirmed once I send the request?</span><span class="pm" aria-hidden="true"></span></button></h3><div class="faq-a" id="fa4" role="region" aria-labelledby="fq4" hidden><p data-i18n="fq.4.a">Not yet. It is a request. We reply within one business day — by phone, text or email, whichever you choose — with a confirmed time or the nearest alternatives.</p></div></div>
-          <div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="fa5" id="fq5"><span data-i18n="fq.5.q">I am not sure which service to choose.</span><span class="pm" aria-hidden="true"></span></button></h3><div class="faq-a" id="fa5" role="region" aria-labelledby="fq5" hidden><p data-i18n="fq.5.a">Call us and the front desk will describe what each session involves. We cannot assess you over the phone, but your practitioner will tell you honestly at the first visit if a different service would suit you better.</p></div></div>
-          <div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="fa6" id="fq6"><span data-i18n="fq.6.q">Will I see the same practitioner each time?</span><span class="pm" aria-hidden="true"></span></button></h3><div class="faq-a" id="fa6" role="region" aria-labelledby="fq6" hidden><p data-i18n="fq.6.a">Yes, unless you ask otherwise. Continuity is the point of a small clinic.</p></div></div>
-        </div>
-      </section>
+      <h1 data-i18n="sv.h1">Services and fees</h1>
+      <p class="lead" data-i18n="sv.lead">Prices are per visit. Massage, physiotherapy and acupuncture are HST-exempt. HST is added to osteopathic manual therapy.</p>
+      <nav class="jump" aria-label="Go to a service" data-i18n-attr="aria-label:sv.jump">
+        <a href="#massage" data-i18n="svc.mas.h">Massage therapy</a>
+        <a href="#physio" data-i18n="svc.phy.h">Physiotherapy</a>
+        <a href="#acupuncture" data-i18n="svc.acu.h">Acupuncture</a>
+        <a href="#osteo" data-i18n="svc.ost.h">Osteopathic manual therapy</a>
+      </nav>
     </div>
   </div>
 
-  <section class="cta-band" aria-labelledby="cb-h">
-    <svg class="cta-rings" viewBox="0 0 720 720" aria-hidden="true"><circle cx="360" cy="360" r="120"/><circle cx="360" cy="360" r="200"/><circle cx="360" cy="360" r="280"/><circle cx="360" cy="360" r="355"/></svg>
-    <div class="wrap">
+  <div class="wrap svc-page">
+    <section class="svc-row" id="massage" aria-labelledby="h-mas">
+      <img src="assets/img/back.jpg" width="1000" height="1500" loading="lazy" alt="A massage therapist working on a client’s back" data-i18n-attr="alt:alt.back">
       <div>
-        <h2 class="h-lg" id="cb-h" data-reveal data-i18n-html="cb.h2">Tell us when suits you. <em>We’ll call you back.</em></h2>
-        <p data-reveal data-i18n="cb.p">A booking request takes about two minutes and asks nothing about your health. Or simply phone the front desk.</p>
+        <h2 id="h-mas" data-i18n="svc.mas.h">Massage therapy</h2>
+        <p data-i18n="sv.mas.p">Before the session, your therapist asks where you are sore and how much pressure you like. You stay covered with a sheet except for the area being worked on.</p>
+        <table class="prices">
+          <thead><tr><th scope="col" data-i18n="sv.col.len">Session</th><th scope="col" data-i18n="sv.col.price">Price</th></tr></thead>
+          <tbody>
+            <tr><th scope="row" data-i18n="len.mas30">30 minutes</th><td>$70</td></tr>
+            <tr><th scope="row" data-i18n="len.mas45">45 minutes</th><td>$95</td></tr>
+            <tr><th scope="row" data-i18n="len.mas60">60 minutes</th><td>$120</td></tr>
+            <tr><th scope="row" data-i18n="len.mas60p">60 minutes, prenatal</th><td>$120</td></tr>
+            <tr><th scope="row" data-i18n="len.mas90">90 minutes</th><td>$165</td></tr>
+          </tbody>
+        </table>
+        <p class="who"><b data-i18n="sv.who">Who you will see</b><br><span data-i18n="p.mc.n">Mei-Ling Cheung, RMT</span><br><span data-i18n="p.dh.n">Daniel Ho, RMT</span></p>
+        <a class="btn btn-blue" href="book.html?service=massage" data-i18n="sv.book">Request this service</a>
       </div>
-      <div class="acts" data-reveal>
-        <a class="btn btn--light" href="book.html" data-i18n="cta.book">Request a booking</a>
-        <a class="btn btn--ghost" href="tel:+19055550117" data-i18n="cta.call">Call (905) 555-0117</a>
+    </section>
+
+    <section class="svc-row" id="physio" aria-labelledby="h-phy">
+      <img src="assets/img/physio-weights.jpg" width="1000" height="667" loading="lazy" alt="A physiotherapist guiding a client through an arm exercise with light weights" data-i18n-attr="alt:alt.weights">
+      <div>
+        <h2 id="h-phy" data-i18n="svc.phy.h">Physiotherapy</h2>
+        <p data-i18n="sv.phy.p">The first visit is a full assessment. You leave with a plan and exercises to do at home. Most people come once or twice a week at the start.</p>
+        <table class="prices">
+          <thead><tr><th scope="col" data-i18n="sv.col.len">Session</th><th scope="col" data-i18n="sv.col.price">Price</th></tr></thead>
+          <tbody>
+            <tr><th scope="row" data-i18n="len.phy60f">First assessment, 60 minutes</th><td>$130</td></tr>
+            <tr><th scope="row" data-i18n="len.phy30">Follow-up, 30 minutes</th><td>$80</td></tr>
+            <tr><th scope="row" data-i18n="len.phy45">Follow-up, 45 minutes</th><td>$105</td></tr>
+          </tbody>
+        </table>
+        <p class="who"><b data-i18n="sv.who">Who you will see</b><br><span data-i18n="p.jl.n">Jonathan Lau, Registered Physiotherapist</span></p>
+        <a class="btn btn-blue" href="book.html?service=physio" data-i18n="sv.book">Request this service</a>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="svc-row" id="acupuncture" aria-labelledby="h-acu">
+      <img src="assets/img/acupuncture.jpg" width="1000" height="647" loading="lazy" alt="An acupuncturist placing a needle" data-i18n-attr="alt:alt.acu">
+      <div>
+        <h2 id="h-acu" data-i18n="svc.acu.h">Acupuncture</h2>
+        <p data-i18n="sv.acu.p">Needles are thin, sterile and used once. Most people feel little or nothing. The first visit is longer because your acupuncturist takes a full history in person.</p>
+        <table class="prices">
+          <thead><tr><th scope="col" data-i18n="sv.col.len">Session</th><th scope="col" data-i18n="sv.col.price">Price</th></tr></thead>
+          <tbody>
+            <tr><th scope="row" data-i18n="len.acu75f">First visit, 75 minutes</th><td>$125</td></tr>
+            <tr><th scope="row" data-i18n="len.acu45">45 minutes</th><td>$85</td></tr>
+            <tr><th scope="row" data-i18n="len.acu60">60 minutes</th><td>$105</td></tr>
+            <tr><th scope="row" data-i18n="len.acu60c">60 minutes with cupping</th><td>$125</td></tr>
+          </tbody>
+        </table>
+        <p class="who"><b data-i18n="sv.who">Who you will see</b><br><span data-i18n="p.wz.n">Wen Zhao, R.Ac</span></p>
+        <a class="btn btn-blue" href="book.html?service=acupuncture" data-i18n="sv.book">Request this service</a>
+      </div>
+    </section>
+
+    <section class="svc-row" id="osteo" aria-labelledby="h-ost">
+      <img src="assets/img/shoulder.jpg" width="1000" height="667" loading="lazy" alt="A practitioner checking a client’s shoulder" data-i18n-attr="alt:alt.osteo">
+      <div>
+        <h2 id="h-ost" data-i18n="svc.ost.h">Osteopathic manual therapy</h2>
+        <p data-i18n="sv.ost.p">Treatment uses gentle stretching and pressure. You stay fully clothed, so wear something comfortable.</p>
+        <table class="prices">
+          <thead><tr><th scope="col" data-i18n="sv.col.len">Session</th><th scope="col" data-i18n="sv.col.price">Price</th></tr></thead>
+          <tbody>
+            <tr><th scope="row" data-i18n="len.ost60f">First visit, 60 minutes</th><td>$125 <small data-i18n="len.plustax">plus HST</small></td></tr>
+            <tr><th scope="row" data-i18n="len.ost30">30 minutes</th><td>$75 <small data-i18n="len.plustax">plus HST</small></td></tr>
+            <tr><th scope="row" data-i18n="len.ost45">45 minutes</th><td>$100 <small data-i18n="len.plustax">plus HST</small></td></tr>
+          </tbody>
+        </table>
+        <p class="who"><b data-i18n="sv.who">Who you will see</b><br><span data-i18n="p.sm.n">Sofia Marchetti, Osteopathic Manual Practitioner</span></p>
+        <a class="btn btn-blue" href="book.html?service=osteo" data-i18n="sv.book">Request this service</a>
+      </div>
+    </section>
+
+    <section class="faq" id="faq" aria-labelledby="faq-h">
+      <h2 id="faq-h" data-i18n="faq.h">Questions people ask us</h2>
+      <dl>
+        <div><dt data-i18n="faq.q1">Do I need a doctor’s referral?</dt><dd data-i18n="faq.a1">Not for us. Some insurance plans need one before they pay, so check your plan.</dd></div>
+        <div><dt data-i18n="faq.q2">How soon can I get in?</dt><dd data-i18n="faq.a2">Usually within a week. Evening times fill up first.</dd></div>
+        <div><dt data-i18n="faq.q3">Can I bring someone with me?</dt><dd data-i18n="faq.a3">Yes. A family member or friend can wait in the waiting area or join you in the room.</dd></div>
+        <div><dt data-i18n="faq.q4">Do you treat children?</dt><dd data-i18n="faq.a4">Physiotherapy and massage, yes. Clients under 16 need a parent or guardian with them.</dd></div>
+      </dl>
+    </section>
+
+    <section class="cta-band" aria-labelledby="cta-h">
+      <h2 id="cta-h" data-i18n="ins.h">Insurance and direct billing</h2>
+      <p data-i18n="ins.p1">We can bill most group insurance plans directly, so you only pay the part your plan does not cover. Bring your insurance card to your first visit.</p>
+      <p class="btns"><a class="btn btn-white" href="book.html" data-i18n="hero.book">Request an appointment</a><a class="btn btn-outline-white" href="tel:+19055550117" data-lang-neutral>(905) 555-0117</a></p>
+    </section>
+  </div>
 </main>
 
 <footer class="site-foot">
-  <div class="wrap">
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <a class="brand" href="index.html" data-i18n-attr="aria-label:brand.aria" aria-label="Stillwater Wellness Clinic — home">
-          <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#f4efe6"/><g fill="none" stroke="#23423a" stroke-width="1.3"><ellipse cx="20" cy="25" rx="13" ry="4.2"/><ellipse cx="20" cy="25" rx="7" ry="2.1" opacity=".7"/></g><circle cx="20" cy="14" r="4.3" fill="#b5593a"/></svg>
-          <span class="brand-name" data-lang-neutral>Stillwater</span><span class="brand-zh" data-lang-neutral>靜水堂</span>
-        </a>
-        <p data-i18n="ft.blurb">A small, unhurried clinic in Markham. Massage therapy, acupuncture, physiotherapy and osteopathic manual therapy.</p>
-      </div>
-      <div>
-        <h2 data-i18n="ft.visit">Visit</h2>
-        <ul><li data-i18n="vs.addr.1">Unit 3, 9 Willowmere Lane</li><li data-lang-neutral>Markham, ON L3R 0X0</li><li><a href="tel:+19055550117">(905) 555-0117</a></li><li><a href="mailto:care@stillwater.example">care@stillwater.example</a></li></ul>
-      </div>
-      <div>
-        <h2 data-i18n="ft.hours">Hours</h2>
-        <ul><li data-i18n="ft.wk">Mon – Fri  9 am – 8 pm</li><li data-i18n="ft.sat">Saturday  9 am – 4 pm</li><li data-i18n="ft.sun">Sunday &amp; holidays  closed</li></ul>
-      </div>
-      <div>
-        <h2 data-i18n="ft.explore">Explore</h2>
-        <ul><li><a href="index.html" data-i18n="ft.home">Home</a></li><li><a href="services.html" data-i18n="nav.services">Services &amp; fees</a></li><li><a href="services.html#faq" data-i18n="ft.faq">Questions &amp; answers</a></li><li><a class="nav-book" href="book.html" data-i18n="nav.book">Request a booking</a></li></ul>
-      </div>
+  <div class="wrap foot-grid">
+    <div>
+      <p class="foot-brand"><span data-i18n="brand.name">Stillwater Wellness Clinic</span></p>
+      <p data-i18n="foot.about">Physiotherapy, massage therapy, acupuncture and osteopathic manual therapy in Markham since 2015.</p>
+      <p class="foot-emerg" data-i18n="foot.emerg">We do not treat emergencies. If this is urgent, call 911.</p>
     </div>
-    <div class="foot-base">
-      <p data-i18n="ft.copy">© 2026 Stillwater Wellness Clinic</p>
-      <p data-i18n="ft.emerg">Not for emergencies — call 911.</p>
-      <p class="demo-note"><a href="../index.html" data-i18n="ft.demo">Demo site — fictional business</a></p>
+    <div>
+      <h2 data-i18n="foot.hours">Hours</h2>
+      <p data-i18n-html="foot.hours.p">Monday to Friday 9:00 am – 8:00 pm<br>Saturday 9:00 am – 4:00 pm<br>Closed Sundays and holidays</p>
     </div>
+    <div>
+      <h2 data-i18n="foot.contact">Contact</h2>
+      <p data-lang-neutral>Unit 4, 410 Tamsworth Drive<br>Markham, ON L6G 9Z8</p>
+      <p><a href="tel:+19055550117" data-lang-neutral>(905) 555-0117</a><br><a href="mailto:frontdesk@stillwaterclinic.example" data-lang-neutral>frontdesk@stillwaterclinic.example</a></p>
+    </div>
+    <div>
+      <h2 data-i18n="foot.pages">Pages</h2>
+      <ul class="foot-links">
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="services.html" data-i18n="nav.services">Services and fees</a></li>
+        <li><a href="book.html" data-i18n="nav.book">Request an appointment</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-base">
+    <span data-i18n="foot.copy">© 2026 Stillwater Wellness Clinic</span>
+    <a href="../index.html" data-i18n="foot.demo">This is a demo website. The clinic is fictional.</a>
   </div>
 </footer>
 
-<div class="actionbar">
-  <a class="btn btn--ghost" href="tel:+19055550117" data-i18n-attr="aria-label:cta.callaria" aria-label="Call the clinic at 905 555 0117"><span data-i18n="cta.callshort">Call</span></a>
-  <a class="btn" href="book.html"><span class="dot" aria-hidden="true"></span><span data-i18n="cta.book">Request a booking</span></a>
-</div>
-
-<script src="assets/i18n-dict.js"></script>
-<script src="../shared/vendor/gsap.min.js"></script>
-<script src="../shared/vendor/ScrollTrigger.min.js"></script>
 <script src="assets/site.js"></script>
 </body>
 </html>

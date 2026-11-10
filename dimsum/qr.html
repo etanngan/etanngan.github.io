@@ -4,15 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <script src="../shared/i18n.js"></script>
-<title data-i18n="qr.title">Table menu — Jade Basket 翠籠軒</title>
-<meta name="description" content="The phone menu for your table at Jade Basket Dim Sum House: search, filter and keep a pick list to show your server." data-i18n-attr="content:qr.desc">
-<meta property="og:title" content="Jade Basket Dim Sum House 翠籠軒" data-i18n-attr="content:og.title">
-<meta property="og:description" content="Hand-made dim sum, steamed to order from 9 am. Markham, Ontario." data-i18n-attr="content:og.desc">
-<meta name="theme-color" content="#120c0a">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23c63a24'/%3E%3Ccircle cx='32' cy='32' r='20' fill='none' stroke='%23f1e6d2' stroke-width='5'/%3E%3Ccircle cx='32' cy='32' r='11' fill='none' stroke='%23f1e6d2' stroke-width='2.5' stroke-dasharray='5 3'/%3E%3Ccircle cx='32' cy='32' r='4' fill='%236dbb9a'/%3E%3C/svg%3E">
+<title data-i18n="qr.title">Phone menu | Jade Basket</title>
+<meta name="description" content="The phone menu for your table at Jade Basket: search dishes and keep a list to show your server." data-i18n-attr="content:qr.desc">
+<meta property="og:title" content="Jade Basket Dim Sum House, Markham" data-i18n-attr="content:og.title">
+<meta property="og:description" content="Hong Kong-style dim sum and dinner near Kennedy Rd and Highway 7. Open daily. Free parking." data-i18n-attr="content:og.desc">
+<meta name="theme-color" content="#0f5c46">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f5c46'/%3E%3Cellipse cx='32' cy='38' rx='20' ry='9' fill='none' stroke='%23fff' stroke-width='4'/%3E%3Cpath d='M12 38V30c0-5 9-9 20-9s20 4 20 9v8' fill='none' stroke='%23fff' stroke-width='4'/%3E%3Cpath d='M26 20c0-3 3-5 6-5s6 2 6 5' fill='none' stroke='%23fff' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;900&family=Noto+Serif+SC:wght@600;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Noto+Sans+SC:wght@400;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@900&text=%E7%BF%A0%E7%B1%A0%E8%BB%92%E7%AC%BC%E8%BD%A9&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/qr.css">
 <script src="assets/i18n-dict.js"></script>
 </head>
@@ -21,47 +22,50 @@
 <div class="col">
   <header class="top" id="top">
     <div class="top-row">
-      <a class="brand" href="index.html" aria-label="Jade Basket Dim Sum House — home" data-i18n-attr="aria-label:brand.aria">
-        <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="10" fill="#c63a24"/><circle cx="32" cy="32" r="20" fill="none" stroke="#f1e6d2" stroke-width="4.5"/><circle cx="32" cy="32" r="11.5" fill="none" stroke="#f1e6d2" stroke-width="2.5" stroke-dasharray="5 3"/><circle cx="32" cy="32" r="4" fill="#6dbb9a"/></svg>
-        <span class="brand-zh" data-i18n="brand.zh" data-lang-neutral>翠籠軒</span>
+      <a class="brand" href="index.html" aria-label="Jade Basket Dim Sum House, home page" data-i18n-attr="aria-label:brand.aria">
+        <span class="brand-zh" aria-hidden="true">翠籠軒</span>
+        <span class="brand-en" aria-hidden="true">Jade Basket</span>
       </a>
       <div class="lang" role="group" aria-label="Language" data-i18n-attr="aria-label:lang.aria">
         <button type="button" data-set-lang="en" lang="en">EN</button>
-        <button type="button" data-set-lang="zh-Hant" lang="zh-Hant">繁體</button>
-        <button type="button" data-set-lang="zh-Hans" lang="zh-Hans">简体</button>
+        <button type="button" data-set-lang="zh-Hant" lang="zh-Hant">繁</button>
+        <button type="button" data-set-lang="zh-Hans" lang="zh-Hans">简</button>
       </div>
     </div>
-    <h1 class="h1"><span data-i18n="qr.h1">Today’s menu</span> <span class="count" id="count" aria-live="polite"></span></h1>
+    <div class="title-row">
+      <h1 class="h1" data-i18n="qr.h1">Menu</h1>
+      <span class="count" id="count" aria-live="polite"></span>
+    </div>
     <div class="search">
       <label class="sr" for="q" data-i18n="qr.search.label">Search dishes</label>
       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      <input id="q" type="search" autocomplete="off" enterkeyhint="search" placeholder="Search: har gow, 蝦餃, 虾饺…" data-i18n-attr="placeholder:qr.search.ph">
+      <input id="q" type="search" autocomplete="off" enterkeyhint="search" placeholder="Search, e.g. har gow or 蝦餃" data-i18n-attr="placeholder:qr.search.ph">
       <button type="button" class="clear" id="clear" hidden aria-label="Clear search" data-i18n-attr="aria-label:qr.search.clear">×</button>
     </div>
-    <div class="filters" role="group" aria-label="Filter" data-i18n-attr="aria-label:qr.filter.aria">
+    <div class="filters" role="group" aria-label="Show" data-i18n-attr="aria-label:qr.filter.aria">
       <button type="button" data-filter="all" aria-pressed="true" data-i18n="qr.filter.all">All</button>
-      <button type="button" data-filter="g" aria-pressed="false"><span class="mk mk-g" aria-hidden="true">招</span><span data-i18n="qr.filter.g">Signatures</span></button>
+      <button type="button" data-filter="g" aria-pressed="false"><span class="mk mk-g" aria-hidden="true">招</span><span data-i18n="qr.filter.g">Favourites</span></button>
       <button type="button" data-filter="v" aria-pressed="false"><span class="mk mk-v" aria-hidden="true">素</span><span data-i18n="qr.filter.v">Vegetarian</span></button>
     </div>
   </header>
 
-  <nav class="tabs" aria-label="Categories" data-i18n-attr="aria-label:qr.tabs"><ul id="tabs"></ul></nav>
+  <nav class="tabs" aria-label="Menu sections" data-i18n-attr="aria-label:qr.tabs"><ul id="tabs"></ul></nav>
 
   <main id="list">
     <div id="cats"></div>
     <p class="empty" id="empty" hidden data-i18n="qr.empty">Nothing matches. Try another word, or ask your server.</p>
 
     <section class="notes" aria-labelledby="notes-h">
-      <h2 id="notes-h" data-i18n="qr.notes.h">At the table</h2>
+      <h2 id="notes-h" data-i18n="qr.notes.h">Good to know</h2>
       <div class="tiers" id="tiers"></div>
       <ul>
-        <li data-i18n="qr.note1">Tea is $2.00 a person. Rest the pot lid ajar for more hot water.</li>
-        <li data-i18n="qr.note2">Mark your order on the paper chit, or show your picks to a server.</li>
-        <li data-i18n="qr.note3">Weekdays before 11:00 am, S, M and L dim sum are $5.50.</li>
+        <li data-i18n="qr.note1">Tea is $2.00 per person. Open the teapot lid and we will bring more hot water.</li>
+        <li data-i18n="qr.note2">To order, tick the paper order sheet or show your list to a server.</li>
+        <li data-i18n="info.early.p">Monday to Friday before 11:00 am, all small, medium and large dim sum are $5.50. Not on holidays.</li>
       </ul>
-      <p class="allergy" data-i18n="qr.allergy">Allergies? Please ask your server before ordering. Our steamers are shared, so traces of shrimp, peanut, sesame, wheat, soy and egg are possible.</p>
-      <p class="links"><a href="index.html" data-i18n="qr.back">Visit our website</a> · <a href="#top" data-i18n="qr.top">Back to top</a></p>
-      <p class="demo"><a href="../index.html" data-i18n="foot.demo">Demo site — fictional business</a></p>
+      <p class="allergy" data-i18n="info.allergy.p">Our kitchen uses shrimp, shellfish, peanuts, sesame, wheat, soy and egg, and the steamers are shared. Please tell your server about any allergy before you order.</p>
+      <p class="links"><a href="index.html" data-i18n="qr.back">Restaurant website</a><a href="#top" data-i18n="qr.top">Back to top</a></p>
+      <p class="demo"><a href="../index.html" data-i18n="foot.demo">This is a demo website. The restaurant is fictional.</a></p>
     </section>
   </main>
 </div>
@@ -69,7 +73,7 @@
 <div class="bar" id="bar" hidden>
   <button type="button" class="bar-btn" id="bar-open" aria-haspopup="dialog" aria-controls="sheet">
     <span class="bar-n" id="bar-n" data-lang-neutral>0</span>
-    <span class="bar-t"><b data-i18n="picks.bar">My picks</b><span id="bar-sub"></span></span>
+    <span class="bar-t"><b data-i18n="picks.bar">My list</b><span id="bar-sub"></span></span>
     <span class="bar-go" data-i18n="picks.show">Show list</span>
   </button>
 </div>
@@ -78,12 +82,12 @@
   <div class="sheet-bg" data-close></div>
   <div class="sheet-card">
     <div class="sheet-head">
-      <h2 id="sheet-h" data-i18n="picks.h">My picks</h2>
+      <h2 id="sheet-h" data-i18n="picks.h">My list</h2>
       <button type="button" class="x" data-close aria-label="Close" data-i18n-attr="aria-label:picks.close">×</button>
     </div>
-    <p class="sheet-note" data-i18n="picks.note">This is just a list for your table. Nothing has been ordered or sent. Read it to your server or copy it onto the paper chit.</p>
+    <p class="sheet-note" data-i18n="picks.note">This list is only on your phone. Nothing has been ordered. Show it to your server or copy it onto the order sheet.</p>
     <ul class="picks" id="picks"></ul>
-    <p class="picks-empty" id="picks-empty" data-i18n="picks.empty">Tap + beside any dish to start a list.</p>
+    <p class="picks-empty" id="picks-empty" data-i18n="picks.empty">Tap + next to a dish to add it.</p>
     <div class="sheet-sum" id="sum"></div>
     <div class="sheet-actions">
       <button type="button" class="btn-ghost" id="picks-clear" data-i18n="picks.clear">Clear list</button>

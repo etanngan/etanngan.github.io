@@ -34,7 +34,7 @@
     return '<span class="st st--' + st + '" title="' + esc(word) + '">' + esc(label) + '</span>';
   }
   function askHref(c) { return 'inquiry.html?class=' + encodeURIComponent(c.id); }
-  var arrow = '<svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var arrow = '';
 
   function filtered() {
     return S.classes.filter(function (c) {
@@ -79,7 +79,7 @@
       '<div><h3 class="lc__name">' + shortTitle(name) + '</h3>' +
       '<p class="lc__meta"><span><b>' + esc(fmt('sch.grade', { g: c.grades })) + '</b></span><span>' + esc(I.pick(subj(c.subject).label)) + '</span><span>' + esc(I.pick(S.teachers[c.teacher])) + '</span><span>' + esc(I.pick(S.rooms[c.room])) + '</span></p>' +
       (c.note ? '<p class="lc__note">' + esc(I.pick(c.note)) + '</p>' : '') + '</div>' +
-      '<div class="lc__act"><a class="btn btn--sm" href="' + askHref(c) + '" aria-label="' + esc(aria) + '">' + esc(I.t('sch.ask')) + arrow + '</a></div></article>';
+      '<div class="lc__act"><a class="btn btn-line btn-sm" href="' + askHref(c) + '" aria-label="' + esc(aria) + '">' + esc(I.t('sch.ask')) + arrow + '</a></div></article>';
   }
 
   function rowCell(range) {
@@ -115,9 +115,9 @@
     return h;
   }
   function renderEmpty() {
-    return '<div class="empty"><svg viewBox="0 0 76 76" aria-hidden="true"><rect x="10" y="8" width="52" height="62" rx="6" fill="#FFFDF8" stroke="#131B45" stroke-width="3" transform="rotate(-6 36 39)"/><path d="M24 28h26M24 40h18" stroke="#B9C3EA" stroke-width="4" stroke-linecap="round"/><circle cx="50" cy="50" r="13" fill="#FFC62E" stroke="#131B45" stroke-width="3"/><path d="M59 59l9 9" stroke="#131B45" stroke-width="4" stroke-linecap="round"/></svg>' +
+    return '<div class="empty">' +
       '<h2>' + esc(I.t('sch.empty.h')) + '</h2><p>' + esc(I.t('sch.empty.p')) + '</p>' +
-      '<div class="empty__act"><button type="button" class="btn btn--yellow btn--sm" data-clear>' + esc(I.t('sch.f.clear')) + '</button><a class="btn btn--sm" href="inquiry.html">' + esc(I.t('sch.empty.b')) + '</a></div></div>';
+      '<div class="btns"><button type="button" class="btn btn-yellow" data-clear>' + esc(I.t('sch.f.clear')) + '</button><a class="btn btn-line" href="inquiry.html">' + esc(I.t('sch.empty.b')) + '</a></div></div>';
   }
 
   function render() {
@@ -136,7 +136,6 @@
     if (state.day !== 'all') p.set('day', state.day);
     var q = p.toString();
     try { history.replaceState(null, '', location.pathname + (q ? '?' + q : '')); } catch (e) {}
-    if (window.ScrollTrigger) window.ScrollTrigger.refresh();
   }
   function clearAll() { state.band = state.subject = state.day = 'all'; render(); }
 

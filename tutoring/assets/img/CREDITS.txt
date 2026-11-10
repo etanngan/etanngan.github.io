@@ -1,0 +1,6 @@
+Photos from Unsplash (https://unsplash.com/license), downloaded from images.unsplash.com:
+tutoring/reading.jpg	https://unsplash.com (image photo-1583468982228-19f19164aee2)
+tutoring/class.jpg	https://unsplash.com (image photo-1509062522246-3755977927d7)
+tutoring/girl-pink.jpg	https://unsplash.com (image photo-1625889944911-5e6e9d2d4c28)
+tutoring/girl-class.jpg	https://unsplash.com (image photo-1623287073501-8c849217c2fd)
+tutoring/worksheet.jpg	https://unsplash.com (image photo-1518133910546-b6c2fb7d79e3)

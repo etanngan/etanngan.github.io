@@ -4,382 +4,220 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../shared/i18n.js"></script>
-<title data-i18n="meta.home.title">Stillwater Wellness Clinic — massage, acupuncture &amp; physiotherapy in Markham</title>
-<meta name="description" data-i18n-attr="content:meta.home.desc" content="A small, unhurried clinic in Markham: registered massage therapy, acupuncture, physiotherapy and osteopathic manual therapy. English, Cantonese and Mandarin spoken. Direct billing to most plans.">
-<meta property="og:title" content="Stillwater Wellness Clinic · 靜水堂">
-<meta property="og:description" content="Unhurried massage therapy, acupuncture, physiotherapy and osteopathic manual therapy in Markham. English, Cantonese and Mandarin.">
-<meta property="og:type" content="website">
-<meta name="theme-color" content="#23423a">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2323423a'/%3E%3Cg fill='none' stroke='%23f4efe6' stroke-width='2.4'%3E%3Cellipse cx='32' cy='40' rx='22' ry='7'/%3E%3Cellipse cx='32' cy='40' rx='12' ry='3.6' opacity='.7'/%3E%3C/g%3E%3Ccircle cx='32' cy='22' r='7' fill='%23d98a66'/%3E%3C/svg%3E">
+<title data-i18n="home.title">Stillwater Wellness Clinic | Physiotherapy, massage and acupuncture in Markham</title>
+<meta name="description" content="Registered physiotherapy, massage therapy, acupuncture and osteopathic manual therapy near Woodbine Ave and 16th Ave in Markham. Direct billing. Call (905) 555-0117." data-i18n-attr="content:home.desc">
+<meta property="og:title" content="Stillwater Wellness Clinic, Markham" data-i18n-attr="content:og.title">
+<meta property="og:description" content="Physiotherapy, massage therapy, acupuncture and osteopathic manual therapy near Woodbine Ave and 16th Ave. Direct billing." data-i18n-attr="content:og.desc">
+<meta property="og:image" content="assets/img/interior.jpg">
+<meta name="theme-color" content="#1d5a80">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%231d5a80'/%3E%3Cpath d='M12 28c5-5 10-5 15 0s10 5 15 0 7-4 10-2M12 40c5-5 10-5 15 0s10 5 15 0 7-4 10-2' fill='none' stroke='%23fff' stroke-width='4.5' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,0..100;1,9..144,300..500,0..100&family=Source+Sans+3:wght@400;500;600&family=Noto+Serif+TC:wght@500;600&family=Noto+Serif+SC:wght@500;600&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
+<script src="assets/i18n-dict.js"></script>
 </head>
-<body data-page="home">
-<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+<body>
+<a class="skip" href="#main" data-i18n="a11y.skip">Skip to content</a>
 
-<header class="site-head" id="top">
-  <div class="wrap">
-    <a class="brand" href="index.html" data-i18n-attr="aria-label:brand.aria" aria-label="Stillwater Wellness Clinic — home">
-      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#23423a"/><g fill="none" stroke="#f4efe6" stroke-width="1.3"><ellipse cx="20" cy="25" rx="13" ry="4.2"/><ellipse cx="20" cy="25" rx="7" ry="2.1" opacity=".7"/></g><circle cx="20" cy="14" r="4.3" fill="#d98a66"/></svg>
-      <span class="brand-name" data-lang-neutral>Stillwater</span>
-      <span class="brand-zh" data-lang-neutral>靜水堂</span>
+<div class="topbar">
+  <div class="wrap topbar-row">
+    <span class="tb-item"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="top.billing">Direct billing to most insurance plans</span></span>
+    <span class="tb-item tb-today" id="tb-today" hidden><span data-i18n="top.today">Today</span> <b id="tb-hours"></b></span>
+    <a class="tb-item tb-phone" href="tel:+19055550117" aria-label="Call Stillwater at (905) 555-0117" data-i18n-attr="aria-label:call.aria">(905) 555-0117</a>
+  </div>
+</div>
+
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="index.html" aria-label="Stillwater Wellness Clinic, home page" data-i18n-attr="aria-label:brand.aria">
+      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="32" fill="#1d5a80"/><path d="M12 28c5-5 10-5 15 0s10 5 15 0 7-4 10-2M12 40c5-5 10-5 15 0s10 5 15 0 7-4 10-2" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/></svg>
+      <span class="brand-text"><b>Stillwater</b><span class="brand-zh" data-i18n="brand.zh" data-lang-neutral>靜水堂</span></span>
     </a>
-    <nav class="nav" id="nav" data-i18n-attr="aria-label:nav.aria" aria-label="Main">
-      <a href="services.html" data-i18n="nav.services">Services &amp; fees</a>
-      <a href="index.html#team" data-i18n="nav.team">Practitioners</a>
-      <a href="index.html#first-visit" data-i18n="nav.first">First visit</a>
-      <a href="index.html#visit" data-i18n="nav.visit">Hours &amp; location</a>
-      <a class="nav-book" href="book.html" data-i18n="nav.book">Request a booking</a>
-      <p class="nav-extra"><span data-i18n="nav.extra">Prefer to call?</span> <a href="tel:+19055550117">(905) 555-0117</a></p>
+    <nav class="nav" id="nav" aria-label="Main" data-i18n-attr="aria-label:nav.aria">
+      <a href="services.html" data-i18n="nav.services">Services and fees</a>
+      <a href="#team" data-i18n="nav.team">Our team</a>
+      <a href="#insurance" data-i18n="nav.insurance">Insurance</a>
+      <a href="#visit" data-i18n="nav.visit">Visit us</a>
     </nav>
-    <div class="lang" role="group" data-i18n-attr="aria-label:lang.aria" aria-label="Language">
-      <button type="button" data-set-lang="en" lang="en">EN</button>
-      <button type="button" data-set-lang="zh-Hant" lang="zh-Hant">繁體</button>
-      <button type="button" data-set-lang="zh-Hans" lang="zh-Hans">简体</button>
+    <div class="head-tools">
+      <div class="lang" role="group" aria-label="Language" data-i18n-attr="aria-label:lang.aria">
+        <button type="button" data-set-lang="en" lang="en">EN</button>
+        <button type="button" data-set-lang="zh-Hant" lang="zh-Hant">繁</button>
+        <button type="button" data-set-lang="zh-Hans" lang="zh-Hans">简</button>
+      </div>
+      <a class="btn btn-blue head-book" href="book.html"><span class="long" data-i18n="nav.book">Request an appointment</span><span class="short" data-i18n="nav.book.short">Book</span></a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu" data-i18n-attr="aria-label:nav.open"><span></span><span></span><span></span></button>
     </div>
-    <a class="btn btn--sm head-cta" href="book.html"><span class="dot" aria-hidden="true"></span><span data-i18n="cta.book">Request a booking</span></a>
-    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" data-i18n-attr="aria-label:nav.menu" aria-label="Menu"><span></span></button>
   </div>
 </header>
 
 <main id="main">
-  <!-- ============ HERO SCENE ============ -->
-  <section class="scene hero" aria-labelledby="hero-h">
-    <div class="layer depth-0 wash" data-depth="0" aria-hidden="true"></div>
-    <div class="layer depth-1 hills hills--far" data-depth="1" aria-hidden="true"><img src="assets/img/hills-far.svg" alt="" width="1600" height="520"></div>
-    <div class="layer depth-1 hills hills--near" data-depth="1.6" aria-hidden="true"><img src="assets/img/hills-near.svg" alt="" width="1600" height="520"></div>
-    <div class="layer depth-2 water" data-depth="2" aria-hidden="true"></div>
-    <div class="layer depth-2 ripples" data-depth="2.4" aria-hidden="true">
-      <svg viewBox="0 0 1200 300" preserveAspectRatio="xMidYMax meet">
-        <g transform="translate(860 210)"><ellipse class="ripple-ring" cx="0" cy="0" rx="520" ry="90"/><ellipse class="ripple-ring" cx="0" cy="0" rx="520" ry="90"/><ellipse class="ripple-ring" cx="0" cy="0" rx="520" ry="90"/><ellipse class="ripple-ring" cx="0" cy="0" rx="520" ry="90"/></g>
-        <g transform="translate(240 250)" opacity=".7"><ellipse class="ripple-ring" cx="0" cy="0" rx="300" ry="50"/><ellipse class="ripple-ring" cx="0" cy="0" rx="300" ry="50"/><ellipse class="ripple-ring" cx="0" cy="0" rx="300" ry="50"/></g>
-      </svg>
-    </div>
-    <div class="layer depth-3 hero-subject" data-depth="3" aria-hidden="true">
-      <div class="wrap">
-        <div class="arch">
-          <div class="arch-outline"></div>
-          <div class="arch-frame">
-            <div class="arch-sun"></div>
-            <div class="arch-hill"></div>
-            <div class="arch-reflect"></div>
-            <div class="arch-rings"><svg viewBox="0 0 200 60"><g transform="translate(100 30)"><ellipse class="ripple-ring" rx="96" ry="22"/><ellipse class="ripple-ring" rx="96" ry="22"/><ellipse class="ripple-ring" rx="96" ry="22"/></g></svg></div>
-            <img class="arch-reed" src="assets/img/reed.svg" alt="" width="120" height="320">
-          </div>
-          <div class="arch-seal" data-lang-neutral><span>靜</span><span>水</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="layer depth-5 hero-willow" data-depth="5" aria-hidden="true"><img src="assets/img/willow.svg" alt="" width="520" height="760"></div>
-
-    <div class="layer depth-4 hero-text" data-depth="4">
-      <div class="wrap">
-        <div class="inner">
-          <p class="eyebrow" data-reveal data-i18n="hero.eyebrow">A four-room clinic in Markham</p>
-          <h1 class="h-xl" id="hero-h"><span class="line" data-line data-i18n="hero.h1a">Care that</span><span class="line" data-line data-i18n-html="hero.h1b"><em>doesn’t hurry.</em></span></h1>
-          <p class="lede" data-reveal data-i18n="hero.lede">Registered massage therapy, acupuncture, physiotherapy and osteopathic manual therapy, in four quiet rooms just off Highway 7. Speak to us in English, Cantonese or Mandarin.</p>
-          <div class="hero-cta" data-reveal>
-            <a class="btn" href="book.html"><span class="dot" aria-hidden="true"></span><span data-i18n="cta.book">Request a booking</span></a>
-            <a class="btn btn--ghost" href="tel:+19055550117" data-i18n="cta.call">Call (905) 555-0117</a>
-          </div>
-          <ul class="hero-meta" data-reveal>
-            <li data-i18n-html="hero.m1"><strong>Evenings</strong> to 8 pm, and Saturdays</li>
-            <li data-i18n-html="hero.m2"><strong>Direct billing</strong> to most plans</li>
-            <li data-i18n-html="hero.m3"><strong>Free parking</strong> at the door</li>
-          </ul>
+  <section class="hero">
+    <img class="hero-img" src="assets/img/interior.jpg" width="1800" height="1200" alt="The bright waiting area at the front of the clinic" data-i18n-attr="alt:hero.alt" fetchpriority="high">
+    <div class="wrap hero-wrap">
+      <div class="hero-card">
+        <h1 data-i18n-html="hero.h1">Physiotherapy, massage therapy and acupuncture in Markham</h1>
+        <p data-i18n="hero.p">All our practitioners are registered. We bill most insurance plans directly, and we have evening appointments on weekdays.</p>
+        <p class="hero-addr"><span data-lang-neutral>Unit 4, 410 Tamsworth Drive, Markham</span><br><span data-i18n="addr.near">Near Woodbine Ave and 16th Ave, on the ground floor</span></p>
+        <div class="btns">
+          <a class="btn btn-blue" href="book.html" data-i18n="hero.book">Request an appointment</a>
+          <a class="btn btn-line" href="tel:+19055550117" data-lang-neutral>(905) 555-0117</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ APPROACH ============ -->
-  <section class="section" id="approach" aria-labelledby="ap-h">
-    <div class="wrap split">
-      <div class="sticky-col">
-        <p class="eyebrow" data-reveal data-i18n="ap.eyebrow">How we work</p>
-        <h2 class="h-lg" id="ap-h" data-reveal data-i18n-html="ap.h2">Three things we <em>won’t</em> trade away.</h2>
-        <p class="lede" style="margin-top:20px" data-reveal data-i18n="ap.lede">Stillwater is deliberately small. Four rooms, four practitioners, and a front desk that knows who you are when you call.</p>
-        <div class="motto" data-reveal>
-          <span class="motto-zh" data-lang-neutral lang="zh-Hant">靜水流深</span>
-          <p data-i18n="ap.motto.p">“Still water runs deep” — the four characters over our door, and the way we like to work.</p>
-        </div>
-      </div>
-      <ol class="approach-list">
-        <li data-reveal><span class="approach-num" data-i18n="ap.n1">i.</span><div><h3 class="h-md" data-i18n="ap.1.h">Unhurried appointments</h3></div><p data-i18n="ap.1.p">A 60-minute session is 60 minutes of hands-on time. We leave fifteen minutes between visits, so nobody is watching the door — not your practitioner, and not you.</p></li>
-        <li data-reveal><span class="approach-num" data-i18n="ap.n2">ii.</span><div><h3 class="h-md" data-i18n="ap.2.h">One practitioner, start to finish</h3></div><p data-i18n="ap.2.p">The person who greets you is the person who treats you. No hand-off to an assistant halfway through, and the same practitioner next time unless you ask for a change.</p></li>
-        <li data-reveal><span class="approach-num" data-i18n="ap.n3">iii.</span><div><h3 class="h-md" data-i18n="ap.3.h">Speak to us in your language</h3></div><p data-i18n="ap.3.p">Booking, explanations and receipts in English, Cantonese or Mandarin. Bring a parent who would rather not have their appointment translated for them.</p></li>
-      </ol>
+  <section class="sec" id="services" aria-labelledby="svc-h">
+    <div class="wrap">
+      <h2 id="svc-h" data-i18n="svc.h">Services and fees</h2>
+      <ul class="svc-list">
+        <li>
+          <img src="assets/img/massage.jpg" width="1400" height="2100" loading="lazy" alt="A massage therapist working on a client’s shoulder" data-i18n-attr="alt:alt.massage">
+          <h3><a href="services.html#massage" data-i18n="svc.mas.h">Massage therapy</a></h3>
+          <p data-i18n="svc.mas.p">For sore muscles, a stiff neck or back, and tension. Prenatal massage is available.</p>
+          <p class="price" data-i18n="svc.mas.f">From $70 for 30 minutes</p>
+        </li>
+        <li>
+          <img src="assets/img/physio-leg.jpg" width="1400" height="934" loading="lazy" alt="A physiotherapist helping a client with a knee exercise" data-i18n-attr="alt:alt.physio">
+          <h3><a href="services.html#physio" data-i18n="svc.phy.h">Physiotherapy</a></h3>
+          <p data-i18n="svc.phy.p">Assessment and exercise plans for injuries, joint pain and recovery after surgery.</p>
+          <p class="price" data-i18n="svc.phy.f">First visit $130, then from $80</p>
+        </li>
+        <li>
+          <img src="assets/img/acupuncture.jpg" width="1000" height="647" loading="lazy" alt="An acupuncturist placing a needle" data-i18n-attr="alt:alt.acu">
+          <h3><a href="services.html#acupuncture" data-i18n="svc.acu.h">Acupuncture</a></h3>
+          <p data-i18n="svc.acu.p">Traditional Chinese acupuncture with single-use needles. Cupping is available.</p>
+          <p class="price" data-i18n="svc.acu.f">First visit $125, then from $85</p>
+        </li>
+        <li>
+          <img src="assets/img/shoulder.jpg" width="1000" height="667" loading="lazy" alt="A practitioner checking a client’s shoulder" data-i18n-attr="alt:alt.osteo">
+          <h3><a href="services.html#osteo" data-i18n="svc.ost.h">Osteopathic manual therapy</a></h3>
+          <p data-i18n="svc.ost.p">Gentle hands-on treatment for posture, back and joint problems.</p>
+          <p class="price" data-i18n="svc.ost.f">First visit $125, then from $75</p>
+        </li>
+      </ul>
+      <p><a class="link-strong" href="services.html" data-i18n="svc.more">See all session lengths and prices</a></p>
     </div>
   </section>
 
-  <!-- ============ SERVICES ============ -->
-  <section class="section section--tint" id="services" aria-labelledby="sv-h">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow" data-reveal data-i18n="sv.eyebrow">Services</p>
-        <h2 class="h-lg" id="sv-h" data-reveal data-i18n-html="sv.h2">Four kinds of care, <em>plainly described.</em></h2>
-        <p class="lede" data-reveal data-i18n="sv.lede">What a session involves, how long it takes and what it costs. No packages, no memberships.</p>
-      </div>
-      <div class="svc-rows">
-        <a class="svc-row" href="services.html#massage" data-reveal>
-          <h3 class="h-md" data-i18n="sv.mas.h">Registered massage therapy</h3>
-          <p data-i18n="sv.mas.p">Swedish and deep-tissue work with steady, attentive pressure. Often booked for desk-work stiffness, after sport, or simply to unwind.</p>
-          <span class="from"><span data-i18n="sv.mas.len">30 · 45 · 60 · 90 min</span><b data-i18n="sv.from.mas">from $70</b></span>
-          <span class="go" aria-hidden="true"><svg viewBox="0 0 16 10" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M0 5h15M11 1l4 4-4 4"/></svg></span>
-        </a>
-        <a class="svc-row" href="services.html#acupuncture" data-reveal>
-          <h3 class="h-md" data-i18n="sv.acu.h">Acupuncture</h3>
-          <p data-i18n="sv.acu.p">Fine single-use needles, placed after an unhurried conversation, then quiet rest in a warm room. Cupping can be added.</p>
-          <span class="from"><span data-i18n="sv.acu.len">45 · 60 · 75 min</span><b data-i18n="sv.from.acu">from $85</b></span>
-          <span class="go" aria-hidden="true"><svg viewBox="0 0 16 10" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M0 5h15M11 1l4 4-4 4"/></svg></span>
-        </a>
-        <a class="svc-row" href="services.html#physio" data-reveal>
-          <h3 class="h-md" data-i18n="sv.phy.h">Physiotherapy</h3>
-          <p data-i18n="sv.phy.p">One-on-one for the whole appointment: a movement assessment, hands-on work, and two or three exercises you will actually do at home.</p>
-          <span class="from"><span data-i18n="sv.phy.len">30 · 45 · 60 min</span><b data-i18n="sv.from.phy">from $80</b></span>
-          <span class="go" aria-hidden="true"><svg viewBox="0 0 16 10" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M0 5h15M11 1l4 4-4 4"/></svg></span>
-        </a>
-        <a class="svc-row" href="services.html#osteo" data-reveal>
-          <h3 class="h-md" data-i18n="sv.ost.h">Osteopathic manual therapy</h3>
-          <p data-i18n="sv.ost.p">Slow, gentle hands-on work that looks at the body as a whole. You stay fully clothed throughout.</p>
-          <span class="from"><span data-i18n="sv.ost.len">30 · 45 · 60 min</span><b data-i18n="sv.from.ost">from $75</b></span>
-          <span class="go" aria-hidden="true"><svg viewBox="0 0 16 10" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M0 5h15M11 1l4 4-4 4"/></svg></span>
-        </a>
-      </div>
-      <div class="svc-note">
-        <p class="small" style="margin:0" data-i18n="sv.note">Fees are listed before HST, which applies to some services.</p>
-        <a class="textlink" href="services.html"><span data-i18n="sv.all">All session lengths &amp; fees</span><svg viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 5h17M13 1l4 4-4 4"/></svg></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ TEAM ============ -->
-  <section class="section" id="team" aria-labelledby="tm-h">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow" data-reveal data-i18n="tm.eyebrow">Practitioners</p>
-        <h2 class="h-lg" id="tm-h" data-reveal data-i18n-html="tm.h2">Four practitioners. <em>You’ll know them by name.</em></h2>
-        <p class="lede" data-reveal data-i18n="tm.lede">Each of us works from the same room every day, and each speaks at least one of the languages you do.</p>
-      </div>
-      <div class="team">
-        <article class="person" data-reveal>
-          <div class="pebble" aria-hidden="true" data-i18n="tm.mc.mono">MC</div>
-          <h3 class="h-md" data-i18n="tm.mc.name">Mei-Ling Cheung</h3>
-          <p class="cred" data-i18n="tm.mc.cred">Registered Massage Therapist (RMT)</p>
-          <div><p class="bio" data-i18n="tm.mc.bio">Fourteen years in practice, the first six in a sports clinic. Mei-Ling is known for steady pressure and for checking in before going deeper — never after.</p>
-          <ul class="tags"><li class="tag tag--lang" data-i18n="lg.yue">Cantonese</li><li class="tag tag--lang" data-i18n="lg.en">English</li><li class="tag" data-i18n="tm.prenatal">Prenatal massage</li></ul></div>
-        </article>
-        <article class="person" data-reveal>
-          <div class="pebble" aria-hidden="true" data-i18n="tm.wz.mono">WZ</div>
-          <h3 class="h-md" data-i18n="tm.wz.name">Wen Zhao</h3>
-          <p class="cred" data-i18n="tm.wz.cred">Registered Acupuncturist (R.Ac)</p>
-          <div><p class="bio" data-i18n="tm.wz.bio">Wen explains each step before she begins and never minds a nervous first-timer. She also offers cupping, and will show you the cups before you decide.</p>
-          <ul class="tags"><li class="tag tag--lang" data-i18n="lg.cmn">Mandarin</li><li class="tag tag--lang" data-i18n="lg.en">English</li><li class="tag" data-i18n="tm.cupping">Cupping</li></ul></div>
-        </article>
-        <article class="person" data-reveal>
-          <div class="pebble" aria-hidden="true" data-i18n="tm.jl.mono">JL</div>
-          <h3 class="h-md" data-i18n="tm.jl.name">Jonathan Lau</h3>
-          <p class="cred" data-i18n="tm.jl.cred">Registered Physiotherapist</p>
-          <div><p class="bio" data-i18n="tm.jl.bio">Jonathan stays with you for the full appointment — no assistants, no being left on a machine. He sends you home with two or three exercises, not twelve.</p>
-          <ul class="tags"><li class="tag tag--lang" data-i18n="lg.en">English</li><li class="tag tag--lang" data-i18n="lg.yue">Cantonese</li><li class="tag tag--lang" data-i18n="lg.cmn">Mandarin</li></ul></div>
-        </article>
-        <article class="person" data-reveal>
-          <div class="pebble" aria-hidden="true" data-i18n="tm.sm.mono">SM</div>
-          <h3 class="h-md" data-i18n="tm.sm.name" data-lang-neutral>Sofia Marchetti</h3>
-          <p class="cred" data-i18n="tm.sm.cred">Osteopathic Manual Practitioner (DOMP)</p>
-          <div><p class="bio" data-i18n="tm.sm.bio">Sofia works slowly and quietly, and tells you what she is noticing as she goes. A former contemporary dancer, she has practised in York Region for nine years.</p>
-          <ul class="tags"><li class="tag tag--lang" data-i18n="lg.en">English</li></ul></div>
-        </article>
-      </div>
-      <p class="team-note small" data-i18n="tm.note">Massage therapists, acupuncturists and physiotherapists are regulated health professionals in Ontario. Your practitioner’s registration number is printed on every receipt.</p>
-    </div>
-  </section>
-
-  <!-- ============ FIRST VISIT ============ -->
-  <section class="section section--pine" id="first-visit" aria-labelledby="fv-h">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow" data-reveal data-i18n="fv.eyebrow">Your first visit</p>
-        <h2 class="h-lg" id="fv-h" data-reveal data-i18n-html="fv.h2">No surprises. <em>Here is what happens.</em></h2>
-      </div>
-      <ol class="steps">
-        <li class="step" data-reveal><span class="step-dot" aria-hidden="true">1</span><span class="time" data-i18n="fv.1.t">10 minutes before</span><h3 data-i18n="fv.1.h">Arrive and settle</h3><p data-i18n="fv.1.p">Park at the door and have a cup of warm tea. There is one short form — on paper, on a clipboard, handed straight to your practitioner.</p></li>
-        <li class="step" data-reveal><span class="step-dot" aria-hidden="true">2</span><span class="time" data-i18n="fv.2.t">In the room</span><h3 data-i18n="fv.2.h">Talk first</h3><p data-i18n="fv.2.p">With the door closed, your practitioner asks about your health and what you would like from the session — in the language you prefer.</p></li>
-        <li class="step" data-reveal><span class="step-dot" aria-hidden="true">3</span><span class="time" data-i18n="fv.3.t">The session</span><h3 data-i18n="fv.3.h">Explained as it goes</h3><p data-i18n="fv.3.p">You hear what is about to happen before it does. Say “softer”, “firmer” or “stop” at any point and that is what happens.</p></li>
-        <li class="step" data-reveal><span class="step-dot" aria-hidden="true">4</span><span class="time" data-i18n="fv.4.t">Before you go</span><h3 data-i18n="fv.4.h">Billing, then home</h3><p data-i18n="fv.4.p">We bill your plan directly where we can, or hand you a receipt to claim. Rebook if you want to; nobody will press you.</p></li>
-      </ol>
-      <div class="visit-foot">
-        <p data-i18n="fv.foot">Wear something comfortable. If you would like us to bill your plan, bring your benefits card — that is all.</p>
-        <a class="textlink" style="color:#f4efe6;border-color:rgba(244,239,230,.35)" href="services.html#massage"><span data-i18n="fv.link">What to wear for each service</span><svg viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 5h17M13 1l4 4-4 4"/></svg></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ POLICIES ============ -->
-  <section class="section" id="policies" aria-labelledby="po-h">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow" data-reveal data-i18n="po.eyebrow">The practical part</p>
-        <h2 class="h-lg" id="po-h" data-reveal data-i18n-html="po.h2">Insurance, receipts and <em>changing your plans.</em></h2>
-      </div>
-      <div class="notes">
-        <div class="note" data-reveal>
-          <svg class="glyph" viewBox="0 0 46 46" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="5" y="12" width="36" height="24" rx="5"/><path d="M5 19h36"/><circle cx="33" cy="29" r="3" stroke="#b5593a"/></svg>
-          <h3 class="h-md" data-i18n="po.1.h">Direct billing</h3>
-          <p data-i18n="po.1.p">We bill most extended health plans directly, so you pay only the part your plan does not cover. We will tell you when we confirm your booking whether yours is one of them.</p>
-        </div>
-        <div class="note" data-reveal>
-          <svg class="glyph" viewBox="0 0 46 46" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M11 5h24v36l-4-3-4 3-4-3-4 3-4-3-4 3z"/><path d="M16 14h14M16 20h14M16 26h8"/><path d="M26 26h4" stroke="#b5593a"/></svg>
-          <h3 class="h-md" data-i18n="po.2.h">Receipts for claims</h3>
-          <p data-i18n="po.2.p">Every visit comes with an itemised receipt: practitioner, credentials and registration number, date, session length and fee — what insurers ask for.</p>
-        </div>
-        <div class="note" data-reveal>
-          <svg class="glyph" viewBox="0 0 46 46" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="23" cy="23" r="17"/><path d="M23 12v11l7 5"/><circle cx="23" cy="23" r="1.6" fill="#b5593a" stroke="none"/></svg>
-          <h3 class="h-md" data-i18n="po.3.h">24-hour cancellation</h3>
-          <p data-i18n="po.3.p">Plans change. Give us 24 hours’ notice and there is no charge. Under 24 hours, half the session fee applies. If you wake up unwell, call us; we would rather you rest.</p>
-        </div>
-      </div>
-      <p style="margin-top:28px"><a class="textlink" href="services.html#insurance"><span data-i18n="po.link">Insurance &amp; policies in full</span><svg viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M0 5h17M13 1l4 4-4 4"/></svg></a></p>
-    </div>
-  </section>
-
-  <!-- ============ KIND WORDS ============ -->
-  <section class="section section--tint" aria-labelledby="kw-h">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow" data-reveal data-i18n="kw.eyebrow">Kind words</p>
-        <h2 class="h-lg" id="kw-h" data-reveal data-i18n-html="kw.h2">About the experience, <em>in their words.</em></h2>
-      </div>
-      <div class="words">
-        <figure class="word" data-reveal><blockquote data-i18n="kw.1.q">“We started on time and nobody rushed me. I never once felt the clock.”</blockquote><figcaption data-lang-neutral data-i18n="kw.1.c">Karen L., Unionville</figcaption></figure>
-        <figure class="word" data-reveal><blockquote data-i18n="kw.2.q">“My mother only speaks Cantonese. From the booking call to the receipt, I didn’t have to translate a word.”</blockquote><figcaption data-lang-neutral data-i18n="kw.2.c">Vivian C., Markham</figcaption></figure>
-        <figure class="word" data-reveal><blockquote data-i18n="kw.3.q">“Everything was explained before it happened — including the fee. Booking took one text message.”</blockquote><figcaption data-lang-neutral data-i18n="kw.3.c">Raj P., Richmond Hill</figcaption></figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ VISIT ============ -->
-  <section class="section" id="visit" aria-labelledby="vs-h">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow" data-reveal data-i18n="vs.eyebrow">Find us</p>
-        <h2 class="h-lg" id="vs-h" data-reveal data-i18n-html="vs.h2">Beside the pond, <em>off Highway 7.</em></h2>
-      </div>
-      <div class="visit">
-        <figure class="map" data-reveal style="margin:0">
-          <svg viewBox="0 0 500 560" role="img" data-i18n-attr="aria-label:map.aria" aria-label="Hand-drawn map: Stillwater is in Unit 3 at 9 Willowmere Lane, a short lane off Highway 7 beside Willowmere Pond, with parking in front.">
-            <defs><pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0v6" stroke="#23423a" stroke-width=".6" opacity=".25"/></pattern></defs>
-            <rect width="500" height="560" fill="#ebe5d6"/>
-            <!-- blocks -->
-            <g fill="#e1dac8" stroke="#23423a" stroke-opacity=".12"><rect x="30" y="40" width="150" height="130" rx="8"/><rect x="330" y="40" width="140" height="110" rx="8"/><rect x="30" y="300" width="90" height="220" rx="8"/></g>
-            <!-- pond -->
-            <path d="M260 330 C300 290 400 300 430 350 C460 400 430 470 360 480 C290 490 230 450 230 400 C230 370 240 350 260 330Z" fill="#c6d4c9" stroke="#23423a" stroke-opacity=".3"/>
-            <g fill="none" stroke="#23423a" stroke-opacity=".25"><ellipse cx="335" cy="395" rx="50" ry="22"/><ellipse cx="335" cy="395" rx="28" ry="11"/></g>
-            <text x="335" y="438" text-anchor="middle" font-size="14" fill="#2f574c" font-style="italic" data-i18n="map.pond">Willowmere Pond</text>
-            <!-- highway -->
-            <path d="M0 225 C140 215 330 235 500 220" stroke="#d3c9b2" stroke-width="34" fill="none"/>
-            <path d="M0 225 C140 215 330 235 500 220" stroke="#fbf8f2" stroke-width="1.5" stroke-dasharray="10 9" fill="none"/>
-            <text x="40" y="206" font-size="13" letter-spacing="2" fill="#545e59" font-weight="600" data-i18n="map.hwy">HIGHWAY 7</text>
-            <!-- lane -->
-            <path d="M200 238 C196 300 186 360 170 520" stroke="#ddd3bd" stroke-width="18" fill="none" stroke-linecap="round"/>
-            <text transform="translate(160 470) rotate(-84)" font-size="13" fill="#545e59" data-i18n="map.lane">Willowmere Lane</text>
-            <!-- parking -->
-            <rect x="212" y="268" width="66" height="44" rx="5" fill="url(#hatch)" stroke="#23423a" stroke-opacity=".35"/>
-            <text x="245" y="295" text-anchor="middle" font-size="15" font-weight="600" fill="#23423a">P</text>
-            <text x="286" y="284" font-size="12" fill="#545e59" data-i18n="map.park">Free parking</text>
-            <!-- clinic -->
-            <rect x="212" y="318" width="34" height="28" rx="4" fill="#23423a"/>
-            <circle cx="229" cy="332" r="20" fill="none" stroke="#b5593a" stroke-width="1.2"/>
-            <circle cx="229" cy="332" r="30" fill="none" stroke="#b5593a" stroke-width=".8" opacity=".5"/>
-            <circle cx="229" cy="332" r="4" fill="#e8a583"/>
-            <g transform="translate(120 360)"><rect x="-6" y="-16" width="150" height="26" rx="13" fill="#23423a"/><text x="69" y="2" text-anchor="middle" font-size="12.5" fill="#f4efe6" data-i18n="map.us">Stillwater · Unit 3</text></g>
-            <!-- bus -->
-            <circle cx="390" cy="196" r="9" fill="#fbf8f2" stroke="#23423a" stroke-opacity=".5"/><text x="390" y="200" text-anchor="middle" font-size="10" font-weight="600" fill="#23423a">B</text>
-            <text x="404" y="186" font-size="12" fill="#545e59" data-i18n="map.bus">Bus stop</text>
-            <path d="M382 204 C340 250 280 260 250 300" fill="none" stroke="#b5593a" stroke-width="1.3" stroke-dasharray="2 5" stroke-linecap="round"/>
-            <text x="318" y="262" font-size="11.5" fill="#9c4527" data-i18n="map.walk">5 min walk</text>
-            <!-- willow mark -->
-            <g stroke="#2f574c" fill="none" stroke-width="1" opacity=".6"><path d="M440 300 q-6 30 -4 60 M446 302 q2 28 6 52 M436 300 q-14 24 -18 50"/><path d="M420 298 q20 -8 34 2"/></g>
-            <!-- compass -->
-            <g transform="translate(450 520)" stroke="#23423a" fill="none" stroke-opacity=".5"><circle r="14"/><path d="M0 -10 L4 4 L0 1 L-4 4Z" fill="#23423a" fill-opacity=".5"/></g>
-            <text x="450" y="494" text-anchor="middle" font-size="11" fill="#545e59">N</text>
-          </svg>
-        </figure>
-        <dl class="info-list">
-          <div data-reveal><dt data-i18n="vs.addr.t">Address</dt><dd><p data-i18n="vs.addr.1">Unit 3, 9 Willowmere Lane</p><p class="small" data-lang-neutral data-i18n="vs.addr.2">Markham, ON L3R 0X0</p></dd></div>
-          <div data-reveal><dt data-i18n="vs.hours.t">Hours</dt><dd>
-            <table class="hours"><tbody>
-              <tr><th scope="row" data-i18n="hr.wk">Monday – Friday</th><td data-i18n="hr.wk.v">9 am – 8 pm</td></tr>
-              <tr><th scope="row" data-i18n="hr.sat">Saturday</th><td data-i18n="hr.sat.v">9 am – 4 pm</td></tr>
-              <tr class="closed"><th scope="row" data-i18n="hr.sun">Sunday &amp; holidays</th><td data-i18n="hr.sun.v">Closed</td></tr>
-            </tbody></table>
-            <p class="small" style="margin-top:6px" data-i18n="vs.hours.note">Last appointment starts one hour before closing.</p></dd></div>
-          <div data-reveal><dt data-i18n="vs.park.t">Parking</dt><dd><p data-i18n="vs.park.p">Free surface parking directly in front of the unit, with two accessible spaces beside the door. No time limit, no validation.</p></dd></div>
-          <div data-reveal><dt data-i18n="vs.acc.t">Access</dt><dd><p data-i18n="vs.acc.p">Ground floor with a level, step-free entrance and an automatic door. Accessible washroom. All four rooms have height-adjustable tables.</p></dd></div>
-          <div data-reveal><dt data-i18n="vs.bus.t">Transit</dt><dd><p data-i18n="vs.bus.p">The nearest bus stop is on Highway 7, about a five-minute walk along a lit sidewalk.</p></dd></div>
-          <div data-reveal><dt data-i18n="vs.contact.t">Contact</dt><dd><a class="big-tel" href="tel:+19055550117" data-i18n-attr="aria-label:cta.callaria">(905) 555-0117</a><p><a href="mailto:care@stillwater.example">care@stillwater.example</a></p></dd></div>
-        </dl>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CTA ============ -->
-  <section class="cta-band" aria-labelledby="cb-h">
-    <svg class="cta-rings" viewBox="0 0 720 720" aria-hidden="true"><circle cx="360" cy="360" r="120"/><circle cx="360" cy="360" r="200"/><circle cx="360" cy="360" r="280"/><circle cx="360" cy="360" r="355"/></svg>
-    <div class="wrap">
+  <section class="sec sec-tint" id="insurance" aria-labelledby="ins-h">
+    <div class="wrap ins-grid">
       <div>
-        <h2 class="h-lg" id="cb-h" data-reveal data-i18n-html="cb.h2">Tell us when suits you. <em>We’ll call you back.</em></h2>
-        <p data-reveal data-i18n="cb.p">A booking request takes about two minutes and asks nothing about your health. Or simply phone the front desk.</p>
+        <h2 id="ins-h" data-i18n="ins.h">Insurance and direct billing</h2>
+        <p data-i18n="ins.p1">We can bill most group insurance plans directly, so you only pay the part your plan does not cover. Bring your insurance card to your first visit.</p>
+        <p data-i18n="ins.p2">Every visit comes with a receipt showing your practitioner’s registration number, so you can claim from plans we cannot bill.</p>
+        <p data-i18n="ins.p3">Car accident and workplace injury claims: call us before your first visit so we can set up the paperwork.</p>
+        <p class="small" data-i18n="ins.p4">Some plans need a doctor’s note before they pay for physiotherapy or massage. Check with your plan first.</p>
       </div>
-      <div class="acts" data-reveal>
-        <a class="btn btn--light" href="book.html" data-i18n="cta.book">Request a booking</a>
-        <a class="btn btn--ghost" href="tel:+19055550117" data-i18n="cta.call">Call (905) 555-0117</a>
+      <div class="first-box">
+        <h2 data-i18n="first.h">Your first visit</h2>
+        <ul class="checks">
+          <li data-i18n="first.1">Arrive 10 minutes early to fill in a short form.</li>
+          <li data-i18n="first.2">Bring photo ID and your insurance card.</li>
+          <li data-i18n="first.3">Wear loose, comfortable clothes. Shorts are handy for physiotherapy.</li>
+          <li data-i18n="first.4">Your practitioner asks about your health in person, in a private room.</li>
+        </ul>
+        <a class="btn btn-blue" href="book.html" data-i18n="hero.book">Request an appointment</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="team" aria-labelledby="team-h">
+    <div class="wrap">
+      <h2 id="team-h" data-i18n="team.h">Our practitioners</h2>
+      <p class="lead" data-i18n="team.p">Tell us when you book if you would prefer a male or female practitioner.</p>
+      <ul class="team">
+        <li><h3 data-i18n="p.mc.n">Mei-Ling Cheung, RMT</h3><p class="role" data-i18n="p.mc.r">Massage therapy, prenatal massage</p><p data-i18n="p.mc.p">12 years in practice. Speaks English and Cantonese.</p></li>
+        <li><h3 data-i18n="p.dh.n">Daniel Ho, RMT</h3><p class="role" data-i18n="p.dh.r">Massage therapy, sports and deep tissue</p><p data-i18n="p.dh.p">Works with runners and weekend hockey players. Speaks English and Mandarin.</p></li>
+        <li><h3 data-i18n="p.jl.n">Jonathan Lau, Registered Physiotherapist</h3><p class="role" data-i18n="p.jl.r">Physiotherapy</p><p data-i18n="p.jl.p">Back and neck pain, sports injuries and recovery after surgery. Speaks English and Cantonese.</p></li>
+        <li><h3 data-i18n="p.wz.n">Wen Zhao, R.Ac</h3><p class="role" data-i18n="p.wz.r">Acupuncture and cupping</p><p data-i18n="p.wz.p">Trained in traditional Chinese medicine. Speaks Mandarin and English.</p></li>
+        <li><h3 data-i18n="p.sm.n">Sofia Marchetti, Osteopathic Manual Practitioner</h3><p class="role" data-i18n="p.sm.r">Osteopathic manual therapy</p><p data-i18n="p.sm.p">Posture, back and joint problems. Speaks English and Italian.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec sec-grey" id="info" aria-labelledby="info-h">
+    <div class="wrap">
+      <h2 id="info-h" data-i18n="info.h">Good to know</h2>
+      <dl class="info-list">
+        <div><dt data-i18n="info.park.h">Parking</dt><dd data-i18n="info.park.p">Free parking in our lot, with two accessible spots by the door.</dd></div>
+        <div><dt data-i18n="info.access.h">Accessibility</dt><dd data-i18n="info.access.p">We are on the ground floor with no steps. Wide doors, an accessible washroom and treatment tables that lower.</dd></div>
+        <div><dt data-i18n="info.cancel.h">Cancelling</dt><dd data-i18n="info.cancel.p">Please give us 24 hours’ notice to cancel or move an appointment. Late cancellations and missed appointments are charged half the fee.</dd></div>
+        <div><dt data-i18n="info.pay.h">Payment and tax</dt><dd data-i18n="info.pay.p">Debit, Visa, Mastercard, cash or Interac e-Transfer. Massage, physiotherapy and acupuncture are HST-exempt. HST is added to osteopathic manual therapy.</dd></div>
+        <div><dt data-i18n="info.lang.h">Languages</dt><dd data-i18n="info.lang.p">The front desk speaks English, Cantonese and Mandarin.</dd></div>
+        <div><dt data-i18n="info.kids.h">Under 16</dt><dd data-i18n="info.kids.p">Clients under 16 need a parent or guardian with them.</dd></div>
+        <div><dt data-i18n="info.gift.h">Gift cards</dt><dd data-i18n="info.gift.p">Gift cards in any amount are sold at the front desk.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="sec" id="visit" aria-labelledby="map-h">
+    <div class="wrap visit-grid">
+      <div>
+        <h2 id="map-h" data-i18n="map.h">Visit us</h2>
+        <p class="strong" data-lang-neutral>Unit 4, 410 Tamsworth Drive<br>Markham, ON L6G 9Z8</p>
+        <p data-i18n="map.drive">By car: from Woodbine Avenue, turn west onto 16th Avenue, then right onto Tamsworth Drive. We are the single-storey building at the end of the plaza.</p>
+        <p data-i18n="map.bus">By bus: get off at Woodbine Ave and 16th Ave. It is a 3-minute walk.</p>
+        <h3 data-i18n="map.hours">Hours</h3>
+        <table class="hours">
+          <tbody>
+            <tr data-days="1,2,3,4,5" data-open="9:00" data-close="20:00"><th scope="row" data-i18n="d.weekdays">Monday to Friday</th><td data-i18n="h.weekdays">9:00 am – 8:00 pm</td></tr>
+            <tr data-days="6" data-open="9:00" data-close="16:00"><th scope="row" data-i18n="d.sat">Saturday</th><td data-i18n="h.sat">9:00 am – 4:00 pm</td></tr>
+            <tr data-days="0"><th scope="row" data-i18n="d.sun">Sunday and holidays</th><td data-i18n="h.closed">Closed</td></tr>
+          </tbody>
+        </table>
+        <h3 data-i18n="hol.h">Holiday hours</h3>
+        <table class="hours hol">
+          <tbody>
+            <tr data-date="2026-12-24" data-open="9:00" data-close="14:00"><th scope="row" data-i18n="hol.d1224">Thursday, December 24</th><td data-i18n="hol.short">9:00 am – 2:00 pm</td></tr>
+            <tr data-date="2026-12-25 2026-12-26"><th scope="row" data-i18n="hol.d1225">Friday, December 25 and Saturday, December 26</th><td data-i18n="h.closed">Closed</td></tr>
+            <tr data-date="2026-12-31" data-open="9:00" data-close="14:00"><th scope="row" data-i18n="hol.d1231">Thursday, December 31</th><td data-i18n="hol.short">9:00 am – 2:00 pm</td></tr>
+            <tr data-date="2027-01-01"><th scope="row" data-i18n="hol.d0101">Friday, January 1</th><td data-i18n="h.closed">Closed</td></tr>
+            <tr data-date="2027-02-15"><th scope="row" data-i18n="hol.d0215">Monday, February 15 (Family Day)</th><td data-i18n="h.closed">Closed</td></tr>
+            <tr data-date="2027-03-26"><th scope="row" data-i18n="hol.d0326">Friday, March 26 (Good Friday)</th><td data-i18n="h.closed">Closed</td></tr>
+          </tbody>
+        </table>
+        <p class="btns"><a class="btn btn-blue" href="https://www.google.com/maps/search/?api=1&amp;query=Woodbine+Ave+and+16th+Ave+Markham+ON" target="_blank" rel="noopener" data-i18n="map.open">Open in Google Maps</a></p>
+      </div>
+      <div class="map-frame">
+        <iframe data-map-q="Woodbine Ave & 16th Ave, Markham, ON" src="https://maps.google.com/maps?q=Woodbine%20Ave%20%26%2016th%20Ave%2C%20Markham%2C%20ON&amp;z=15&amp;hl=en&amp;output=embed" title="Map of the area around Woodbine Ave and 16th Ave, Markham" data-i18n-attr="title:map.title" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </section>
 </main>
 
 <footer class="site-foot">
-  <div class="wrap">
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <a class="brand" href="index.html" data-i18n-attr="aria-label:brand.aria" aria-label="Stillwater Wellness Clinic — home">
-          <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#f4efe6"/><g fill="none" stroke="#23423a" stroke-width="1.3"><ellipse cx="20" cy="25" rx="13" ry="4.2"/><ellipse cx="20" cy="25" rx="7" ry="2.1" opacity=".7"/></g><circle cx="20" cy="14" r="4.3" fill="#b5593a"/></svg>
-          <span class="brand-name" data-lang-neutral>Stillwater</span><span class="brand-zh" data-lang-neutral>靜水堂</span>
-        </a>
-        <p data-i18n="ft.blurb">A small, unhurried clinic in Markham. Massage therapy, acupuncture, physiotherapy and osteopathic manual therapy.</p>
-      </div>
-      <div>
-        <h2 data-i18n="ft.visit">Visit</h2>
-        <ul><li data-i18n="vs.addr.1">Unit 3, 9 Willowmere Lane</li><li data-lang-neutral>Markham, ON L3R 0X0</li><li><a href="tel:+19055550117">(905) 555-0117</a></li><li><a href="mailto:care@stillwater.example">care@stillwater.example</a></li></ul>
-      </div>
-      <div>
-        <h2 data-i18n="ft.hours">Hours</h2>
-        <ul><li data-i18n="ft.wk">Mon – Fri  9 am – 8 pm</li><li data-i18n="ft.sat">Saturday  9 am – 4 pm</li><li data-i18n="ft.sun">Sunday &amp; holidays  closed</li></ul>
-      </div>
-      <div>
-        <h2 data-i18n="ft.explore">Explore</h2>
-        <ul><li><a href="index.html" data-i18n="ft.home">Home</a></li><li><a href="services.html" data-i18n="nav.services">Services &amp; fees</a></li><li><a href="services.html#faq" data-i18n="ft.faq">Questions &amp; answers</a></li><li><a class="nav-book" href="book.html" data-i18n="nav.book">Request a booking</a></li></ul>
-      </div>
+  <div class="wrap foot-grid">
+    <div>
+      <p class="foot-brand"><span data-i18n="brand.name">Stillwater Wellness Clinic</span></p>
+      <p data-i18n="foot.about">Physiotherapy, massage therapy, acupuncture and osteopathic manual therapy in Markham since 2015.</p>
+      <p class="foot-emerg" data-i18n="foot.emerg">We do not treat emergencies. If this is urgent, call 911.</p>
     </div>
-    <div class="foot-base">
-      <p data-i18n="ft.copy">© 2026 Stillwater Wellness Clinic</p>
-      <p data-i18n="ft.emerg">Not for emergencies — call 911.</p>
-      <p class="demo-note"><a href="../index.html" data-i18n="ft.demo">Demo site — fictional business</a></p>
+    <div>
+      <h2 data-i18n="foot.hours">Hours</h2>
+      <p data-i18n-html="foot.hours.p">Monday to Friday 9:00 am – 8:00 pm<br>Saturday 9:00 am – 4:00 pm<br>Closed Sundays and holidays</p>
     </div>
+    <div>
+      <h2 data-i18n="foot.contact">Contact</h2>
+      <p data-lang-neutral>Unit 4, 410 Tamsworth Drive<br>Markham, ON L6G 9Z8</p>
+      <p><a href="tel:+19055550117" data-lang-neutral>(905) 555-0117</a><br><a href="mailto:frontdesk@stillwaterclinic.example" data-lang-neutral>frontdesk@stillwaterclinic.example</a></p>
+    </div>
+    <div>
+      <h2 data-i18n="foot.pages">Pages</h2>
+      <ul class="foot-links">
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="services.html" data-i18n="nav.services">Services and fees</a></li>
+        <li><a href="book.html" data-i18n="nav.book">Request an appointment</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-base">
+    <span data-i18n="foot.copy">© 2026 Stillwater Wellness Clinic</span>
+    <a href="../index.html" data-i18n="foot.demo">This is a demo website. The clinic is fictional.</a>
   </div>
 </footer>
 
-<div class="actionbar">
-  <a class="btn btn--ghost" href="tel:+19055550117" data-i18n-attr="aria-label:cta.callaria" aria-label="Call the clinic at 905 555 0117"><span data-i18n="cta.callshort">Call</span></a>
-  <a class="btn" href="book.html"><span class="dot" aria-hidden="true"></span><span data-i18n="cta.book">Request a booking</span></a>
-</div>
-
-<script src="assets/i18n-dict.js"></script>
-<script src="../shared/vendor/gsap.min.js"></script>
-<script src="../shared/vendor/ScrollTrigger.min.js"></script>
 <script src="assets/site.js"></script>
 </body>
 </html>

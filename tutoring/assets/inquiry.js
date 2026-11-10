@@ -12,7 +12,11 @@
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;'); }
   function fmt(key, vars) { var s = I.t(key); for (var k in vars) s = s.split('{' + k + '}').join(vars[k]); return s; }
   function byId(id) { for (var i = 0; i < S.classes.length; i++) if (S.classes[i].id === id) return S.classes[i]; }
-  function classLabel(c) { return I.t('day.' + c.day + '.s') + ' ' + S.fmtRange(c.time, I.lang) + ' · ' + I.pick(c.name) + ' · ' + fmt('sch.grade', { g: c.grades }); }
+  var sep = function () { return I.lang === 'en' ? ', ' : '，'; };
+  function classLabel(c) { return I.t('day.' + c.day + '.s') + ' ' + S.fmtRange(c.time, I.lang) + sep() + I.pick(c.name) + sep() + fmt('sch.grade', { g: c.grades }); }
+  var topic = qs.get('topic');
+  if (topic === 'assessment' || topic === 'class' || topic === 'other') $('f-topic').value = topic;
+  else if (wanted) $('f-topic').value = 'class';
   function checked(name) { return Array.prototype.map.call(form.querySelectorAll('input[name="' + name + '"]:checked'), function (i) { return i.value; }); }
 
   /* ---------- build / relabel controls ---------- */
@@ -101,6 +105,7 @@
       return;
     }
     sent = {
+      topic: $('f-topic').value,
       name: $('f-name').value.trim(), phone: $('f-phone').value.trim(), email: $('f-email').value.trim(),
       lang: checked('lang')[0] || 'en', grade: $('f-grade').value, subjects: checked('subjects'), cls: $('f-class').value,
       days: checked('days'), method: checked('method')[0] || '', message: $('f-msg').value.trim()
@@ -122,8 +127,9 @@
     var subj = d.subjects.map(function (id) { for (var i = 0; i < S.subjects.length; i++) if (S.subjects[i].id === id) return I.pick(S.subjects[i].long || S.subjects[i].label); }).join(I.lang === 'en' ? ', ' : '、');
     var c = byId(d.cls);
     var rows = [
+      ['inq.topic', I.t('inq.topic.' + d.topic)],
       ['inq.name', d.name],
-      ['inq.ok.l.contact', [d.phone, d.email].filter(Boolean).join(' · ')],
+      ['inq.ok.l.contact', [d.phone, d.email].filter(Boolean).join(sep())],
       ['inq.lang', langName],
       ['inq.grade', fmt('inq.grade.opt', { g: d.grade })],
       ['inq.subjects', subj || none],
@@ -133,13 +139,11 @@
       ['inq.msg', d.message || none]
     ];
     slip.innerHTML =
-      '<svg class="slip__stamp" viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="38" fill="none" stroke="#E5432D" stroke-width="3" stroke-dasharray="5 4"/><circle cx="42" cy="42" r="30" fill="#FFF1ED" stroke="#E5432D" stroke-width="2.5"/><path d="M28 43l10 10 19-22" fill="none" stroke="#E5432D" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
-      '<p class="kicker">' + esc(I.t('inq.ok.kicker')) + '</p>' +
       '<h2>' + esc(fmt('inq.ok.h', { name: d.name })) + '</h2>' +
-      '<p class="slip__demo">' + I.t('inq.ok.demo') + '</p>' +
+      '<p class="slip__demo">' + esc(I.t('inq.ok.demo')) + '</p>' +
       '<dl>' + rows.map(function (r) { return '<div><dt>' + esc(I.t(r[0])) + '</dt><dd>' + esc(r[1]) + '</dd></div>'; }).join('') + '</dl>' +
       '<p class="slip__real">' + esc(fmt('inq.ok.real', { lang: langName, method: I.t('inq.ok.m.' + method) })) + '</p>' +
-      '<div class="hero__cta"><button type="button" class="btn btn--yellow" id="again">' + esc(I.t('inq.ok.again')) + '</button><a class="btn" href="schedule.html">' + esc(I.t('inq.ok.back')) + '</a></div>';
+      '<div class="btns"><button type="button" class="btn btn-yellow" id="again">' + esc(I.t('inq.ok.again')) + '</button><a class="btn btn-line" href="schedule.html">' + esc(I.t('inq.ok.back')) + '</a></div>';
     slip.hidden = false;
     $('again').addEventListener('click', function () {
       sent = null; errCount = 0; form.reset(); built = false; wanted = null;
