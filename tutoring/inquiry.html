@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../shared/i18n.js"></script>
+<script src="assets/i18n-dict.js"></script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect x='2' y='2' width='44' height='44' rx='11' fill='%231E3FD8'/%3E%3Cpath d='M24 7l2 4.6 3.4-1.6-.8 4.6 4.6-.8-2.6 3.4 2 1-6 2.6-.6 3.2h-2l-.6-3.2-6-2.6 2-1-2.6-3.4 4.6.8-.8-4.6 3.4 1.6z' fill='%23FFC62E'/%3E%3Cpath d='M7 31h34M10 40c4-9 8-12 14-12s10 3 14 12' fill='none' stroke='%23fff' stroke-width='3.4' stroke-linecap='round'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#1E3FD8">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Maple Bridge Learning Centre">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Caveat:wght@600;700&family=Figtree:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<title data-i18n="inq.title">Inquiry — Maple Bridge Learning Centre</title>
+<meta name="description" data-i18n-attr="content:inq.desc" content="Ask about a class or book a free placement assessment.">
+<meta property="og:title" content="Inquiry — Maple Bridge Learning Centre">
+<meta property="og:description" content="Ask about a class or book a free placement assessment. We reply in English, Cantonese or Mandarin.">
+<script src="assets/schedule-data.js"></script>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Skip to main content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html" data-i18n-attr="aria-label:brand.home" aria-label="Maple Bridge Learning Centre — home">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="11" fill="#1E3FD8" stroke="#131B45" stroke-width="2"/><path d="M24 7l2 4.6 3.4-1.6-.8 4.6 4.6-.8-2.6 3.4 2 1-6 2.6-.6 3.2h-2l-.6-3.2-6-2.6 2-1-2.6-3.4 4.6.8-.8-4.6 3.4 1.6z" fill="#FFC62E" stroke="#131B45" stroke-width="1" stroke-linejoin="round"/><path d="M7 31h34M10 40c4-9 8-12 14-12s10 3 14 12M17 31v-0M31 31v0" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/></svg>
+      <span class="logo__text"><span class="logo__name" data-i18n="brand.name">Maple Bridge</span><span class="logo__sub" data-lang-neutral data-i18n="brand.sub">Learning Centre</span></span>
+    </a>
+    <nav id="site-nav" class="nav" data-i18n-attr="aria-label:nav.label" aria-label="Main navigation">
+      <a href="index.html#programs" data-i18n="nav.programs">Programs</a>
+      <a href="index.html#teachers" data-i18n="nav.teachers">Teachers</a>
+      <a href="index.html#fees" data-i18n="nav.fees">Fees</a>
+      <a href="index.html#faq" data-i18n="nav.faq">FAQ</a>
+      <a href="schedule.html"  data-i18n="nav.schedule">Timetable</a>
+      <a href="inquiry.html" aria-current="page" data-i18n="nav.inquiry">Inquiry</a>
+      <a class="btn btn--primary" href="inquiry.html?topic=assessment" data-i18n="nav.cta">Book a free assessment</a>
+    </nav>
+    <div class="lang" role="group" data-i18n-attr="aria-label:lang.label" aria-label="Language">
+      <button type="button" data-set-lang="en" lang="en">EN</button><button type="button" data-set-lang="zh-Hant" lang="zh-Hant">繁體</button><button type="button" data-set-lang="zh-Hans" lang="zh-Hans">简体</button>
+    </div>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="site-nav" data-i18n-attr="aria-label:nav.open" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main id="main">
+<section class="phead scene" aria-labelledby="inq-h">
+  <div class="layer depth-1" data-depth="1" aria-hidden="true"><div class="shape shape--sun"></div></div>
+  <div class="layer depth-2" data-depth="2" aria-hidden="true">
+    <svg class="shape shape--card" viewBox="0 0 160 110"><rect x="2" y="2" width="156" height="106" rx="8" fill="#FFFDF8" stroke="#131B45" stroke-width="3"/><path d="M2 30h156" stroke="#E5432D" stroke-width="2"/><path d="M14 52h120M14 72h96M14 92h110" stroke="#B9C3EA" stroke-width="3" stroke-linecap="round"/><path d="M110 70l12 14 26-34" fill="none" stroke="#E5432D" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+  <div class="layer depth-3" data-depth="3" aria-hidden="true">
+    <svg class="shape shape--pencil" viewBox="0 0 220 32"><path d="M40 4h150v24H40z" fill="#FFC62E" stroke="#131B45" stroke-width="3"/><path d="M190 4h12v24h-12z" fill="#B8BCCB" stroke="#131B45" stroke-width="3"/><path d="M202 4h12a2 2 0 012 2v20a2 2 0 01-2 2h-12z" fill="#E5432D" stroke="#131B45" stroke-width="3"/><path d="M40 4L6 16l34 12z" fill="#F4D9A8" stroke="#131B45" stroke-width="3" stroke-linejoin="round"/><path d="M6 16l12-4.3v8.6z" fill="#131B45"/></svg>
+  </div>
+  <div class="layer depth-4" data-depth="4">
+    <div class="wrap"><div class="inner">
+      <p class="kicker" data-i18n="inq.kicker">Inquiry</p>
+      <h1 id="inq-h" data-i18n-html="inq.h1">Ask about a class. <span class="ul">We answer in your language.</span></h1>
+      <p class="phead__lead" data-i18n="inq.lead">Tell us the grade and what you’re after. We reply within one business day — by phone, text or email, in English, Cantonese or Mandarin.</p>
+    </div></div>
+  </div>
+</section>
+
+<section class="inq">
+  <div class="wrap inq__grid">
+    <div>
+      <div class="priv">
+        <svg viewBox="0 0 44 44" aria-hidden="true"><path d="M22 3l16 6v11c0 10-7 17-16 21C13 37 6 30 6 20V9z" fill="#FFC62E" stroke="#131B45" stroke-width="2.5" stroke-linejoin="round"/><path d="M14 22l6 6 10-12" fill="none" stroke="#131B45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><h2 data-i18n="inq.priv.h">What this form doesn’t ask</h2><p data-i18n="inq.priv.p">No child’s full name. No school. No birth date. A grade is enough to answer you. Enrolment details come later, on paper, only if you decide to join.</p></div>
+      </div>
+
+      <form class="form" id="inq-form" novalidate data-i18n-attr="aria-label:inq.form.aria" aria-label="Inquiry form">
+        <div class="errsum" id="errsum" role="alert" tabindex="-1" hidden></div>
+
+        <fieldset>
+          <legend class="form__sec"><i aria-hidden="true">1</i><span data-i18n="inq.s1">About you</span></legend>
+          <div class="fld">
+            <label class="lbl" for="f-name"><span data-i18n="inq.name">Your name</span> <small class="req" data-i18n="inq.req">required</small></label>
+            <input class="inp" id="f-name" name="name" type="text" autocomplete="name" data-i18n-attr="placeholder:inq.name.ph" placeholder="e.g. Mrs. Chan" aria-describedby="e-name">
+            <p class="err" id="e-name" hidden></p>
+          </div>
+          <div class="fld2">
+            <div class="fld">
+              <label class="lbl" for="f-phone"><span data-i18n="inq.phone">Phone</span></label>
+              <input class="inp" id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(905) 555-0123" aria-describedby="h-contact e-phone">
+              <p class="err" id="e-phone" hidden></p>
+            </div>
+            <div class="fld">
+              <label class="lbl" for="f-email"><span data-i18n="inq.email">Email</span></label>
+              <input class="inp" id="f-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="name@example.com" aria-describedby="h-contact e-email">
+              <p class="err" id="e-email" hidden></p>
+            </div>
+          </div>
+          <p class="hint" id="h-contact" style="margin:-10px 0 4px" data-i18n="inq.contact.hint">Phone or email — at least one.</p>
+          <p class="err" id="e-contact" hidden style="margin:0 0 18px"></p>
+          <fieldset class="fld" style="margin-top:16px">
+            <legend class="lbl" data-i18n="inq.lang">Reply to me in</legend>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="lang" value="en"><span data-i18n="inq.lang.en">English</span></label>
+              <label class="opt"><input type="radio" name="lang" value="yue"><span data-i18n="inq.lang.yue">Cantonese</span></label>
+              <label class="opt"><input type="radio" name="lang" value="cmn"><span data-i18n="inq.lang.cmn">Mandarin</span></label>
+            </div>
+          </fieldset>
+        </fieldset>
+
+        <fieldset>
+          <legend class="form__sec"><i aria-hidden="true">2</i><span data-i18n="inq.s2">About the student</span></legend>
+          <div class="fld">
+            <label class="lbl" for="f-grade"><span data-i18n="inq.grade">Student’s grade</span> <small class="req" data-i18n="inq.req">required</small></label>
+            <select class="inp" id="f-grade" name="grade" aria-describedby="h-grade e-grade"></select>
+            <p class="hint" id="h-grade" data-i18n="inq.grade.hint">The grade they’re in as of January 2027.</p>
+            <p class="err" id="e-grade" hidden></p>
+          </div>
+          <fieldset class="fld">
+            <legend class="lbl"><span data-i18n="inq.subjects">Subjects of interest</span> <small data-i18n="inq.opt">optional</small></legend>
+            <div class="opts" id="f-subjects"></div>
+            <p class="hint" data-i18n="inq.subjects.hint">Tick any that apply.</p>
+          </fieldset>
+          <div class="fld">
+            <label class="lbl" for="f-class"><span data-i18n="inq.class">A specific class</span> <small data-i18n="inq.opt">optional</small></label>
+            <select class="inp" id="f-class" name="class" aria-describedby="h-class"></select>
+            <p class="hint" id="h-class" data-i18n="inq.class.hint">Picked from the Winter Term 2027 timetable.</p>
+            <span class="picked" id="picked" hidden data-i18n="inq.class.picked">Carried over from the timetable.</span>
+          </div>
+          <fieldset class="fld">
+            <legend class="lbl"><span data-i18n="inq.days">Days that suit you</span> <small data-i18n="inq.opt">optional</small></legend>
+            <div class="opts" id="f-days"></div>
+          </fieldset>
+        </fieldset>
+
+        <fieldset>
+          <legend class="form__sec"><i aria-hidden="true">3</i><span data-i18n="inq.s3">How to reach you</span></legend>
+          <fieldset class="fld">
+            <legend class="lbl"><span data-i18n="inq.method">Best way to reach me</span> <small data-i18n="inq.opt">optional</small></legend>
+            <div class="opts">
+              <label class="opt"><input type="radio" name="method" value="call"><span data-i18n="inq.method.call">Phone call</span></label>
+              <label class="opt"><input type="radio" name="method" value="text"><span data-i18n="inq.method.text">Text message</span></label>
+              <label class="opt"><input type="radio" name="method" value="email"><span data-i18n="inq.method.email">Email</span></label>
+            </div>
+            <p class="err" id="e-method" hidden></p>
+          </fieldset>
+          <div class="fld">
+            <label class="lbl" for="f-msg"><span data-i18n="inq.msg">Anything else?</span> <small data-i18n="inq.opt">optional</small></label>
+            <textarea class="inp" id="f-msg" name="message" rows="4" data-i18n-attr="placeholder:inq.msg.ph" placeholder="e.g. Finds fractions hard"></textarea>
+          </div>
+          <div class="consent" id="consent-box">
+            <input type="checkbox" id="f-consent" name="consent" aria-describedby="e-consent">
+            <label for="f-consent" data-i18n="inq.consent">I agree that Maple Bridge may contact me about this inquiry using the details above. They won’t be used for marketing.</label>
+          </div>
+          <p class="err" id="e-consent" hidden></p>
+        </fieldset>
+
+        <div class="form__foot">
+          <button class="btn btn--primary" type="submit"><span data-i18n="inq.submit">Send inquiry</span><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <p data-i18n="inq.demo">Demo form — nothing is transmitted or stored.</p>
+        </div>
+      </form>
+
+      <div class="slip" id="slip" hidden tabindex="-1" aria-live="polite"></div>
+    </div>
+
+    <aside class="aside" data-i18n-attr="aria-label:inq.side.h" aria-label="Prefer to talk?">
+      <div class="icard icard--pin">
+        <h2 data-i18n="inq.side.h">Prefer to talk?</h2>
+        <dl class="reach">
+          <div><dt data-i18n="inq.side.call">Call or text</dt><dd><a href="tel:+19055550162" data-i18n-attr="aria-label:phone.aria" aria-label="Call (905) 555-0162">(905) 555-0162</a></dd></div>
+          <div><dt data-i18n="inq.side.email">Email</dt><dd><a href="mailto:hello@maplebridge.example">hello@maplebridge.example</a></dd></div>
+          <div><dt data-i18n="inq.side.addr">Address</dt><dd><span data-i18n="addr.line1">Suite 205, 150 Inkstone Crescent</span><span data-lang-neutral data-i18n="addr.line2">Markham, ON L3R 0X0</span></dd></div>
+          <div><dt data-i18n="inq.side.hours">Hours</dt><dd><span data-i18n="foot.h1">Mon – Fri · 3:15 – 8:45 pm</span><span data-i18n="foot.h2">Saturday · 9:00 am – 4:30 pm</span><span data-i18n="foot.h3">Sunday · closed</span></dd></div>
+        </dl>
+      </div>
+      <figure class="mapcard settle">
+  <svg class="map" viewBox="0 0 600 380" role="img" data-i18n-attr="aria-label:map.aria" aria-label="Stylised map">
+    <rect width="600" height="380" fill="#FFFDF8"/>
+    <g stroke="rgba(30,63,216,.12)" stroke-width="1"><path d="M0 0V380"/><path d="M30 0V380"/><path d="M60 0V380"/><path d="M90 0V380"/><path d="M120 0V380"/><path d="M150 0V380"/><path d="M180 0V380"/><path d="M210 0V380"/><path d="M240 0V380"/><path d="M270 0V380"/><path d="M300 0V380"/><path d="M330 0V380"/><path d="M360 0V380"/><path d="M390 0V380"/><path d="M420 0V380"/><path d="M450 0V380"/><path d="M480 0V380"/><path d="M510 0V380"/><path d="M540 0V380"/><path d="M570 0V380"/><path d="M600 0V380"/><path d="M0 0H600"/><path d="M0 30H600"/><path d="M0 60H600"/><path d="M0 90H600"/><path d="M0 120H600"/><path d="M0 150H600"/><path d="M0 180H600"/><path d="M0 210H600"/><path d="M0 240H600"/><path d="M0 270H600"/><path d="M0 300H600"/><path d="M0 330H600"/><path d="M0 360H600"/></g>
+    <path d="M-10 300H610" stroke="#131B45" stroke-width="34"/><path d="M-10 300H610" stroke="#FFC62E" stroke-width="2.5" stroke-dasharray="18 14"/>
+    <text x="34" y="340" font-size="15" fill="#131B45" data-i18n="map.hwy">HIGHWAY 7</text>
+    <path d="M420 -10V283" stroke="#B9C3EA" stroke-width="18"/>
+    <path d="M60 283C70 170 170 90 300 90s230 40 240 193" fill="none" stroke="#B9C3EA" stroke-width="18" stroke-linecap="round"/>
+    <text x="96" y="140" font-size="15" fill="#414A75" transform="rotate(-38 96 140)" data-i18n="map.cres">Inkstone Cres.</text>
+    <rect x="200" y="150" width="190" height="62" rx="6" fill="#E3E9FD" stroke="#131B45" stroke-width="2.5"/>
+    <rect x="215" y="222" width="160" height="44" rx="4" fill="none" stroke="#131B45" stroke-width="2" stroke-dasharray="5 5"/>
+    <g stroke="#131B45" stroke-width="1.5"><path d="M235 224v40"/><path d="M255 224v40"/><path d="M275 224v40"/><path d="M295 224v40"/><path d="M315 224v40"/><path d="M335 224v40"/><path d="M355 224v40"/></g>
+    <text x="295" y="252" text-anchor="middle" font-size="13" fill="#131B45" style="paint-order:stroke" stroke="#FFFDF8" stroke-width="5" data-i18n="map.park">Free parking</text>
+    <g transform="translate(296 118)"><path d="M0 34C-14 16-20 8-20 0a20 20 0 0140 0c0 8-6 16-20 34z" fill="#E5432D" stroke="#131B45" stroke-width="2.5"/><circle r="7" fill="#fff" stroke="#131B45" stroke-width="2"/></g>
+    <g transform="translate(296 66)"><rect x="-108" y="-20" width="216" height="32" rx="16" fill="#131B45"/><text y="1" text-anchor="middle" font-size="14" fill="#fff" data-i18n="map.here">We’re here · Suite 205</text></g>
+    <g transform="translate(470 252)"><rect x="-12" y="-14" width="24" height="24" rx="5" fill="#1E3FD8" stroke="#131B45" stroke-width="2"/><text y="4" text-anchor="middle" font-size="13" fill="#fff">B</text><text x="18" y="4" font-size="13" fill="#131B45" data-i18n="map.bus">Bus stop · 3 min</text></g>
+    <g transform="translate(548 52)"><circle r="24" fill="#FFC62E" stroke="#131B45" stroke-width="2.5"/><path d="M0-16l8 20H-8z" fill="#131B45"/><text y="16" text-anchor="middle" font-size="11" fill="#131B45" data-i18n="map.n">N</text></g>
+    <path class="draw" d="M150 236c40 20 80 18 100-6" fill="none" stroke="#E5432D" stroke-width="3" stroke-linecap="round"/><path d="M240 222l12 6-5 12" fill="none" stroke="#E5432D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <figcaption data-i18n="map.note">Drawn map, not to scale.</figcaption>
+</figure>
+      <div class="icard icard--yellow">
+        <h2 data-i18n="inq.next.h">What happens next</h2>
+        <ol class="next">
+          <li><h3 data-i18n="inq.next.1h">We reply within one business day</h3><p data-i18n="inq.next.1p">In the language you chose, the way you chose.</p></li>
+          <li><h3 data-i18n="inq.next.2h">We book the free assessment</h3><p data-i18n="inq.next.2p">About 40 minutes at the centre. Bring the latest report card if you can.</p></li>
+          <li><h3 data-i18n="inq.next.3h">You get a class recommendation</h3><p data-i18n="inq.next.3p">Try one class for $30 before deciding. No pressure either way.</p></li>
+        </ol>
+      </div>
+    </aside>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <a class="logo" href="index.html" data-i18n-attr="aria-label:brand.home" aria-label="Maple Bridge Learning Centre — home">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="11" fill="#1E3FD8" stroke="#fff" stroke-width="2"/><path d="M24 7l2 4.6 3.4-1.6-.8 4.6 4.6-.8-2.6 3.4 2 1-6 2.6-.6 3.2h-2l-.6-3.2-6-2.6 2-1-2.6-3.4 4.6.8-.8-4.6 3.4 1.6z" fill="#FFC62E"/><path d="M7 31h34M10 40c4-9 8-12 14-12s10 3 14 12" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/></svg>
+          <span class="logo__text"><span class="logo__name" data-i18n="brand.name">Maple Bridge</span><span class="logo__sub" data-lang-neutral data-i18n="brand.sub">Learning Centre</span></span>
+        </a>
+        <p data-i18n="foot.tag">Small-group after-school tutoring for Grades 1–12, Ontario curriculum.</p>
+      </div>
+      <div>
+        <h2 class="foot__h" data-i18n="foot.visit">Visit</h2>
+        <address><span data-i18n="addr.line1">Suite 205, 150 Inkstone Crescent</span><span data-lang-neutral data-i18n="addr.line2">Markham, ON L3R 0X0</span></address>
+        <h2 class="foot__h" style="margin-top:18px" data-i18n="foot.contact">Contact</h2>
+        <ul><li><a href="tel:+19055550162" data-i18n-attr="aria-label:phone.aria" aria-label="Call (905) 555-0162">(905) 555-0162</a></li><li><a href="mailto:hello@maplebridge.example">hello@maplebridge.example</a></li></ul>
+      </div>
+      <div>
+        <h2 class="foot__h" data-i18n="foot.hours">Hours</h2>
+        <ul><li data-i18n="foot.h1">Mon – Fri · 3:15 – 8:45 pm</li><li data-i18n="foot.h2">Saturday · 9:00 am – 4:30 pm</li><li data-i18n="foot.h3">Sunday · closed</li></ul>
+      </div>
+      <div>
+        <h2 class="foot__h" data-i18n="foot.pages">Pages</h2>
+        <ul><li><a href="index.html" data-i18n="foot.home">Home</a></li><li><a href="schedule.html" data-i18n="nav.schedule">Timetable</a></li><li><a href="inquiry.html" data-i18n="nav.inquiry">Inquiry</a></li><li><a href="index.html#faq" data-i18n="nav.faq">FAQ</a></li></ul>
+      </div>
+    </div>
+    <div class="foot__base">
+      <span data-i18n="foot.copy">© 2026 Maple Bridge Learning Centre. Not affiliated with any school board.</span>
+      <a href="../index.html" data-i18n="foot.demo">Demo site — fictional business</a>
+    </div>
+  </div>
+</footer>
+<script src="../shared/vendor/gsap.min.js" defer></script>
+<script src="../shared/vendor/ScrollTrigger.min.js" defer></script>
+<script src="assets/site.js" defer></script>
+<script src="assets/inquiry.js" defer></script>
+</body>
+</html>
