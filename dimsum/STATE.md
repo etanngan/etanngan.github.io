@@ -21,3 +21,12 @@
 - Checks: 3 pages x 3 languages x 360/390/1440 px clean (overflow, wraps, Chinese line breaks, links, console). Intro once and skippable; story steps follow scroll; steam pauses off screen; nothing replays on language switch; reduced motion: no intro, no animations, story becomes a list.
 - Fixed from checks/screenshots: menu phone bar button wrap at 360 px, "Hong / Kong" and "in" line breaks in the EN headline, 節日營業時間 splitting on desktop, morning price shown on the tappable sheet rows (rows now show regular prices; the total uses the morning price with a note, like the menu's sheet).
 - concept.html moved to the Trash. Not committed.
+
+## 2026-11-11 concept v2 pass (from ~/Downloads/concept-v2.html, file kept)
+- Scroll motion now runs on GSAP 3.12.5 + ScrollTrigger (cdnjs, SRI, defer) instead of the hand-written scroll handler. Same fallback as the concept: no GSAP or reduced motion leaves a normal page (plain story list, swipeable cart, full bars, plain sign-off).
+- Deliberate differences from the concept: GSAP is deferred so hours/status never wait for the CDN; the sign only drifts on desktop (on phones it would cover the headline); the $5.50 only slides left (never into its heading); gsap.matchMedia reverts cleanly if reduced motion is switched on; pinned scenes clear the phone call bar.
+- "What every table orders" is now the pinned dim sum cart (9 dishes, 4 photos, 5 stamped lids) with Your sheet; ticks still go into `jb-sheet` (checked on menu.html). The old photo grid's weekend photo moved to Before you visit.
+- New strings (cart lede, Tick it / Ticked, empty sheet line) are in i18n-dict.js in all three languages.
+- Checks: 3 pages x 3 languages x 360/390/1440 px clean; GSAP loads and runs 7 triggers; story and cart pins verified at 390 and 1440 (last dish fully on screen, no sideways scroll); reduced motion and a blocked CDN both give the plain page with no script errors.
+- Fixed from checks/screenshots: 繁 status line leaving 開始 alone at 360 px (balanced), phone call bar covering the pinned cart's rail and wheels.
+- Not committed.

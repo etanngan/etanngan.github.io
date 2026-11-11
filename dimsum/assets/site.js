@@ -1,5 +1,5 @@
 /* Jade Basket: header menu, phone bar, today (Toronto time), hours and holiday lists, tier key, map language,
-   and on the home page: the order sheets (hero, story, tappable), the lid-lift intro and the scroll-linked motion. */
+   and on the home page: the order sheets (hero, story), the dim sum cart, the lid-lift intro and the GSAP ScrollTrigger motion. */
 (function () {
   'use strict';
   var JB = window.JB;
@@ -11,7 +11,6 @@
   var TICK = '<svg class="tick" viewBox="0 0 22 18" aria-hidden="true" focusable="false"><path d="M2.5 9.5l5.5 5.5L19.5 2.5"/></svg>';
   var BOX = '<span class="box" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M4 13l5 5L21 5"/></svg></span>';
   var root = document.documentElement;
-  var calm = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : { matches: false };
 
   /* ---------- burger ---------- */
   var burger = document.querySelector('.burger'), nav = $('nav');
@@ -119,8 +118,9 @@
     });
   }
 
-  /* the tappable sheet writes into the same sheet as the menu and phone menu (jb-sheet, kept 6 hours) */
-  var PICKS = ['s01', 's02', 's03', 's05', 's08', 'f06', 's13', 'd01'];
+  /* the cart: tick dishes into the same sheet as the menu and phone menu (jb-sheet, kept 6 hours) */
+  var CART = ['s01', 's03', 's02', 's08', 'r03', 's05', 'f06', 'd01', 's13'];
+  var PHOTO = { s01: ['hargow', 480, 445, 'alt.hargow'], s02: ['siumai', 480, 360, 'alt.siumai'], r03: ['rollcf', 480, 360, 'alt.rollcf'], d01: ['eggtart', 480, 360, 'alt.eggtart'] };
   var KEY = 'jb-sheet', KEEP = 6 * 3600 * 1000;
   function loadSheet() {
     var S = { items: {}, table: '', guests: 2 };
@@ -131,35 +131,47 @@
     return S;
   }
   function saveSheet(S) { try { localStorage.setItem(KEY, JSON.stringify({ t: Date.now(), items: S.items, table: S.table, guests: S.guests })); } catch (e) {} }
-  function picks() {
-    var box = $('picks'); if (!box) return;
+  function cart() {
+    var box = $('cart-cards'); if (!box) return;
     var S = loadSheet();
-    box.innerHTML = PICKS.map(function (id) {
+    box.innerHTML = CART.map(function (id) {
       var it = JB.byId(id); if (!it) return '';
-      return '<button type="button" class="pick" data-id="' + id + '" aria-pressed="' + ((S.items[id] || 0) > 0) + '">' + BOX +
-        '<span class="dish">' + dishHtml(it) + '</span><span class="tier">' + esc(JB.tier(it.t)) + '</span>' +
-        '<span class="price-s">' + JB.money(JB.price(it)) + '</span></button>';
+      var on = (S.items[id] || 0) > 0, ph = PHOTO[id];
+      var bowl = ph
+        ? '<img src="assets/img/' + ph[0] + '-480.webp" srcset="assets/img/' + ph[0] + '-480.webp 480w, assets/img/' + ph[0] + '-800.webp 800w" sizes="(min-width: 861px) 270px, 170px" width="' + ph[1] + '" height="' + ph[2] + '" loading="lazy" alt="' + esc(T(ph[3])) + '">'
+        : '<span class="closed" aria-hidden="true"><span>' + esc(JB.tier(it.t)) + '</span></span>';
+      return '<div class="dcard" role="listitem" data-id="' + id + '" data-on="' + on + '"><div class="bowl">' + bowl + '</div>' +
+        '<div class="nm">' + dishHtml(it) + '</div>' +
+        '<div class="pr">' + esc(JB.tier(it.t)) + ' ' + JB.money(JB.price(it)) + '</div>' +
+        '<button type="button" class="cart-tick" aria-pressed="' + on + '">' + BOX + '<span class="tl">' + esc(T(on ? 'tick.on' : 'tick.off')) + '</span><span class="sr"> ' + esc(JB.name(it)) + '</span></button></div>';
     }).join('');
-    pickTotal(S);
+    sheetSummary(S);
   }
-  function pickTotal(S) {
+  /* Your sheet: every dish on the sheet (from here, the menu or the phone menu), with the total */
+  function sheetSummary(S) {
     var el = $('pick-total'); if (!el) return;
-    var n = 0, sum = 0, early = JB.early();
-    Object.keys(S.items).forEach(function (id) { var it = JB.byId(id), c = S.items[id] || 0; if (it && c > 0) { n += c; sum += JB.unitPrice(it, early) * c; } });
+    var n = 0, sum = 0, names = [], early = JB.early(), zh = MPi18n.lang !== 'en';
+    Object.keys(S.items).forEach(function (id) {
+      var it = JB.byId(id), c = S.items[id] || 0;
+      if (it && c > 0) { n += c; sum += JB.unitPrice(it, early) * c; names.push(JB.name(it) + (c > 1 ? ' ×' + c : '')); }
+    });
     el.textContent = n === 0 ? T('total.none') : fill(T(n === 1 ? 'total.one' : 'total.many'), { n: n, s: JB.money(sum) });
+    var list = $('pick-list'); if (list) list.textContent = n === 0 ? T('list.none') : names.join(zh ? '、' : ', ');
     var note = $('pick-early'); if (note) note.hidden = !early; /* the total uses the weekday morning price, like the menu's sheet */
   }
-  var pickBox = $('picks');
-  if (pickBox) {
-    pickBox.addEventListener('click', function (e) {
-      var b = e.target.closest('.pick'); if (!b) return;
-      var S = loadSheet(), id = b.getAttribute('data-id'), on = (S.items[id] || 0) > 0;
+  var cardBox = $('cart-cards');
+  if (cardBox) {
+    cardBox.addEventListener('click', function (e) {
+      var b = e.target.closest('.cart-tick'); if (!b) return;
+      var card = b.closest('.dcard'), id = card.getAttribute('data-id'), S = loadSheet(), on = (S.items[id] || 0) > 0;
       if (on) delete S.items[id]; else S.items[id] = 1;
       saveSheet(S);
+      card.setAttribute('data-on', String(!on));
       b.setAttribute('aria-pressed', String(!on));
-      pickTotal(S);
+      b.querySelector('.tl').textContent = T(!on ? 'tick.on' : 'tick.off');
+      sheetSummary(S);
     });
-    window.addEventListener('storage', function (e) { if (e.key === KEY) picks(); });
+    window.addEventListener('storage', function (e) { if (e.key === KEY) cart(); });
   }
 
   /* ---------- the map follows the page language ---------- */
@@ -174,11 +186,14 @@
     tierKeys(); today(); hoursList(); holidays(); mapLang();
     sheetRows('hero-rows', ['s01', 's02', 'd01']);
     sheetRows('story-rows', ['s01', 's03', 's08', 'd01']);
-    picks();
+    cart();
     var ep = $('early-price'); if (ep) ep.textContent = JB.money(JB.earlyBird);
   }
   all();
-  document.addEventListener('mp:langchange', all);
+  document.addEventListener('mp:langchange', function () {
+    all();
+    if (window.ScrollTrigger && root.classList.contains('gsap')) ScrollTrigger.refresh(); /* text lengths changed */
+  });
   setInterval(function () { today(); hoursList(); }, 60000);
 
   if (!document.body.classList.contains('page-home')) return;
@@ -201,47 +216,66 @@
     new IntersectionObserver(function (es) { hero.classList.toggle('is-away', !es[0].isIntersecting); }).observe(hero);
   }
 
-  /* ---------- scroll-linked motion: each [data-scroll] gets --p from 0 to 1; transforms only ---------- */
-  var els = [].slice.call(document.querySelectorAll('[data-scroll]'));
-  var story = document.querySelector('[data-scroll="story"]');
-  var steps = story ? [].slice.call(story.querySelectorAll('.steps li')) : [];
-  var ticking = false;
-  function clamp(v) { return v < 0 ? 0 : (v > 1 ? 1 : v); }
-  function update() {
-    ticking = false;
-    if (calm.matches) return;
-    var vh = window.innerHeight;
-    els.forEach(function (el) {
-      var r = el.getBoundingClientRect();
-      if (r.bottom < -vh || r.top > vh * 2) return;
-      var mode = el.getAttribute('data-scroll'), p;
-      if (mode === 'hero') p = clamp(-r.top / r.height);
-      else if (mode === 'story') {
-        p = clamp(-r.top / Math.max(1, r.height - vh));
-        var step = Math.min(3, Math.floor(p * 4));
-        el.setAttribute('data-active', String(step));
-        el.style.setProperty('--sp', (p * 4 - step).toFixed(3));
-        steps.forEach(function (li, i) { li.classList.toggle('on', i === step); });
-      } else p = clamp((vh - r.top) / (vh + r.height));
-      el.style.setProperty('--p', p.toFixed(3));
-    });
-  }
-  function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll);
-  function resetMotion() {
-    if (!calm.matches) { update(); return; }
-    els.forEach(function (el) { el.style.removeProperty('--p'); el.style.removeProperty('--sp'); });
-    steps.forEach(function (li) { li.classList.add('on'); });
-  }
-  if (calm.addEventListener) calm.addEventListener('change', resetMotion);
-  resetMotion();
+  /* ---------- scroll motion with GSAP ScrollTrigger (3.12.5, loaded with defer) ----------
+     Without GSAP, or with reduced motion, the page stays a normal page: a plain story list,
+     a cart you swipe sideways, full wait bars and a plain sign-off. */
+  var cartST = null;
+  function initMotion() {
+    if (!window.gsap || !window.ScrollTrigger) return;
+    gsap.registerPlugin(ScrollTrigger);
+    var head = document.querySelector('.site-head'), track = $('cart-track'), story = $('how');
+    var steps = story ? [].slice.call(story.querySelectorAll('.steps li')) : [];
+    var top = function () { return 'top ' + (head ? head.offsetHeight : 68) + 'px'; };
+    var maxX = function () { return track ? Math.max(0, track.scrollWidth - document.documentElement.clientWidth) : 0; };
+    gsap.matchMedia().add({ mobile: '(max-width: 900px)', motion: '(prefers-reduced-motion: no-preference)' }, function (ctx) {
+      if (!ctx.conditions.motion) return;
+      var mobile = ctx.conditions.mobile;
+      root.classList.add('gsap'); /* before the pins are measured: switches the story and cart to their pinned layout */
 
-  /* ---------- footer sign-off: 翠籠軒 is stamped once when it comes into view ---------- */
-  var so = $('signoff');
-  if (so) {
-    if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function (es, obs) { es.forEach(function (e) { if (e.isIntersecting) { so.classList.add('on'); obs.disconnect(); } }); }, { threshold: 0.4 }).observe(so);
-    } else so.classList.add('on');
+      /* hero: the signboard drifts (desktop only, on phones it sits above the headline), the steamer turns, the sheet lifts away */
+      var hero = gsap.timeline({ scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 0.6 } });
+      if (!mobile) hero.to('.hero .sign', { y: 140, ease: 'none' }, 0);
+      hero.to('.steamer img', { rotation: 70, ease: 'none' }, 0)
+        .fromTo('.hero-sheet', { y: 0, rotation: mobile ? -3 : -4 }, { y: mobile ? -40 : -90, rotation: mobile ? -6 : -12, ease: 'none' }, 0);
+
+      /* $5.50 slides as the band passes (leftwards only, so it never runs into its heading) */
+      gsap.fromTo('.band .price', { xPercent: 0 }, { xPercent: mobile ? -6 : -14, ease: 'none', scrollTrigger: { trigger: '.band', start: 'top bottom', end: 'bottom top', scrub: 0.6 } });
+
+      /* first visit story: pin and step through four scenes */
+      if (story) ScrollTrigger.create({ trigger: '.story-pin', start: top, end: '+=300%', pin: true, scrub: true, invalidateOnRefresh: true,
+        onUpdate: function (self) {
+          var p = self.progress, step = Math.min(3, Math.floor(p * 4));
+          story.setAttribute('data-active', String(step));
+          story.style.setProperty('--sp', (p * 4 - step).toFixed(3));
+          steps.forEach(function (li, i) { li.classList.toggle('on', i === step); });
+        } });
+
+      /* the cart: pin and roll the dishes sideways, wheels turning */
+      if (track) {
+        var tl = gsap.timeline({ scrollTrigger: { trigger: '.cart-pin', start: top, end: function () { return '+=' + maxX(); }, pin: true, scrub: 0.5, invalidateOnRefresh: true } });
+        tl.to(track, { x: function () { return -maxX(); }, ease: 'none' }, 0)
+          .to('.wheel', { rotation: function () { return maxX() / (Math.PI * 46) * 360; }, ease: 'none' }, 0);
+        cartST = tl.scrollTrigger;
+      }
+
+      /* weekend waits grow in; the weekend photo drifts in its frame; 翠籠軒 is stamped one character at a time */
+      gsap.from('.bar i', { scaleX: 0, duration: 0.9, ease: 'power2.out', stagger: 0.12, scrollTrigger: { trigger: '.waits', start: 'top 80%' } });
+      gsap.fromTo('.visit-photo img', { yPercent: 0 }, { yPercent: -12, ease: 'none', scrollTrigger: { trigger: '.visit-photo', start: 'top bottom', end: 'bottom top', scrub: 0.6 } });
+      gsap.from('.signoff span', { opacity: 0, scale: 1.6, rotation: -6, duration: 0.42, ease: 'back.out(2.5)', stagger: 0.16, scrollTrigger: { trigger: '.signoff', start: 'top 88%' } });
+
+      return function () { root.classList.remove('gsap'); cartST = null; };
+    });
+    /* fonts change text heights; measure again once they are in */
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { ScrollTrigger.refresh(); });
   }
+  /* keyboard users: bring a focused dish into view while the cart is pinned (never for mouse or touch) */
+  if (cardBox) cardBox.addEventListener('focusin', function (e) {
+    var card = e.target.closest('.dcard'); if (!card || !cartST || !e.target.matches(':focus-visible')) return;
+    var r = card.getBoundingClientRect(); if (r.left >= 0 && r.right <= window.innerWidth) return;
+    var track = $('cart-track'), max = Math.max(1, track.scrollWidth - document.documentElement.clientWidth);
+    var p = Math.min(1, Math.max(0, (card.offsetLeft - 60) / max));
+    window.scrollTo(0, cartST.start + p * (cartST.end - cartST.start));
+  });
+  /* GSAP is deferred: it runs after this file, just before DOMContentLoaded */
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initMotion); else initMotion();
 })();
