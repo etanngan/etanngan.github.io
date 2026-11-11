@@ -1,42 +1,44 @@
-/* Jade Basket Dim Sum House: the menu. Used by menu.html, qr.html and the home page.
+/* Jade Basket Dim Sum House 翠籠軒: the menu, the hours and the holiday hours.
+   Every page reads prices and times from here, so the home page, menu, phone menu and the sheet never disagree.
    n: [zh-Hant, zh-Hans, en]   d: [en, zh-Hant, zh-Hans]
    t: dim sum size (S/M/L/XL/SP)   p: fixed price   incl: covered by the tea charge
    q: pieces per order   tags: g = house favourite, v = vegetarian, p = contains peanuts, s = spicy */
 window.JB = {
   tiers: { S: 5.5, M: 6.5, L: 7.5, XL: 8.5, SP: 9.8 },
   tierOrder: ['S', 'M', 'L', 'XL', 'SP'],
-  tierChar: {
-    S: { en: '小', 'zh-Hant': '小', 'zh-Hans': '小' },
-    M: { en: '中', 'zh-Hant': '中', 'zh-Hans': '中' },
-    L: { en: '大', 'zh-Hant': '大', 'zh-Hans': '大' },
-    XL: { en: '特', 'zh-Hant': '特', 'zh-Hans': '特' },
-    SP: { en: '頂', 'zh-Hant': '頂', 'zh-Hans': '顶' }
+  tierName: {
+    S: { en: '小點', 'zh-Hant': '小點', 'zh-Hans': '小点' },
+    M: { en: '中點', 'zh-Hant': '中點', 'zh-Hans': '中点' },
+    L: { en: '大點', 'zh-Hant': '大點', 'zh-Hans': '大点' },
+    XL: { en: '特點', 'zh-Hant': '特點', 'zh-Hans': '特点' },
+    SP: { en: '頂點', 'zh-Hant': '頂點', 'zh-Hans': '顶点' }
   },
-  teaCharge: 2,
-  earlyBird: 5.5,
-  signatures: ['s01', 's02', 's06', 'f02', 'r01', 'b01'],
+  tierEn: { S: 'Small', M: 'Medium', L: 'Large', XL: 'Extra large', SP: 'Special' },
+  tea: 2, teaSenior: 1.5, earlyBird: 5.5, earlyTiers: ['S', 'M', 'L'],
   cats: [
     { id: 'steamed', name: { en: 'Steamed', 'zh-Hant': '蒸點', 'zh-Hans': '蒸点' },
       note: { en: 'Steamed when you order. Takes about 10 minutes.', 'zh-Hant': '即叫即蒸，約需十分鐘。', 'zh-Hans': '现点现蒸，大约十分钟。' } },
-    { id: 'fried', name: { en: 'Pan-fried, fried and baked', 'zh-Hant': '煎炸焗點', 'zh-Hans': '煎炸烤点心' },
+    { id: 'fried', name: { en: 'Fried and baked', 'zh-Hant': '煎炸焗', 'zh-Hans': '煎炸烤' },
       note: { en: 'Best eaten while hot.', 'zh-Hant': '趁熱食最好。', 'zh-Hans': '趁热吃最好。' } },
-    { id: 'rolls', name: { en: 'Rice noodle rolls', 'zh-Hant': '腸粉', 'zh-Hans': '肠粉' },
-      note: { en: 'Made fresh for each order.', 'zh-Hant': '每碟即叫即拉。', 'zh-Hans': '每份现点现拉。' } },
+    { id: 'rolls', name: { en: 'Rice rolls (cheung fun)', 'zh-Hant': '腸粉', 'zh-Hans': '肠粉' },
+      note: { en: 'Made fresh for each order.', 'zh-Hant': '每碟即叫即拉。', 'zh-Hans': '每份现点现做。' } },
+    { id: 'sweets', name: { en: 'Sweets', 'zh-Hant': '甜品', 'zh-Hans': '甜品' },
+      note: { en: 'Priced by size, like the dim sum.', 'zh-Hant': '與點心一樣按大小計價。', 'zh-Hans': '和点心一样按大小计价。' } },
     { id: 'congee', name: { en: 'Congee and noodles', 'zh-Hant': '粥粉麵飯', 'zh-Hans': '粥粉面饭' },
       note: { en: 'Priced per bowl or plate. Served all day.', 'zh-Hant': '按碗或碟計，全日供應。', 'zh-Hans': '按份计价，全天供应。' } },
     { id: 'bbq', name: { en: 'BBQ and vegetables', 'zh-Hant': '燒味及時菜', 'zh-Hans': '烧味和青菜' },
-      note: { en: 'Priced per plate. Roast meats from 11 am until sold out.', 'zh-Hant': '按碟計。燒味上午十一時起供應，賣完即止。', 'zh-Hans': '按份计价。烧味上午11点开始供应，卖完为止。' } },
-    { id: 'sweets', name: { en: 'Desserts', 'zh-Hant': '甜品', 'zh-Hans': '甜品' },
-      note: { en: 'Priced by size, like the dim sum.', 'zh-Hant': '與點心一樣按大小計價。', 'zh-Hans': '和点心一样按大小计价。' } },
+      note: { en: 'Priced per plate. Roast meats from 11 am until sold out.', 'zh-Hant': '按碟計。燒味上午十一時起供應，賣完即止。', 'zh-Hans': '按份计价。烧味上午 11 点开始供应，卖完为止。' } },
     { id: 'tea', name: { en: 'Tea', 'zh-Hant': '茶', 'zh-Hans': '茶' },
-      note: { en: 'Tea is $2.00 per person, with free hot water refills. Aged pu-erh is extra.', 'zh-Hant': '茶芥每位 $2.00，熱水任添。陳年普洱另計。', 'zh-Hans': '茶位费每人 $2.00，热水随时加。陈年普洱另算。' } }
+      note: { en: 'Included in the tea charge, with free hot water. Aged pu-erh is extra.', 'zh-Hant': '已包括在茶芥內，熱水任添。陳年普洱另計。', 'zh-Hans': '已含在茶位费里，热水随便加。陈年普洱另算。' } }
   ],
+  /* the order of the printed sheet: dim sum by size first, then the kitchen */
+  kitchen: ['congee', 'bbq', 'tea'],
   items: [
     { id: 's01', c: 'steamed', n: ['蝦餃皇', '虾饺皇', 'Shrimp dumplings (har gow)'], t: 'L', q: 4, tags: 'g',
       d: ['Whole shrimp in a thin, see-through wrapper.', '原隻鮮蝦，餃皮薄身透光。', '整只鲜虾，饺皮薄而透。'] },
-    { id: 's02', c: 'steamed', n: ['蟹籽燒賣皇', '蟹籽烧卖皇', 'Pork and shrimp siu mai'], t: 'L', q: 4, tags: 'g',
+    { id: 's02', c: 'steamed', n: ['蟹籽燒賣皇', '蟹籽烧卖', 'Pork and shrimp siu mai'], t: 'L', q: 4, tags: 'g',
       d: ['Pork, shrimp and mushroom, topped with crab roe.', '豬肉、鮮蝦、冬菇，面鋪蟹籽。', '猪肉、鲜虾、香菇，上面铺蟹籽。'] },
-    { id: 's03', c: 'steamed', n: ['豉汁蒸鳳爪', '豉汁蒸凤爪', 'Chicken feet in black bean sauce'], t: 'M', tags: 'p',
+    { id: 's03', c: 'steamed', n: ['豉汁蒸鳳爪', '豉汁凤爪', 'Chicken feet in black bean sauce'], t: 'M', tags: 'p',
       d: ['Fried, then steamed until soft, with black bean and a little chili.', '先炸後蒸，豉汁微辣，入口軟腍。', '先炸后蒸，豉汁微辣，软烂入味。'] },
     { id: 's04', c: 'steamed', n: ['豉汁蒸排骨', '豉汁蒸排骨', 'Spare ribs in black bean sauce'], t: 'M', tags: '',
       d: ['Bite-size pork ribs with garlic and fermented black beans.', '一口大小的排骨，蒜蓉豆豉蒸。', '小块排骨，蒜蓉豆豉蒸。'] },
@@ -44,34 +46,32 @@ window.JB = {
       d: ['Soft steamed buns with sweet roast pork inside.', '鬆軟包皮，蜜汁叉燒餡。', '松软的包子，蜜汁叉烧馅。'] },
     { id: 's06', c: 'steamed', n: ['流沙奶皇包', '流沙奶黄包', 'Custard lava buns'], t: 'L', q: 3, tags: 'gv',
       d: ['Salted egg yolk custard that runs when you bite. It is hot.', '鹹蛋黃奶皇餡，咬開會流心，小心熱。', '咸蛋黄奶黄馅，咬开会流心，小心烫。'] },
-    { id: 's07', c: 'steamed', n: ['鮮竹牛肉球', '鲜竹牛肉球', 'Steamed beef balls'], t: 'M', q: 3, tags: '',
+    { id: 's07', c: 'steamed', n: ['山竹牛肉球', '山竹牛肉球', 'Steamed beef balls'], t: 'M', q: 3, tags: '',
       d: ['Minced beef and water chestnut on bean curd skin, with Worcestershire sauce.', '牛肉混馬蹄，墊腐皮蒸，配喼汁。', '牛肉加马蹄，垫腐竹皮蒸，配辣酱油。'] },
-    { id: 's08', c: 'steamed', n: ['珍珠糯米雞', '珍珠糯米鸡', 'Sticky rice in lotus leaf (lo mai gai)'], t: 'L', q: 2, tags: '',
+    { id: 's08', c: 'steamed', n: ['珍珠糯米雞', '糯米鸡', 'Sticky rice in lotus leaf (lo mai gai)'], t: 'XL', q: 2, tags: '',
       d: ['Sticky rice with chicken, pork and mushroom, wrapped in lotus leaf.', '荷葉包糯米，內有雞肉、豬肉、冬菇。', '荷叶包糯米，里面有鸡肉、猪肉、香菇。'] },
-    { id: 's09', c: 'steamed', n: ['潮州蒸粉果', '潮州蒸粉果', 'Chiu Chow dumplings'], t: 'M', q: 3, tags: 'p',
+    { id: 's09', c: 'steamed', n: ['潮州蒸粉粿', '潮州粉粿', 'Chiu Chow dumplings'], t: 'M', q: 3, tags: 'p',
       d: ['Pork, peanuts, chives and dried radish in a chewy wrapper.', '豬肉、花生、韭菜、菜脯，外皮煙韌。', '猪肉、花生、韭菜、萝卜干，皮有嚼劲。'] },
     { id: 's10', c: 'steamed', n: ['花菇上素餃', '香菇素饺', 'Mushroom and vegetable dumplings'], t: 'M', q: 3, tags: 'v',
       d: ['Shiitake, wood ear, carrot and greens.', '花菇、雲耳、紅蘿蔔、時菜。', '香菇、木耳、胡萝卜、青菜。'] },
-    { id: 's11', c: 'steamed', n: ['蠔皇鮮竹卷', '蚝皇鲜竹卷', 'Bean curd skin rolls'], t: 'M', q: 3, tags: '',
+    { id: 's11', c: 'steamed', n: ['蠔皇鮮竹卷', '蚝油鲜竹卷', 'Bean curd skin rolls'], t: 'M', q: 3, tags: '',
       d: ['Pork and bamboo shoot wrapped in bean curd skin, in oyster sauce.', '腐皮包豬肉筍粒，蠔油汁蒸。', '腐竹皮包猪肉笋丁，蚝油汁蒸。'] },
     { id: 's12', c: 'steamed', n: ['沙爹金錢肚', '沙爹金钱肚', 'Satay beef tripe'], t: 'M', tags: 's',
       d: ['Honeycomb tripe braised until soft, in a mild satay sauce.', '金錢肚燜至軟腍，沙爹汁微辣。', '金钱肚炖得软烂，沙爹汁微辣。'] },
     { id: 's13', c: 'steamed', n: ['上湯灌湯餃', '上汤灌汤饺', 'Large soup dumpling'], t: 'SP', q: 1, tags: '',
       d: ['One big dumpling with pork, shrimp and crab, in hot broth.', '一隻大灌湯餃，豬肉鮮蝦蟹肉餡，配上湯。', '一只大灌汤饺，猪肉鲜虾蟹肉馅，泡在上汤里。'] },
-    { id: 's14', c: 'steamed', n: ['古法馬拉糕', '古法马拉糕', 'Brown sugar sponge cake (ma lai go)'], t: 'M', tags: 'v',
-      d: ['Soft steamed cake made with brown sugar.', '黃糖蒸蛋糕，鬆軟清甜。', '红糖蒸蛋糕，松软不腻。'] },
 
-    { id: 'f01', c: 'fried', n: ['臘味蘿蔔糕', '腊味萝卜糕', 'Pan-fried turnip cake'], t: 'M', q: 3, tags: '',
+    { id: 'f01', c: 'fried', n: ['臘味蘿蔔糕', '腊味萝卜糕', 'Pan-fried turnip cake (lo bak go)'], t: 'M', q: 3, tags: '',
       d: ['Daikon cake with Chinese sausage and dried shrimp.', '蘿蔔糕有臘腸蝦米，煎至兩面金黃。', '萝卜糕里有腊肠虾米，两面煎黄。'] },
-    { id: 'f02', c: 'fried', n: ['酥皮焗叉燒包', '酥皮焗叉烧包', 'Baked BBQ pork buns'], t: 'L', q: 3, tags: 'g',
+    { id: 'f02', c: 'fried', n: ['酥皮焗叉燒包', '酥皮叉烧包', 'Baked BBQ pork buns'], t: 'L', q: 3, tags: 'g',
       d: ['Sweet, crumbly top with roast pork inside.', '面層酥脆香甜，叉燒餡。', '表皮酥甜，叉烧馅。'] },
-    { id: 'f03', c: 'fried', n: ['安蝦鹹水角', '咸水角', 'Fried glutinous dumplings (ham sui gok)'], t: 'M', q: 3, tags: '',
+    { id: 'f03', c: 'fried', n: ['鹹水角', '咸水角', 'Fried glutinous dumplings (ham sui gok)'], t: 'M', q: 3, tags: '',
       d: ['Crispy outside, chewy inside, with pork and dried shrimp.', '外脆內煙韌，豬肉蝦米餡。', '外脆里糯，猪肉虾米馅。'] },
-    { id: 'f04', c: 'fried', n: ['蜂巢荔芋角', '蜂巢荔芋角', 'Fried taro puffs (wu gok)'], t: 'M', q: 3, tags: '',
+    { id: 'f04', c: 'fried', n: ['蜂巢荔芋角', '蜂巢芋角', 'Fried taro puffs (wu gok)'], t: 'M', q: 3, tags: '',
       d: ['Lacy fried taro shell with pork inside.', '芋蓉炸成蜂巢狀，豬肉餡。', '芋泥炸成蜂窝状，猪肉馅。'] },
     { id: 'f05', c: 'fried', n: ['上素脆春卷', '素春卷', 'Vegetable spring rolls'], t: 'M', q: 3, tags: 'v',
       d: ['Cabbage, carrot, mushroom and glass noodles.', '椰菜、紅蘿蔔、冬菇、粉絲。', '卷心菜、胡萝卜、香菇、粉丝。'] },
-    { id: 'f06', c: 'fried', n: ['鮮蝦腐皮卷', '鲜虾腐皮卷', 'Crispy shrimp bean curd rolls'], t: 'L', q: 3, tags: '',
+    { id: 'f06', c: 'fried', n: ['鮮蝦腐皮卷', '鲜虾腐皮卷', 'Crispy shrimp bean curd rolls'], t: 'XL', q: 3, tags: '',
       d: ['Shrimp wrapped in bean curd skin and fried.', '鮮蝦以腐皮包好炸脆。', '鲜虾用腐竹皮包好炸脆。'] },
     { id: 'f07', c: 'fried', n: ['香煎韭菜餃', '香煎韭菜饺', 'Pan-fried chive dumplings'], t: 'M', q: 3, tags: '',
       d: ['Chives and shrimp, crisp on the bottom.', '韭菜鮮蝦餡，底部煎脆。', '韭菜鲜虾馅，底部煎脆。'] },
@@ -82,24 +82,41 @@ window.JB = {
 
     { id: 'r01', c: 'rolls', n: ['脆皮紅米腸', '脆皮红米肠', 'Crispy shrimp red rice roll'], t: 'SP', tags: 'g',
       d: ['Shrimp in a crispy net, wrapped in a pink rice roll.', '鮮蝦包脆網，外層紅米腸粉。', '鲜虾裹脆网，外面是红米肠粉。'] },
-    { id: 'r02', c: 'rolls', n: ['鮮蝦腸粉', '鲜虾肠粉', 'Shrimp rice roll'], t: 'L', tags: '',
+    { id: 'r02', c: 'rolls', n: ['鮮蝦腸粉', '鲜虾肠粉', 'Shrimp cheung fun'], t: 'L', tags: '',
       d: ['Smooth rice roll with shrimp, in sweet soy sauce.', '滑身腸粉包鮮蝦，淋甜豉油。', '滑嫩肠粉包鲜虾，浇甜酱油。'] },
-    { id: 'r03', c: 'rolls', n: ['叉燒腸粉', '叉烧肠粉', 'BBQ pork rice roll'], t: 'M', tags: '',
-      d: ['Rice roll with roast pork.', '腸粉包叉燒。', '肠粉包叉烧。'] },
-    { id: 'r04', c: 'rolls', n: ['香茜牛肉腸', '香菜牛肉肠', 'Beef and cilantro rice roll'], t: 'M', tags: '',
-      d: ['Minced beef and cilantro.', '牛肉碎配芫茜。', '牛肉末配香菜。'] },
+    { id: 'r03', c: 'rolls', n: ['叉燒腸粉', '叉烧肠粉', 'BBQ pork cheung fun'], t: 'M', tags: '',
+      d: ['Rice roll with roast pork, in sweet soy sauce.', '腸粉包叉燒，淋甜豉油。', '肠粉包叉烧，浇甜酱油。'] },
+    { id: 'r04', c: 'rolls', n: ['香茜牛肉腸', '香菜牛肉肠', 'Beef and cilantro cheung fun'], t: 'M', tags: '',
+      d: ['Rice roll with minced beef and cilantro.', '腸粉包牛肉碎，配芫茜。', '肠粉包牛肉末，配香菜。'] },
     { id: 'r05', c: 'rolls', n: ['炸兩', '炸两', 'Rice roll with fried dough (zha leung)'], t: 'M', tags: 'v',
       d: ['A crispy cruller wrapped in a soft rice roll.', '油炸鬼外包腸粉，外軟內脆。', '油条外面包肠粉，外软里脆。'] },
-    { id: 'r06', c: 'rolls', n: ['甜醬齋腸', '甜酱斋肠', 'Plain rice rolls with three sauces'], t: 'S', tags: 'vp',
-      d: ['With sweet sauce, peanut sauce and sesame.', '配甜醬、花生醬、芝麻。', '配甜酱、花生酱、芝麻。'] },
+    { id: 'r06', c: 'rolls', n: ['甜醬齋腸', '斋肠粉', 'Plain cheung fun with three sauces'], t: 'S', tags: 'vp',
+      d: ['Plain rice roll with sweet sauce, peanut sauce and sesame.', '配甜醬、花生醬、芝麻。', '配甜酱、花生酱、芝麻。'] },
+
+    { id: 'd01', c: 'sweets', n: ['酥皮蛋撻', '酥皮蛋挞', 'Egg tarts (dan tat)'], t: 'M', q: 3, tags: 'v',
+      d: ['Flaky pastry, baked in small batches all morning.', '千層酥皮，全朝分批焗。', '千层酥皮，上午分批烤。'] },
+    { id: 'd02', c: 'sweets', n: ['楊枝甘露', '杨枝甘露', 'Mango pomelo sago'], t: 'L', tags: 'v',
+      d: ['Mango, pomelo and sago in coconut milk, served cold.', '芒果、西柚、西米、椰汁，凍食。', '芒果、西柚、西米、椰汁，冷饮。'] },
+    { id: 'd03', c: 'sweets', n: ['香煎馬蹄糕', '香煎马蹄糕', 'Pan-fried water chestnut cake'], t: 'M', q: 3, tags: 'v',
+      d: ['Lightly sweet, with pieces of water chestnut.', '清甜，有馬蹄粒。', '清甜，有马蹄丁。'] },
+    { id: 'd04', c: 'sweets', n: ['芝麻煎堆仔', '芝麻煎堆', 'Sesame balls (jin deui)'], t: 'M', q: 3, tags: 'v',
+      d: ['Fried sesame balls with lotus seed paste.', '炸芝麻球，蓮蓉餡。', '炸芝麻球，莲蓉馅。'] },
+    { id: 'd05', c: 'sweets', n: ['古法馬拉糕', '马拉糕', 'Brown sugar sponge cake (ma lai go)'], t: 'M', tags: 'v',
+      d: ['Soft steamed cake made with brown sugar.', '黃糖蒸蛋糕，鬆軟清甜。', '红糖蒸蛋糕，松软不腻。'] },
+    { id: 'd06', c: 'sweets', n: ['椰汁桂花糕', '椰汁桂花糕', 'Osmanthus and coconut jelly'], t: 'M', q: 3, tags: 'v',
+      d: ['Cold, lightly sweet jelly.', '凍食，清甜不膩。', '冷吃，清甜不腻。'] },
+    { id: 'd07', c: 'sweets', n: ['擂沙湯丸', '擂沙汤圆', 'Rice balls with peanut powder'], t: 'M', q: 3, tags: 'vp',
+      d: ['Black sesame filling, rolled in peanut powder.', '芝麻餡湯丸，滾上花生粉。', '芝麻馅汤圆，裹花生粉。'] },
+    { id: 'd08', c: 'sweets', n: ['薑汁豆腐花', '姜汁豆腐花', 'Tofu pudding with ginger syrup'], t: 'S', tags: 'v',
+      d: ['Warm silken tofu with ginger syrup.', '暖豆腐花，配薑汁糖水。', '热豆腐花，配姜汁糖水。'] },
 
     { id: 'c01', c: 'congee', n: ['皮蛋瘦肉粥', '皮蛋瘦肉粥', 'Pork and preserved egg congee'], p: 9.8, tags: '',
       d: ['Smooth rice congee with salted pork and century egg.', '綿滑白粥，鹹瘦肉、皮蛋。', '绵滑白粥，咸瘦肉、皮蛋。'] },
-    { id: 'c02', c: 'congee', n: ['荔灣艇仔粥', '艇仔粥', 'Boat congee'], p: 10.8, tags: 'p',
+    { id: 'c02', c: 'congee', n: ['艇仔粥', '艇仔粥', 'Boat congee'], p: 10.8, tags: 'p',
       d: ['Fish, squid, pork skin, peanuts and green onion.', '魚片、魷魚、豬皮、花生、葱花。', '鱼片、鱿鱼、猪皮、花生、葱花。'] },
     { id: 'c03', c: 'congee', n: ['生滾魚片粥', '生滚鱼片粥', 'Sliced fish congee'], p: 11.8, tags: '',
       d: ['Fresh fish slices cooked in the congee when you order.', '即叫即滾鮮魚片。', '现点现滚鲜鱼片。'] },
-    { id: 'c04', c: 'congee', n: ['白粥配油炸鬼', '白粥配油条', 'Plain congee with fried dough'], p: 5.8, tags: 'v',
+    { id: 'c04', c: 'congee', n: ['白粥油炸鬼', '白粥配油条', 'Plain congee with fried dough'], p: 5.8, tags: 'v',
       d: ['Plain congee and a cruller for dipping.', '白粥一碗，配油炸鬼。', '一碗白粥，配油条。'] },
     { id: 'c05', c: 'congee', n: ['鮮蝦雲吞麵', '鲜虾云吞面', 'Shrimp wonton noodle soup'], p: 12.8, tags: '',
       d: ['Thin egg noodles and shrimp wontons in clear broth.', '銀絲細麵，鮮蝦雲吞，清湯。', '细蛋面，鲜虾云吞，清汤。'] },
@@ -107,7 +124,7 @@ window.JB = {
       d: ['Wide rice noodles fried with beef, bean sprouts and soy sauce.', '河粉、牛肉、芽菜，豉油乾炒。', '河粉、牛肉、豆芽，酱油干炒。'] },
     { id: 'c07', c: 'congee', n: ['豉油皇炒麵', '豉油皇炒面', 'Soy sauce chow mein'], p: 14.8, tags: 'v',
       d: ['Thin noodles with bean sprouts, onion and green onion.', '細麵配芽菜、洋葱、葱段。', '细面配豆芽、洋葱、葱段。'] },
-    { id: 'c08', c: 'congee', n: ['星洲炒米', '星洲炒米', 'Singapore rice noodles'], p: 17.8, tags: 's',
+    { id: 'c08', c: 'congee', n: ['星洲炒米', '星洲炒米粉', 'Singapore rice noodles'], p: 17.8, tags: 's',
       d: ['Curry rice vermicelli with shrimp, BBQ pork and egg.', '咖喱炒米粉，有蝦仁、叉燒、蛋絲。', '咖喱炒米粉，有虾仁、叉烧、蛋丝。'] },
     { id: 'c09', c: 'congee', n: ['揚州炒飯', '扬州炒饭', 'Yeung Chow fried rice'], p: 16.8, tags: '',
       d: ['Fried rice with shrimp, BBQ pork, egg and peas.', '蝦仁、叉燒、蛋、青豆炒飯。', '虾仁、叉烧、鸡蛋、青豆炒饭。'] },
@@ -129,22 +146,7 @@ window.JB = {
     { id: 'b08', c: 'bbq', n: ['椒鹽鮮魷', '椒盐鲜鱿', 'Salt and pepper squid'], p: 15.8, tags: 's',
       d: ['Fried squid with garlic and chili.', '炸鮮魷，蒜蓉辣椒炒香。', '炸鲜鱿，蒜末辣椒炒香。'] },
 
-    { id: 'd01', c: 'sweets', n: ['酥皮蛋撻', '酥皮蛋挞', 'Egg tarts'], t: 'M', q: 3, tags: 'v',
-      d: ['Flaky pastry, baked in small batches all morning.', '千層酥皮，全朝分批焗。', '千层酥皮，上午分批烤。'] },
-    { id: 'd02', c: 'sweets', n: ['楊枝甘露', '杨枝甘露', 'Mango pomelo sago'], t: 'L', tags: 'v',
-      d: ['Mango, pomelo and sago in coconut milk, served cold.', '芒果、西柚、西米、椰汁，凍食。', '芒果、西柚、西米、椰汁，冷饮。'] },
-    { id: 'd03', c: 'sweets', n: ['香煎馬蹄糕', '香煎马蹄糕', 'Pan-fried water chestnut cake'], t: 'M', q: 3, tags: 'v',
-      d: ['Lightly sweet, with pieces of water chestnut.', '清甜，有馬蹄粒。', '清甜，有马蹄丁。'] },
-    { id: 'd04', c: 'sweets', n: ['黑芝麻煎堆仔', '芝麻煎堆', 'Sesame balls (jin deui)'], t: 'M', q: 3, tags: 'v',
-      d: ['Fried sesame balls with lotus seed paste.', '炸芝麻球，蓮蓉餡。', '炸芝麻球，莲蓉馅。'] },
-    { id: 'd05', c: 'sweets', n: ['椰汁桂花糕', '椰汁桂花糕', 'Osmanthus and coconut jelly'], t: 'M', q: 3, tags: 'v',
-      d: ['Cold, lightly sweet jelly.', '凍食，清甜不膩。', '冷吃，清甜不腻。'] },
-    { id: 'd06', c: 'sweets', n: ['擂沙湯圓', '擂沙汤圆', 'Rice balls with peanut powder'], t: 'M', q: 3, tags: 'vp',
-      d: ['Black sesame filling, rolled in peanut powder.', '芝麻餡湯圓，滾上花生粉。', '芝麻馅汤圆，裹花生粉。'] },
-    { id: 'd07', c: 'sweets', n: ['薑汁豆腐花', '姜汁豆腐花', 'Tofu pudding with ginger syrup'], t: 'S', tags: 'v',
-      d: ['Warm silken tofu with ginger syrup.', '暖豆腐花，配薑汁糖水。', '热豆腐花，配姜汁糖水。'] },
-
-    { id: 't01', c: 'tea', n: ['香片', '香片', 'Jasmine'], incl: true, tags: '',
+    { id: 't01', c: 'tea', n: ['香片', '茉莉花茶', 'Jasmine'], incl: true, tags: '',
       d: ['Light and floral.', '清香淡雅。', '清香淡雅。'] },
     { id: 't02', c: 'tea', n: ['普洱', '普洱', 'Pu-erh'], incl: true, tags: '',
       d: ['Dark and earthy. Good with fried food.', '色深味醇，最解油膩。', '色深味醇，最解油腻。'] },
@@ -156,16 +158,122 @@ window.JB = {
       d: ['Mild white tea.', '白茶，味道柔和。', '白茶，口感柔和。'] },
     { id: 't06', c: 'tea', n: ['十年陳普洱', '十年陈普洱', '10-year aged pu-erh'], p: 8, unit: 'pot', tags: '',
       d: ['Smooth aged tea, brewed in a clay pot.', '陳年普洱，紫砂壺沖泡，入口順滑。', '陈年普洱，紫砂壶冲泡，口感顺滑。'] }
+  ],
+
+  /* ---------- hours (America/Toronto). o = open, c = close, ds = dim sum served until ---------- */
+  week: {
+    0: { o: '8:30', c: '21:30', ds: '16:00' },
+    1: { o: '9:00', c: '21:30', ds: '15:00' },
+    2: { o: '9:00', c: '21:30', ds: '15:00' },
+    3: { o: '9:00', c: '21:30', ds: '15:00' },
+    4: { o: '9:00', c: '21:30', ds: '15:00' },
+    5: { o: '9:00', c: '22:00', ds: '15:00' },
+    6: { o: '8:30', c: '22:00', ds: '16:00' }
+  },
+  weekRows: [
+    { days: [1, 2, 3, 4], label: 'd.mon_thu' },
+    { days: [5], label: 'd.fri' },
+    { days: [6], label: 'd.sat' },
+    { days: [0], label: 'd.sun' }
+  ],
+  dinner: '17:00',
+  holidays: [
+    { date: '2026-12-24', o: '8:30', c: '20:00', ds: '16:00', name: 'hol.xmaseve' },
+    { date: '2026-12-25', o: '10:00', c: '20:00', ds: '20:00', name: 'hol.xmas', note: 'hol.xmas.note' },
+    { date: '2026-12-31', o: '9:00', c: '22:00', ds: '15:00', name: 'hol.nye' },
+    { date: '2027-01-01', o: '10:00', c: '21:30', ds: '16:00', name: 'hol.ny' },
+    { date: '2027-02-05', o: '9:00', c: '15:00', ds: '15:00', name: 'hol.lnye', note: 'hol.lnye.note' },
+    { date: '2027-02-06', o: '8:00', c: '22:00', ds: '16:00', name: 'hol.lny', note: 'hol.lny.note' },
+    { date: '2027-02-15', o: '9:00', c: '21:30', ds: '16:00', name: 'hol.family', note: 'hol.family.note' }
   ]
 };
-/* helpers shared by every page */
+
+/* ---------- helpers shared by every page ---------- */
 (function (JB) {
   var L = function () { return (window.MPi18n && MPi18n.lang) || 'en'; };
   JB.name = function (it, lang) { lang = lang || L(); return lang === 'zh-Hant' ? it.n[0] : lang === 'zh-Hans' ? it.n[1] : it.n[2]; };
-  JB.zhName = function (it, lang) { lang = lang || L(); return lang === 'zh-Hans' ? it.n[1] : it.n[0]; };
+  /* the second name printed under the first: Chinese on the English page, English on the Chinese pages */
+  JB.altName = function (it, lang) { lang = lang || L(); return lang === 'en' ? it.n[0] : it.n[2]; };
   JB.desc = function (it, lang) { lang = lang || L(); return lang === 'zh-Hant' ? it.d[1] : lang === 'zh-Hans' ? it.d[2] : it.d[0]; };
   JB.price = function (it) { return it.t ? JB.tiers[it.t] : (it.p || 0); };
   JB.money = function (n) { return '$' + n.toFixed(2); };
   JB.byId = function (id) { for (var i = 0; i < JB.items.length; i++) if (JB.items[i].id === id) return JB.items[i]; return null; };
   JB.has = function (it, tag) { return (it.tags || '').indexOf(tag) > -1; };
+  JB.tier = function (k, lang) { lang = lang || L(); return JB.tierName[k][lang] || JB.tierName[k].en; };
+  JB.cat = function (id) { for (var i = 0; i < JB.cats.length; i++) if (JB.cats[i].id === id) return JB.cats[i]; return null; };
+
+  /* ---------- time, always in Toronto ---------- */
+  JB.hm = function (s) { var p = String(s).split(':'); return +p[0] * 60 + +p[1]; };
+  var DOW = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+  /* { ymd: '2026-11-11', dow: 3, mins: 615 }. ?now=2026-12-25T11:30 overrides it for testing. */
+  JB.clock = function () {
+    var q = null;
+    try { q = new URLSearchParams(location.search).get('now'); } catch (e) {}
+    if (q && /^\d{4}-\d\d-\d\dT\d\d:\d\d$/.test(q)) {
+      return { ymd: q.slice(0, 10), dow: new Date(q.slice(0, 10) + 'T12:00:00Z').getUTCDay(), mins: +q.slice(11, 13) * 60 + +q.slice(14, 16) };
+    }
+    var parts = {};
+    try {
+      new Intl.DateTimeFormat('en-US', { timeZone: 'America/Toronto', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23', weekday: 'short' })
+        .formatToParts(new Date()).forEach(function (p) { parts[p.type] = p.value; });
+    } catch (e) {
+      var d = new Date();
+      parts = { year: d.getFullYear(), month: String(d.getMonth() + 1).padStart(2, '0'), day: String(d.getDate()).padStart(2, '0'), hour: d.getHours(), minute: d.getMinutes(), weekday: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][d.getDay()] };
+    }
+    return { ymd: parts.year + '-' + parts.month + '-' + parts.day, dow: DOW[parts.weekday], mins: (+parts.hour % 24) * 60 + +parts.minute };
+  };
+  JB.addDays = function (ymd, n) {
+    var d = new Date(ymd + 'T12:00:00Z'); d.setUTCDate(d.getUTCDate() + n);
+    return { ymd: d.toISOString().slice(0, 10), dow: d.getUTCDay() };
+  };
+  JB.holiday = function (ymd) { for (var i = 0; i < JB.holidays.length; i++) if (JB.holidays[i].date === ymd) return JB.holidays[i]; return null; };
+  JB.day = function (ymd, dow) {
+    var h = JB.holiday(ymd), b = h || JB.week[dow];
+    return { o: JB.hm(b.o), c: JB.hm(b.c), ds: JB.hm(b.ds), hol: h, closed: !!b.closed };
+  };
+  /* what is happening right now: before | dimsum | between | dinner | after | closed */
+  JB.status = function (clk) {
+    clk = clk || JB.clock();
+    var d = JB.day(clk.ymd, clk.dow), tm = JB.addDays(clk.ymd, 1), next = JB.day(tm.ymd, tm.dow), m = clk.mins, din = JB.hm(JB.dinner);
+    var s;
+    if (d.closed) s = 'closed';
+    else if (m < d.o) s = 'before';
+    else if (m >= d.c) s = 'after';
+    else if (m < d.ds) s = 'dimsum';
+    else if (m < din) s = 'between';
+    else s = 'dinner';
+    return { s: s, open: s === 'dimsum' || s === 'between' || s === 'dinner', today: d, tomorrow: next, clock: clk };
+  };
+  /* weekday mornings before 11, not on holidays: small, medium and large are $5.50 */
+  JB.early = function (clk) {
+    clk = clk || JB.clock();
+    return clk.dow >= 1 && clk.dow <= 5 && clk.mins < 660 && !JB.holiday(clk.ymd) && clk.mins >= JB.day(clk.ymd, clk.dow).o;
+  };
+  JB.unitPrice = function (it, early) { return early && it.t && JB.earlyTiers.indexOf(it.t) > -1 ? JB.earlyBird : JB.price(it); };
+
+  /* 9:00 am | 上午9:00 | 9:00 */
+  JB.time = function (m, lang) {
+    lang = lang || L();
+    var h = Math.floor(m / 60), mm = String(m % 60).padStart(2, '0'), h12 = h % 12 || 12;
+    if (lang === 'zh-Hans') return h + ':' + mm;
+    if (lang === 'zh-Hant') return (h === 12 && mm === '00' ? '中午' : h < 12 ? '上午' : h < 18 ? '下午' : '晚上') + h12 + ':' + mm;
+    return h12 + ':' + mm + ' ' + (h < 12 ? 'am' : 'pm');
+  };
+  JB.range = function (o, c, lang) {
+    lang = lang || L();
+    return lang === 'zh-Hans' ? JB.time(o, lang) + '–' + JB.time(c, lang) : JB.time(o, lang) + ' – ' + JB.time(c, lang);
+  };
+  var WD = {
+    en: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+    'zh-Hant': ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
+    'zh-Hans': ['周日', '周一', '周二', '周三', '周四', '周五', '周六']
+  };
+  var MO = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  /* Thu, Dec 24 | 12月24日（星期四） | 12月24日（周四） */
+  JB.date = function (ymd, lang) {
+    lang = lang || L();
+    var p = ymd.split('-'), mo = +p[1], d = +p[2], dow = new Date(ymd + 'T12:00:00Z').getUTCDay();
+    if (lang === 'en') return WD.en[dow] + ', ' + MO[mo - 1] + ' ' + d;
+    return mo + '月' + d + '日（' + WD[lang][dow] + '）';
+  };
 })(window.JB);

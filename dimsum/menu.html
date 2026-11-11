@@ -2,19 +2,21 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <script src="../shared/i18n.js"></script>
 <title data-i18n="menu.title">Menu | Jade Basket Dim Sum House, Markham</title>
-<meta name="description" content="Full dim sum, congee, noodle and BBQ menu at Jade Basket in Markham, with prices." data-i18n-attr="content:menu.desc">
+<meta name="description" content="The full Jade Basket menu with prices: dim sum by size, congee, noodles, BBQ and tea." data-i18n-attr="content:menu.desc">
 <meta property="og:type" content="restaurant">
 <meta property="og:title" content="Jade Basket Dim Sum House, Markham" data-i18n-attr="content:og.title">
-<meta property="og:description" content="Hong Kong-style dim sum and dinner near Kennedy Rd and Highway 7. Open daily. Free parking." data-i18n-attr="content:og.desc">
-<meta name="theme-color" content="#0f5c46">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f5c46'/%3E%3Cellipse cx='32' cy='38' rx='20' ry='9' fill='none' stroke='%23fff' stroke-width='4'/%3E%3Cpath d='M12 38V30c0-5 9-9 20-9s20 4 20 9v8' fill='none' stroke='%23fff' stroke-width='4'/%3E%3Cpath d='M26 20c0-3 3-5 6-5s6 2 6 5' fill='none' stroke='%23fff' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<meta property="og:description" content="Hong Kong-style dim sum every day and Cantonese dinner, at Kennedy Rd and Highway 7 in Markham. Free parking." data-i18n-attr="content:og.desc">
+<meta property="og:image" content="assets/img/hero-1440.webp">
+<meta name="theme-color" content="#0B5A43">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230B5A43'/%3E%3Crect x='5' y='5' width='54' height='54' fill='none' stroke='%23FBFCFA' stroke-width='2'/%3E%3Cpath d='M16 18H48M32 18V48M32 33H44M20 33V48M13 48H51' stroke='%23FBFCFA' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Noto+Sans+SC:wght@400;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@900&text=%E7%BF%A0%E7%B1%A0%E8%BB%92%E7%AC%BC%E8%BD%A9&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@900&text=%E7%BF%A0%E7%B1%A0%E8%BB%92%E7%87%9F%E6%A5%AD%E4%B8%AD%E8%90%A5%E4%B8%9A&display=swap">
+<script src="assets/fonts.js"></script>
 <link rel="stylesheet" href="assets/site.css">
 <script src="assets/i18n-dict.js"></script>
 </head>
@@ -24,118 +26,144 @@
 <header class="site-head">
   <div class="wrap head-row">
     <a class="brand" href="index.html" aria-label="Jade Basket Dim Sum House, home page" data-i18n-attr="aria-label:brand.aria">
-      <span class="brand-zh" aria-hidden="true">翠籠軒</span>
-      <span class="brand-en" aria-hidden="true">Jade Basket<br>Dim Sum House</span>
+      <span class="brand-sign" aria-hidden="true">翠籠軒</span>
+      <span class="brand-en" aria-hidden="true">Jade Basket</span>
     </a>
     <nav class="nav" id="nav" aria-label="Main" data-i18n-attr="aria-label:nav.aria">
-      <a href="menu.html" aria-current="page" data-i18n="nav.menu">Menu</a>
-      <a href="index.html#hours" data-i18n="nav.hours">Hours and location</a>
-      <a href="index.html#info" data-i18n="nav.info">Before you visit</a>
-      <a href="index.html#room" data-i18n="nav.room">Private room</a>
-      <a href="qr.html" data-i18n="nav.qr">Phone menu</a>
+      <ul>
+        <li><a href="menu.html" aria-current="page" data-i18n="nav.menu">Menu</a></li>
+        <li><a href="index.html#hours" data-i18n="nav.hours">Hours and location</a></li>
+        <li><a href="index.html#info" data-i18n="nav.info">Before you visit</a></li>
+        <li><a href="index.html#room" data-i18n="nav.room">Private room</a></li>
+        <li><a href="qr.html" data-i18n="nav.qr">Phone menu</a></li>
+      </ul>
+      <a class="btn-call" href="tel:+19055550138" data-i18n="cta.call">Call to book a table</a>
     </nav>
-    <div class="head-tools">
-      <div class="lang" role="group" aria-label="Language" data-i18n-attr="aria-label:lang.aria">
-        <button type="button" data-set-lang="en" lang="en">EN</button>
-        <button type="button" data-set-lang="zh-Hant" lang="zh-Hant">繁</button>
-        <button type="button" data-set-lang="zh-Hans" lang="zh-Hans">简</button>
-      </div>
-      <a class="head-call" href="tel:+19055550138" aria-label="Call Jade Basket at (905) 555-0138" data-i18n-attr="aria-label:call.aria">(905) 555-0138</a>
-      <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu" data-i18n-attr="aria-label:nav.open"><span></span><span></span><span></span></button>
+    <div class="lang" role="group" aria-label="Language" data-i18n-attr="aria-label:lang.aria">
+      <button type="button" data-set-lang="en" lang="en">EN</button>
+      <button type="button" data-set-lang="zh-Hant" lang="zh-Hant">繁</button>
+      <button type="button" data-set-lang="zh-Hans" lang="zh-Hans">简</button>
     </div>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu" data-i18n-attr="aria-label:nav.open"><span></span><span></span><span></span></button>
   </div>
 </header>
 
 <main id="main">
-  <div class="menu-top">
-    <div class="wrap menu-top-grid">
-      <div>
-        <h1 data-i18n="menu.h1">Menu</h1>
-        <p data-i18n="menu.lead">Dim sum is priced by size. All prices are in Canadian dollars, before HST.</p>
-        <p class="small" data-i18n="info.early.p">Monday to Friday before 11:00 am, all small, medium and large dim sum are $5.50. Not on holidays.</p>
-        <p class="small"><span data-i18n="book.takeout">For takeout, call ahead. Most orders are ready in about 20 minutes. Pay at the front counter.</span> <a href="tel:+19055550138" data-lang-neutral>(905) 555-0138</a></p>
-      </div>
-      <img class="menu-photo" src="assets/img/yumcha.jpg" width="1400" height="941" alt="Dim sum, tea and dipping sauces on a restaurant table" data-i18n-attr="alt:alt.yumcha">
+  <div class="wrap menu-head">
+    <div>
+      <h1 data-i18n="menu.h1">Menu</h1>
+      <p class="lead" data-i18n="menu.lead">Dim sum is priced by size, the same as the paper sheet on your table. Tap the box beside a dish to tally it on your sheet.</p>
+      <ul class="tier-key" data-tier-key aria-label="Dim sum prices by size" data-i18n-attr="aria-label:tierkey.aria"></ul>
+      <p data-i18n="info.early.p">Monday to Friday before 11:00 am, all small, medium and large dim sum are $5.50. Not on holidays.</p>
+      <p><span data-i18n="menu.note">Prices in Canadian dollars, before HST.</span> <span data-i18n="menu.takeout">Takeout: call ahead,</span> <a href="tel:+19055550138" data-lang-neutral>(905) 555-0138</a></p>
     </div>
+    <img src="assets/img/spread-800.webp" srcset="assets/img/spread-800.webp 800w, assets/img/spread-1500.webp 1500w" sizes="(min-width: 900px) 500px, 100vw" width="800" height="526" alt="A table of dim sum from above: har gow, chicken feet, rice rolls and tea" data-i18n-attr="alt:alt.spread">
   </div>
 
-  <nav class="catbar" aria-label="Menu sections" data-i18n-attr="aria-label:menu.catnav"><ul class="wrap" id="catbar-list"></ul></nav>
+  <nav class="tierbar" aria-label="Menu sections" data-i18n-attr="aria-label:menu.tiers"><ul class="wrap" id="tierbar-list"></ul></nav>
 
-  <div class="wrap menu-body">
-    <aside class="menu-side">
-      <div class="side-box">
-        <h2 data-i18n="sizes.h">Dim sum prices by size</h2>
-        <ul class="size-list" id="size-list"></ul>
-      </div>
-      <div class="side-box">
-        <h2 data-i18n="marks.h">Symbols</h2>
-        <ul class="mark-list">
-          <li><span class="mk mk-g" aria-hidden="true">招</span><span data-i18n="mark.g">House favourite</span></li>
-          <li><span class="mk mk-v" aria-hidden="true">素</span><span data-i18n="mark.v">Vegetarian</span></li>
-          <li><span class="mk mk-p" aria-hidden="true">生</span><span data-i18n="mark.p">Contains peanuts</span></li>
-          <li><span class="mk mk-s" aria-hidden="true">辣</span><span data-i18n="mark.s">Spicy</span></li>
-        </ul>
-      </div>
-      <div class="qr-block" id="phone-menu">
-        <div class="qr-frame" id="qr-code"></div>
-        <div>
-          <h2 data-i18n="qrb.h">Phone menu for your table</h2>
-          <p data-i18n="qrb.p">Every table has this code. Scan it to see the menu on your phone, search for dishes and keep a list to show your server.</p>
-          <p><a href="qr.html" data-i18n="qrb.link">Open the phone menu</a></p>
-          <p class="qr-url" id="qr-url" data-lang-neutral></p>
+  <div class="wrap">
+    <div class="filters" role="group" aria-label="Show" data-i18n-attr="aria-label:filter.aria">
+      <button type="button" data-filter="all" aria-pressed="true" data-i18n="filter.all">All</button>
+      <button type="button" data-filter="steamed" aria-pressed="false" data-i18n="filter.steamed">Steamed</button>
+      <button type="button" data-filter="fried" aria-pressed="false" data-i18n="filter.fried">Fried and baked</button>
+      <button type="button" data-filter="rolls" aria-pressed="false" data-i18n="filter.rolls">Rice rolls</button>
+      <button type="button" data-filter="sweets" aria-pressed="false" data-i18n="filter.sweets">Sweets</button>
+      <button type="button" data-filter="v" aria-pressed="false" data-i18n="filter.v">Vegetarian</button>
+    </div>
+    <div class="menu-layout">
+      <div>
+        <div class="sheet-paper">
+          <div class="sheet-band" aria-hidden="true"><span class="band-t" data-i18n="band.t">點心紙</span><span class="band-sub" data-i18n="band.sub">Order sheet</span></div>
+          <div id="sheet-root"><noscript><p>Please turn on JavaScript to see the menu, or call (905) 555-0138.</p></noscript></div>
+          <p class="menu-empty" id="menu-empty" hidden data-i18n="menu.empty">Nothing here for this choice. Choose All to see every dish.</p>
+        </div>
+        <div class="menu-foot">
+          <h2 data-i18n="info.allergy.h">Allergies</h2>
+          <p data-i18n="info.allergy.p">Our kitchen uses shrimp, shellfish, peanuts, sesame, wheat, soy and egg, and the steamers are shared. Tell your server about any allergy before you order.</p>
+          <p data-i18n="menu.change">Prices may change. Please check with your server.</p>
         </div>
       </div>
-    </aside>
-
-    <div class="menu-main">
-      <div id="menu-root"><noscript><p>Please turn on JavaScript to see the menu, or call (905) 555-0138.</p></noscript></div>
-      <div class="allergy">
-        <h2 data-i18n="info.allergy.h">Allergies</h2>
-        <p data-i18n="info.allergy.p">Our kitchen uses shrimp, shellfish, peanuts, sesame, wheat, soy and egg, and the steamers are shared. Please tell your server about any allergy before you order.</p>
-        <p data-i18n="menu.change">Prices may change. Please check with your server.</p>
-      </div>
+      <aside class="menu-side">
+        <div class="side-box side-sheet">
+          <h2 data-i18n="sheet.h">Your sheet</h2>
+          <p class="count-line"><b data-sheet-count>0 dishes</b> <span class="num" data-sheet-total>$0.00</span></p>
+          <p data-i18n="sheet.side.p">Tap the boxes to tally dishes. The same sheet opens on the phone menu at your table.</p>
+          <button type="button" class="btn-line" data-sheet-open data-i18n="sheet.open">Show your sheet</button>
+        </div>
+        <div class="side-box">
+          <h2 data-i18n="marks.h">Symbols</h2>
+          <ul class="mark-list">
+            <li><span class="mk mk-g" aria-hidden="true">招</span><span data-i18n="mark.g">House favourite</span></li>
+            <li><span class="mk mk-v" aria-hidden="true">素</span><span data-i18n="mark.v">Vegetarian</span></li>
+            <li><span class="mk mk-p" aria-hidden="true">生</span><span data-i18n="mark.p">Contains peanuts</span></li>
+            <li><span class="mk mk-s" aria-hidden="true">辣</span><span data-i18n="mark.s">Spicy</span></li>
+          </ul>
+        </div>
+        <div class="side-box qr-block" id="phone-menu">
+          <div class="qr-frame" id="qr-code"></div>
+          <div>
+            <h2 data-i18n="qrb.h">Phone menu at your table</h2>
+            <p data-i18n="qrb.p">Every table has this code. Scan it to open this sheet on your phone and show it to your server.</p>
+            <p><a class="text-link" href="qr.html" data-i18n="qrb.link">Open the phone menu</a></p>
+            <p class="qr-url" id="qr-url" data-lang-neutral></p>
+          </div>
+        </div>
+      </aside>
     </div>
   </div>
 </main>
 
 <footer class="site-foot">
-  <div class="wrap foot-grid">
-    <div>
-      <p class="foot-brand"><span class="brand-zh" aria-hidden="true">翠籠軒</span> <span data-i18n="brand.name">Jade Basket Dim Sum House</span></p>
-      <p data-i18n="foot.about">A family-run dim sum restaurant in Markham since 2009.</p>
-    </div>
-    <div>
-      <h2 data-i18n="foot.hours.h">Hours</h2>
-      <p data-i18n-html="foot.hours.p">Open every day<br>Weekdays from 9:00 am<br>Weekends from 8:30 am</p>
-    </div>
-    <div>
-      <h2 data-i18n="foot.contact.h">Contact</h2>
-      <p data-lang-neutral>Unit 108, 3150 Ellesworth Road<br>Markham, ON L3R 9Z9</p>
-      <p><a href="tel:+19055550138" data-lang-neutral>(905) 555-0138</a><br><a href="mailto:hello@jadebasket.example" data-lang-neutral>hello@jadebasket.example</a></p>
-    </div>
-    <div>
-      <h2 data-i18n="foot.pages.h">Pages</h2>
-      <ul class="foot-links">
-        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
-        <li><a href="menu.html" data-i18n="nav.menu">Menu</a></li>
-        <li><a href="qr.html" data-i18n="nav.qr">Phone menu</a></li>
+  <div class="wrap">
+    <div class="small-print">
+      <h2 data-i18n="foot.print.h">Printed on every order sheet</h2>
+      <ul>
+        <li data-i18n="fp.1">Tea $2.00 per person, seniors $1.50.</li>
+        <li data-i18n="fp.2">15% service charge for tables of 10 or more.</li>
+        <li data-i18n="fp.3">Prices in Canadian dollars, before HST.</li>
+        <li data-i18n="fp.4">Tell your server about any allergy before you order.</li>
       </ul>
     </div>
-  </div>
-  <div class="wrap foot-base">
-    <span data-i18n="foot.copy">© 2026 Jade Basket Dim Sum House</span>
-    <a href="../index.html" data-i18n="foot.demo">This is a demo website. The restaurant is fictional.</a>
+    <div class="foot-grid">
+      <div>
+        <p class="foot-brand"><span class="brand-sign" aria-hidden="true">翠籠軒</span><span data-i18n="brand.name">Jade Basket Dim Sum House</span></p>
+        <p data-i18n="foot.about">A family-run dim sum restaurant in Markham since 2009.</p>
+      </div>
+      <div>
+        <h2 data-i18n="foot.hours.h">Hours</h2>
+        <p data-i18n-html="foot.hours.p">Open every day<br>Weekdays from 9:00 am<br>Weekends from 8:30 am<br>Dinner menu from 5:00 pm</p>
+      </div>
+      <div class="contact">
+        <h2 data-i18n="foot.contact.h">Contact</h2>
+        <p data-lang-neutral>Unit 108, 3150 Ellesworth Road<br>Markham, ON L3R 9Z9</p>
+        <p><a href="tel:+19055550138" data-lang-neutral>(905) 555-0138</a><br><a href="mailto:hello@jadebasket.example" data-lang-neutral>hello@jadebasket.example</a></p>
+      </div>
+      <div>
+        <h2 data-i18n="foot.pages.h">Pages</h2>
+        <ul class="foot-links">
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="menu.html" data-i18n="nav.menu">Menu</a></li>
+          <li><a href="qr.html" data-i18n="nav.qr">Phone menu</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span data-i18n="foot.copy">© 2026 Jade Basket Dim Sum House</span>
+      <a href="../index.html" data-i18n="foot.demo">This is a demo website. The restaurant is fictional.</a>
+    </div>
   </div>
 </footer>
 
-<nav class="callbar" aria-label="Quick actions" data-i18n-attr="aria-label:callbar.aria">
-  <a href="tel:+19055550138" data-i18n="head.call">Call</a>
-  <a href="qr.html" data-i18n="nav.qr">Phone menu</a>
-  <a href="index.html#map" data-i18n="addr.directions">Get directions</a>
+<nav class="callbar" aria-label="Quick links" data-i18n-attr="aria-label:callbar.aria">
+  <a class="btn-call" href="tel:+19055550138" data-i18n="cta.call">Call to book a table</a>
+  <button type="button" class="btn-line bar-sheet" data-sheet-open><span data-i18n="sheet.h">Your sheet</span>&nbsp;<span class="num" data-sheet-count>0</span></button>
 </nav>
 
 <script src="../shared/vendor/qrcode.js"></script>
 <script src="assets/menu-data.js"></script>
 <script src="assets/site.js"></script>
+<script src="assets/sheet.js"></script>
+<script src="assets/menu.js"></script>
 </body>
 </html>

@@ -15,7 +15,7 @@
 /* Portfolio page: plain and neutral so the three example sites carry the colour. */
 :root{
   --ink:#1c2026; --muted:#535a64; --line:#e3e6ea; --grey:#f5f6f8;
-  --jade:#0f5c46; --yellow:#ffc629; --blue:#1d5a80;
+  --jade:#0b5a43; --yellow:#ffc629; --blue:#2a41a0;
   --latin:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
   --hant:"Noto Sans TC","PingFang HK","PingFang TC","Microsoft JhengHei",sans-serif;
   --hans:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
@@ -24,8 +24,9 @@
 [hidden]{display:none!important}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:#fff;color:var(--ink);font-family:var(--latin),var(--hant);font-size:18px;line-height:1.6}
-html[lang="zh-Hans"] body{font-family:var(--latin),var(--hans)}
-html:not([lang="en"]) body{line-height:1.75;font-size:17px}
+html[lang^="zh-Hant"] body{font-family:var(--hant),var(--latin)}
+html[lang^="zh-Hans"] body{font-family:var(--hans),var(--latin)}
+html:not([lang="en"]) body{line-height:1.75;font-size:17px;letter-spacing:.02em}
 img{max-width:100%;height:auto;display:block}
 a{color:var(--ink);text-underline-offset:3px}
 :focus-visible{outline:3px solid #2a6fdb;outline-offset:2px}
@@ -38,9 +39,9 @@ p{margin:0 0 .9em}
 
 .top{border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff;z-index:5}
 .top-row{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
-.name{font-weight:700;font-size:1.05rem;text-decoration:none}
+.name{font-weight:700;font-size:1.05rem;text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
 .lang{display:flex;border:1.5px solid var(--line);border-radius:8px;overflow:hidden}
-.lang button{font:inherit;font-size:.92rem;font-weight:600;background:#fff;color:var(--ink);border:0;min-width:46px;min-height:40px;cursor:pointer}
+.lang button{font:inherit;font-size:1rem;font-weight:600;background:#fff;color:var(--ink);border:0;min-width:48px;min-height:44px;cursor:pointer}
 .lang button+button{border-left:1.5px solid var(--line)}
 .lang button[aria-pressed="true"]{background:var(--ink);color:#fff}
 
@@ -62,7 +63,7 @@ html:not([lang="en"]) .intro h1{letter-spacing:0;max-width:16em}
 .case li{margin-bottom:6px}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 22px;border-radius:8px;font-weight:700;text-decoration:none;color:#fff}
 .links{display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px}
-.links a:not(.btn){font-weight:600}
+.links a:not(.btn){font-weight:600;display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px}
 .c-dim .btn{background:var(--jade)}
 .c-tut .btn{background:var(--yellow);color:var(--ink)}
 .c-well .btn{background:var(--blue)}
@@ -83,7 +84,7 @@ html:not([lang="en"]) .intro h1{letter-spacing:0;max-width:16em}
 .inc-list b{display:block;margin-bottom:4px}
 .inc-list span{color:var(--muted)}
 
-.foot{padding:32px 0 40px;font-size:.92rem;color:var(--muted)}
+.foot{padding:32px 0 40px;font-size:1rem;color:var(--muted)}
 
 @media (max-width:900px){
   .case-grid{grid-template-columns:1fr;gap:28px}
@@ -93,8 +94,8 @@ html:not([lang="en"]) .intro h1{letter-spacing:0;max-width:16em}
 @media (max-width:600px){
   body{font-size:16.5px}
   .intro{padding:40px 0 28px}
-  .name{font-size:.95rem}
-  .lang button{min-width:40px}
+  .name{font-size:1rem}
+  .lang button{min-width:44px}
   .inc-list{grid-template-columns:1fr}
   .phone{width:30%;border-width:4px;border-radius:14px}
 }
@@ -120,9 +121,9 @@ html:not([lang="en"]) .intro h1{letter-spacing:0;max-width:16em}
       <p data-i18n="intro1">Here are three example sites for made-up local businesses: a dim sum restaurant, a tutoring centre and a clinic. Every page works in English, Traditional Chinese and Simplified Chinese.</p>
       <p data-i18n="intro2">Try the language buttons at the top. Your choice carries over into all three sites.</p>
       <nav class="jump" aria-label="Examples" data-i18n-attr="aria-label:jump">
-        <a href="#dimsum"><i style="background:#0f5c46"></i><span data-i18n="c1.type">Dim sum restaurant</span></a>
+        <a href="#dimsum"><i style="background:#0b5a43"></i><span data-i18n="c1.type">Dim sum restaurant</span></a>
         <a href="#tutoring"><i style="background:#ffc629"></i><span data-i18n="c2.type">Tutoring centre</span></a>
-        <a href="#clinic"><i style="background:#1d5a80"></i><span data-i18n="c3.type">Physio and massage clinic</span></a>
+        <a href="#clinic"><i style="background:#2a41a0"></i><span data-i18n="c3.type">Physio and massage clinic</span></a>
       </nav>
     </div>
   </section>
@@ -132,12 +133,12 @@ html:not([lang="en"]) .intro h1{letter-spacing:0;max-width:16em}
       <div>
         <h2 id="c1-h" data-i18n="c1.name">Jade Basket Dim Sum House</h2>
         <p class="alt" data-lang-neutral data-i18n="c1.alt">翠籠軒, a dim sum restaurant</p>
-        <p data-i18n="c1.p">A restaurant site that answers what people check before they come: today’s hours, parking, weekend waits and the tea charge.</p>
+        <p data-i18n="c1.p">Built around the paper order sheet on every dim sum table: dishes grouped by price, a box to tally each one, a red chop. It answers what people check before they come: today’s hours, whether dim sum is on now, parking and the tea charge.</p>
         <p class="what" data-i18n="what">What it has</p>
         <ul>
-          <li data-i18n="c1.l1">A full menu priced by dim sum size, in all three languages</li>
-          <li data-i18n="c1.l2">A QR code for each table that opens a phone menu with search and a list to show the server</li>
-          <li data-i18n="c1.l3">Holiday hours through Lunar New Year, payment methods and a private room for parties</li>
+          <li data-i18n="c1.l1">A menu printed like the order sheet, grouped by dim sum size, in all three languages</li>
+          <li data-i18n="c1.l2">A phone menu for each table: tap a dish to tally it on your own order sheet, then show it to the server</li>
+          <li data-i18n="c1.l3">Shows whether dim sum or dinner is being served right now, plus holiday hours, payment and a private room</li>
         </ul>
         <div class="links">
           <a class="btn" href="dimsum/index.html" data-i18n="open">Open the site</a>
@@ -157,11 +158,11 @@ html:not([lang="en"]) .intro h1{letter-spacing:0;max-width:16em}
       <div>
         <h2 id="c2-h" data-i18n="c2.name">Maple Bridge Learning Centre</h2>
         <p class="alt" data-lang-neutral data-i18n="c2.alt">楓橋教育中心, an after-school tutoring centre</p>
-        <p data-i18n="c2.p">A tutoring site that shows parents the fees, the teachers and every class with seats left, before they pick up the phone.</p>
+        <p data-i18n="c2.p">Built around a page of marked homework: ruled exercise-book paper and the teacher’s red pen. Parents see the fees, class size and every class with seats left before they pick up the phone.</p>
         <p class="what" data-i18n="what">What it has</p>
         <ul>
-          <li data-i18n="c2.l1">A weekly timetable parents can filter by grade, subject and day</li>
-          <li data-i18n="c2.l2">An inquiry form that carries over the class they picked and doesn’t ask for the child’s name or school</li>
+          <li data-i18n="c2.l1">A weekly timetable parents can filter by grade, subject and day, with seats left circled in red</li>
+          <li data-i18n="c2.l2">A free trial class form that carries over the class they picked and doesn’t ask for the child’s name or school</li>
           <li data-i18n="c2.l3">Pick-up and parking rules, missed-class policy, term dates and PA day camps</li>
         </ul>
         <div class="links">
@@ -182,12 +183,12 @@ html:not([lang="en"]) .intro h1{letter-spacing:0;max-width:16em}
       <div>
         <h2 id="c3-h" data-i18n="c3.name">Stillwater Wellness Clinic</h2>
         <p class="alt" data-lang-neutral data-i18n="c3.alt">靜水堂, a physiotherapy, massage and acupuncture clinic</p>
-        <p data-i18n="c3.p">A clinic site that puts prices, insurance and parking up front, and takes appointment requests without asking about anyone’s health online.</p>
+        <p data-i18n="c3.p">Built around the appointment card the front desk fills in by hand. Prices, direct billing and parking are up front, and appointment requests never ask about anyone’s health online.</p>
         <p class="what" data-i18n="what">What it has</p>
         <ul>
           <li data-i18n="c3.l1">Every service with session lengths, prices and who you will see</li>
-          <li data-i18n="c3.l2">A booking request form with a calendar that skips Sundays and holidays, and no health questions</li>
-          <li data-i18n="c3.l3">Direct billing, first-visit checklist, cancellation policy and holiday hours</li>
+          <li data-i18n="c3.l2">A request form that fills in your appointment card, with a calendar that skips Sundays and holidays, and no health questions</li>
+          <li data-i18n="c3.l3">Direct billing, a first-visit guide, staff who speak Cantonese and Mandarin, and holiday hours</li>
         </ul>
         <div class="links">
           <a class="btn" href="wellness/index.html" data-i18n="open">Open the site</a>
@@ -219,7 +220,7 @@ html:not([lang="en"]) .intro h1{letter-spacing:0;max-width:16em}
 
 <footer class="foot">
   <div class="wrap">
-    <p data-i18n="foot">All three businesses, their addresses, phone numbers and staff are made up for this demo. Photos are from Unsplash.</p>
+    <p data-i18n="foot">All three businesses, their addresses, phone numbers and staff are made up for this demo. Photos are from Unsplash and Pexels.</p>
   </div>
 </footer>
 
@@ -239,28 +240,28 @@ MPi18n.init({
   "c1.type":{en:"Dim sum restaurant","zh-Hant":"點心茶居","zh-Hans":"点心茶楼"},
   "c1.name":{en:"Jade Basket Dim Sum House","zh-Hant":"翠籠軒點心茶居","zh-Hans":"翠笼轩点心茶楼"},
   "c1.alt":{en:"翠籠軒, a dim sum restaurant","zh-Hant":"Jade Basket Dim Sum House","zh-Hans":"Jade Basket Dim Sum House"},
-  "c1.p":{en:"A restaurant site that answers what people check before they come: today’s hours, parking, weekend waits and the tea charge.","zh-Hant":"把客人出門前想知道的事放在最前：今日營業時間、泊車、週末等位及茶芥。","zh-Hans":"把客人出门前想知道的事放在最前面：今天的营业时间、停车、周末排队和茶位费。"},
-  "c1.l1":{en:"A full menu priced by dim sum size, in all three languages","zh-Hant":"按點心大小計價的完整餐牌，三種語言","zh-Hans":"按点心大小计价的完整菜单，三种语言"},
-  "c1.l2":{en:"A QR code for each table that opens a phone menu with search and a list to show the server","zh-Hant":"每張枱的二維碼可開啟手機餐牌，可搜尋菜式，並記下想點的菜給職員看","zh-Hans":"每张桌上的二维码可以打开手机菜单，能搜菜品，还能把想点的记下来给服务员看"},
-  "c1.l3":{en:"Holiday hours through Lunar New Year, payment methods and a private room for parties","zh-Hant":"農曆新年等節日營業時間、付款方式及貴賓房宴會","zh-Hans":"春节等节假日营业时间、付款方式和包间宴请"},
+  "c1.p":{en:"Built around the paper order sheet on every dim sum table: dishes grouped by price, a box to tally each one, a red chop. It answers what people check before they come: today’s hours, whether dim sum is on now, parking and the tea charge.","zh-Hant":"以茶樓枱上的點心紙為設計主軸：按價錢分點心、每款有格劃記、蓋上紅印。客人出門前想知的都放在最前：今日營業時間、而家有冇點心、泊車及茶芥。","zh-Hans":"整个网站以茶楼桌上的点心单为主线：点心按价格分档，每款有格子画记，盖上红印。客人出门前想知道的都放在最前面：今天的营业时间、现在有没有点心、停车和茶位费。"},
+  "c1.l1":{en:"A menu printed like the order sheet, grouped by dim sum size, in all three languages","zh-Hant":"餐牌印成點心紙樣式，按小點、中點、大點分類，三種語言","zh-Hans":"菜单做成点心单的样子，按小点、中点、大点分类，三种语言"},
+  "c1.l2":{en:"A phone menu for each table: tap a dish to tally it on your own order sheet, then show it to the server","zh-Hant":"每枱的手機餐牌：按一下就在自己的點心紙上劃一筆，再給職員看","zh-Hans":"每张桌的手机菜单：点一下就在自己的点心单上画一笔，再给服务员看"},
+  "c1.l3":{en:"Shows whether dim sum or dinner is being served right now, plus holiday hours, payment and a private room","zh-Hant":"即時顯示而家供應點心定晚市，另有節日營業時間、付款方式及貴賓房","zh-Hans":"实时显示现在供应点心还是晚市，另有节假日营业时间、付款方式和包间"},
   "c1.menu":{en:"Menu","zh-Hant":"餐牌","zh-Hans":"菜单"},
   "c1.qr":{en:"Phone menu","zh-Hant":"手機餐牌","zh-Hans":"手机菜单"},
   "c2.type":{en:"Tutoring centre","zh-Hant":"補習中心","zh-Hans":"辅导中心"},
   "c2.name":{en:"Maple Bridge Learning Centre","zh-Hant":"楓橋教育中心","zh-Hans":"枫桥教育中心"},
   "c2.alt":{en:"楓橋教育中心, an after-school tutoring centre","zh-Hant":"Maple Bridge Learning Centre","zh-Hans":"Maple Bridge Learning Centre"},
-  "c2.p":{en:"A tutoring site that shows parents the fees, the teachers and every class with seats left, before they pick up the phone.","zh-Hant":"家長未致電之前，已可看到學費、導師資料及每班餘額。","zh-Hans":"家长打电话之前，就能看到学费、老师介绍和每个班的剩余名额。"},
-  "c2.l1":{en:"A weekly timetable parents can filter by grade, subject and day","zh-Hant":"可按年級、科目及上課日篩選的每週時間表","zh-Hans":"可以按年级、科目和上课日筛选的每周课程表"},
-  "c2.l2":{en:"An inquiry form that carries over the class they picked and doesn’t ask for the child’s name or school","zh-Hant":"查詢表格會自動帶入所選班別，而且不問孩子姓名或學校","zh-Hans":"咨询表会自动带入选好的班级，而且不问孩子的姓名或学校"},
+  "c2.p":{en:"Built around a page of marked homework: ruled exercise-book paper and the teacher’s red pen. Parents see the fees, class size and every class with seats left before they pick up the phone.","zh-Hant":"以批改過的功課為設計主軸：練習簿的橫線紙，加上老師的紅筆。家長未致電之前，已可看到學費、每班人數及每班餘額。","zh-Hans":"整个网站以批改过的作业为主线：练习本的横线纸，加上老师的红笔。家长打电话之前，就能看到学费、每班人数和每个班的剩余名额。"},
+  "c2.l1":{en:"A weekly timetable parents can filter by grade, subject and day, with seats left circled in red","zh-Hant":"可按年級、科目及上課日篩選的每週時間表，餘額用紅筆圈出","zh-Hans":"可以按年级、科目和上课日筛选的每周课程表，剩余名额用红笔圈出"},
+  "c2.l2":{en:"A free trial class form that carries over the class they picked and doesn’t ask for the child’s name or school","zh-Hant":"免費試堂表格會自動帶入所選班別，而且不問孩子姓名或學校","zh-Hans":"免费试听课申请表会自动带入选好的班级，而且不问孩子的姓名或学校"},
   "c2.l3":{en:"Pick-up and parking rules, missed-class policy, term dates and PA day camps","zh-Hant":"接送及泊車安排、補堂安排、學期日期及 PA Day 日營","zh-Hans":"接送和停车安排、补课安排、学期日期和 PA Day 日营"},
   "c2.sched":{en:"Timetable","zh-Hant":"時間表","zh-Hans":"课程表"},
   "c2.inq":{en:"Inquiry form","zh-Hant":"查詢表格","zh-Hans":"咨询表"},
   "c3.type":{en:"Physio and massage clinic","zh-Hant":"物理治療及按摩診所","zh-Hans":"理疗和按摩诊所"},
   "c3.name":{en:"Stillwater Wellness Clinic","zh-Hant":"靜水堂康健中心","zh-Hans":"静水堂康健中心"},
   "c3.alt":{en:"靜水堂, a physiotherapy, massage and acupuncture clinic","zh-Hant":"Stillwater Wellness Clinic","zh-Hans":"Stillwater Wellness Clinic"},
-  "c3.p":{en:"A clinic site that puts prices, insurance and parking up front, and takes appointment requests without asking about anyone’s health online.","zh-Hant":"價錢、保險及泊車資料一目了然；網上預約申請完全不問健康狀況。","zh-Hans":"价格、保险和停车信息一目了然；在线预约申请完全不问健康情况。"},
+  "c3.p":{en:"Built around the appointment card the front desk fills in by hand. Prices, direct billing and parking are up front, and appointment requests never ask about anyone’s health online.","zh-Hant":"以前台手寫的預約卡為設計主軸。價錢、直接向保險公司收費及泊車資料一目了然；網上預約申請完全不問健康狀況。","zh-Hans":"整个网站以前台手写的预约卡为主线。价格、保险直接结算和停车信息一目了然；在线预约申请完全不问健康情况。"},
   "c3.l1":{en:"Every service with session lengths, prices and who you will see","zh-Hant":"每項服務列明療程時間、價錢及治療師","zh-Hans":"每项服务都列出疗程时长、价格和治疗师"},
-  "c3.l2":{en:"A booking request form with a calendar that skips Sundays and holidays, and no health questions","zh-Hant":"預約申請表配日曆，自動避開星期日及假期，並且不問健康問題","zh-Hans":"预约申请表配日历，自动避开周日和节假日，而且不问健康问题"},
-  "c3.l3":{en:"Direct billing, first-visit checklist, cancellation policy and holiday hours","zh-Hant":"直接保險索償、首次到診須知、取消政策及假期時間","zh-Hans":"保险直接结算、首次就诊须知、取消政策和节假日时间"},
+  "c3.l2":{en:"A request form that fills in your appointment card, with a calendar that skips Sundays and holidays, and no health questions","zh-Hant":"填寫預約申請就像填好一張預約卡，日曆自動避開星期日及假期，並且不問健康問題","zh-Hans":"填写预约申请就像填好一张预约卡，日历自动避开周日和节假日，而且不问健康问题"},
+  "c3.l3":{en:"Direct billing, a first-visit guide, staff who speak Cantonese and Mandarin, and holiday hours","zh-Hant":"直接向保險公司收費、首次到診須知、職員講廣東話及普通話，另有假期時間","zh-Hans":"保险直接结算、首次就诊须知、员工会说粤语和普通话，另有节假日时间"},
   "c3.svc":{en:"Services and fees","zh-Hant":"服務及收費","zh-Hans":"服务和收费"},
   "c3.book":{en:"Booking form","zh-Hant":"預約表格","zh-Hans":"预约表"},
   "inc.h":{en:"What every site includes","zh-Hant":"每個網站都包括","zh-Hans":"每个网站都包括"},
@@ -276,7 +277,7 @@ MPi18n.init({
   "inc.5p":{en:"A table of closures and short days, so customers don’t show up to a locked door.","zh-Hant":"列明休息日及提早關門的日子，免得客人白行一趟。","zh-Hans":"列出休息日和提前关门的日子，免得客人白跑一趟。"},
   "inc.6h":{en:"Forms that help","zh-Hant":"好用的表格","zh-Hans":"好用的表格"},
   "inc.6p":{en:"Clear error messages in every language, and only the questions a business actually needs.","zh-Hant":"每種語言都有清楚的錯誤提示，只問商戶真正需要的資料。","zh-Hans":"每种语言都有清楚的错误提示，只问商家真正需要的信息。"},
-  "foot":{en:"All three businesses, their addresses, phone numbers and staff are made up for this demo. Photos are from Unsplash.","zh-Hant":"三間商戶及其地址、電話與職員均為示範而虛構。相片來自 Unsplash。","zh-Hans":"三家商家及其地址、电话和员工都是为示范虚构的。照片来自 Unsplash。"}
+  "foot":{en:"All three businesses, their addresses, phone numbers and staff are made up for this demo. Photos are from Unsplash and Pexels.","zh-Hant":"三間商戶及其地址、電話與職員均為示範而虛構。相片來自 Unsplash 及 Pexels。","zh-Hans":"三家商家及其地址、电话和员工都是为示范虚构的。照片来自 Unsplash 和 Pexels。"}
 });
 // Preview screenshots follow the chosen language.
 function swapShots(){document.querySelectorAll('img[data-shot]').forEach(function(im){im.src='assets/shots/'+im.dataset.shot+'-'+MPi18n.lang+'.jpg';});}

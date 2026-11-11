@@ -1,6 +1,22 @@
-Photos from Unsplash (https://unsplash.com/license), downloaded from images.unsplash.com:
-tutoring/reading.jpg	https://unsplash.com (image photo-1583468982228-19f19164aee2)
-tutoring/class.jpg	https://unsplash.com (image photo-1509062522246-3755977927d7)
-tutoring/girl-pink.jpg	https://unsplash.com (image photo-1625889944911-5e6e9d2d4c28)
-tutoring/girl-class.jpg	https://unsplash.com (image photo-1623287073501-8c849217c2fd)
-tutoring/worksheet.jpg	https://unsplash.com (image photo-1518133910546-b6c2fb7d79e3)
+Photos used on the Maple Bridge Learning Centre demo site (tutoring/).
+All are free for commercial use, no attribution required. Resized, cropped and converted to WebP for the site.
+
+hero-girl-800.webp, hero-girl-1200.webp, hero-girl-1800.webp, og-image.jpg
+  Girl writing in her exercise book in class.
+  https://unsplash.com/photos/photo-1623287073501-8c849217c2fd (downloaded from images.unsplash.com)
+  Unsplash License: https://unsplash.com/license
+
+homework-700.webp, homework-1100.webp
+  Girl in a pink jacket doing her homework at a table.
+  https://unsplash.com/photos/photo-1625889944911-5e6e9d2d4c28 (downloaded from images.unsplash.com)
+  Unsplash License: https://unsplash.com/license
+
+group-700.webp, group-1100.webp
+  Teacher pointing at a line in a student's exercise book while another student writes. Cropped.
+  https://www.pexels.com/photo/5905480/ (downloaded from images.pexels.com)
+  Pexels License: https://www.pexels.com/license/
+
+tutor-700.webp, tutor-1100.webp
+  Teacher and a boy in glasses working through a problem. Cropped.
+  https://www.pexels.com/photo/7079148/ (downloaded from images.pexels.com)
+  Pexels License: https://www.pexels.com/license/

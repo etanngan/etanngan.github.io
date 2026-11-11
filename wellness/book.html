@@ -4,225 +4,200 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../shared/i18n.js"></script>
+<script>(function(){var h=document.documentElement;function f(){if(h.lang==='zh-Hant')h.lang='zh-Hant-HK';}f();document.addEventListener('mp:langchange',f);})();</script>
 <title data-i18n="bk.title">Request an appointment | Stillwater Wellness Clinic</title>
 <meta name="description" content="Ask for an appointment at Stillwater in Markham. We confirm within one business day. This form does not ask about your health." data-i18n-attr="content:bk.desc">
 <meta property="og:title" content="Stillwater Wellness Clinic, Markham" data-i18n-attr="content:og.title">
-<meta property="og:description" content="Physiotherapy, massage therapy, acupuncture and osteopathic manual therapy near Woodbine Ave and 16th Ave. Direct billing." data-i18n-attr="content:og.desc">
-<meta name="theme-color" content="#1d5a80">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%231d5a80'/%3E%3Cpath d='M12 28c5-5 10-5 15 0s10 5 15 0 7-4 10-2M12 40c5-5 10-5 15 0s10 5 15 0 7-4 10-2' fill='none' stroke='%23fff' stroke-width='4.5' stroke-linecap='round'/%3E%3C/svg%3E">
+<meta property="og:description" content="Physiotherapy, massage therapy and acupuncture near Woodbine Ave and 16th Ave in Markham. Direct billing, evenings until 8 on weekdays." data-i18n-attr="content:og.desc">
+<meta property="og:image" content="assets/img/room-1200.webp">
+<meta name="theme-color" content="#1f4a4c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='12' width='56' height='40' rx='4' fill='%231f4a4c'/%3E%3Cpath d='M14 26h36M14 34h36M14 42h22' stroke='%23fff' stroke-width='3'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;700&family=Noto+Sans+HK:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 <script src="assets/i18n-dict.js"></script>
 </head>
 <body class="page-book">
 <a class="skip" href="#main" data-i18n="a11y.skip">Skip to content</a>
 
-<div class="topbar">
-  <div class="wrap topbar-row">
-    <span class="tb-item"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="top.billing">Direct billing to most insurance plans</span></span>
-    <span class="tb-item tb-today" id="tb-today" hidden><span data-i18n="top.today">Today</span> <b id="tb-hours"></b></span>
-    <a class="tb-item tb-phone" href="tel:+19055550117" aria-label="Call Stillwater at (905) 555-0117" data-i18n-attr="aria-label:call.aria">(905) 555-0117</a>
-  </div>
-</div>
-
 <header class="site-head">
   <div class="wrap head-row">
-    <a class="brand" href="index.html" aria-label="Stillwater Wellness Clinic, home page" data-i18n-attr="aria-label:brand.aria">
-      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="32" fill="#1d5a80"/><path d="M12 28c5-5 10-5 15 0s10 5 15 0 7-4 10-2M12 40c5-5 10-5 15 0s10 5 15 0 7-4 10-2" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/></svg>
-      <span class="brand-text"><b>Stillwater</b><span class="brand-zh" data-i18n="brand.zh" data-lang-neutral>靜水堂</span></span>
-    </a>
+    <a class="brand" href="index.html" aria-label="Stillwater Wellness Clinic, home page" data-i18n-attr="aria-label:brand.aria"><b class="brand-en" lang="en">Stillwater</b><b class="brand-zh" data-i18n="brand.short">靜水堂</b></a>
     <nav class="nav" id="nav" aria-label="Main" data-i18n-attr="aria-label:nav.aria">
       <a href="services.html" data-i18n="nav.services">Services and fees</a>
-      <a href="index.html#team" data-i18n="nav.team">Our team</a>
-      <a href="index.html#insurance" data-i18n="nav.insurance">Insurance</a>
-      <a href="index.html#visit" data-i18n="nav.visit">Visit us</a>
+      <a href="index.html#team" data-i18n="nav.team">Practitioners</a>
+      <a href="index.html#insurance" data-i18n="nav.insurance">Direct billing</a>
+      <a href="index.html#hours" data-i18n="nav.hours">Hours and location</a>
+      <a class="btn btn-main nav-book" href="book.html" aria-current="page" data-i18n="cta">Request an appointment</a>
+      <a class="nav-call" href="tel:+19055550117"><span data-i18n="call.or">Or call</span>&nbsp;<span class="nowrap" lang="en">(905) 555-0117</span></a>
     </nav>
-    <div class="head-tools">
-      <div class="lang" role="group" aria-label="Language" data-i18n-attr="aria-label:lang.aria">
-        <button type="button" data-set-lang="en" lang="en">EN</button>
-        <button type="button" data-set-lang="zh-Hant" lang="zh-Hant">繁</button>
-        <button type="button" data-set-lang="zh-Hans" lang="zh-Hans">简</button>
-      </div>
-      <a class="btn btn-blue head-book" href="book.html" aria-current="page"><span class="long" data-i18n="nav.book">Request an appointment</span><span class="short" data-i18n="nav.book.short">Book</span></a>
-      <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu" data-i18n-attr="aria-label:nav.open"><span></span><span></span><span></span></button>
+    <a class="head-call" href="tel:+19055550117" lang="en">(905) 555-0117</a>
+    <div class="lang" role="group" aria-label="Language" data-i18n-attr="aria-label:lang.aria">
+      <button type="button" data-set-lang="en" lang="en">EN</button>
+      <button type="button" data-set-lang="zh-Hant" lang="zh-Hant">繁</button>
+      <button type="button" data-set-lang="zh-Hans" lang="zh-Hans">简</button>
     </div>
+    <a class="btn btn-main head-book" href="book.html" aria-current="page" data-i18n="cta">Request an appointment</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu" data-i18n-attr="aria-label:nav.menu"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="menu-word" data-i18n="nav.menu">Menu</span></button>
   </div>
 </header>
 
 <main id="main">
   <div class="page-head">
     <div class="wrap">
-      <h1 data-i18n="bk.h1">Request an appointment</h1>
-      <p class="lead" data-i18n="bk.lede">Tell us the service you want and two times that work for you. We will confirm within one business day. Your appointment is not booked until you hear from us.</p>
+      <h1 data-i18n="cta">Request an appointment</h1>
+      <p class="lede" data-i18n="bk.lede">Fill in the card below. We call or text you within one business day to confirm a time. Your appointment is not booked until we confirm.</p>
     </div>
   </div>
 
   <div class="wrap book-grid">
     <div class="book-main">
-      <form class="form" id="bookForm" novalidate aria-describedby="reqNote">
-        <p class="small" id="reqNote" data-i18n="bk.req">Everything is needed unless it says optional.</p>
-        <p class="errsum" id="errSummary" role="alert" tabindex="-1" hidden data-i18n="er.summary">A few things need fixing before you can send this request.</p>
+      <div class="privacy" id="privacy">
+        <h2 data-i18n="bk.priv.h">We don’t ask about your health online</h2>
+        <p data-i18n="bk.priv.p">Your practitioner asks about your health in person, in a private room. This form only asks for what we need to find you a time.</p>
+      </div>
+
+      <form class="appt-card form-card" id="bookForm" novalidate aria-labelledby="form-title" aria-describedby="privacy">
+        <div class="card-head">
+          <p class="card-name"><span class="n1" data-i18n="card.n1">Stillwater Wellness Clinic</span> <span class="n2" data-i18n="card.n2" data-other-lang lang="zh-Hant-HK">靜水堂</span></p>
+          <p class="card-sub"><b id="form-title" data-i18n="bk.cardsub">Appointment request</b><br><span lang="en">Unit 4, 410 Tamsworth Drive, Markham</span><br><span lang="en">(905) 555-0117</span></p>
+        </div>
+        <p class="req-note" data-i18n="bk.req">Everything is needed unless it says optional.</p>
+        <div class="errsum" id="errSummary" role="alert" tabindex="-1" hidden>
+          <p class="errsum-title" data-i18n="er.summary">Please fix these before sending:</p>
+          <ul id="errList"></ul>
+        </div>
 
         <fieldset class="fs">
-          <legend data-i18n="bk.s1">About you</legend>
-          <p class="fs-hint" data-i18n="bk.s1.hint">A phone number or an email is enough.</p>
-          <div class="grid2">
-            <div class="field full" data-field="name">
-              <label for="f-name" data-i18n="bk.name">Name</label>
-              <input class="input" id="f-name" name="name" type="text" autocomplete="name" placeholder="The name we should ask for" data-i18n-attr="placeholder:bk.name.ph" aria-describedby="e-name">
-              <p class="err" id="e-name" aria-live="polite"></p>
-            </div>
-            <div class="field" data-field="phone">
-              <label for="f-phone" data-i18n="bk.phone">Phone</label>
-              <input class="input" id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="905-555-0199" aria-describedby="e-phone">
-              <p class="err" id="e-phone" aria-live="polite"></p>
-            </div>
-            <div class="field" data-field="email">
-              <label for="f-email" data-i18n="bk.email">Email</label>
-              <input class="input" id="f-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="name@example.com" aria-describedby="e-email">
-              <p class="err" id="e-email" aria-live="polite"></p>
-            </div>
-            <div class="field full" data-field="contact"><p class="err" id="e-contact" aria-live="polite"></p></div>
-            <fieldset class="field full plain" data-field="lang" aria-describedby="e-lang">
-              <legend class="label" data-i18n="bk.lang">Language you would like us to use</legend>
-              <div class="chips">
-                <label class="chip"><input type="radio" name="lang" value="en"><span data-i18n="lg.en">English</span></label>
-                <label class="chip"><input type="radio" name="lang" value="yue"><span data-i18n="lg.yue">Cantonese</span></label>
-                <label class="chip"><input type="radio" name="lang" value="cmn"><span data-i18n="lg.cmn">Mandarin</span></label>
-              </div>
-              <p class="err" id="e-lang" aria-live="polite"></p>
-            </fieldset>
+          <legend data-i18n="fs.what">What for</legend>
+          <div class="field" data-field="service">
+            <label for="f-service" data-i18n="bk.service">Service</label>
+            <select class="input" id="f-service" name="service" aria-describedby="e-service"></select>
+            <p class="err" id="e-service"></p>
           </div>
-        </fieldset>
-
-        <fieldset class="fs">
-          <legend data-i18n="bk.s2">Your visit</legend>
           <div class="grid2">
-            <div class="field" data-field="service">
-              <label for="f-service" data-i18n="bk.service">Service</label>
-              <select class="input" id="f-service" name="service" aria-describedby="e-service"></select>
-              <p class="err" id="e-service" aria-live="polite"></p>
-            </div>
             <div class="field" data-field="length">
               <label for="f-length" data-i18n="bk.length">Session length</label>
               <select class="input" id="f-length" name="length" aria-describedby="e-length" disabled></select>
-              <p class="err" id="e-length" aria-live="polite"></p>
+              <p class="err" id="e-length"></p>
             </div>
-            <div class="field full" data-field="prac">
+            <div class="field" data-field="prac">
               <label for="f-prac" data-i18n="bk.prac">Practitioner</label>
               <select class="input" id="f-prac" name="practitioner" aria-describedby="h-prac"></select>
-              <p class="help" id="h-prac" data-i18n="bk.prac.help">We only list practitioners who offer the service you chose.</p>
+              <p class="help" id="h-prac" data-i18n="bk.prac.help">Only practitioners who offer the service you chose are listed.</p>
             </div>
-            <fieldset class="field full plain" data-field="visitor" aria-describedby="e-visitor">
-              <legend class="label" data-i18n="bk.visitor">Have you been to Stillwater before?</legend>
-              <div class="chips">
-                <label class="chip"><input type="radio" name="visitor" value="new"><span data-i18n="bk.new">First time</span></label>
-                <label class="chip"><input type="radio" name="visitor" value="returning"><span data-i18n="bk.returning">I have been before</span></label>
-              </div>
-              <p class="err" id="e-visitor" aria-live="polite"></p>
-            </fieldset>
           </div>
         </fieldset>
 
         <fieldset class="fs">
-          <legend data-i18n="bk.s3">When suits you</legend>
-          <p class="fs-hint" data-i18n="bk.s3.hint">Give us a first choice and, if you can, a second. We are closed on Sundays.</p>
+          <legend data-i18n="fs.when">When</legend>
+          <p class="fs-hint" data-i18n="bk.when.hint">Give us a first choice and, if you can, a second. Closed Sundays and holidays.</p>
           <div class="slot" data-slot="1"></div>
           <div class="slot" data-slot="2"></div>
         </fieldset>
 
         <fieldset class="fs">
-          <legend data-i18n="bk.s4">How should we confirm?</legend>
-          <p class="fs-hint" data-i18n="bk.s4.hint">We only use this to confirm your time.</p>
-          <div class="field" data-field="confirm" role="radiogroup" aria-label="How should we confirm?" data-i18n-attr="aria-label:bk.s4" aria-describedby="e-confirm">
-            <div class="chips">
-              <label class="chip"><input type="radio" name="confirm" value="call"><span data-i18n="bk.c.call">Phone call</span></label>
-              <label class="chip"><input type="radio" name="confirm" value="text"><span data-i18n="bk.c.text">Text message</span></label>
-              <label class="chip"><input type="radio" name="confirm" value="email"><span data-i18n="bk.c.email">Email</span></label>
+          <legend data-i18n="fs.you">Your details</legend>
+          <div class="field" data-field="name">
+            <label for="f-name" data-i18n="bk.name">Name</label>
+            <input class="input" id="f-name" name="name" type="text" autocomplete="name" aria-describedby="e-name">
+            <p class="err" id="e-name"></p>
+          </div>
+          <div class="grid2">
+            <div class="field" data-field="phone">
+              <label for="f-phone" data-i18n="bk.phone">Phone</label>
+              <input class="input" id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="905-555-0199" aria-describedby="h-phone e-phone">
+              <p class="help" id="h-phone" data-i18n="bk.phone.help">We call or text this number to confirm your time.</p>
+              <p class="err" id="e-phone"></p>
             </div>
-            <p class="err" id="e-confirm" aria-live="polite"></p>
+            <div class="field" data-field="email">
+              <label for="f-email"><span data-i18n="bk.email">Email</span> <span class="opt" data-i18n="bk.opt">(optional)</span></label>
+              <input class="input" id="f-email" name="email" type="email" inputmode="email" autocomplete="email" aria-describedby="e-email">
+              <p class="err" id="e-email"></p>
+            </div>
           </div>
-          <div class="field" data-field="consent">
-            <label class="consent"><input type="checkbox" name="consent" id="f-consent" aria-describedby="e-consent"><span data-i18n="bk.consent">Stillwater may contact me about this request using the details above.</span></label>
-            <p class="err" id="e-consent" aria-live="polite"></p>
-          </div>
+          <p class="help lang-note" data-i18n="bk.langnote">The front desk speaks English, Cantonese and Mandarin. Tell us which you prefer when we call.</p>
         </fieldset>
 
         <div class="form-foot">
-          <button class="btn btn-blue" type="submit" data-i18n="bk.submit">Send request</button>
-          <p class="small" data-i18n="bk.submit.note">This is a demo form. Nothing is sent or saved.</p>
+          <p class="use-note" data-i18n="bk.use">We use your name and phone number only to arrange this appointment.</p>
+          <button class="btn btn-main" type="submit" data-i18n="cta">Request an appointment</button>
+          <p class="card-note" data-i18n="note.24">Please give 24 hours’ notice to change or cancel.</p>
+          <p class="demo-note" data-i18n="bk.demo">This is a demo form. Nothing is sent or saved.</p>
         </div>
       </form>
 
-      <div class="success" id="success" hidden tabindex="-1" aria-labelledby="ok-h">
-        <h2 id="ok-h"></h2>
-        <p id="ok-p"></p>
-        <dl class="sum" id="ok-sum"></dl>
-        <p class="demo-flag" data-i18n="ok.demo">This is a demo site. Nothing was sent or saved.</p>
-        <p class="small" data-i18n="ok.health">We did not ask about your health. Your practitioner will ask in person.</p>
-        <div class="btns">
-          <button class="btn btn-blue" type="button" id="again" data-i18n="ok.again">Make another request</button>
-          <a class="btn btn-line" href="index.html" data-i18n="ok.home">Back to home</a>
+      <div class="appt-card done-card" id="success" hidden tabindex="-1" aria-labelledby="ok-h">
+        <div class="card-head">
+          <p class="card-name"><span class="n1" data-i18n="card.n1">Stillwater Wellness Clinic</span> <span class="n2" data-i18n="card.n2" data-other-lang lang="zh-Hant-HK">靜水堂</span></p>
+          <p class="card-sub"><span lang="en">Unit 4, 410 Tamsworth Drive, Markham</span><br><span lang="en">(905) 555-0117</span></p>
+        </div>
+        <div class="done-intro">
+          <h2 id="ok-h" data-i18n="ok.h0">Thank you. We have your request.</h2>
+          <p data-i18n="ok.health">We did not ask about your health. Your practitioner will ask in person.</p>
+        </div>
+        <div id="ok-rows"></div>
+        <p class="not-yet" id="ok-notyet"></p>
+        <p class="card-note" data-i18n="note.24">Please give 24 hours’ notice to change or cancel.</p>
+        <p class="demo-note" data-i18n="ok.demo">This is a demo site. Nothing was sent or saved.</p>
+        <div class="done-actions">
+          <button class="btn btn-plain" type="button" id="again" data-i18n="ok.again">Make another request</button>
+          <a class="tap" href="index.html" data-i18n="ok.home">Back to home</a>
         </div>
       </div>
     </div>
 
-    <aside class="book-aside">
-      <div class="aside-box aside-blue">
-        <h2 data-i18n="bk.priv.h">We don’t ask about your health online</h2>
-        <p data-i18n="bk.priv.p">Your practitioner asks in person, in a private room, at your first visit. This form only asks for what we need to find you a time.</p>
-      </div>
-      <div class="aside-box aside-warn"><p data-i18n="bk.emerg">Not for emergencies. If this is urgent, call 911 or go to the nearest emergency department.</p></div>
-      <div class="aside-box">
+    <aside class="book-aside" aria-label="Contact and hours" data-i18n-attr="aria-label:foot.contact">
+      <div class="aside-block dbl">
         <h2 data-i18n="bk.call.h">Prefer to call?</h2>
-        <p class="big-phone"><a href="tel:+19055550117" data-lang-neutral>(905) 555-0117</a></p>
-        <p class="small" data-i18n="bk.call.p">The front desk answers in English, Cantonese and Mandarin.</p>
+        <p class="big-phone"><a href="tel:+19055550117" lang="en">(905) 555-0117</a></p>
+        <p data-i18n="bk.call.p">The front desk answers in English, Cantonese and Mandarin.</p>
       </div>
-      <div class="aside-box">
-        <h2 data-i18n="map.hours">Hours</h2>
+      <div class="aside-block dbl">
+        <h2 data-i18n="hours.card">Hours</h2>
         <table class="hours">
           <tbody>
-            <tr data-days="1,2,3,4,5" data-open="9:00" data-close="20:00"><th scope="row" data-i18n="d.weekdays">Monday to Friday</th><td data-i18n="h.weekdays">9:00 am – 8:00 pm</td></tr>
-            <tr data-days="6" data-open="9:00" data-close="16:00"><th scope="row" data-i18n="d.sat">Saturday</th><td data-i18n="h.sat">9:00 am – 4:00 pm</td></tr>
-            <tr data-days="0"><th scope="row" data-i18n="d.sun">Sunday and holidays</th><td data-i18n="h.closed">Closed</td></tr>
+            <tr data-days="1,2,3,4,5"><th scope="row" data-i18n="d.weekdays">Monday to Friday</th><td data-i18n="h.weekdays">9:00 am – 8:00 pm</td></tr>
+            <tr data-days="6"><th scope="row" data-i18n="d.sat">Saturday</th><td data-i18n="h.sat">9:00 am – 4:00 pm</td></tr>
+            <tr data-days="0"><th scope="row" data-i18n="d.sun">Sunday and statutory holidays</th><td data-i18n="h.closed">Closed</td></tr>
           </tbody>
         </table>
-        <p class="small" data-lang-neutral>Unit 4, 410 Tamsworth Drive<br>Markham, ON L6G 9Z8</p>
+        <p lang="en" style="margin-top:.8em">Unit 4, 410 Tamsworth Drive<br>Markham, ON L6G 9Z8</p>
       </div>
+      <p class="emerg" data-i18n="bk.emerg">Not for emergencies. If it is urgent, call 911 or go to the nearest emergency department.</p>
     </aside>
   </div>
 </main>
 
 <footer class="site-foot">
-  <div class="wrap foot-grid">
-    <div>
-      <p class="foot-brand"><span data-i18n="brand.name">Stillwater Wellness Clinic</span></p>
-      <p data-i18n="foot.about">Physiotherapy, massage therapy, acupuncture and osteopathic manual therapy in Markham since 2015.</p>
-      <p class="foot-emerg" data-i18n="foot.emerg">We do not treat emergencies. If this is urgent, call 911.</p>
+  <div class="wrap">
+    <p class="foot-note" data-i18n="note.24">Please give 24 hours’ notice to change or cancel.</p>
+    <div class="foot-grid">
+      <div>
+        <p class="foot-name"><span data-i18n="brand.name">Stillwater Wellness Clinic</span></p>
+        <p data-i18n="foot.about">Physiotherapy, massage therapy and acupuncture in Markham since 2015.</p>
+        <p lang="en">Unit 4, 410 Tamsworth Drive<br>Markham, ON L6G 9Z8</p>
+        <p><a class="foot-tap" href="tel:+19055550117" lang="en">(905) 555-0117</a><br><a class="foot-tap" href="mailto:frontdesk@stillwaterclinic.example" lang="en">frontdesk@stillwaterclinic.example</a></p>
+      </div>
+      <div>
+        <h2 data-i18n="foot.hours">Hours</h2>
+        <p data-i18n-html="foot.hours.p">Monday to Friday 9:00 am – 8:00 pm<br>Saturday 9:00 am – 4:00 pm<br>Closed Sundays and statutory holidays</p>
+        <p data-i18n="foot.emerg">We do not treat emergencies. If it is urgent, call 911.</p>
+      </div>
+      <div>
+        <h2 data-i18n="foot.pages">Pages</h2>
+        <ul class="foot-links">
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="services.html" data-i18n="nav.services">Services and fees</a></li>
+          <li><a href="book.html" data-i18n="cta">Request an appointment</a></li>
+        </ul>
+      </div>
     </div>
-    <div>
-      <h2 data-i18n="foot.hours">Hours</h2>
-      <p data-i18n-html="foot.hours.p">Monday to Friday 9:00 am – 8:00 pm<br>Saturday 9:00 am – 4:00 pm<br>Closed Sundays and holidays</p>
+    <div class="foot-base">
+      <p data-i18n="foot.copy">© 2026 Stillwater Wellness Clinic</p>
+      <p><span data-i18n="foot.demo">This is a demo website. The clinic and its staff are made up.</span> <a class="foot-tap" href="../index.html" data-i18n="foot.back">Back to the portfolio</a></p>
     </div>
-    <div>
-      <h2 data-i18n="foot.contact">Contact</h2>
-      <p data-lang-neutral>Unit 4, 410 Tamsworth Drive<br>Markham, ON L6G 9Z8</p>
-      <p><a href="tel:+19055550117" data-lang-neutral>(905) 555-0117</a><br><a href="mailto:frontdesk@stillwaterclinic.example" data-lang-neutral>frontdesk@stillwaterclinic.example</a></p>
-    </div>
-    <div>
-      <h2 data-i18n="foot.pages">Pages</h2>
-      <ul class="foot-links">
-        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
-        <li><a href="services.html" data-i18n="nav.services">Services and fees</a></li>
-        <li><a href="book.html" data-i18n="nav.book">Request an appointment</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="wrap foot-base">
-    <span data-i18n="foot.copy">© 2026 Stillwater Wellness Clinic</span>
-    <a href="../index.html" data-i18n="foot.demo">This is a demo website. The clinic is fictional.</a>
   </div>
 </footer>
 

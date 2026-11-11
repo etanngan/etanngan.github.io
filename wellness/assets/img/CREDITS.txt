@@ -1,8 +1,22 @@
-Photos from Unsplash (https://unsplash.com/license), downloaded from images.unsplash.com:
-wellness/massage.jpg	https://unsplash.com (image photo-1741522509438-a120c0bb5e88)
-wellness/back.jpg	https://unsplash.com (image photo-1639162906614-0603b0ae95fd)
-wellness/acupuncture.jpg	https://unsplash.com (image photo-1598555763574-dca77e10427e)
-wellness/physio-leg.jpg	https://unsplash.com (image photo-1649751361457-01d3a696c7e6)
-wellness/physio-weights.jpg	https://unsplash.com (image photo-1645005513713-9e2b92a687d3)
-wellness/shoulder.jpg	https://unsplash.com (image photo-1645005512968-0c1fe99f0093)
-wellness/interior.jpg	https://unsplash.com (image photo-1648775507324-b48dd3791fa5)
+Photos used on the Stillwater Wellness Clinic demo (wellness/). All are free for commercial use, no attribution required;
+credited here anyway. Converted to WebP and cropped/resized with sharp.
+
+room-800/1200/1800.webp, room-wide-800/1200.webp (treatment room with massage table)
+  Unsplash, image photo-1745327883290-1e9c6447b938
+  https://images.unsplash.com/photo-1745327883290-1e9c6447b938  (Unsplash License: https://unsplash.com/license)
+
+massage-600/1100.webp (therapist's hands on a patient's upper back)
+  Unsplash, image photo-1519823551278-64ac92734fb1
+  https://images.unsplash.com/photo-1519823551278-64ac92734fb1  (Unsplash License: https://unsplash.com/license)
+
+physio-600/1100.webp (arm exercise with light dumbbells)
+  Unsplash, image photo-1645005513713-9e2b92a687d3
+  https://images.unsplash.com/photo-1645005513713-9e2b92a687d3  (Unsplash License: https://unsplash.com/license)
+
+osteo-600/1100.webp (practitioner checking a shoulder)
+  Unsplash, image photo-1645005512968-0c1fe99f0093
+  https://images.unsplash.com/photo-1645005512968-0c1fe99f0093  (Unsplash License: https://unsplash.com/license)
+
+acupuncture-600/1100.webp (needles in the upper back)
+  Pexels, photo 4353249
+  https://www.pexels.com/photo/4353249/  (Pexels License: https://www.pexels.com/license/)
