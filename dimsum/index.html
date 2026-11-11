@@ -59,7 +59,7 @@
 </header>
 
 <main id="main">
-  <section class="hero" data-scroll="hero" aria-labelledby="hero-h">
+  <section class="hero" aria-labelledby="hero-h">
     <div class="wrap hero-grid">
       <p class="sign" aria-hidden="true">翠籠軒</p>
 
@@ -93,7 +93,7 @@
     </div>
   </section>
 
-  <section class="band" data-scroll aria-labelledby="band-h">
+  <section class="band" aria-labelledby="band-h">
     <div class="wrap band-grid">
       <p class="price" id="early-price" aria-hidden="true">$5.50</p>
       <div>
@@ -103,7 +103,7 @@
     </div>
   </section>
 
-  <section class="story" id="how" data-scroll="story" data-active="0" aria-labelledby="how-h">
+  <section class="story" id="how" data-active="0" aria-labelledby="how-h">
     <div class="story-pin">
       <div class="wrap story-grid">
         <div>
@@ -135,26 +135,29 @@
     </div>
   </section>
 
-  <section class="order" id="order" aria-labelledby="order-h">
-    <div class="wrap order-grid">
-      <div class="mosaic" data-scroll>
-        <figure class="big"><img src="assets/img/weekend-800.webp" srcset="assets/img/weekend-800.webp 800w, assets/img/weekend-1400.webp 1400w" sizes="(min-width: 901px) 580px, 100vw" width="800" height="530" loading="lazy" alt="A busy weekend table with tea, steamers and a sponge cake" data-i18n-attr="alt:alt.weekend"></figure>
-        <figure><img src="assets/img/hargow-480.webp" srcset="assets/img/hargow-480.webp 480w, assets/img/hargow-800.webp 800w" sizes="(min-width: 901px) 290px, 50vw" width="480" height="445" loading="lazy" alt="Four har gow in a bamboo steamer" data-i18n-attr="alt:alt.hargow"></figure>
-        <figure><img src="assets/img/siumai-480.webp" srcset="assets/img/siumai-480.webp 480w, assets/img/siumai-800.webp 800w" sizes="(min-width: 901px) 290px, 50vw" width="480" height="360" loading="lazy" alt="Siu mai topped with crab roe in a bamboo steamer" data-i18n-attr="alt:alt.siumai"></figure>
-        <figure><img src="assets/img/eggtart-480.webp" srcset="assets/img/eggtart-480.webp 480w, assets/img/eggtart-800.webp 800w" sizes="(min-width: 901px) 290px, 50vw" width="480" height="360" loading="lazy" alt="Three egg tarts on a plate" data-i18n-attr="alt:alt.eggtart"></figure>
-        <figure><img src="assets/img/rollcf-480.webp" srcset="assets/img/rollcf-480.webp 480w, assets/img/rollcf-800.webp 800w" sizes="(min-width: 901px) 290px, 50vw" width="480" height="360" loading="lazy" alt="BBQ pork rice rolls on a white plate" data-i18n-attr="alt:alt.rollcf"></figure>
-      </div>
-      <div>
-        <h2 class="display" id="order-h" data-i18n="order.h">What every table orders</h2>
-        <p class="lede" data-i18n="order.p">Tap a dish to tick it, then show your sheet to the server.</p>
-        <div class="sheet bigsheet">
+  <section class="cart" id="order" aria-labelledby="order-h">
+    <div class="cart-pin">
+      <div class="wrap cart-head">
+        <div>
+          <h2 class="display" id="order-h" data-i18n="order.h">What every table orders</h2>
+          <p class="lede" data-i18n="order.p">The cart is coming round. Tap a dish to tick it on your sheet, then show the sheet to the server.</p>
+        </div>
+        <div class="sheet mysheet">
           <div class="sheet-head"><b data-i18n="hs.sheet">點心紙</b><span data-i18n="sheet.h">Your sheet</span></div>
-          <div id="picks" role="group" aria-labelledby="order-h"></div>
+          <p class="list" id="pick-list">Your ticked dishes show up here.</p>
           <div class="total"><span id="pick-total" aria-live="polite">Nothing ticked yet</span><a href="menu.html" data-i18n="fav.link">See the full menu</a></div>
         </div>
-        <p class="fine" id="pick-early" hidden data-i18n="sheet.early">Weekday morning price used for small, medium and large dim sum.</p>
-        <p class="fine"><span data-i18n="fav.p">Prices are per order, before tax.</span> <span data-i18n="order.kept">Your ticks stay on this phone for 6 hours and show up on the full menu.</span></p>
       </div>
+      <div class="cart-view">
+        <div class="cart-track" id="cart-track">
+          <div class="cards" id="cart-cards" role="list" aria-labelledby="order-h"></div>
+          <span class="wheel w1" aria-hidden="true"></span><span class="wheel w2" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+    <div class="wrap cart-foot">
+      <p class="fine" id="pick-early" hidden data-i18n="sheet.early">Weekday morning price used for small, medium and large dim sum.</p>
+      <p class="fine"><span data-i18n="fav.p">Prices are per order, before tax.</span> <span data-i18n="order.kept">Your ticks stay on this phone for 6 hours and show up on the full menu.</span></p>
     </div>
   </section>
 
@@ -164,7 +167,7 @@
       <div class="visit-grid">
         <div>
           <h3 data-i18n="wait.h">Weekend waits</h3>
-          <ul class="waits" data-scroll>
+          <ul class="waits">
             <li><span class="when" data-i18n="wait.t1">8:30 – 10:30 am</span><span class="bar light" style="--w:20%"><i></i><span data-i18n="wait.w1">Under 10 minutes</span></span></li>
             <li><span class="when" data-i18n="wait.t2">10:30 am – 1:30 pm</span><span class="bar peak" style="--w:100%"><i></i><span data-i18n="wait.w2">30 to 45 minutes</span></span></li>
             <li><span class="when" data-i18n="wait.t3">1:30 – 4:00 pm</span><span class="bar light" style="--w:34%"><i></i><span data-i18n="wait.w3">About 15 minutes</span></span></li>
@@ -172,6 +175,8 @@
           </ul>
           <p class="note" data-i18n="wait.p">Take a number at the front desk. We text you when your table is ready, so you can wait in the car.</p>
         </div>
+        <figure class="visit-photo"><img src="assets/img/weekend-800.webp" srcset="assets/img/weekend-800.webp 800w, assets/img/weekend-1400.webp 1400w" sizes="(min-width: 861px) 560px, 100vw" width="800" height="530" loading="lazy" alt="A busy weekend table with tea, steamers and a sponge cake" data-i18n-attr="alt:alt.weekend"></figure>
+      </div>
         <dl class="facts">
           <div><dt data-i18n="book.h">Booking a table</dt><dd data-i18n="book.p">Call us at (905) 555-0138. On weekdays we book any size of table. On weekends we only book tables of 6 or more; smaller tables take a number at the front desk.</dd></div>
           <div><dt data-i18n="info.tea.h">Tea charge</dt><dd data-i18n="info.tea.p">$2.00 per person, $1.50 for seniors 65 and over. Leave the teapot lid open and we bring more hot water.</dd></div>
@@ -182,7 +187,6 @@
           <div><dt data-i18n="info.access.h">Wheelchairs and children</dt><dd data-i18n="info.access.p">Step-free entrance and an accessible washroom. High chairs and booster seats are available.</dd></div>
           <div><dt data-i18n="info.allergy.h">Allergies</dt><dd data-i18n="info.allergy.p">Our kitchen uses shrimp, shellfish, peanuts, sesame, wheat, soy and egg, and the steamers are shared. Tell your server about any allergy before you order.</dd></div>
         </dl>
-      </div>
     </div>
   </section>
 
@@ -294,6 +298,8 @@
   <a class="text-link" href="#map" data-i18n="callbar.map">Map</a>
 </nav>
 
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="assets/menu-data.js"></script>
 <script src="assets/site.js"></script>
 </body>

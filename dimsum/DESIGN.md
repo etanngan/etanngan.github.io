@@ -18,8 +18,8 @@ A demo site for a made-up business. The restaurant, address (Unit 108, 3150 Elle
   - **Hero (jade):** the gold signboard (vertical 翠籠軒 in a double gold frame on desktop, horizontal on phones), a plain headline, today's status and hours, the red call button. On the right, a round bamboo steamer holding the real har gow photo, steam rising from it, and a tilted paper order sheet whose boxes get red ticks before the 營業中 / 休息中 chop thumps onto it.
   - **Red band:** the weekday morning price ($5.50) in huge gold numerals, like the price card on the trolley.
   - **First time at yum cha?** a pinned four-step story: take a number (red ticket A23), tick your sheet (ticks draw as you scroll), leave the teapot lid open (the lid lifts), pay at the counter (a red 多謝 chop).
-  - **What every table orders:** a photo grid and a large paper sheet you can tap to tick dishes. Ticks go into the same sheet the menu and phone menu use (`jb-sheet`, kept on the phone for 6 hours).
-  - **Before you visit:** weekend waits as bars (the peak bar in red), the practical facts as plain text.
+  - **What every table orders (concept v2):** the dim sum cart. Nine dishes ride past in round bamboo steamers on a cart with a steel rail and two wheels (real photos for har gow, siu mai, BBQ pork cheung fun and egg tarts; the others are closed lids stamped with their size). Each has a "Tick it" button; "Your sheet" beside the heading lists what is ticked and the total. Ticks go into the same sheet the menu and phone menu use (`jb-sheet`, kept on the phone for 6 hours).
+  - **Before you visit:** weekend waits as bars (the peak bar in red) next to the framed weekend table photo, then the practical facts in two columns.
   - **Hours and location + footer (deep jade):** hours list with today marked by a gold edge, address, a big gold phone number, the map, and 翠籠軒 stamped huge at the bottom like the board over the door.
   - **Menu and phone menu pages:** keep the sheet layout (tier boxes, tally boxes); they share the jade header, red call button and jade footer.
 - **What stays quiet:** paper and porcelain backgrounds, plain sans text, no icons, no gradients except the bamboo texture of the steamer and lid.
@@ -71,12 +71,12 @@ Red and gold are the signboard's colours, used generously in bands and big numbe
 - Same photos as before (Pexels, Unsplash, Flickr CC BY; see `assets/img/CREDITS.txt`), WebP with `srcset`, lazy below the first screen. The hero photo is shown in a round bamboo steamer.
 
 ## 8. Motion
-All motion is CSS/SVG plus one small scroll handler (transforms only). Everything is off for `prefers-reduced-motion`, and all text is readable at every frame.
+Entrances and loops are CSS/SVG. Scroll motion uses GSAP 3.12.5 + ScrollTrigger from cdnjs (pinned version, SRI hashes, `defer` so a slow CDN never delays the page). Without GSAP, or with `prefers-reduced-motion`, the page is a normal page: a plain story list, a cart you swipe sideways, full wait bars and a plain sign-off. All text is readable at every frame.
 - **Lid-lift intro:** on the first page view of a visit only, a bamboo steamer lid covers the screen and lifts away with puffs of steam (about 1.4 s). Tap, click, scroll or any key skips it. Never with reduced motion.
 - **Hero:** red ticks land on the tilted sheet, then the chop thumps (after the intro when it plays); steam rises slowly from the steamer (paused when the hero is off screen).
-- **Scroll-linked:** the sign drifts and the steamer turns (desktop), the $5.50 slides, the photo grid shifts slightly, the wait bars grow, the four-step story is pinned and each scene plays as you scroll, and 翠籠軒 is stamped once when the footer comes into view.
-- **Tap:** ticking a dish on the order sheet draws the tick.
-- **Reduced motion:** no intro, no steam, no scroll effects; the story becomes a plain numbered list; the sheets show their ticks and chop in place.
+- **Scroll-linked (GSAP):** the sign drifts (desktop only, so it never covers the headline), the steamer turns and the sheet lifts away; the $5.50 slides left; the four-step story pins and plays its scenes; the cart pins and rolls sideways with its wheels turning (keyboard focus brings an off-screen dish into view); the wait bars grow in; the weekend photo drifts in its frame; 翠籠軒 is stamped one character at a time. On phones the pinned scenes leave room for the bottom call bar.
+- **Tap:** ticking a dish on the cart draws the tick and lifts its steamer.
+- **Reduced motion or no GSAP:** no intro (reduced motion), no steam, no scroll effects; the story is a plain numbered list; the cart scrolls sideways by swipe; the sheets show their ticks and chop in place.
 
 ## 9. Language notes
 - **繁 (Hong Kong wording):** 餐牌, 訂枱, 泊車, 落單, 茶芥, 埋單, 點心紙, 枱號, 人數, 貴賓房, 取籌, 外賣, 拎外賣, 長者, 加一服務費 (written as 15% 服務費 since it is 15%), times as 上午9:00 / 下午3:00 / 晚上9:30. Written standard Chinese with HK vocabulary, not colloquial Cantonese.
