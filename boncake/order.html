@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <script src="../shared/i18n.js"></script>
 <title data-i18n="order.title">Order a whole cake — Bon Cake (preview)</title>
-<meta name="description" content="Concept preview of a cake order request page for Bon Cake, First Markham Place. Not the official website.">
+<meta name="description" content="Concept preview of a cake ordering page for Bon Cake, First Markham Place. Not the official website.">
 <meta name="theme-color" content="#fde8ec">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23fde0e6'/%3E%3Crect x='14' y='26' width='36' height='24' fill='%23f8cdd7'/%3E%3Crect x='14' y='33' width='36' height='4' fill='%23ffffff'/%3E%3Crect x='14' y='42' width='36' height='4' fill='%23ffffff'/%3E%3Ccircle cx='32' cy='20' r='5' fill='%23c76b82'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,37 +41,37 @@
 </header>
 
 <main id="main">
-<section class="page-hero">
-  <p class="eyebrow" data-i18n="order.eyebrow">Cake orders</p>
-  <h1 data-i18n="order.h">Order a whole cake.</h1>
-  <p class="lede" data-i18n="order.lede">Tell us the flavour, the day and the message. We'll confirm the details and price with you by phone or WeChat.</p>
-  <p class="note"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="10" cy="10" r="8"/><path d="M10 9v5M10 6h.01"/></svg><span data-i18n="order.demo">Preview: this form doesn't send anything yet.</span></p>
-</section>
-<form class="order-wrap" id="order-form" novalidate>
-  <fieldset style="border:0;margin:0;padding:0;min-width:0">
-    <legend><h2 data-i18n="order.pickH" style="margin-bottom:16px">1. Pick a flavour</h2></legend>
-    <div class="pick">
-      <label><input type="radio" name="flavour" value="taro"><span class="art" data-slice="taro"></span><span><b data-i18n="taro.n">Taro ube</b><small data-i18n="taro.d">Four airy chiffon layers with light taro cream.</small></span></label>
-      <label><input type="radio" name="flavour" value="sesame"><span class="art" data-slice="sesame"></span><span><b data-i18n="sesame.n">Black sesame</b><small data-i18n="sesame.d">Rich, nutty sesame cream, only lightly sweet.</small></span></label>
-      <label><input type="radio" name="flavour" value="oval"><span class="art" data-slice="oval"></span><span><b data-i18n="oval.n">Ovaltine chocolate crunch</b><small data-i18n="oval.d">Malty chocolate cream with crispy bits.</small></span></label>
-      <label><input type="radio" name="flavour" value="mochi"><span class="art" data-slice="mochi"></span><span><b data-i18n="mochi.n">Taro mochi</b><small data-i18n="mochi.d">Creamy taro with chewy mochi pieces all through.</small></span></label>
-    </div>
-  </fieldset>
-  <div style="display:grid;gap:16px">
-    <div class="form">
-      <h2 data-i18n="order.formH">2. Your cake details</h2>
-      <fieldset class="field"><legend data-i18n="f.size">Size</legend><div class="seg"><label><input type="radio" name="size" value="f.size6" checked><span data-i18n="f.size6">6-inch</span></label><label><input type="radio" name="size" value="f.sizeAsk"><span data-i18n="f.sizeAsk">Bigger — please ask</span></label></div></fieldset>
-      <div class="field"><label for="f-date" data-i18n="f.date">Pickup day</label><input id="f-date" name="date" type="date"><small data-i18n="f.dateHint">At least 2 days from today. We're closed Tuesdays.</small></div>
-      <div class="field"><label for="f-msg" data-i18n="f.msg">Message on the cake (optional)</label><input id="f-msg" name="msg" maxlength="40" placeholder="e.g. Happy Birthday Mom" data-i18n-attr="placeholder:f.msgPh" autocomplete="off"></div>
-      <div class="field"><label for="f-name" data-i18n="f.name">Your name</label><input id="f-name" name="name" autocomplete="off"></div>
-      <div class="field"><label for="f-phone" data-i18n="f.phone">Phone number</label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="off"></div>
-      <fieldset class="field"><legend data-i18n="f.via">Best way to confirm</legend><div class="seg"><label><input type="radio" name="via" value="f.viaCall" checked><span data-i18n="f.viaCall">Phone call</span></label><label><input type="radio" name="via" value="f.viaText"><span data-i18n="f.viaText">Text</span></label><label><input type="radio" name="via" value="f.viaWc"><span data-i18n="f.viaWc">WeChat</span></label></div></fieldset>
-      <p class="err" id="f-err" role="alert"></p>
-      <button class="btn btn-primary" type="submit" data-i18n="f.submit">Review my order</button>
-    </div>
-    <div class="result" id="result" hidden aria-live="polite"></div>
+<section class="page-hero order-hero">
+  <div>
+    <p class="eyebrow" data-i18n="order.eyebrow">Cake orders</p>
+    <h1 data-i18n="order.h">Order a whole cake.</h1>
+    <p class="lede" data-i18n="order.lede">For now, the easiest way is to call us. We'll go over flavour, size and price with you, and have your cake ready at Unit 236.</p>
   </div>
-</form>
+  <figure class="order-photo"><img src="assets/img/whole-cake.jpg" width="583" height="728" alt="A whole cake topped with berries and biscuits" data-i18n-attr="alt:img.whole"></figure>
+</section>
+<div class="order-wrap">
+  <section class="call-card rv" aria-labelledby="oc-h">
+    <h2 id="oc-h" data-i18n="oc.h">Call to order</h2>
+    <a class="btn btn-primary btn-big" href="tel:+16478988043"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M5.3 2.2c.5-.4 1.2-.3 1.6.2l1.9 2.6c.3.5.3 1.1-.1 1.5L7.5 7.7a10.6 10.6 0 0 0 4.8 4.8l1.2-1.2c.4-.4 1-.5 1.5-.1l2.6 1.9c.5.4.6 1.1.2 1.6l-1.2 1.6c-.6.8-1.6 1.1-2.5.8A16 16 0 0 1 2.9 6.2c-.3-.9 0-1.9.8-2.5z"/></svg><span data-i18n="oc.btn">Call (647) 898-8043</span></a>
+    <p class="when" data-i18n="oc.when">Noon to 8 pm · closed Tuesdays</p>
+    <p class="notice" data-i18n="oc.notice">Please order at least 2 days ahead, and earlier before weekends and holidays.</p>
+    <h3 data-i18n="ask.h">What we'll ask you</h3>
+    <ul class="ask">
+      <li><b data-i18n="ask.flav">Flavour</b><span data-i18n="ask.flavD">Pick from our cakes, or ask what's in the case today.</span></li>
+      <li><b data-i18n="ask.size">Size</b><span data-i18n="ask.sizeD">6-inch is our usual whole cake. Ask us about bigger.</span></li>
+      <li><b data-i18n="ask.day">Pickup day</b><span data-i18n="ask.dayD">At least 2 days from today. We're closed Tuesdays.</span></li>
+      <li><b data-i18n="ask.msg">Message on the cake</b><span data-i18n="ask.msgD">Optional, for example “Happy Birthday Mom”.</span></li>
+      <li><b data-i18n="ask.you">Your name and phone</b><span data-i18n="ask.youD">So we can call you back to confirm.</span></li>
+    </ul>
+  </section>
+  <section class="tpl-card rv" aria-labelledby="em-h">
+    <h2 id="em-h" data-i18n="em.h">Prefer to write it down?</h2>
+    <p data-i18n="em.p">Copy this message, fill in the blanks, and send it to us by email or WeChat.</p>
+    <pre id="tpl" class="tpl"></pre>
+    <button class="btn btn-ghost" type="button" id="copy-tpl"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="7" y="7" width="10" height="11" rx="2"/><path d="M13 7V4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg><span data-i18n="em.copy">Copy message</span></button>
+    <p class="to" data-i18n="em.to">Email: shop address to be added · WeChat: ask at the counter</p>
+  </section>
+</div>
 </main>
 
 <footer>
