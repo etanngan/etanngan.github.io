@@ -4,31 +4,32 @@
   'use strict';
   function T(en, hant, hans) { return { en: en, 'zh-Hant': hant, 'zh-Hans': hans }; }
 
+  /* grade bands: only used for old links like schedule.html?band=J (the filter is now by single grade) */
   var bands = [
-    { id: 'P', label: T('Primary 1–3', '初小 1–3年級', '低年级 1–3年级') },
-    { id: 'J', label: T('Junior 4–6', '高小 4–6年級', '高年级 4–6年级') },
-    { id: 'I', label: T('Intermediate 7–8', '初中 7–8年級', '初中 7–8年级') },
-    { id: 'H', label: T('High school 9–12', '高中 9–12年級', '高中 9–12年级') }
+    { id: 'P', lo: 1, hi: 3 },
+    { id: 'J', lo: 4, hi: 6 },
+    { id: 'I', lo: 7, hi: 8 },
+    { id: 'H', lo: 9, hi: 12 }
   ];
 
   var subjects = [
     { id: 'math', label: T('Math', '數學', '数学') },
     { id: 'english', label: T('English', '英文', '英语'), long: T('English reading & writing', '英文閱讀及寫作', '英语阅读与写作') },
     { id: 'science', label: T('Science', '科學', '科学') },
-    { id: 'osslt', label: T('OSSLT prep', 'OSSLT備試', 'OSSLT备考'), long: T('OSSLT prep (Gr 10 literacy test)', 'OSSLT備試（十年級讀寫測試）', 'OSSLT备考（十年级读写测试）') },
+    { id: 'osslt', label: T('OSSLT prep', 'OSSLT 備試', 'OSSLT 备考'), long: T('OSSLT prep (Grade 10 literacy test)', 'OSSLT 備試（十年級讀寫測試）', 'OSSLT 备考（十年级读写测试）') },
     { id: 'french', label: T('French', '法文', '法语'), long: T('French basics', '法文基礎', '法语基础') },
     { id: 'mandarin', label: T('Mandarin', '中文班', '中文班'), long: T('Mandarin / Chinese class', '中文班（普通話）', '中文班') },
-    { id: 'club', label: T('Homework club', '功課輔導班', '作业辅导班') }
+    { id: 'club', label: T('Homework Club', '功課班', '作业辅导班') }
   ];
 
   var days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 
   var teachers = {
     KL: T('Ms. Lau', '劉老師', '刘老师'),
-    DO: T('Mr. Okafor', 'Okafor老師', 'Okafor老师'),
+    DO: T('Mr. Okafor', 'Okafor 老師', 'Okafor 老师'),
     XZ: T('Ms. Zhao', '趙老師', '赵老师'),
     EW: T('Ms. Wong', '黃老師', '黄老师'),
-    JI: T('Mr. Ip', '葉Sir', '叶老师')
+    JI: T('Mr. Ip', '葉 Sir', '叶老师')
   };
 
   var rooms = {
@@ -70,12 +71,12 @@
     ossl: T('OSSLT Prep', 'OSSLT備試班', 'OSSLT备考班'),
     mand1: T('Mandarin for Beginners', '中文班（初級）', '中文班（初级）'),
     mand2: T('Mandarin: Reading & Speaking', '中文班（進階）', '中文班（进阶）'),
-    club: T('Homework Club', '功課輔導班', '作业辅导班')
+    club: T('Homework Club', '功課班', '作业辅导班')
   };
 
-  var noteOssltWed = T('8-week block, Jan 6 – Feb 24', '一期八週：1月6日至2月24日', '一期8周：1月6日–2月24日');
-  var noteOssltSat = T('8-week block, Jan 9 – Feb 27', '一期八週：1月9日至2月27日', '一期8周：1月9日–2月27日');
-  var noteClub = T('Pick-up 5:30–6:30 pm', '下午5:30–6:30接回', '17:30–18:30接孩子');
+  var noteOssltWed = T('8 weeks, Jan 6 to Feb 24', '共 8 星期：1 月 6 日至 2 月 24 日', '共8周：1月6日至2月24日');
+  var noteOssltSat = T('8 weeks, Jan 9 to Feb 27', '共 8 星期：1 月 9 日至 2 月 27 日', '共8周：1月9日至2月27日');
+  var noteClub = T('Pickup 5:30 to 6:30 pm', '下午5:30 – 6:30 接走', '17:30–18:30 接孩子');
 
   /* id, day, slot, time, subject, name, grades, bands, teacher, room, seats left (of cap) */
   function C(id, day, slot, time, subject, name, grades, bandIds, teacher, room, left, extra) {
@@ -83,6 +84,7 @@
       bands: bandIds, teacher: teacher, room: room, left: left, cap: 6 };
     if (extra) for (var k in extra) c[k] = extra[k];
     c.status = left === 0 ? 'wait' : (left <= 2 ? 'few' : 'open');
+    var g = grades.split('–'); c.lo = +g[0]; c.hi = +(g[1] || g[0]);
     return c;
   }
   function club(day) {

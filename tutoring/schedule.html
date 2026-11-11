@@ -4,15 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../shared/i18n.js"></script>
+<script>(function(){function hk(){if(window.MPi18n&&MPi18n.lang==='zh-Hant')document.documentElement.lang='zh-Hant-HK';}hk();document.addEventListener('mp:langchange',hk);})();</script>
 <title data-i18n="sch.title">Winter 2027 timetable | Maple Bridge Learning Centre</title>
-<meta name="description" content="Every class in the Winter 2027 term (January 4 to March 27), with grade, time, teacher, room and seats left." data-i18n-attr="content:sch.desc">
+<meta name="description" content="Every class in the Winter 2027 term (January 4 to March 27), with grade, time, teacher, room and seats left. Filter by grade, subject and day." data-i18n-attr="content:sch.desc">
 <meta property="og:title" content="Maple Bridge Learning Centre, Markham" data-i18n-attr="content:og.title">
-<meta property="og:description" content="After-school tutoring for Grades 1 to 12 near Kennedy Rd and Bur Oak Ave. Classes of six or fewer." data-i18n-attr="content:og.desc">
-<meta name="theme-color" content="#ffc629">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23ffc629'/%3E%3Cpath d='M10 44h44M16 44V36a16 16 0 0 1 32 0v8' fill='none' stroke='%23262a31' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+<meta property="og:description" content="After-school tutoring for Grades 1 to 12 near Kennedy Rd and Bur Oak Ave. Six students or fewer per class. Free trial class." data-i18n-attr="content:og.desc">
+<meta property="og:image" content="assets/img/og-image.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23ffc629'/%3E%3Cpath d='M10 44h44M16 44V36a16 16 0 0 1 32 0v8' fill='none' stroke='%231c2430' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700&family=LXGW+WenKai+TC&family=Noto+Sans+HK:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 <script src="assets/i18n-dict.js"></script>
 </head>
@@ -22,25 +25,24 @@
 <header class="site-head">
   <div class="wrap head-row">
     <a class="brand" href="index.html" aria-label="Maple Bridge Learning Centre, home page" data-i18n-attr="aria-label:brand.aria">
-      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="12" fill="#ffc629"/><path d="M10 44h44M16 44V36a16 16 0 0 1 32 0v8" fill="none" stroke="#262a31" stroke-width="5" stroke-linecap="round"/></svg>
-      <span class="brand-text"><b data-i18n="brand.name">Maple Bridge Learning Centre</b></span>
+      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="12" fill="#ffc629"/><path d="M10 44h44M16 44V36a16 16 0 0 1 32 0v8" fill="none" stroke="#1c2430" stroke-width="5" stroke-linecap="round"/></svg>
+      <span class="brand-name" data-i18n="brand.name">Maple Bridge Learning Centre</span>
     </a>
     <nav class="nav" id="nav" aria-label="Main" data-i18n-attr="aria-label:nav.aria">
       <a href="index.html#fees" data-i18n="nav.fees">Classes and fees</a>
       <a href="schedule.html" aria-current="page" data-i18n="nav.schedule">Timetable</a>
       <a href="index.html#teachers" data-i18n="nav.teachers">Teachers</a>
       <a href="index.html#parents" data-i18n="nav.parents">For parents</a>
-      <a href="index.html#visit" data-i18n="nav.contact">Contact</a>
+      <a href="index.html#visit" data-i18n="nav.contact">Find us</a>
+      <a class="btn-main nav-cta" href="inquiry.html?topic=trial" data-i18n="cta">Book a free trial class</a>
     </nav>
-    <div class="head-tools">
-      <div class="lang" role="group" aria-label="Language" data-i18n-attr="aria-label:lang.aria">
-        <button type="button" data-set-lang="en" lang="en">EN</button>
-        <button type="button" data-set-lang="zh-Hant" lang="zh-Hant">繁</button>
-        <button type="button" data-set-lang="zh-Hans" lang="zh-Hans">简</button>
-      </div>
-      <a class="btn btn-yellow head-cta" href="inquiry.html?topic=assessment" data-i18n="nav.cta">Free assessment</a>
-      <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu" data-i18n-attr="aria-label:nav.open"><span></span><span></span><span></span></button>
+    <div class="lang" role="group" aria-label="Language" data-i18n-attr="aria-label:lang.aria">
+      <button type="button" data-set-lang="en" lang="en">EN</button>
+      <button type="button" data-set-lang="zh-Hant" lang="zh-Hant">繁</button>
+      <button type="button" data-set-lang="zh-Hans" lang="zh-Hans">简</button>
     </div>
+    <a class="btn-main head-cta" href="inquiry.html?topic=trial" data-i18n="cta">Book a free trial class</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu" data-i18n-attr="aria-label:nav.open"><span></span><span></span><span></span></button>
   </div>
 </header>
 
@@ -48,21 +50,21 @@
   <div class="page-head">
     <div class="wrap">
       <h1 data-i18n="sch.h1">Winter 2027 timetable</h1>
-      <p class="lead" data-i18n="sch.lead">Classes run from January 4 to March 27. There are no regular classes during March Break (March 15 to 19) or on Family Day.</p>
-      <p class="small" data-i18n="sch.updated">Seats were last updated on Monday, November 9, 2026. Please call to confirm before you register.</p>
+      <p class="lead" data-i18n="sch.lead">Classes run January 4 to March 27. No regular classes in March Break (March 15 to 19) or on Family Day.</p>
+      <p class="small" data-i18n="sch.updated">Seats last updated Monday, November 9, 2026. Please call to confirm before you register.</p>
     </div>
   </div>
 
   <div class="wrap layout" id="layout">
     <div class="filters" role="group" aria-label="Filter classes" data-i18n-attr="aria-label:sch.f.label">
-      <div class="frow"><span class="flabel" data-i18n="sch.f.band">Grade</span><div class="fchips" id="f-band"></div></div>
-      <div class="frow"><span class="flabel" data-i18n="sch.f.subject">Subject</span><div class="fchips" id="f-subj"></div></div>
-      <div class="frow"><span class="flabel" data-i18n="sch.f.day">Day</span><div class="fchips" id="f-day"></div></div>
+      <div class="frow"><span class="flabel" id="fl-grade" data-i18n="sch.f.grade">Your child’s grade</span><div class="fchips fchips--grade" id="f-grade" role="group" aria-labelledby="fl-grade"></div></div>
+      <div class="frow"><span class="flabel" id="fl-subj" data-i18n="sch.f.subject">Subject</span><div class="fchips" id="f-subj" role="group" aria-labelledby="fl-subj"></div></div>
+      <div class="frow"><span class="flabel" id="fl-day" data-i18n="sch.f.day">Day</span><div class="fchips" id="f-day" role="group" aria-labelledby="fl-day"></div></div>
       <div class="fbar">
         <p class="count" id="count" aria-live="polite"></p>
         <button type="button" class="link-btn" id="clear" hidden data-i18n="sch.f.clear">Clear filters</button>
         <div class="views" role="group" aria-label="View" data-i18n-attr="aria-label:sch.view.label">
-          <button type="button" data-view="grid" aria-pressed="true" data-i18n="sch.view.grid">Timetable</button>
+          <button type="button" data-view="grid" aria-pressed="true" data-i18n="sch.view.grid">Week</button>
           <button type="button" data-view="list" aria-pressed="false" data-i18n="sch.view.list">List</button>
         </div>
       </div>
@@ -72,17 +74,20 @@
 
     <div class="sch-foot">
       <div class="legend">
-        <h2 data-i18n="sch.legend">Seats</h2>
+        <h2 data-i18n="sch.legend.h">Reading the timetable</h2>
         <ul>
-          <li><span class="st st--open" data-i18n="sch.st.open">Open</span><span data-i18n="sch.legend.open">Open: 3 or more seats</span></li>
-          <li><span class="st st--few" data-i18n="sch.st.few">Few left</span><span data-i18n="sch.legend.few">Few left: 1 or 2 seats</span></li>
-          <li><span class="st st--wait" data-i18n="sch.st.wait">Waitlist</span><span data-i18n="sch.legend.wait">Waitlist: full, we call you when a seat opens</span></li>
+          <li><span class="seats" aria-hidden="true"><span class="ring">3</span></span><span data-i18n="sch.legend.seats">The circled number is how many seats are left. Every class has 6 seats.</span></li>
+          <li><span class="seats full" aria-hidden="true" data-i18n="sch.full">Full</span><span data-i18n="sch.legend.full">A full class takes a waitlist. We call you as soon as a seat opens.</span></li>
+          <li><span class="seats" aria-hidden="true">3:30</span><span data-i18n="sch.legend.time">Times on the left are the start and end of each class.</span></li>
         </ul>
       </div>
-      <div class="help-box">
+      <div class="help">
         <h2 data-i18n="sch.help.h">Not sure which class fits?</h2>
-        <p data-i18n="sch.help.p">Book the free assessment. A teacher will recommend a class based on how your child does.</p>
-        <p class="btns"><a class="btn btn-yellow" href="inquiry.html?topic=assessment" data-i18n="hero.cta1">Book a free assessment</a><a class="btn btn-line" href="index.html#fees" data-i18n="sch.fees">See fees</a></p>
+        <p data-i18n="sch.help.p">Book a free trial class. After the class, the teacher tells you which level fits your child.</p>
+        <div class="acts">
+          <a class="btn-main" href="inquiry.html?topic=trial" data-i18n="cta">Book a free trial class</a>
+          <a class="link-sec" href="index.html#fees" data-i18n="sch.fees">See the fees</a>
+        </div>
       </div>
     </div>
   </div>
@@ -90,31 +95,28 @@
 
 <footer class="site-foot">
   <div class="wrap foot-grid">
-    <div>
-      <p class="foot-brand" data-i18n="brand.name">Maple Bridge Learning Centre</p>
-      <p data-i18n="foot.about">Small-group tutoring for Grades 1 to 12 in Markham since 2012.</p>
+    <div class="label">
+      <dl>
+        <div><dt data-i18n="foot.l.name">Name</dt><dd data-i18n="brand.name">Maple Bridge Learning Centre</dd></div>
+        <div><dt data-i18n="foot.l.subj">Subjects</dt><dd data-i18n="foot.subj">Math, English, science, French, Mandarin, Grades 1 to 12</dd></div>
+        <div><dt data-i18n="foot.l.phone">Phone</dt><dd><a href="tel:+19055550162" data-lang-neutral>(905) 555-0162</a></dd></div>
+        <div><dt data-i18n="foot.email">Email</dt><dd><a href="mailto:office@maplebridge.example" data-lang-neutral>office@maplebridge.example</a></dd></div>
+        <div><dt data-i18n="foot.l.addr">Address</dt><dd data-lang-neutral>Suite 205, 88 Fernbrook Gate, Markham, ON L6C 9Z9</dd></div>
+        <div><dt data-i18n="foot.l.hours">Hours</dt><dd data-i18n-html="foot.hours.p">Mon to Fri 3:30 – 8:30 pm<br>Sat 9:00 am – 3:30 pm, Sun closed</dd></div>
+      </dl>
     </div>
-    <div>
-      <h2 data-i18n="foot.hours">Hours</h2>
-      <p data-i18n-html="foot.hours.p">Monday to Friday 3:30 – 8:30 pm<br>Saturday 9:00 am – 3:30 pm<br>Sunday closed</p>
-    </div>
-    <div>
-      <h2 data-i18n="foot.contact">Contact</h2>
-      <p data-lang-neutral>Suite 205, 88 Fernbrook Gate<br>Markham, ON L6C 9Z9</p>
-      <p><a href="tel:+19055550162" data-lang-neutral>(905) 555-0162</a><br><a href="mailto:office@maplebridge.example" data-lang-neutral>office@maplebridge.example</a></p>
-    </div>
-    <div>
-      <h2 data-i18n="foot.pages">Pages</h2>
+    <nav aria-label="Pages" data-i18n-attr="aria-label:foot.pages">
       <ul class="foot-links">
         <li><a href="index.html" data-i18n="nav.home">Home</a></li>
         <li><a href="schedule.html" data-i18n="nav.schedule">Timetable</a></li>
-        <li><a href="inquiry.html" data-i18n="nav.contact">Contact</a></li>
+        <li><a href="inquiry.html?topic=trial" data-i18n="cta">Book a free trial class</a></li>
+        <li><a href="index.html#visit" data-i18n="nav.contact">Find us</a></li>
       </ul>
-    </div>
+    </nav>
   </div>
   <div class="wrap foot-base">
-    <span data-i18n="foot.copy">© 2026 Maple Bridge Learning Centre</span>
-    <a href="../index.html" data-i18n="foot.demo">This is a demo website. The tutoring centre is fictional.</a>
+    <p data-i18n="foot.copy">© 2026 Maple Bridge Learning Centre, Markham</p>
+    <a href="../index.html" data-i18n="foot.demo">This is a demo website. The tutoring centre is made up.</a>
   </div>
 </footer>
 

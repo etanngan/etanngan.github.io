@@ -1,8 +1,43 @@
-Photos from Unsplash (https://unsplash.com/license), downloaded from images.unsplash.com:
-dimsum/table.jpg	https://unsplash.com (image photo-1559667709-eabb5b50117a)
-dimsum/siumai.jpg	https://unsplash.com (image photo-1563245370-63ffc97abdbd)
-dimsum/hargow.jpg	https://unsplash.com (image photo-1559329255-2e7cb2e21ca7)
-dimsum/bao.jpg	https://unsplash.com (image photo-1782875976147-d4dcbe74d037)
-dimsum/eggtart.jpg	https://unsplash.com (image photo-1787191346424-175f90780325)
-dimsum/yumcha.jpg	https://unsplash.com (image photo-1495899686424-be6ded54191a)
-dimsum/room.jpg	https://unsplash.com (image photo-1725781747036-8071bd5497fb)
+Photo credits for the Jade Basket demo site (dimsum/).
+Every photo was cropped, resized and converted to WebP for this site. No photo shows a real restaurant name or logo.
+The restaurant is fictional; these photos were not taken there.
+
+hero-*.webp
+  "Assorted Dim Sum in Bamboo Steamers" by Change C.C on Pexels
+  https://www.pexels.com/photo/assorted-dim-sum-in-bamboo-steamers-32860322/
+  Licence: Pexels licence (free for commercial use, no attribution required) https://www.pexels.com/license/
+
+siumai-*.webp
+  "Close-up of Steamed Shumai in Bamboo Steamer" by Change C.C on Pexels
+  https://www.pexels.com/photo/close-up-of-steamed-shumai-in-bamboo-steamer-32393811/
+  Licence: Pexels licence https://www.pexels.com/license/
+
+hargow-*.webp  (cropped to the har gow steamer)
+  "Assorted Dim Sum in Bamboo Steamers" by Yuen Tou Zan on Pexels
+  https://www.pexels.com/photo/assorted-dim-sum-in-bamboo-steamers-35069186/
+  Licence: Pexels licence https://www.pexels.com/license/
+
+weekend-*.webp
+  "Breakfast in Bamboo Bowls" by angello on Pexels
+  https://www.pexels.com/photo/breakfast-in-bamboo-bowls-7563033/
+  Licence: Pexels licence https://www.pexels.com/license/
+
+room-*.webp  (cropped)
+  "Food in Wooden Bowls" by Yuen Tou Zan on Pexels
+  https://www.pexels.com/photo/food-in-wooden-bowls-13518744/
+  Licence: Pexels licence https://www.pexels.com/license/
+
+spread-*.webp  (cropped; reused from the previous version of this site)
+  Unsplash photo photo-1559667709-eabb5b50117a
+  https://unsplash.com/photos/photo-1559667709-eabb5b50117a  (downloaded from images.unsplash.com)
+  Licence: Unsplash licence (free for commercial use) https://unsplash.com/license
+
+eggtart-*.webp  (cropped)
+  "酥皮雞蛋撻 Chicken Egg Tart with Puff Pastry" by See-ming Lee (SML) on Flickr
+  https://www.flickr.com/photos/48973657@N00/8099366361
+  Licence: CC BY 2.0 https://creativecommons.org/licenses/by/2.0/
+
+rollcf-*.webp  (cropped)
+  "蜜汁叉燒腸 Barbequed Pork Rice Noodle Roll" by See-ming Lee (SML) on Flickr
+  https://www.flickr.com/photos/48973657@N00/8090747287
+  Licence: CC BY 2.0 https://creativecommons.org/licenses/by/2.0/

@@ -2,20 +2,22 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <script src="../shared/i18n.js"></script>
 <title data-i18n="home.title">Jade Basket Dim Sum House | Dim sum in Markham</title>
-<meta name="description" content="Hong Kong-style dim sum and dinner in Markham, near Kennedy Rd and Highway 7. Open daily from 9 am. Free parking. Call (905) 555-0138." data-i18n-attr="content:home.desc">
+<meta name="description" content="Hong Kong-style dim sum every day from 9 am and Cantonese dinner from 5 pm, at Kennedy Rd and Highway 7 in Markham. Free parking. Call (905) 555-0138 to book." data-i18n-attr="content:home.desc">
 <meta property="og:type" content="restaurant">
 <meta property="og:title" content="Jade Basket Dim Sum House, Markham" data-i18n-attr="content:og.title">
-<meta property="og:description" content="Hong Kong-style dim sum and dinner near Kennedy Rd and Highway 7. Open daily. Free parking." data-i18n-attr="content:og.desc">
-<meta property="og:image" content="assets/img/table.jpg">
-<meta name="theme-color" content="#0f5c46">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f5c46'/%3E%3Cellipse cx='32' cy='38' rx='20' ry='9' fill='none' stroke='%23fff' stroke-width='4'/%3E%3Cpath d='M12 38V30c0-5 9-9 20-9s20 4 20 9v8' fill='none' stroke='%23fff' stroke-width='4'/%3E%3Cpath d='M26 20c0-3 3-5 6-5s6 2 6 5' fill='none' stroke='%23fff' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<meta property="og:description" content="Hong Kong-style dim sum every day and Cantonese dinner, at Kennedy Rd and Highway 7 in Markham. Free parking." data-i18n-attr="content:og.desc">
+<meta property="og:image" content="assets/img/hero-1440.webp">
+<meta name="theme-color" content="#0B5A43">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230B5A43'/%3E%3Crect x='5' y='5' width='54' height='54' fill='none' stroke='%23FBFCFA' stroke-width='2'/%3E%3Cpath d='M16 18H48M32 18V48M32 33H44M20 33V48M13 48H51' stroke='%23FBFCFA' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Noto+Sans+SC:wght@400;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@900&text=%E7%BF%A0%E7%B1%A0%E8%BB%92%E7%AC%BC%E8%BD%A9&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@900&text=%E7%BF%A0%E7%B1%A0%E8%BB%92%E7%87%9F%E6%A5%AD%E4%B8%AD%E8%90%A5%E4%B8%9A&display=swap">
+<script src="assets/fonts.js"></script>
+<link rel="preload" as="image" href="assets/img/hero-640.webp" imagesrcset="assets/img/hero-640.webp 640w, assets/img/hero-960.webp 960w, assets/img/hero-1440.webp 1440w, assets/img/hero-2000.webp 2000w" imagesizes="100vw">
 <link rel="stylesheet" href="assets/site.css">
 <script src="assets/i18n-dict.js"></script>
 </head>
@@ -25,191 +27,230 @@
 <header class="site-head">
   <div class="wrap head-row">
     <a class="brand" href="index.html" aria-label="Jade Basket Dim Sum House, home page" data-i18n-attr="aria-label:brand.aria">
-      <span class="brand-zh" aria-hidden="true">翠籠軒</span>
-      <span class="brand-en" aria-hidden="true">Jade Basket<br>Dim Sum House</span>
+      <span class="brand-sign" aria-hidden="true">翠籠軒</span>
+      <span class="brand-en" aria-hidden="true">Jade Basket</span>
     </a>
     <nav class="nav" id="nav" aria-label="Main" data-i18n-attr="aria-label:nav.aria">
-      <a href="menu.html" data-i18n="nav.menu">Menu</a>
-      <a href="#hours" data-i18n="nav.hours">Hours and location</a>
-      <a href="#info" data-i18n="nav.info">Before you visit</a>
-      <a href="#room" data-i18n="nav.room">Private room</a>
-      <a href="qr.html" data-i18n="nav.qr">Phone menu</a>
+      <ul>
+        <li><a href="menu.html" data-i18n="nav.menu">Menu</a></li>
+        <li><a href="#hours" data-i18n="nav.hours">Hours and location</a></li>
+        <li><a href="#info" data-i18n="nav.info">Before you visit</a></li>
+        <li><a href="#room" data-i18n="nav.room">Private room</a></li>
+        <li><a href="qr.html" data-i18n="nav.qr">Phone menu</a></li>
+      </ul>
+      <a class="btn-call" href="tel:+19055550138" data-i18n="cta.call">Call to book a table</a>
     </nav>
-    <div class="head-tools">
-      <div class="lang" role="group" aria-label="Language" data-i18n-attr="aria-label:lang.aria">
-        <button type="button" data-set-lang="en" lang="en">EN</button>
-        <button type="button" data-set-lang="zh-Hant" lang="zh-Hant">繁</button>
-        <button type="button" data-set-lang="zh-Hans" lang="zh-Hans">简</button>
-      </div>
-      <a class="head-call" href="tel:+19055550138" aria-label="Call Jade Basket at (905) 555-0138" data-i18n-attr="aria-label:call.aria">(905) 555-0138</a>
-      <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu" data-i18n-attr="aria-label:nav.open"><span></span><span></span><span></span></button>
+    <div class="lang" role="group" aria-label="Language" data-i18n-attr="aria-label:lang.aria">
+      <button type="button" data-set-lang="en" lang="en">EN</button>
+      <button type="button" data-set-lang="zh-Hant" lang="zh-Hant">繁</button>
+      <button type="button" data-set-lang="zh-Hans" lang="zh-Hans">简</button>
     </div>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu" data-i18n-attr="aria-label:nav.open"><span></span><span></span><span></span></button>
   </div>
 </header>
 
 <main id="main">
-  <section class="hero">
-    <div class="hero-text">
-      <h1 data-i18n-html="hero.h1"><span class="nw">Hong Kong-style</span> dim sum and dinner in Markham</h1>
-      <p class="hero-p" data-i18n="hero.p">Our dim sum is made in our own kitchen every morning. We are open every day, with free parking at the door.</p>
-      <p class="today" id="today" hidden>
-        <span class="today-label" data-i18n="hero.today">Today</span>
-        <span class="today-hours" id="today-hours"></span>
-        <span class="today-status" id="today-status"></span>
-      </p>
-      <p class="hero-addr"><span data-lang-neutral>3150 Ellesworth Road, Markham</span><br><span data-i18n="addr.near">In Ellesworth Plaza, near Kennedy Rd and Highway 7</span></p>
-      <div class="btns">
-        <a class="btn btn-light" href="menu.html" data-i18n="hero.menu">See the menu</a>
-        <a class="btn btn-outline-light" href="tel:+19055550138" data-i18n="hero.call">Call to book a table</a>
-      </div>
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="hero-photo">
+      <img src="assets/img/hero-960.webp" srcset="assets/img/hero-640.webp 640w, assets/img/hero-960.webp 960w, assets/img/hero-1440.webp 1440w, assets/img/hero-2000.webp 2000w" sizes="100vw" width="1440" height="960" fetchpriority="high" alt="Har gow, siu mai and chicken feet in bamboo steamers on a wooden table" data-i18n-attr="alt:hero.alt">
     </div>
-    <figure class="hero-photo">
-      <img src="assets/img/table.jpg" width="1800" height="1350" alt="A table of dim sum: rice rolls, shrimp dumplings, buns and chicken feet" data-i18n-attr="alt:hero.alt" fetchpriority="high">
-    </figure>
-  </section>
-
-  <section class="facts" id="hours" aria-label="Hours and location" data-i18n-attr="aria-label:nav.hours">
-    <div class="wrap facts-grid">
-      <div class="fact">
-        <h2 data-i18n="hours.h">Opening hours</h2>
-        <table class="hours">
+    <div class="wrap hero-wrap">
+      <div class="slip hero-slip">
+        <div class="slip-top">
+          <h1 id="hero-h" data-i18n="brand.name">Jade Basket Dim Sum House</h1>
+          <span class="chop" id="chop" role="img" aria-label="Open now" data-i18n-attr="aria-label:chop.aria" hidden></span>
+        </div>
+        <p class="hero-what" data-i18n="hero.what">Hong Kong-style dim sum and Cantonese dinner in Markham. Free parking.</p>
+        <table class="today" id="today" aria-label="Today at Jade Basket" data-i18n-attr="aria-label:today.aria">
           <tbody>
-            <tr data-days="1,2,3,4" data-open="9:00" data-close="21:30"><th scope="row" data-i18n="d.mon_thu">Monday to Thursday</th><td data-i18n="h.mon_thu">9:00 am – 9:30 pm</td></tr>
-            <tr data-days="5" data-open="9:00" data-close="22:00"><th scope="row" data-i18n="d.fri">Friday</th><td data-i18n="h.fri">9:00 am – 10:00 pm</td></tr>
-            <tr data-days="6" data-open="8:30" data-close="22:00"><th scope="row" data-i18n="d.sat">Saturday</th><td data-i18n="h.sat">8:30 am – 10:00 pm</td></tr>
-            <tr data-days="0" data-open="8:30" data-close="21:30"><th scope="row" data-i18n="d.sun">Sunday</th><td data-i18n="h.sun">8:30 am – 9:30 pm</td></tr>
+            <tr><th scope="row" data-i18n="today.today">Today</th><td id="t-hours">9:00 am – 9:30 pm</td></tr>
+            <tr><th scope="row" data-i18n="today.now">Now</th><td id="t-now">Dim sum from 9:00 am</td></tr>
+            <tr><th scope="row" data-i18n="today.where">Where</th><td><a href="#map" data-i18n="today.whereval">3150 Ellesworth Rd, at Kennedy and Hwy 7</a></td></tr>
           </tbody>
         </table>
-        <p class="small" data-i18n="hours.dimsum">Dim sum is served until 3:00 pm on weekdays and 4:00 pm on weekends. The dinner menu starts at 5:00 pm.</p>
-        <p class="small"><a href="#holidays" data-i18n="hours.holiday">See holiday hours</a></p>
-      </div>
-      <div class="fact">
-        <h2 data-i18n="addr.h">Address</h2>
-        <p class="addr" data-lang-neutral>Unit 108, 3150 Ellesworth Road<br>Markham, ON L3R 9Z9</p>
-        <p data-i18n="addr.near">In Ellesworth Plaza, near Kennedy Rd and Highway 7</p>
-        <p class="small" data-i18n="addr.park">Free parking in the plaza. On weekends the lot fills up around noon, so try the parking behind the building.</p>
-        <p class="small"><a href="#map" data-i18n="addr.directions">Get directions</a></p>
-      </div>
-      <div class="fact">
-        <h2 data-i18n="book.h">Reservations and takeout</h2>
-        <p class="big-phone"><a href="tel:+19055550138" data-lang-neutral>(905) 555-0138</a></p>
-        <p data-i18n="book.p">We take reservations by phone. On weekends we only book tables of 6 or more.</p>
-        <p class="small" data-i18n="book.takeout">For takeout, call ahead. Most orders are ready in about 20 minutes. Pay at the front counter.</p>
+        <div class="hero-act">
+          <a class="btn-call" href="tel:+19055550138" data-i18n="cta.call">Call to book a table</a>
+        </div>
+        <p class="hero-sub"><span class="num" data-lang-neutral>(905) 555-0138</span><a class="text-link" href="menu.html" data-i18n="hero.menu">See the menu</a></p>
+        <ul class="tier-key" data-tier-key aria-label="Dim sum prices by size" data-i18n-attr="aria-label:tierkey.aria"></ul>
       </div>
     </div>
   </section>
 
-  <section class="favs" aria-labelledby="fav-h">
+  <section class="sec" id="hours" aria-labelledby="hours-h">
     <div class="wrap">
-      <h2 id="fav-h" data-i18n="fav.h">Our most-ordered dim sum</h2>
+      <h2 class="sec-h" id="hours-h" data-i18n="hours.h">Hours and location</h2>
+      <div class="cols">
+        <div>
+          <table class="grid">
+            <caption class="sr" data-i18n="hours.cap">Opening hours and dim sum hours</caption>
+            <tbody id="hours-body"></tbody>
+          </table>
+          <p style="margin-top:12px" data-i18n="hours.dinner">Dinner menu from 5:00 pm every day. Congee and noodles are served all day.</p>
+          <p><a class="text-link" href="#holidays" data-i18n="hours.hol">Holiday hours</a></p>
+        </div>
+        <div class="facts">
+          <h3 data-i18n="addr.h">Address and parking</h3>
+          <p class="addr" data-lang-neutral>Unit 108, 3150 Ellesworth Road<br>Markham, ON L3R 9Z9</p>
+          <p data-i18n="addr.near">In Ellesworth Plaza, near Kennedy Rd and Highway 7</p>
+          <p data-i18n="addr.park">Free parking in the plaza. On weekends the front lot is full by noon, so use the lot behind the building.</p>
+          <p><a class="text-link" href="#map" data-i18n="addr.directions">Directions and map</a></p>
+          <h3 data-i18n="book.h">Booking a table</h3>
+          <p data-i18n="book.p">Call us at (905) 555-0138. On weekdays we book any size of table. On weekends we only book tables of 6 or more; smaller tables take a number at the front desk.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="favs" aria-labelledby="fav-h">
+    <div class="wrap">
+      <h2 class="sec-h" id="fav-h" data-i18n="fav.h">What most tables order</h2>
       <ul class="fav-list">
-        <li data-dish="s02"><img src="assets/img/siumai.jpg" width="1000" height="667" loading="lazy" alt="Siu mai in a bamboo steamer" data-i18n-attr="alt:alt.siumai"><div class="fav-text"></div></li>
-        <li data-dish="s01"><img src="assets/img/hargow.jpg" width="1000" height="667" loading="lazy" alt="Shrimp dumplings in a bamboo steamer" data-i18n-attr="alt:alt.hargow"><div class="fav-text"></div></li>
-        <li data-dish="s05"><img src="assets/img/bao.jpg" width="1000" height="1500" loading="lazy" alt="Steamed buns with chili sauce" data-i18n-attr="alt:alt.bao"><div class="fav-text"></div></li>
-        <li data-dish="d01"><img src="assets/img/eggtart.jpg" width="1000" height="667" loading="lazy" alt="Egg tarts fresh from the oven" data-i18n-attr="alt:alt.tart"><div class="fav-text"></div></li>
+        <li data-dish="s01"><img src="assets/img/hargow-480.webp" srcset="assets/img/hargow-480.webp 480w, assets/img/hargow-800.webp 800w" sizes="(min-width: 900px) 290px, 50vw" width="480" height="445" loading="lazy" alt="Four har gow in a bamboo steamer" data-i18n-attr="alt:alt.hargow"><div class="fav-text"></div></li>
+        <li data-dish="s02"><img src="assets/img/siumai-480.webp" srcset="assets/img/siumai-480.webp 480w, assets/img/siumai-800.webp 800w" sizes="(min-width: 900px) 290px, 50vw" width="480" height="360" loading="lazy" alt="Siu mai topped with crab roe in a bamboo steamer" data-i18n-attr="alt:alt.siumai"><div class="fav-text"></div></li>
+        <li data-dish="r03"><img src="assets/img/rollcf-480.webp" srcset="assets/img/rollcf-480.webp 480w, assets/img/rollcf-800.webp 800w" sizes="(min-width: 900px) 290px, 50vw" width="480" height="360" loading="lazy" alt="BBQ pork rice rolls on a white plate" data-i18n-attr="alt:alt.rollcf"><div class="fav-text"></div></li>
+        <li data-dish="d01"><img src="assets/img/eggtart-480.webp" srcset="assets/img/eggtart-480.webp 480w, assets/img/eggtart-800.webp 800w" sizes="(min-width: 900px) 290px, 50vw" width="480" height="360" loading="lazy" alt="Three egg tarts on a plate" data-i18n-attr="alt:alt.eggtart"><div class="fav-text"></div></li>
       </ul>
-      <p class="fav-foot"><span data-i18n="fav.p">Prices are per order. The full menu has 59 dishes, including congee, noodles and BBQ.</span> <a href="menu.html" data-i18n="fav.link">See the full menu</a></p>
+      <p class="fav-foot"><span data-i18n="fav.p">Prices are per order, before tax.</span> <a class="text-link" href="menu.html" data-i18n="fav.link">See the full menu</a></p>
     </div>
   </section>
 
-  <section class="info" id="info" aria-labelledby="info-h">
+  <section class="sec" id="info" aria-labelledby="info-h">
     <div class="wrap">
-      <h2 id="info-h" data-i18n="info.h">Before you visit</h2>
+      <h2 class="sec-h" id="info-h" data-i18n="info.h">Before you visit</h2>
+      <div class="wait-grid">
+        <div>
+          <h3 data-i18n="wait.h">Weekend waits</h3>
+          <table class="grid">
+            <thead><tr><th scope="col" data-i18n="wait.col.time">Time</th><th scope="col" data-i18n="wait.col.wait">Usual wait</th></tr></thead>
+            <tbody>
+              <tr><th scope="row" data-i18n="wait.t1">Weekends, 8:30 – 10:30 am</th><td data-i18n="wait.w1">Under 10 minutes</td></tr>
+              <tr class="is-today"><th scope="row" data-i18n="wait.t2">Weekends, 10:30 am – 1:30 pm</th><td><b data-i18n="wait.w2">30 to 45 minutes</b></td></tr>
+              <tr><th scope="row" data-i18n="wait.t3">Weekends, 1:30 – 4:00 pm</th><td data-i18n="wait.w3">About 15 minutes</td></tr>
+              <tr><th scope="row" data-i18n="wait.t4">Weekdays</th><td data-i18n="wait.w4">Usually no wait</td></tr>
+            </tbody>
+          </table>
+          <p style="margin-top:12px" data-i18n="wait.p">Take a number at the front desk. We text you when your table is ready, so you can wait in the car.</p>
+        </div>
+        <img src="assets/img/weekend-800.webp" srcset="assets/img/weekend-800.webp 800w, assets/img/weekend-1400.webp 1400w" sizes="(min-width: 900px) 580px, 100vw" width="800" height="530" loading="lazy" alt="A busy weekend table with tea, steamers and a sponge cake" data-i18n-attr="alt:alt.weekend">
+      </div>
       <dl class="info-list">
-        <div><dt data-i18n="info.wait.h">Weekend waits</dt><dd data-i18n="info.wait.p">Weekends from 10:30 am to 1:30 pm are our busiest. Expect to wait 30 to 45 minutes. Take a number at the front desk and we will text you when your table is ready.</dd></div>
-        <div><dt data-i18n="info.tea.h">Tea charge</dt><dd data-i18n="info.tea.p">$2.00 per person, or $1.50 for seniors 65 and over. Leave the teapot lid open and we will bring more hot water.</dd></div>
+        <div><dt data-i18n="info.tea.h">Tea charge</dt><dd data-i18n="info.tea.p">$2.00 per person, $1.50 for seniors 65 and over. Leave the teapot lid open and we bring more hot water.</dd></div>
         <div><dt data-i18n="info.early.h">Weekday morning prices</dt><dd data-i18n="info.early.p">Monday to Friday before 11:00 am, all small, medium and large dim sum are $5.50. Not on holidays.</dd></div>
-        <div><dt data-i18n="info.pay.h">Payment</dt><dd data-i18n="info.pay.p">Cash, debit, Visa, Mastercard, WeChat Pay and Alipay. We do not take American Express. On weekends we print one bill per table.</dd></div>
-        <div><dt data-i18n="info.groups.h">Large groups</dt><dd data-i18n="info.groups.p">Groups of 10 or more can book any day. A 15% service charge is added for groups of 10 or more.</dd></div>
-        <div><dt data-i18n="info.access.h">Wheelchairs and children</dt><dd data-i18n="info.access.p">Step-free entrance and an accessible washroom. We have high chairs and booster seats.</dd></div>
-        <div><dt data-i18n="info.allergy.h">Allergies</dt><dd data-i18n="info.allergy.p">Our kitchen uses shrimp, shellfish, peanuts, sesame, wheat, soy and egg, and the steamers are shared. Please tell your server about any allergy before you order.</dd></div>
+        <div><dt data-i18n="info.pay.h">Paying the bill</dt><dd data-i18n="info.pay.p">Cash, debit, Visa, Mastercard, WeChat Pay and Alipay. No American Express. Pay at the front counter; on weekends it is one bill per table.</dd></div>
+        <div><dt data-i18n="info.groups.h">Groups of 10 or more</dt><dd data-i18n="info.groups.p">Book any day, weekends too. A 15% service charge is added for 10 or more.</dd></div>
+        <div><dt data-i18n="info.takeout.h">Takeout</dt><dd><span data-i18n="info.takeout.p">Call ahead to order. Most orders are ready in about 20 minutes. Pick up and pay at the front counter.</span> <a class="text-link" href="tel:+19055550138" data-lang-neutral>(905) 555-0138</a></dd></div>
+        <div><dt data-i18n="info.access.h">Wheelchairs and children</dt><dd data-i18n="info.access.p">Step-free entrance and an accessible washroom. High chairs and booster seats are available.</dd></div>
+        <div><dt data-i18n="info.allergy.h">Allergies</dt><dd data-i18n="info.allergy.p">Our kitchen uses shrimp, shellfish, peanuts, sesame, wheat, soy and egg, and the steamers are shared. Tell your server about any allergy before you order.</dd></div>
       </dl>
     </div>
   </section>
 
-  <section class="holidays" id="holidays" aria-labelledby="hol-h">
+  <section class="sec" id="holidays" aria-labelledby="hol-h">
     <div class="wrap hol-grid">
       <div>
-        <h2 id="hol-h" data-i18n="hol.h">Holiday hours</h2>
+        <h2 class="sec-h" id="hol-h" data-i18n="hol.h">Holiday hours</h2>
         <p data-i18n="hol.p">Days not listed here follow our regular hours.</p>
       </div>
-      <table class="hol-table">
-        <tbody>
-          <tr data-date="2026-12-24" data-open="8:30" data-close="20:00"><th scope="row" data-i18n="hol.d1224">Thursday, December 24 (Christmas Eve)</th><td data-i18n="hol.h1224">8:30 am – 8:00 pm</td></tr>
-          <tr data-date="2026-12-25" data-open="10:00" data-close="20:00"><th scope="row" data-i18n="hol.d1225">Friday, December 25 (Christmas Day)</th><td data-i18n="hol.h1225">10:00 am – 8:00 pm, dim sum all day</td></tr>
-          <tr data-date="2026-12-31" data-open="9:00" data-close="22:00"><th scope="row" data-i18n="hol.d1231">Thursday, December 31 (New Year’s Eve)</th><td data-i18n="hol.h1231">9:00 am – 10:00 pm</td></tr>
-          <tr data-date="2027-01-01" data-open="10:00" data-close="21:30"><th scope="row" data-i18n="hol.d0101">Friday, January 1 (New Year’s Day)</th><td data-i18n="hol.h0101">10:00 am – 9:30 pm</td></tr>
-          <tr data-date="2027-02-05" data-open="9:00" data-close="15:00"><th scope="row" data-i18n="hol.d0205">Friday, February 5 (Lunar New Year’s Eve)</th><td data-i18n="hol.h0205">9:00 am – 3:00 pm. Dinner is set menus by reservation only.</td></tr>
-          <tr data-date="2027-02-06" data-open="8:00" data-close="22:00"><th scope="row" data-i18n="hol.d0206">Saturday, February 6 (Lunar New Year’s Day)</th><td data-i18n="hol.h0206">8:00 am – 10:00 pm. No reservations for tables under 10.</td></tr>
-          <tr data-date="2027-02-15" data-open="9:00" data-close="21:30"><th scope="row" data-i18n="hol.d0215">Monday, February 15 (Family Day)</th><td data-i18n="hol.h0215">9:00 am – 9:30 pm. No weekday morning prices.</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="room" id="room" aria-labelledby="room-h">
-    <div class="wrap room-grid">
-      <img src="assets/img/room.jpg" width="1400" height="1050" loading="lazy" alt="Our dining room, with red chairs and a carved wooden screen" data-i18n-attr="alt:alt.room">
-      <div class="room-text">
-        <h2 id="room-h" data-i18n="room.h">Private room for family dinners and parties</h2>
-        <p data-i18n="room.p1">Our private room seats up to 30 people at three round tables. We host birthdays, baby full-month parties and wedding tea ceremonies.</p>
-        <p data-i18n="room.p2">Set dinner menus start at $388 for a table of 10. Call us to check the date. A $100 deposit holds the room.</p>
-        <a class="btn btn-jade" href="tel:+19055550138" data-i18n="room.call">Call about the private room</a>
+      <div>
+        <table class="grid hol-tab" id="hol-table">
+          <caption class="sr" data-i18n="hol.cap">Upcoming holiday hours</caption>
+          <tbody id="hol-body"></tbody>
+        </table>
+        <p id="hol-none" hidden data-i18n="hol.none">No holiday changes coming up.</p>
       </div>
     </div>
   </section>
 
-  <section class="map" id="map" aria-labelledby="map-h">
-    <div class="wrap map-grid">
-      <div class="map-text">
-        <h2 id="map-h" data-i18n="map.h">Getting here</h2>
-        <p class="addr" data-lang-neutral>Unit 108, 3150 Ellesworth Road<br>Markham, ON L3R 9Z9</p>
-        <p data-i18n="map.drive">By car: from Highway 7, go north on Kennedy Road and turn right on Ellesworth Road. The plaza is on your left.</p>
-        <p data-i18n="map.bus">By bus: get off at Kennedy Rd and Highway 7, then walk about 5 minutes north.</p>
-        <p data-i18n="addr.park">Free parking in the plaza. On weekends the lot fills up around noon, so try the parking behind the building.</p>
-        <p><a class="btn btn-jade" href="https://www.google.com/maps/search/?api=1&amp;query=Kennedy+Rd+and+Highway+7+Markham+ON" target="_blank" rel="noopener" data-i18n="map.open">Open in Google Maps</a></p>
+  <section class="sec" id="room" aria-labelledby="room-h">
+    <div class="wrap">
+      <h2 class="sec-h" id="room-h" data-i18n="room.h">Private room for family parties</h2>
+      <div class="room-grid">
+        <img src="assets/img/room-800.webp" srcset="assets/img/room-800.webp 800w, assets/img/room-1400.webp 1400w" sizes="(min-width: 900px) 640px, 100vw" width="800" height="480" loading="lazy" alt="Longevity buns and sticky rice on a party table" data-i18n-attr="alt:alt.room">
+        <div>
+          <p data-i18n="room.p1">Seats up to 30 at three round tables. We host birthdays, baby full-month parties and wedding tea ceremonies.</p>
+          <p data-i18n="room.p2">Set dinners start at $388 for a table of 10. A $100 deposit holds the date.</p>
+          <a class="text-link" href="tel:+19055550138" data-i18n="room.call">Ask about the private room: (905) 555-0138</a>
+        </div>
       </div>
-      <div class="map-frame">
-        <iframe data-map-q="Kennedy Rd & Highway 7, Markham, ON" src="https://maps.google.com/maps?q=Kennedy%20Rd%20%26%20Highway%207%2C%20Markham%2C%20ON&amp;z=15&amp;hl=en&amp;output=embed" title="Map of the area around Kennedy Rd and Highway 7, Markham" data-i18n-attr="title:map.title" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+  <section class="sec" id="map" aria-labelledby="map-h">
+    <div class="wrap">
+      <h2 class="sec-h" id="map-h" data-i18n="map.h">Getting here</h2>
+      <div class="map-grid">
+        <div>
+          <p class="addr" data-lang-neutral>Unit 108, 3150 Ellesworth Road<br>Markham, ON L3R 9Z9</p>
+          <p data-i18n="map.drive">By car: from Highway 7, go north on Kennedy Road and turn right on Ellesworth Road. The plaza is on your left.</p>
+          <p data-i18n="map.bus">By bus: get off at Kennedy Rd and Highway 7, then walk about 5 minutes north.</p>
+          <p data-i18n="addr.park">Free parking in the plaza. On weekends the front lot is full by noon, so use the lot behind the building.</p>
+          <p><a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=Kennedy+Rd+and+Highway+7+Markham+ON" target="_blank" rel="noopener" data-i18n="map.open">Open in Google Maps</a></p>
+        </div>
+        <div class="map-frame">
+          <iframe data-map-q="Kennedy Rd & Highway 7, Markham, ON" src="https://maps.google.com/maps?q=Kennedy%20Rd%20%26%20Highway%207%2C%20Markham%2C%20ON&amp;z=15&amp;hl=en&amp;output=embed" title="Map of the area around Kennedy Rd and Highway 7, Markham" data-i18n-attr="title:map.title" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="end-h">
+    <div class="wrap">
+      <div class="slip end-slip">
+        <h2 id="end-h" data-i18n="end.h">Book a table</h2>
+        <p data-i18n="end.p">Weekdays, any size of table. Weekends, tables of 6 or more. Every day from 9:00 am.</p>
+        <a class="btn-call" href="tel:+19055550138" data-i18n="cta.call">Call to book a table</a>
+        <p class="num" style="font-size:20px;margin:6px 0 0" data-lang-neutral>(905) 555-0138</p>
       </div>
     </div>
   </section>
 </main>
 
 <footer class="site-foot">
-  <div class="wrap foot-grid">
-    <div>
-      <p class="foot-brand"><span class="brand-zh" aria-hidden="true">翠籠軒</span> <span data-i18n="brand.name">Jade Basket Dim Sum House</span></p>
-      <p data-i18n="foot.about">A family-run dim sum restaurant in Markham since 2009.</p>
-    </div>
-    <div>
-      <h2 data-i18n="foot.hours.h">Hours</h2>
-      <p data-i18n-html="foot.hours.p">Open every day<br>Weekdays from 9:00 am<br>Weekends from 8:30 am</p>
-    </div>
-    <div>
-      <h2 data-i18n="foot.contact.h">Contact</h2>
-      <p data-lang-neutral>Unit 108, 3150 Ellesworth Road<br>Markham, ON L3R 9Z9</p>
-      <p><a href="tel:+19055550138" data-lang-neutral>(905) 555-0138</a><br><a href="mailto:hello@jadebasket.example" data-lang-neutral>hello@jadebasket.example</a></p>
-    </div>
-    <div>
-      <h2 data-i18n="foot.pages.h">Pages</h2>
-      <ul class="foot-links">
-        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
-        <li><a href="menu.html" data-i18n="nav.menu">Menu</a></li>
-        <li><a href="qr.html" data-i18n="nav.qr">Phone menu</a></li>
+  <div class="wrap">
+    <div class="small-print">
+      <h2 data-i18n="foot.print.h">Printed on every order sheet</h2>
+      <ul>
+        <li data-i18n="fp.1">Tea $2.00 per person, seniors $1.50.</li>
+        <li data-i18n="fp.2">15% service charge for tables of 10 or more.</li>
+        <li data-i18n="fp.3">Prices in Canadian dollars, before HST.</li>
+        <li data-i18n="fp.4">Tell your server about any allergy before you order.</li>
       </ul>
     </div>
-  </div>
-  <div class="wrap foot-base">
-    <span data-i18n="foot.copy">© 2026 Jade Basket Dim Sum House</span>
-    <a href="../index.html" data-i18n="foot.demo">This is a demo website. The restaurant is fictional.</a>
+    <div class="foot-grid">
+      <div>
+        <p class="foot-brand"><span class="brand-sign" aria-hidden="true">翠籠軒</span><span data-i18n="brand.name">Jade Basket Dim Sum House</span></p>
+        <p data-i18n="foot.about">A family-run dim sum restaurant in Markham since 2009.</p>
+      </div>
+      <div>
+        <h2 data-i18n="foot.hours.h">Hours</h2>
+        <p data-i18n-html="foot.hours.p">Open every day<br>Weekdays from 9:00 am<br>Weekends from 8:30 am<br>Dinner menu from 5:00 pm</p>
+      </div>
+      <div class="contact">
+        <h2 data-i18n="foot.contact.h">Contact</h2>
+        <p data-lang-neutral>Unit 108, 3150 Ellesworth Road<br>Markham, ON L3R 9Z9</p>
+        <p><a href="tel:+19055550138" data-lang-neutral>(905) 555-0138</a><br><a href="mailto:hello@jadebasket.example" data-lang-neutral>hello@jadebasket.example</a></p>
+      </div>
+      <div>
+        <h2 data-i18n="foot.pages.h">Pages</h2>
+        <ul class="foot-links">
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="menu.html" data-i18n="nav.menu">Menu</a></li>
+          <li><a href="qr.html" data-i18n="nav.qr">Phone menu</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span data-i18n="foot.copy">© 2026 Jade Basket Dim Sum House</span>
+      <a href="../index.html" data-i18n="foot.demo">This is a demo website. The restaurant is fictional.</a>
+    </div>
   </div>
 </footer>
 
-<nav class="callbar" aria-label="Quick actions" data-i18n-attr="aria-label:callbar.aria">
-  <a href="tel:+19055550138" data-i18n="head.call">Call</a>
-  <a href="menu.html" data-i18n="nav.menu">Menu</a>
-  <a href="#map" data-i18n="addr.directions">Get directions</a>
+<nav class="callbar" aria-label="Quick links" data-i18n-attr="aria-label:callbar.aria">
+  <a class="btn-call" href="tel:+19055550138" data-i18n="cta.call">Call to book a table</a>
+  <a class="text-link" href="menu.html" data-i18n="nav.menu">Menu</a>
+  <a class="text-link" href="#map" data-i18n="callbar.map">Map</a>
 </nav>
 
 <script src="assets/menu-data.js"></script>

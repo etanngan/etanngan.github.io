@@ -4,15 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../shared/i18n.js"></script>
-<title data-i18n="inq.title">Free assessment and inquiries | Maple Bridge Learning Centre</title>
-<meta name="description" content="Book a free assessment or ask about a class. We reply within one business day in English, Cantonese or Mandarin." data-i18n-attr="content:inq.desc">
+<script>(function(){function hk(){if(window.MPi18n&&MPi18n.lang==='zh-Hant')document.documentElement.lang='zh-Hant-HK';}hk();document.addEventListener('mp:langchange',hk);})();</script>
+<title data-i18n="inq.title">Book a free trial class | Maple Bridge Learning Centre</title>
+<meta name="description" content="Book a free trial class or ask about a class. We reply within one business day in English, Cantonese or Mandarin." data-i18n-attr="content:inq.desc">
 <meta property="og:title" content="Maple Bridge Learning Centre, Markham" data-i18n-attr="content:og.title">
-<meta property="og:description" content="After-school tutoring for Grades 1 to 12 near Kennedy Rd and Bur Oak Ave. Classes of six or fewer." data-i18n-attr="content:og.desc">
-<meta name="theme-color" content="#ffc629">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23ffc629'/%3E%3Cpath d='M10 44h44M16 44V36a16 16 0 0 1 32 0v8' fill='none' stroke='%23262a31' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+<meta property="og:description" content="After-school tutoring for Grades 1 to 12 near Kennedy Rd and Bur Oak Ave. Six students or fewer per class. Free trial class." data-i18n-attr="content:og.desc">
+<meta property="og:image" content="assets/img/og-image.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23ffc629'/%3E%3Cpath d='M10 44h44M16 44V36a16 16 0 0 1 32 0v8' fill='none' stroke='%231c2430' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700&family=LXGW+WenKai+TC&family=Noto+Sans+HK:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 <script src="assets/i18n-dict.js"></script>
 </head>
@@ -22,71 +25,71 @@
 <header class="site-head">
   <div class="wrap head-row">
     <a class="brand" href="index.html" aria-label="Maple Bridge Learning Centre, home page" data-i18n-attr="aria-label:brand.aria">
-      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="12" fill="#ffc629"/><path d="M10 44h44M16 44V36a16 16 0 0 1 32 0v8" fill="none" stroke="#262a31" stroke-width="5" stroke-linecap="round"/></svg>
-      <span class="brand-text"><b data-i18n="brand.name">Maple Bridge Learning Centre</b></span>
+      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="12" fill="#ffc629"/><path d="M10 44h44M16 44V36a16 16 0 0 1 32 0v8" fill="none" stroke="#1c2430" stroke-width="5" stroke-linecap="round"/></svg>
+      <span class="brand-name" data-i18n="brand.name">Maple Bridge Learning Centre</span>
     </a>
     <nav class="nav" id="nav" aria-label="Main" data-i18n-attr="aria-label:nav.aria">
       <a href="index.html#fees" data-i18n="nav.fees">Classes and fees</a>
       <a href="schedule.html" data-i18n="nav.schedule">Timetable</a>
       <a href="index.html#teachers" data-i18n="nav.teachers">Teachers</a>
       <a href="index.html#parents" data-i18n="nav.parents">For parents</a>
-      <a href="index.html#visit" data-i18n="nav.contact">Contact</a>
+      <a href="index.html#visit" data-i18n="nav.contact">Find us</a>
+      <a class="btn-main nav-cta" href="inquiry.html?topic=trial" data-i18n="cta">Book a free trial class</a>
     </nav>
-    <div class="head-tools">
-      <div class="lang" role="group" aria-label="Language" data-i18n-attr="aria-label:lang.aria">
-        <button type="button" data-set-lang="en" lang="en">EN</button>
-        <button type="button" data-set-lang="zh-Hant" lang="zh-Hant">繁</button>
-        <button type="button" data-set-lang="zh-Hans" lang="zh-Hans">简</button>
-      </div>
-      <a class="btn btn-yellow head-cta" href="inquiry.html?topic=assessment" aria-current="page" data-i18n="nav.cta">Free assessment</a>
-      <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu" data-i18n-attr="aria-label:nav.open"><span></span><span></span><span></span></button>
+    <div class="lang" role="group" aria-label="Language" data-i18n-attr="aria-label:lang.aria">
+      <button type="button" data-set-lang="en" lang="en">EN</button>
+      <button type="button" data-set-lang="zh-Hant" lang="zh-Hant">繁</button>
+      <button type="button" data-set-lang="zh-Hans" lang="zh-Hans">简</button>
     </div>
+    <a class="btn-main head-cta" href="inquiry.html?topic=trial" aria-current="page" data-i18n="cta">Book a free trial class</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu" data-i18n-attr="aria-label:nav.open"><span></span><span></span><span></span></button>
   </div>
 </header>
 
 <main id="main">
   <div class="page-head">
     <div class="wrap">
-      <h1 data-i18n="inq.h1">Book a free assessment or ask about a class</h1>
-      <p class="lead" data-i18n="inq.lead">Fill in this form and we will get back to you within one business day. You can also call us at (905) 555-0162.</p>
+      <h1 data-i18n="inq.h1">Book a free trial class</h1>
+      <p class="lead" data-i18n="inq.lead">Or ask us anything about classes. We reply within one business day, in English, Cantonese or Mandarin.</p>
     </div>
   </div>
 
   <div class="wrap inq-grid">
     <div class="inq-main">
-      <form class="form" id="inq-form" novalidate aria-label="Inquiry form" data-i18n-attr="aria-label:inq.form.aria">
+      <form class="sheet form-sheet" id="inq-form" novalidate aria-label="Trial class and inquiry form" data-i18n-attr="aria-label:inq.form.aria">
         <div class="errsum" id="errsum" role="alert" tabindex="-1" hidden></div>
 
         <div class="fld">
-          <label class="lbl" for="f-topic" data-i18n="inq.topic">I would like to</label>
+          <label class="lbl" for="f-topic" data-i18n="inq.topic">What would you like?</label>
           <select class="inp" id="f-topic" name="topic">
-            <option value="assessment" data-i18n="inq.topic.assessment">Book a free assessment</option>
+            <option value="trial" data-i18n="inq.topic.trial">Book a free trial class</option>
             <option value="class" data-i18n="inq.topic.class">Ask about a class</option>
+            <option value="wait" data-i18n="inq.topic.wait">Ask about the waitlist</option>
             <option value="other" data-i18n="inq.topic.other">Ask something else</option>
           </select>
         </div>
 
-        <fieldset class="sec-fs">
-          <legend data-i18n="inq.s1">About you</legend>
+        <fieldset class="fs">
+          <legend><span class="ring" aria-hidden="true">1</span><span data-i18n="inq.s1">About you</span></legend>
           <div class="fld">
-            <label class="lbl" for="f-name"><span data-i18n="inq.name">Your name</span> <small class="req" data-i18n="inq.req">required</small></label>
+            <label class="lbl" for="f-name"><span data-i18n="inq.name">Your name</span><small class="req" data-i18n="inq.req">required</small></label>
             <input class="inp" id="f-name" name="name" type="text" autocomplete="name" placeholder="e.g. Mrs. Chan" data-i18n-attr="placeholder:inq.name.ph" aria-describedby="e-name">
             <p class="err" id="e-name" hidden></p>
           </div>
+          <p class="hint" id="h-contact" data-i18n="inq.contact.hint">A phone number or an email is enough.</p>
           <div class="fld2">
             <div class="fld">
               <label class="lbl" for="f-phone" data-i18n="inq.phone">Phone</label>
-              <input class="inp" id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(905) 555-0123" aria-describedby="h-contact e-phone">
+              <input class="inp" id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(905) 555-0123" aria-describedby="h-contact e-phone e-contact">
               <p class="err" id="e-phone" hidden></p>
             </div>
             <div class="fld">
               <label class="lbl" for="f-email" data-i18n="inq.email">Email</label>
-              <input class="inp" id="f-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="name@example.com" aria-describedby="h-contact e-email">
+              <input class="inp" id="f-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="name@example.com" aria-describedby="h-contact e-email e-contact">
               <p class="err" id="e-email" hidden></p>
             </div>
           </div>
-          <p class="hint" id="h-contact" data-i18n="inq.contact.hint">Give us a phone number, an email, or both.</p>
-          <p class="err" id="e-contact" hidden></p>
+          <p class="err err-contact" id="e-contact" hidden></p>
           <fieldset class="fld">
             <legend class="lbl" data-i18n="inq.lang">Reply to me in</legend>
             <div class="opts">
@@ -97,80 +100,64 @@
           </fieldset>
         </fieldset>
 
-        <fieldset class="sec-fs">
-          <legend data-i18n="inq.s2">About the student</legend>
+        <fieldset class="fs">
+          <legend><span class="ring" aria-hidden="true">2</span><span data-i18n="inq.s2">About your child</span></legend>
           <div class="fld">
-            <label class="lbl" for="f-grade"><span data-i18n="inq.grade">Student’s grade</span> <small class="req" data-i18n="inq.req">required</small></label>
+            <label class="lbl" for="f-grade"><span data-i18n="inq.grade">Your child’s grade</span><small class="req" data-i18n="inq.req">required</small></label>
             <select class="inp" id="f-grade" name="grade" aria-describedby="h-grade e-grade"></select>
-            <p class="hint" id="h-grade" data-i18n="inq.grade.hint">The grade they are in as of January 2027.</p>
+            <p class="hint" id="h-grade" data-i18n="inq.grade.hint">The grade they are in now (2026–27 school year).</p>
             <p class="err" id="e-grade" hidden></p>
           </div>
           <fieldset class="fld">
-            <legend class="lbl"><span data-i18n="inq.subjects">Subjects</span> <small data-i18n="inq.opt">optional</small></legend>
+            <legend class="lbl"><span data-i18n="inq.subjects">Subjects</span><small data-i18n="inq.opt">optional</small></legend>
             <div class="opts" id="f-subjects"></div>
-            <p class="hint" data-i18n="inq.subjects.hint">Tick any that apply.</p>
           </fieldset>
           <div class="fld">
-            <label class="lbl" for="f-class"><span data-i18n="inq.class">A specific class</span> <small data-i18n="inq.opt">optional</small></label>
-            <select class="inp" id="f-class" name="class" aria-describedby="h-class"></select>
-            <p class="hint" id="h-class" data-i18n="inq.class.hint">From the Winter 2027 timetable.</p>
-            <p class="picked" id="picked" hidden data-i18n="inq.class.picked">Filled in from the timetable.</p>
+            <label class="lbl" for="f-class"><span data-i18n="inq.class">Class from the timetable</span><small data-i18n="inq.opt">optional</small></label>
+            <select class="inp" id="f-class" name="class" aria-describedby="picked"></select>
+            <p class="picked" id="picked" hidden><span data-i18n="inq.class.picked">Filled in from the timetable. You can change it.</span></p>
           </div>
           <fieldset class="fld">
-            <legend class="lbl"><span data-i18n="inq.days">Days that suit you</span> <small data-i18n="inq.opt">optional</small></legend>
+            <legend class="lbl"><span data-i18n="inq.days">Days that suit you</span><small data-i18n="inq.opt">optional</small></legend>
             <div class="opts" id="f-days"></div>
           </fieldset>
         </fieldset>
 
-        <fieldset class="sec-fs">
-          <legend data-i18n="inq.s3">How to reach you</legend>
-          <fieldset class="fld">
-            <legend class="lbl"><span data-i18n="inq.method">Best way to reach me</span> <small data-i18n="inq.opt">optional</small></legend>
-            <div class="opts">
-              <label class="opt"><input type="radio" name="method" value="call"><span data-i18n="inq.method.call">Phone call</span></label>
-              <label class="opt"><input type="radio" name="method" value="text"><span data-i18n="inq.method.text">Text message</span></label>
-              <label class="opt"><input type="radio" name="method" value="email"><span data-i18n="inq.method.email">Email</span></label>
-            </div>
-            <p class="err" id="e-method" hidden></p>
-          </fieldset>
+        <fieldset class="fs">
+          <legend><span class="ring" aria-hidden="true">3</span><span data-i18n="inq.s3">Anything else</span></legend>
           <div class="fld">
-            <label class="lbl" for="f-msg"><span data-i18n="inq.msg">Anything else we should know?</span> <small data-i18n="inq.opt">optional</small></label>
-            <textarea class="inp" id="f-msg" name="message" rows="4" placeholder="e.g. finds fractions hard, writing the OSSLT this spring, needs pick-up by 6:00" data-i18n-attr="placeholder:inq.msg.ph"></textarea>
+            <label class="lbl" for="f-msg"><span data-i18n="inq.msg">Anything else we should know?</span><small data-i18n="inq.opt">optional</small></label>
+            <textarea class="inp" id="f-msg" name="message" rows="4" placeholder="e.g. finds fractions hard, writing the OSSLT this spring, needs pickup by 6:00" data-i18n-attr="placeholder:inq.msg.ph"></textarea>
           </div>
-          <div class="consent" id="consent-box">
-            <input type="checkbox" id="f-consent" name="consent" aria-describedby="e-consent">
-            <label for="f-consent" data-i18n="inq.consent">Maple Bridge may contact me about this inquiry using the details above. They will not be used for marketing.</label>
-          </div>
-          <p class="err" id="e-consent" hidden></p>
         </fieldset>
 
         <div class="form-foot">
-          <button class="btn btn-yellow" type="submit" data-i18n="inq.submit">Send inquiry</button>
+          <button class="btn-main" type="submit" id="submit" data-i18n="cta">Book a free trial class</button>
+          <p class="small" data-i18n="inq.privacy">We use these details only to reply to you. We don’t ask for your child’s name, school or report card.</p>
           <p class="small" data-i18n="inq.demo">This is a demo form. Nothing is sent or saved.</p>
         </div>
       </form>
-      <div class="slip" id="slip" tabindex="-1" hidden aria-live="polite"></div>
+      <div class="sheet form-sheet slip" id="slip" tabindex="-1" hidden aria-live="polite"></div>
     </div>
 
     <aside class="inq-side">
       <div class="side-box">
-        <h2 data-i18n="inq.next.h">What happens next</h2>
-        <ol class="steps steps-sm">
-          <li><h3 data-i18n="inq.next.1h">We reply within one business day</h3><p data-i18n="inq.next.1p">In the language you chose, the way you chose.</p></li>
-          <li><h3 data-i18n="inq.next.2h">We book the free assessment</h3><p data-i18n="inq.next.2p">About 40 minutes at the centre. Bring the latest report card if you can.</p></li>
-          <li><h3 data-i18n="inq.next.3h">You get a class suggestion</h3><p data-i18n="inq.next.3p">Try one class for $30 before you decide.</p></li>
-        </ol>
-      </div>
-      <div class="side-box side-yellow">
         <h2 data-i18n="inq.side.h">Prefer to call?</h2>
         <p class="big-phone"><a href="tel:+19055550162" data-lang-neutral>(905) 555-0162</a></p>
-        <p class="small" data-i18n="fact.office">The front desk answers the phone from 1:00 pm on weekdays.</p>
-        <p class="small" data-i18n="fact.lang">We answer in English, Cantonese and Mandarin.</p>
-        <p class="small" data-lang-neutral>Suite 205, 88 Fernbrook Gate<br>Markham, ON L6C 9Z9</p>
+        <p class="small" data-i18n="visit.office">The front desk answers the phone from 1:00 pm on weekdays, in English, Cantonese and Mandarin.</p>
+      </div>
+      <div class="side-box">
+        <h2 data-i18n="inq.next.h">After you send this</h2>
+        <p data-i18n="inq.next.p">We call or email within one business day to set a trial date. The trial class is free and there is nothing to sign.</p>
       </div>
       <div class="side-box">
         <h2 data-i18n="inq.priv.h">What we don’t ask for</h2>
-        <p class="small" data-i18n="inq.priv.p">This form does not ask for your child’s name, school or date of birth. The grade is enough for us to help.</p>
+        <p data-i18n="inq.priv.p">No child’s name, school, date of birth or report card. The grade is enough for us to suggest a class.</p>
+      </div>
+      <div class="side-box">
+        <h2 data-i18n="visit.h">Find us</h2>
+        <p data-lang-neutral>Suite 205, 88 Fernbrook Gate<br>Markham, ON L6C 9Z9</p>
+        <p><a class="link-sec" href="index.html#pickup" data-i18n="inq.side.park">Parking and pickup</a></p>
       </div>
     </aside>
   </div>
@@ -178,31 +165,28 @@
 
 <footer class="site-foot">
   <div class="wrap foot-grid">
-    <div>
-      <p class="foot-brand" data-i18n="brand.name">Maple Bridge Learning Centre</p>
-      <p data-i18n="foot.about">Small-group tutoring for Grades 1 to 12 in Markham since 2012.</p>
+    <div class="label">
+      <dl>
+        <div><dt data-i18n="foot.l.name">Name</dt><dd data-i18n="brand.name">Maple Bridge Learning Centre</dd></div>
+        <div><dt data-i18n="foot.l.subj">Subjects</dt><dd data-i18n="foot.subj">Math, English, science, French, Mandarin, Grades 1 to 12</dd></div>
+        <div><dt data-i18n="foot.l.phone">Phone</dt><dd><a href="tel:+19055550162" data-lang-neutral>(905) 555-0162</a></dd></div>
+        <div><dt data-i18n="foot.email">Email</dt><dd><a href="mailto:office@maplebridge.example" data-lang-neutral>office@maplebridge.example</a></dd></div>
+        <div><dt data-i18n="foot.l.addr">Address</dt><dd data-lang-neutral>Suite 205, 88 Fernbrook Gate, Markham, ON L6C 9Z9</dd></div>
+        <div><dt data-i18n="foot.l.hours">Hours</dt><dd data-i18n-html="foot.hours.p">Mon to Fri 3:30 – 8:30 pm<br>Sat 9:00 am – 3:30 pm, Sun closed</dd></div>
+      </dl>
     </div>
-    <div>
-      <h2 data-i18n="foot.hours">Hours</h2>
-      <p data-i18n-html="foot.hours.p">Monday to Friday 3:30 – 8:30 pm<br>Saturday 9:00 am – 3:30 pm<br>Sunday closed</p>
-    </div>
-    <div>
-      <h2 data-i18n="foot.contact">Contact</h2>
-      <p data-lang-neutral>Suite 205, 88 Fernbrook Gate<br>Markham, ON L6C 9Z9</p>
-      <p><a href="tel:+19055550162" data-lang-neutral>(905) 555-0162</a><br><a href="mailto:office@maplebridge.example" data-lang-neutral>office@maplebridge.example</a></p>
-    </div>
-    <div>
-      <h2 data-i18n="foot.pages">Pages</h2>
+    <nav aria-label="Pages" data-i18n-attr="aria-label:foot.pages">
       <ul class="foot-links">
         <li><a href="index.html" data-i18n="nav.home">Home</a></li>
         <li><a href="schedule.html" data-i18n="nav.schedule">Timetable</a></li>
-        <li><a href="inquiry.html" data-i18n="nav.contact">Contact</a></li>
+        <li><a href="inquiry.html?topic=trial" data-i18n="cta">Book a free trial class</a></li>
+        <li><a href="index.html#visit" data-i18n="nav.contact">Find us</a></li>
       </ul>
-    </div>
+    </nav>
   </div>
   <div class="wrap foot-base">
-    <span data-i18n="foot.copy">© 2026 Maple Bridge Learning Centre</span>
-    <a href="../index.html" data-i18n="foot.demo">This is a demo website. The tutoring centre is fictional.</a>
+    <p data-i18n="foot.copy">© 2026 Maple Bridge Learning Centre, Markham</p>
+    <a href="../index.html" data-i18n="foot.demo">This is a demo website. The tutoring centre is made up.</a>
   </div>
 </footer>
 

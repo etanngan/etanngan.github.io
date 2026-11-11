@@ -1,12 +1,16 @@
-/* Jade Basket: header menu, today's hours, dishes from menu-data.js, full menu, QR code, map language. No animation library. */
+/* Jade Basket: header menu, phone bar, today (Toronto time), hours and holiday grids, tier key, favourites, map language. */
 (function () {
   'use strict';
-  var T = function (k) { return MPi18n.t(k); };
   var JB = window.JB;
+  var T = function (k) { return MPi18n.t(k); };
+  var $ = function (id) { return document.getElementById(id); };
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function fill(s, o) { return s.replace(/\{(\w+)\}/g, function (m, k) { return o[k] !== undefined ? o[k] : m; }); }
+  window.JBesc = esc; window.JBfill = fill;
+  var TICK = '<svg class="tick" viewBox="0 0 22 18" aria-hidden="true" focusable="false"><path d="M2.5 9.5l5.5 5.5L19.5 2.5"/></svg>';
 
-  /* ---------- phone-width menu ---------- */
-  var burger = document.querySelector('.burger'), nav = document.getElementById('nav');
+  /* ---------- burger ---------- */
+  var burger = document.querySelector('.burger'), nav = $('nav');
   function setNav(open) {
     if (!burger) return;
     burger.setAttribute('aria-expanded', open ? 'true' : 'false');
@@ -17,132 +21,99 @@
   if (burger && nav) {
     burger.addEventListener('click', function () { setNav(burger.getAttribute('aria-expanded') !== 'true'); });
     nav.addEventListener('click', function (e) { if (e.target.closest('a')) setNav(false); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setNav(false); });
-    window.addEventListener('resize', function () { if (window.innerWidth > 980) setNav(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && document.body.classList.contains('nav-open')) { setNav(false); burger.focus(); } });
+    window.addEventListener('resize', function () { if (window.innerWidth > 1080) setNav(false); });
   }
 
-  /* ---------- today's hours ---------- */
-  function mins(s) { var p = s.split(':'); return +p[0] * 60 + +p[1]; }
-  function ymd(d) { return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
-  function today() {
-    var box = document.getElementById('today');
-    var now = new Date(), day = now.getDay(), key = ymd(now);
-    var holiday = document.querySelector('tr[data-date="' + key + '"]');
-    var row = holiday;
-    document.querySelectorAll('.hours tr').forEach(function (tr) {
-      var on = tr.getAttribute('data-days').split(',').indexOf(String(day)) > -1;
-      tr.classList.toggle('is-today', on && !holiday);
-      if (on && !row) row = tr;
+  /* ---------- phone bar: on the home page it waits until the hero button has scrolled away ---------- */
+  var bar = document.querySelector('.callbar');
+  if (bar) {
+    document.body.classList.add('has-callbar');
+    var heroBtn = document.querySelector('.hero .btn-call');
+    if (heroBtn && 'IntersectionObserver' in window) {
+      bar.classList.add('is-off');
+      new IntersectionObserver(function (es) {
+        var off = es[0].isIntersecting || es[0].boundingClientRect.top > 0;
+        bar.classList.toggle('is-off', off);
+        bar.setAttribute('aria-hidden', off ? 'true' : 'false');
+        bar.querySelectorAll('a,button').forEach(function (a) { if (off) a.setAttribute('tabindex', '-1'); else a.removeAttribute('tabindex'); });
+      }).observe(heroBtn);
+    }
+  }
+
+  /* ---------- tier key (小點 $5.50 …) ---------- */
+  function tierKeys() {
+    document.querySelectorAll('[data-tier-key]').forEach(function (ul) {
+      ul.innerHTML = JB.tierOrder.map(function (k) {
+        var label = JB.tier(k) + (MPi18n.lang === 'en' ? ' ' + JB.tierEn[k] : '');
+        return '<li aria-label="' + esc(label + ' ' + JB.money(JB.tiers[k])) + '"><span class="cn" aria-hidden="true">' + esc(JB.tier(k)) + '</span><span class="num" aria-hidden="true">' + JB.money(JB.tiers[k]) + '</span></li>';
+      }).join('');
+      ul.setAttribute('role', 'list');
+      [].forEach.call(ul.children, function (li) { li.setAttribute('role', 'listitem'); });
     });
-    if (holiday) holiday.classList.add('is-today');
-    if (!box || !row) return;
-    var t = now.getHours() * 60 + now.getMinutes();
-    var open = t >= mins(row.getAttribute('data-open')) && t < mins(row.getAttribute('data-close'));
-    document.getElementById('today-hours').textContent = row.querySelector('td').textContent;
-    var st = document.getElementById('today-status');
-    st.textContent = holiday ? T('hero.holiday') : T(open ? 'hero.open' : 'hero.closed');
-    st.className = 'today-status ' + (open ? 'is-open' : 'is-closed');
-    box.hidden = false;
   }
 
-  /* ---------- home: favourites come from the menu data so prices always match ---------- */
+  /* ---------- today, in Toronto time ---------- */
+  function today() {
+    var box = $('today'); if (!box) return;
+    var st = JB.status(), L = MPi18n.lang, d = st.today;
+    var hours = d.closed ? T('st.closed') : JB.range(d.o, d.c);
+    var now;
+    if (st.s === 'dimsum') now = fill(T('now.dimsum'), { t: JB.time(d.ds) });
+    else if (st.s === 'between') now = fill(T('now.between'), { d: JB.time(JB.hm(JB.dinner)) });
+    else if (st.s === 'dinner') now = fill(T('now.dinner'), { t: JB.time(d.c) });
+    else if (st.s === 'before') now = fill(T('now.before'), { o: JB.time(d.o) });
+    else if (st.s === 'closed') now = fill(T('now.closed'), { o: JB.time(st.tomorrow.o) });
+    else now = fill(T('now.after'), { o: JB.time(st.tomorrow.o) });
+    var hol = d.hol ? '<span class="t-hol">' + esc(fill(T('today.hol'), { name: T(d.hol.name) })) + '</span>' : '';
+    $('t-hours').innerHTML = '<b>' + esc(T(st.open ? 'st.open' : 'st.closed')) + '</b> <span class="nw">' + esc(hours) + '</span>' + hol;
+    $('t-now').textContent = now;
+    var chop = $('chop');
+    if (chop) {
+      chop.hidden = !st.open;
+      chop.innerHTML = '<span>' + (L === 'zh-Hans' ? '营业中' : '營業中') + '</span>';
+    }
+  }
+
+  /* ---------- hours grid ---------- */
+  function hoursGrid() {
+    var tb = $('hours-body'); if (!tb) return;
+    var clk = JB.clock(), hol = JB.holiday(clk.ymd);
+    tb.innerHTML = JB.weekRows.map(function (r) {
+      var w = JB.week[r.days[0]], on = !hol && r.days.indexOf(clk.dow) > -1;
+      return '<tr' + (on ? ' class="is-today"' : '') + '><th scope="row">' + esc(T(r.label)) + (on ? '<span class="sub today-tag">' + TICK + esc(T('hours.today')) + '</span>' : '') + '</th>' +
+        '<td><span class="nw">' + esc(JB.range(JB.hm(w.o), JB.hm(w.c))) + '</span><span class="sub">' + esc(fill(T('hours.ds'), { t: JB.time(JB.hm(w.ds)) })) + '</span></td></tr>';
+    }).join('');
+  }
+
+  /* ---------- holiday grid: upcoming days only ---------- */
+  function holidays() {
+    var tb = $('hol-body'); if (!tb) return;
+    var clk = JB.clock();
+    var rows = JB.holidays.filter(function (h) { return h.date >= clk.ymd; });
+    $('hol-none').hidden = rows.length > 0;
+    $('hol-table').hidden = rows.length === 0;
+    tb.innerHTML = rows.map(function (h) {
+      var on = h.date === clk.ymd;
+      return '<tr' + (on ? ' class="is-today"' : '') + '><th scope="row">' + esc(T(h.name)) + '<span class="sub nw">' + esc(JB.date(h.date)) + '</span>' + (on ? '<span class="sub today-tag">' + TICK + esc(T('hours.today')) + '</span>' : '') + '</th>' +
+        '<td><span class="nw">' + esc(JB.range(JB.hm(h.o), JB.hm(h.c))) + '</span><span class="sub">' + esc(fill(T('hours.ds'), { t: JB.time(JB.hm(h.ds)) })) + '</span>' + (h.note ? '<span class="sub">' + esc(T(h.note)) + '</span>' : '') + '</td></tr>';
+    }).join('');
+  }
+
+  /* ---------- favourites: names and prices from the menu data ---------- */
   function favs() {
-    if (!JB) return;
     document.querySelectorAll('.fav-list li[data-dish]').forEach(function (li) {
       var it = JB.byId(li.getAttribute('data-dish')); if (!it) return;
       var L = MPi18n.lang;
-      var price = T('menu.pcs').replace('{n}', it.q) + ', ' + JB.money(JB.price(it));
       li.querySelector('.fav-text').innerHTML =
         '<h3>' + esc(JB.name(it)) + '</h3>' +
-        (L === 'en' ? '<p class="fav-zh" lang="zh-Hant" data-lang-neutral>' + esc(it.n[0]) + '</p>' : '<p class="fav-zh" lang="en" data-lang-neutral>' + esc(it.n[2]) + '</p>') +
-        '<p class="fav-price">' + esc(price) + '</p>';
+        '<span class="alt' + (L === 'en' ? ' cn" lang="zh-Hant"' : '" lang="en"') + ' data-lang-neutral>' + esc(JB.altName(it)) + '</span>' +
+        '<span class="tier-box"><span class="cn">' + esc(JB.tier(it.t)) + '</span><span class="num">' + JB.money(JB.price(it)) + '</span></span>' +
+        (it.q ? ' <span class="muted">' + esc(fill(T('menu.pcs'), { n: it.q })) + '</span>' : '');
     });
   }
 
-  /* ---------- menu page ---------- */
-  var MK = { g: '招', v: '素', p: '生', s: '辣' };
-  function marksHtml(it) {
-    return ['g', 'v', 'p', 's'].filter(function (k) { return JB.has(it, k); }).map(function (k) {
-      return '<span class="mk mk-' + k + '" role="img" aria-label="' + esc(T('mark.' + k)) + '" title="' + esc(T('mark.' + k)) + '">' + MK[k] + '</span>';
-    }).join('');
-  }
-  function priceHtml(it) {
-    if (it.incl) return '<span class="incl">' + esc(T('menu.incl')) + '</span>';
-    if (it.t) return '<span class="seal" title="' + esc(T('tier.' + it.t)) + '" aria-label="' + esc(T('tier.' + it.t)) + '">' + esc(MPi18n.pick(JB.tierChar[it.t])) + '</span><span class="amt">' + JB.money(JB.tiers[it.t]) + '</span>';
-    return '<span class="amt">' + JB.money(it.p) + '</span>' + (it.unit === 'pot' ? '<span class="unit">' + esc(T('menu.pot')) + '</span>' : '');
-  }
-  function sizes() {
-    var ul = document.getElementById('size-list'); if (!ul) return;
-    ul.innerHTML = JB.tierOrder.map(function (k) {
-      return '<li><span class="seal" aria-hidden="true">' + esc(MPi18n.pick(JB.tierChar[k])) + '</span><span class="size-name">' + esc(T('tier.' + k)) + '</span><span class="amt">' + JB.money(JB.tiers[k]) + '</span></li>';
-    }).join('');
-  }
-  function renderMenu() {
-    var root = document.getElementById('menu-root'), bar = document.getElementById('catbar-list');
-    if (!root || !JB) return;
-    var L = MPi18n.lang;
-    bar.innerHTML = JB.cats.map(function (c) {
-      return '<li><a href="#cat-' + c.id + '" data-cat="' + c.id + '">' + esc(MPi18n.pick(c.name)) + '</a></li>';
-    }).join('');
-    root.innerHTML = JB.cats.map(function (c) {
-      var items = JB.items.filter(function (it) { return it.c === c.id; });
-      return '<section class="cat" id="cat-' + c.id + '" aria-labelledby="h-' + c.id + '">' +
-        '<div class="cat-head"><h2 id="h-' + c.id + '">' + esc(MPi18n.pick(c.name)) + '</h2><p>' + esc(MPi18n.pick(c.note)) + '</p></div>' +
-        '<table class="sheet"><thead><tr><th scope="col">' + esc(T('menu.col.dish')) + '</th><th scope="col" class="c-price">' + esc(T('menu.col.price')) + '</th></tr></thead><tbody>' +
-        items.map(function (it) {
-          var first = L === 'en' ? it.n[2] : JB.name(it);
-          var second = L === 'en' ? '<span class="d-alt" lang="zh-Hant" data-lang-neutral>' + esc(it.n[0]) + '</span>' : '<span class="d-alt" lang="en" data-lang-neutral>' + esc(it.n[2]) + '</span>';
-          var qty = it.q ? '<span class="d-qty">' + esc(T('menu.pcs').replace('{n}', it.q)) + '</span>' : '';
-          return '<tr><th scope="row"><span class="d-name">' + esc(first) + '</span>' + marksHtml(it) + second +
-            '<span class="d-desc">' + esc(JB.desc(it)) + ' ' + qty + '</span></th>' +
-            '<td class="c-price"><span class="price-wrap">' + priceHtml(it) + '</span></td></tr>';
-        }).join('') + '</tbody></table></section>';
-    }).join('');
-    spy();
-  }
-  var spyObs = null;
-  function spy() {
-    var links = document.querySelectorAll('#catbar-list a');
-    if (!links.length || !('IntersectionObserver' in window)) return;
-    if (spyObs) spyObs.disconnect();
-    function activate(id) {
-      links.forEach(function (a) {
-        var on = a.getAttribute('data-cat') === id;
-        a.classList.toggle('is-active', on);
-        if (on) {
-          a.setAttribute('aria-current', 'true');
-          var ul = a.closest('ul');
-          ul.scrollLeft = a.offsetLeft - ul.clientWidth / 2 + a.offsetWidth / 2;
-        } else a.removeAttribute('aria-current');
-      });
-    }
-    spyObs = new IntersectionObserver(function (es) {
-      es.forEach(function (e) { if (e.isIntersecting) activate(e.target.id.replace('cat-', '')); });
-    }, { rootMargin: '-30% 0px -60% 0px' });
-    document.querySelectorAll('.cat').forEach(function (s) { spyObs.observe(s); });
-    activate(JB.cats[0].id);
-  }
-  function qr() {
-    var box = document.getElementById('qr-code');
-    if (!box || typeof window.qrcode !== 'function') return;
-    var url = new URL('qr.html', location.href); url.hash = ''; url.search = '';
-    var href = url.href, q = qrcode(0, 'M');
-    q.addData(href); q.make();
-    var n = q.getModuleCount(), pad = 2, scale = 8, cv = document.createElement('canvas');
-    cv.width = cv.height = (n + pad * 2) * scale;
-    var g = cv.getContext('2d');
-    g.fillStyle = '#ffffff'; g.fillRect(0, 0, cv.width, cv.height);
-    g.fillStyle = '#0a3d2f';
-    for (var r = 0; r < n; r++) for (var c = 0; c < n; c++) if (q.isDark(r, c)) g.fillRect((c + pad) * scale, (r + pad) * scale, scale, scale);
-    cv.setAttribute('role', 'img');
-    cv.setAttribute('data-i18n-attr', 'aria-label:qrb.alt');
-    cv.setAttribute('aria-label', T('qrb.alt'));
-    cv.setAttribute('data-url', href);
-    box.innerHTML = ''; box.appendChild(cv);
-    var u = document.getElementById('qr-url'); if (u) u.textContent = href.replace(/^https?:\/\//, '');
-  }
-
-  /* ---------- map follows the page language ---------- */
+  /* ---------- the map follows the page language ---------- */
   function mapLang() {
     var f = document.querySelector('iframe[data-map-q]'); if (!f) return;
     var hl = { en: 'en', 'zh-Hant': 'zh-TW', 'zh-Hans': 'zh-CN' }[MPi18n.lang] || 'en';
@@ -150,8 +121,8 @@
     if (f.getAttribute('src') !== src) f.setAttribute('src', src);
   }
 
-  function all() { today(); favs(); sizes(); renderMenu(); mapLang(); }
-  qr();
+  function all() { tierKeys(); today(); hoursGrid(); holidays(); favs(); mapLang(); }
   all();
   document.addEventListener('mp:langchange', all);
+  setInterval(function () { today(); hoursGrid(); }, 60000);
 })();
