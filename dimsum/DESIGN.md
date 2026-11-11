@@ -15,14 +15,16 @@ A demo site for a made-up business. The restaurant, address (Unit 108, 3150 Elle
 ## 2. The one idea
 - **The object:** the 點心紙, the thin printed dim sum order sheet on every Hong Kong-style table. Printed in ONE ink (here jade green), a grid of dishes grouped by price tier (小點 / 中點 / 大點 / 特點 / 頂點) with the tier price in a reversed box, a little box beside each dish that you fill with a pencil tally (正), the table number (枱號) and number of guests (人數) written at the top, and a red chop.
 - **Where it shows up:**
-  - **Hero:** the business info IS a printed sheet (a slip) lying on a real photo of har gow and siu mai steamers. The slip carries the name, what it is, a ruled "today" grid (today's hours, whether dim sum is being served right now, address), a red 營業中 chop when we are open, the main button, and the sheet's tier key (小點 $5.50 … 頂點 $9.80) across the bottom.
+  - **Hero (Nov 2026 personality pass):** the first screen IS the order sheet at full scale, edge to edge on phones and the full 1200px container on desktop. No card floating on a photo. From top to bottom it prints like a real 點心紙: a ruled header row (點心紙 · 枱號 Table 12 · 人數 Guests 4 in pencil · the red chop box), a full-width reversed jade band with the business name huge, a ruled "today" grid with the main button, and the dish grid by tier (小點 $5.50 … 頂點 $9.80) with pencil tallies and red ticks. The steamer photo is one cell of the sheet (right of the today grid on desktop, at the bottom of the sheet on phones). The chop says 營業中 when open and 休息中 when closed, so it is always stamped.
   - **Section dividers:** the sheet's printed rules: a thick-thin double rule under every section heading, thin ink rules between rows. No other divider style.
   - **Hours:** a ruled grid like the sheet; today's row gets a red tick, the way a server ticks a delivered dish.
   - **Buttons:** square ink blocks with a thin inner paper line, like the reversed tier boxes printed on the sheet. Never pill-shaped.
   - **Menu page:** literally the sheet: dim sum grouped by tier with a reversed tier heading (小點 Small $5.50), each dish with a tally box. Tapping the box pencils one stroke of 正 into it. Congee, noodles, BBQ and tea follow as "kitchen" sections with their own prices, as on real sheets.
   - **QR phone menu:** the diner's own copy of the sheet. Tap a dish, it gets tallied; the bottom bar shows "Your sheet"; the sheet view has 枱號 Table and 人數 Guests fields at the top (guests drives the tea charge), the dishes grouped by tier, and the printed footer. "Show this to your server." The same sheet is shared with the menu page and kept for 6 hours on that phone.
   - **Footer:** the sheet's printed small print: tea charge per person, 15% service for 10+, prices before HST, allergies. Then address, hours, contact, demo note.
-- **What stays quiet so the idea stands out:** one ink colour for everything, flat paper, no shadows except the single slip in the hero, no rounded cards, no icons except the tally strokes and chop, no animation except the pencil stroke.
+- **Jade used generously:** the sheet's reversed printing becomes full-width jade bands in three places: the hero name band, the private room section and the closing "Book a table" band. Everything else is jade ink on paper.
+- **No thin boxes:** ruled grids are open rules (3px top rule, 1px row rules), not framed boxes; photos have no frames. The only framed thing is the hero sheet itself.
+- **What stays quiet so the idea stands out:** one ink colour for everything, flat paper, no shadows at all, no rounded cards, no icons except the tally strokes, ticks and chop, motion only in the hero and the pencil stroke.
 
 ## 3. Colour
 | Name | Hex | Role |
@@ -52,19 +54,22 @@ Not cream + serif + terracotta (cool white, jade, vermilion only for stamps); no
 ## 5. Layout
 - **First phone screen (390×844, everything essential above 700px):**
   ```
-  [翠籠軒 Jade Basket      EN|繁|简  ☰]   header, 60px
-  [ photo band: har gow + siu mai, 180px ]
-  [┌ slip ─────────────────────────────┐]
-  [│ Jade Basket Dim Sum House          │]  H1 = business name
-  [│ Hong Kong-style dim sum and        │]  what it is
-  [│ Cantonese dinner in Markham.       │]
-  [│ Today   9:00 am – 9:30 pm   [營業中]│]  ruled "today" grid + chop
-  [│ Dim sum Now, until 3:00 pm         │]
-  [│ Where   3150 Ellesworth Rd         │]
-  [│ [ Call to book a table ]           │]  main action
-  [│ See the menu   (905) 555-0138      │]
-  [│ 小點 中點 大點 特點 頂點 (tier key)   │]
+  [翠籠軒 Jade Basket      EN|繁|简  ☰]   header, 64px
+  [點心紙 | 枱號 12 | 人數 4 | [營業中]  ]   sheet header row, chop lands last
+  [████ JADE BAND, full bleed █████████]
+  [█ JADE BASKET                       █]  H1 = business name, ~52px EN / ~42px zh
+  [█ DIM SUM HOUSE                     █]
+  [█ Hong Kong-style dim sum … parking █]  what it is
+  [Today   Open 9:00 am – 9:30 pm      ]   ruled "today" grid
+  [Now     Dim sum until 3:00 pm       ]
+  [Where   3150 Ellesworth Rd …        ]
+  [[ Call to book a table            ]]   main action
+  [(905) 555-0138          See the menu]
+  [小點 $5.50 | □ 齋腸     | □ 豆腐花   ]   dish grid by tier, red ticks land
+  [中點 $6.50 | 正✓ 鳳爪   | 正✓ 叉燒包 ]
   ```
+- **Desktop hero (1440):** the same sheet inside the 1200px container with a double-line frame: header row; jade band with the name at ~96px on one line; today grid + button on the left, the steamer photo as a cell on the right; the dish grid as five tier columns, three dishes each.
+- **Scale:** hero H1 is 3× body on phones and 5–6× on desktop; section headings are 2.4–3.4rem condensed (zh 1.9–2.6rem serif).
 - **Section order (home):** hero slip → Hours and location (hours grid, booking rules, address/parking) → Most-ordered dim sum (4 photos, priced from the menu data) → Before you visit (weekend wait grid + photo, tea, morning prices, payment, groups, access, allergies, takeout) → Holiday hours → Private room → Getting here (map) → end slip with the main button → printed footer.
 - **Menu page:** title + prices-by-size key → sticky tier bar (小點 … 頂點, congee and noodles, BBQ, tea) with scroll-spy → type filter (all / steamed / fried and baked / rice rolls / sweet / vegetarian) → the sheet. Desktop: sheet on the left, sticky "Your sheet" + symbols + QR code on the right.
 - **QR page:** one 560px column: brand + toggle, title + count, search, filters, sticky category tabs, dishes by type with tier chip and tally box, notes, sheet bar.
@@ -87,9 +92,10 @@ Not cream + serif + terracotta (cool white, jade, vermilion only for stamps); no
 - **Alt text in all 3 languages:** yes.
 
 ## 8. Motion
-- **The one moment:** tapping a tally box draws one pencil stroke of 正 into it (stroke-dashoffset, 220 ms). It only happens in response to a tap and the count is readable immediately.
+- **Hero entrance (once per page load, about 1.3 s):** red ticks are drawn one after another beside the dishes the table has ordered (stroke-dashoffset, 200 ms each, 140 ms apart), then the red chop lands in its box (scales down from 1.5× with a small turn, 260 ms). CSS and SVG only. All text is printed and readable from the first frame; the ticks and chop are decoration. It does not replay when the language changes.
+- **The tap moment:** tapping a tally box draws one pencil stroke of 正 into it (stroke-dashoffset, 220 ms). It only happens in response to a tap and the count is readable immediately.
 - **Interaction feedback:** row gets an ink wash when it has a tally; the sheet bar updates its count; the sheet dialog opens without a slide.
-- **Reduced motion:** the stroke appears without drawing; smooth scrolling off.
+- **Reduced motion:** the hero ticks and chop are shown in place with no animation; the stroke appears without drawing; smooth scrolling off.
 - No fade-in sections, no hover lifts, no carousels, no autoplay video.
 
 ## 9. Language notes
@@ -116,6 +122,7 @@ Don't:
 - Let a Chinese heading break with one character alone on the last line, or let a button wrap.
 
 ## Removed decoration
+- Nov 2026: the drop shadow under the hero slip (and the slip itself). The sheet is printed flat on the page now, so the site has no shadows at all.
 - The 翠籠軒 sign that was printed again inside the menu page's sheet band. The header already carries the sign one line above, so the band now prints only 點心紙 / 点心单 and "one stroke per order".
 
 ## Refinements made while building (second agent)

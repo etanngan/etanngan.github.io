@@ -1,4 +1,4 @@
-/* Jade Basket: header menu, phone bar, today (Toronto time), hours and holiday grids, tier key, favourites, map language. */
+/* Jade Basket: header menu, phone bar, hero order sheet, today (Toronto time), hours and holiday grids, tier key, favourites, map language. */
 (function () {
   'use strict';
   var JB = window.JB;
@@ -70,8 +70,44 @@
     $('t-now').textContent = now;
     var chop = $('chop');
     if (chop) {
-      chop.hidden = !st.open;
-      chop.innerHTML = '<span>' + (L === 'zh-Hans' ? '营业中' : '營業中') + '</span>';
+      var ck = st.open ? 'chop.aria' : 'chop.closed';
+      chop.setAttribute('data-i18n-attr', 'aria-label:' + ck);
+      chop.setAttribute('aria-label', T(ck));
+      chop.classList.toggle('is-closed', !st.open);
+      chop.innerHTML = '<span>' + (st.open ? (L === 'zh-Hans' ? '营业中' : '營業中') : '休息中') + '</span>';
+    }
+  }
+
+  /* ---------- the order sheet printed in the hero: dishes by size, pencil tallies, red ticks ---------- */
+  var HS = { S: ['r06', 'd08'], M: ['s03', 's05', 'd01'], L: ['s01', 's02', 'r02'], XL: ['s08', 'f06'], SP: ['s13', 'r01'] };
+  var HS_N = { s03: 1, s05: 2, s01: 2, s02: 1, s08: 1 };      /* pencil strokes of 正 the table wrote */
+  var HS_TICK = ['s03', 's05', 's01', 's02', 's08'];           /* red ticks, in the order they land */
+  var HS_ST = ['M8 9H32', 'M20 9V32', 'M20 20.5H29', 'M11 20.5V32', 'M6 32H34'];
+  var heroOnce = false;
+  function heroSheet() {
+    var ul = $('hs-grid'); if (!ul) return;
+    var L = MPi18n.lang;
+    ul.innerHTML = JB.tierOrder.map(function (k) {
+      var ids = HS[k] || [], cells = '';
+      for (var i = 0; i < 3; i++) {
+        var id = ids[i], third = i === 2 ? ' is-third' : '';
+        if (!id || !JB.byId(id)) { cells += '<li class="hs-dish is-blank' + third + '" aria-hidden="true"><span class="hs-box"></span></li>'; continue; }
+        var n = HS_N[id] || 0, ti = HS_TICK.indexOf(id), marks = '';
+        for (var j = 0; j < n; j++) marks += '<path d="' + HS_ST[j] + '"/>';
+        cells += '<li class="hs-dish' + third + '"><span class="hs-box" aria-hidden="true">' + (n ? '<svg viewBox="0 0 40 40" focusable="false">' + marks + '</svg>' : '') + '</span>' +
+          '<span class="hs-dn">' + esc(T('hs.' + id)) + '</span>' +
+          (ti > -1 ? '<svg class="hs-tick" style="--i:' + ti + '" viewBox="0 0 30 26" aria-hidden="true" focusable="false"><path pathLength="1" d="M3.5 13.5l7 8L27 3.5"/></svg>' : '') + '</li>';
+      }
+      var label = JB.tier(k) + (L === 'en' ? ' ' + JB.tierEn[k] : '');
+      return '<li class="hs-tier"><p class="hs-tbox"><span class="sr">' + esc(label + ' ' + JB.money(JB.tiers[k])) + '</span>' +
+        '<span class="cn" aria-hidden="true">' + esc(JB.tier(k)) + '</span><span class="num" aria-hidden="true">' + JB.money(JB.tiers[k]) + '</span></p>' +
+        '<ul class="hs-dishes">' + cells + '</ul></li>';
+    }).join('');
+    if (!heroOnce) {
+      heroOnce = true;
+      /* the entrance runs once; after it, language switches re-print the sheet without replaying the ticks */
+      var hero = ul.closest('.hero');
+      setTimeout(function () { hero.classList.add('is-drawn'); }, 1700);
     }
   }
 
@@ -121,7 +157,7 @@
     if (f.getAttribute('src') !== src) f.setAttribute('src', src);
   }
 
-  function all() { tierKeys(); today(); hoursGrid(); holidays(); favs(); mapLang(); }
+  function all() { tierKeys(); heroSheet(); today(); hoursGrid(); holidays(); favs(); mapLang(); }
   all();
   document.addEventListener('mp:langchange', all);
   setInterval(function () { today(); hoursGrid(); }, 60000);
