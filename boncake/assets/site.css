@@ -279,6 +279,64 @@ fieldset.field{border:0;margin:0;padding:0}
   .pick{grid-template-columns:1fr}
   .strip svg{width:46px;height:46px;padding:10px}
 }
+/* ===== real photos (from Bon Cake's Google Maps listing) ===== */
+.photo-hero{position:relative;width:100%;max-width:560px;aspect-ratio:1;margin-left:auto}
+.photo-hero::before{content:"";position:absolute;inset:2%;border-radius:50%;background:radial-gradient(circle at 40% 35%,#fff3f6 0,#fbe4ec 60%,#ece0f7 100%)}
+.photo-hero::after{content:"";position:absolute;inset:5%;border-radius:50%;border:5px dotted #ffffff;opacity:.9}
+.ph{position:absolute;margin:0;border-radius:50%;overflow:hidden;border:8px solid #ffffff;box-shadow:0 24px 50px -24px rgba(90,58,44,.45);background:#fff}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph-main{left:12%;top:12%;width:72%;aspect-ratio:1;z-index:1}
+.ph-a{left:-2%;bottom:0;width:34%;aspect-ratio:1;z-index:2}
+.ph-a img{object-position:50% 70%}
+.ph-b{right:-2%;top:2%;width:31%;aspect-ratio:1;z-index:2}
+.flav .art{overflow:hidden;background:#fff;box-shadow:0 0 0 8px var(--brand-l)}
+.flav:nth-child(2) .art{box-shadow:0 0 0 8px var(--lav)}
+.flav:nth-child(3) .art{box-shadow:0 0 0 8px var(--mint)}
+.flav:nth-child(4) .art{box-shadow:0 0 0 8px var(--peach)}
+.flav .art img,.mcard .art img{width:100%;height:100%;object-fit:cover;display:block}
+.mcard .art img[src*="cups"]{object-position:50% 88%}
+.mcard .art img[src*="tiramisu"],.mcard .art img[src*="taro"]{object-position:50% 62%}
+.mcard .art{overflow:hidden;background:#fff;box-shadow:0 0 0 6px var(--brand-l)}
+.mcard:nth-child(even) .art{box-shadow:0 0 0 6px var(--lav)}
+.also{grid-column:1/-1;text-align:center;color:var(--mute);font-size:16.5px;margin:6px 0 0}
+.band-art{overflow:hidden}
+.band-art img{width:100%;height:100%;object-fit:cover;display:block;object-position:50% 40%}
+.store{margin:28px 0 0;border-radius:40px;overflow:hidden;max-width:420px;aspect-ratio:4/3;box-shadow:0 0 0 8px var(--brand-l)}
+.store img{width:100%;height:100%;object-fit:cover;object-position:50% 0%;display:block}
+.counter .counter-img{width:120px;height:120px;border-radius:50%;object-fit:cover;border:6px solid #fff}
+
+/* ===== order page: call first, copyable message second ===== */
+.order-hero{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:clamp(20px,4vw,56px);align-items:center}
+.order-photo{margin:0;justify-self:center;width:100%;max-width:300px;aspect-ratio:1;border-radius:50%;overflow:hidden;border:8px solid #fff;box-shadow:0 0 0 10px var(--brand-l)}
+.order-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 70%;display:block}
+.call-card,.tpl-card{background:var(--paper);border:1px solid var(--line);border-radius:40px;padding:clamp(22px,3vw,36px);display:grid;gap:14px;align-content:start}
+.call-card{background:var(--brand-l);border-color:#f6d3db}
+.call-card h2,.tpl-card h2{font-size:clamp(26px,2.8vw,36px)}
+.call-card h3{margin:14px 0 0;font-family:var(--display);font-weight:600;font-size:21px;color:var(--brand-d)}
+.btn-big{min-height:64px;font-size:20px;padding:0 30px;justify-self:start}
+.btn-big svg{width:20px;height:20px}
+.when{margin:0;font-weight:700;color:var(--brand-d)}
+.notice{margin:0;color:var(--ink)}
+.ask{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.ask li{background:#ffffff;border-radius:999px;padding:12px 22px;display:grid;gap:2px}
+.ask b{color:var(--brand-d)}
+.ask span{color:var(--mute);font-size:15px}
+.tpl{margin:0;white-space:pre-wrap;font-family:var(--body);font-size:16px;line-height:1.75;background:var(--cream);border:2px dashed var(--brand-m);border-radius:28px;padding:20px 24px;color:var(--ink)}
+.tpl-card .btn{justify-self:start}
+.tpl-card .btn svg{width:18px;height:18px}
+.to{margin:0;font-size:14.5px;color:var(--mute)}
+@media (max-width:900px){
+  .order-hero{grid-template-columns:1fr}
+  .order-photo{max-width:220px;justify-self:start;order:-1}
+  .photo-hero{max-width:440px;margin:0 auto}
+  .store{max-width:none}
+}
+@media (max-width:560px){
+  .ask li{border-radius:24px}
+  .btn-big{justify-self:stretch}
+  .photo-hero{max-width:340px}
+}
+
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .js .rv{opacity:1;transform:none}
