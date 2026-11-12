@@ -210,11 +210,22 @@
     ['wheel', 'touchmove', 'keydown'].forEach(function (t) { window.addEventListener(t, endIntro, { passive: true }); });
   }
 
-  /* ---------- steam pauses when the hero is off screen ---------- */
-  var hero = document.querySelector('.hero');
+  /* ---------- steam: pauses off screen, stands still with reduced motion, puffs for a second on hover ---------- */
+  var hero = document.querySelector('.hero'), steam = document.querySelector('.steam');
+  var calm = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var away = false;
+  var setSteam = function () { if (steam && steam.pauseAnimations) { if (away || calm.matches) steam.pauseAnimations(); else steam.unpauseAnimations(); } };
+  setSteam();
+  if (calm.addEventListener) calm.addEventListener('change', setSteam);
   if (hero && 'IntersectionObserver' in window) {
-    new IntersectionObserver(function (es) { hero.classList.toggle('is-away', !es[0].isIntersecting); }).observe(hero);
+    new IntersectionObserver(function (es) { away = !es[0].isIntersecting; hero.classList.toggle('is-away', away); setSteam(); }).observe(hero);
   }
+  var plate = document.querySelector('.plate'), puffing = null;
+  if (plate && steam) plate.addEventListener('pointerenter', function (e) {
+    if (e.pointerType !== 'mouse' || calm.matches || puffing) return;
+    steam.classList.add('is-puff');
+    puffing = setTimeout(function () { steam.classList.remove('is-puff'); puffing = null; }, 1000);
+  });
 
   /* ---------- scroll motion with GSAP ScrollTrigger (3.12.5, loaded with defer) ----------
      Without GSAP, or with reduced motion, the page stays a normal page: a plain story list,

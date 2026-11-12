@@ -3,8 +3,8 @@
   var base = 'https://fonts.googleapis.com/css2?display=swap&family=';
   var sets = {
     en: ['Noto+Serif+HK:wght@700'],
-    'zh-Hant': ['Noto+Sans+HK:wght@400;600;700', 'Noto+Serif+HK:wght@700'],
-    'zh-Hans': ['Noto+Sans+SC:wght@400;600;700', 'Noto+Serif+SC:wght@700', 'Noto+Serif+HK:wght@700']
+    'zh-Hant': ['Noto+Sans+HK:wght@400;700', 'Noto+Serif+HK:wght@700'],
+    'zh-Hans': ['Noto+Sans+SC:wght@400;700', 'Noto+Serif+SC:wght@700', 'Noto+Serif+HK:wght@700']
   };
   var done = {};
   function load(lang) {

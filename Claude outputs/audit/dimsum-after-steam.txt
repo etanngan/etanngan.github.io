@@ -1,0 +1,36 @@
+page	lang	w	sizes	weights	maxCh	maxEm	longN	spaceVals	offScale	relative	inter	noHover	noActive	noFocus	notSmooth	noDisabled	ulAnim	nums	headBad	overflow	errors	btn	fams
+index.html	en	390	6	3	38.2	0	0	8	0	7	38	0	0	0	0	0	14/14	55/55	0	0	0	597	Archivo+Noto Serif HK
+index.html	en	1440	8	3	65	0	0	8	0	7	37	0	0	0	0	0	14/14	56/56	0	0	0	709	Archivo+Noto Serif HK
+index.html	zh-Hant	390	6	3	27.1	19.4	0	8	0	7	38	0	0	0	0	0	14/14	54/54	0	0	0	487	Noto Sans HK+Noto Serif HK+Archivo
+index.html	zh-Hant	1440	8	3	28.2	29.6	0	8	0	7	37	0	0	0	0	0	14/14	55/55	0	0	0	638	Noto Sans HK+Noto Serif HK+Archivo
+index.html	zh-Hans	390	6	3	27.1	19.6	0	8	0	7	38	0	0	0	0	0	14/14	54/54	0	0	0	441	Noto Sans SC+Noto Serif HK+Archivo+Noto Serif SC
+index.html	zh-Hans	1440	8	3	28.2	27.1	0	8	0	7	37	0	0	0	0	0	14/14	55/55	0	0	0	601	Noto Sans SC+Noto Serif HK+Archivo+Noto Serif SC
+menu.html	en	390	5	3	38.2	0	0	6	0	0	96	0	0	0	0	0	10/10	34/34	0	0	0		Archivo+Noto Serif HK
+menu.html	en	1440	5	3	62.8	0	0	6	0	0	102	0	0	0	0	0	10/10	41/41	0	0	0		Archivo+Noto Serif HK
+menu.html	zh-Hant	390	5	3	28.4	19.4	0	6	0	0	96	0	0	0	0	0	10/10	33/33	0	0	0		Noto Sans HK+Noto Serif HK+Archivo
+menu.html	zh-Hant	1440	5	3	33.6	32.6	0	6	0	0	102	0	0	0	0	0	10/10	40/40	0	0	0		Noto Sans HK+Noto Serif HK+Archivo
+menu.html	zh-Hans	390	5	3	28.4	19.4	0	6	0	0	96	0	0	0	0	0	10/10	33/33	0	0	0		Noto Sans SC+Noto Serif HK+Archivo+Noto Serif SC
+menu.html	zh-Hans	1440	5	3	33.6	32.6	0	6	0	0	102	0	0	0	0	0	10/10	40/40	0	0	0		Noto Sans SC+Noto Serif HK+Archivo+Noto Serif SC
+qr.html	en	390	5	3	38.9	0	0	7	0	0	88	0	0	0	0	0	4/4	69/69	0	0	0		Archivo+Noto Serif HK
+qr.html	en	1440	5	3	52	0	0	7	0	0	88	0	0	0	0	0	4/4	69/69	0	0	0		Archivo+Noto Serif HK
+qr.html	zh-Hant	390	5	3	30.4	20.5	0	7	0	0	88	0	0	0	0	0	4/4	68/68	0	0	0		Noto Sans HK+Noto Serif HK+Archivo
+qr.html	zh-Hant	1440	5	3	35.2	25.5	0	7	0	0	88	0	0	0	0	0	4/4	68/68	0	0	0		Noto Sans HK+Noto Serif HK+Archivo
+qr.html	zh-Hans	390	5	3	30.4	22.1	0	7	0	0	88	0	0	0	0	0	4/4	68/68	0	0	0		Noto Sans SC+Noto Serif HK+Archivo+Noto Serif SC
+qr.html	zh-Hans	1440	5	3	35.2	25.5	0	7	0	0	88	0	0	0	0	0	4/4	68/68	0	0	0		Noto Sans SC+Noto Serif HK+Archivo+Noto Serif SC
+
+SUMMARY
+font sizes: max 8 per page view (limit 8); 8 across the site: 16 18 22 28 40 64 144 288
+  off the scale [16 18 22 28 40 64 144 288]: none
+font weights: max 3 per page view (limit 3); site: 400 700 900
+line length: widest Latin line 65ch (limit 65), widest Chinese line 32.6em (limit 36); 0 over the limit
+spacing: 0 off-scale values in 0 uses; distinct per view max 8
+interactive (worst view): no hover 0, no pressed 0, no focus ring 0, no 150-250ms transition 0, no disabled style 0
+tabular numbers: 0 price/time texts without tabular-nums
+headings with issues: 0; overflow worst 0px; console/network errors 0; links bad 0 of 32
+reduced motion:
+  index.html@390: running=0 gsap=false overflow=0 errors=0
+  index.html@1440: running=0 gsap=false overflow=0 errors=0
+  menu.html@390: running=0 gsap=false overflow=0 errors=0
+  menu.html@1440: running=0 gsap=false overflow=0 errors=0
+  qr.html@390: running=0 gsap=false overflow=0 errors=0
+  qr.html@1440: running=0 gsap=false overflow=0 errors=0

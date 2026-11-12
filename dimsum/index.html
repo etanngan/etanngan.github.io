@@ -79,10 +79,21 @@
         <div class="steamer">
           <img src="assets/img/hero-960.webp" srcset="assets/img/hero-640.webp 640w, assets/img/hero-960.webp 960w, assets/img/hero-1440.webp 1440w" sizes="(min-width: 901px) 470px, 84vw" width="1440" height="960" fetchpriority="high" alt="Har gow, siu mai and chicken feet in bamboo steamers on a wooden table" data-i18n-attr="alt:hero.alt">
         </div>
+        <!-- steam technique from the AnimatedWebs "Steaming Ramen Noodle Bar" hero: a turbulence field curls the wisps as they rise through it -->
         <svg class="steam" viewBox="0 0 300 200" aria-hidden="true" focusable="false">
-          <path d="M70 200 C 50 160, 95 140, 72 100 S 80 40, 70 10"/>
-          <path d="M150 200 C 128 165, 172 140, 150 100 S 160 45, 148 5"/>
-          <path d="M230 200 C 210 160, 252 138, 230 100 S 238 42, 228 12"/>
+          <filter id="steam-curl" filterUnits="userSpaceOnUse" x="-40" y="-80" width="380" height="300">
+            <feTurbulence type="fractalNoise" baseFrequency="0.012 0.04" numOctaves="1" seed="7" result="noise">
+              <animate attributeName="baseFrequency" dur="10s" values="0.012 0.04;0.017 0.032;0.012 0.04" repeatCount="indefinite"/>
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="18" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+          <g filter="url(#steam-curl)">
+            <path d="M60 200 C 44 166, 82 146, 64 110 S 70 52, 60 22"/>
+            <path d="M106 200 C 88 162, 128 140, 108 102 S 116 44, 104 12"/>
+            <path d="M150 200 C 130 164, 172 140, 150 100 S 160 45, 148 5"/>
+            <path d="M194 200 C 176 160, 216 138, 196 100 S 204 46, 192 14"/>
+            <path d="M240 200 C 222 164, 260 144, 240 108 S 246 54, 236 24"/>
+          </g>
         </svg>
         <div class="sheet hero-sheet" aria-hidden="true">
           <span class="stamp" id="chop">營業中</span>
