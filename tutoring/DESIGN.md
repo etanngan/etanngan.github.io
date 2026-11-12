@@ -50,6 +50,15 @@ and the footer says so on every page.
     like a score. The confirmation gets a red tick.
   - **Fees:** a ruled fee list with the price at the right end of the line and one red-pen margin note.
   - **Footer:** the exercise-book cover: cover blue with the white "Name / Phone / Address" label filled in.
+  - **Intro:** a blank loose-leaf page gets one big red tick and turns away on its holes (section 8).
+  - **Trial class showpiece:** one Grade 5 math worksheet on a cover-blue stage, written in pencil and marked
+    in red pen as the parent scrolls through the three steps. Its note suggests a real class from the
+    timetable (Junior Math, Monday 4:00 pm, Ms. Zhao).
+  - **Work out your fees (hands-on):** grade numbers and class chips on one sheet; on the other the sum is
+    written out line by line with a red tick in the margin, a double rule, and the total circled in red.
+    Fees match the fee table; which classes a grade can pick comes from the timetable data.
+  - **Red-pen notes:** OCT circled beside the three Ontario Certified Teachers; closed days struck through
+    in the term dates; the phone number circled in Find us.
 - **What stays quiet:** body text is a plain sans-serif in ink colour; no illustrations, no doodles, no
   stickers, no gold stars, no rounded cards, no icons except the tick and the circle. Photos are ordinary
   daylight classroom photos. Red is only ever the teacher's pen.
@@ -66,7 +75,7 @@ and the footer says so on every page.
 | Margin red | `#e26d70` | The vertical margin line (decoration only) |
 | Red pen | `#c0251a` | Ticks, circles, margin notes, error messages (6.0:1 on paper) |
 | Pencil yellow | `#ffc629` | The main action only (ink text on it: 12.5:1) |
-| Cover blue | `#1f4d8f` | Links, footer cover (white on it: 8.6:1) |
+| Cover blue | `#1f4d8f` | Links, footer cover, and the one bold band: the trial-class stage (white on it: 8.6:1) |
 
 Check: white paper + blue rules + red pen + one yellow is the real colour of a marked exercise book, not
 cream + serif + terracotta and not black + neon. Yellow stays because it is the existing brand colour and the
@@ -108,8 +117,8 @@ colour of the school pencil; it is now reserved for "do this" so it always means
   [   |  [ Book a free trial class ]     ]   the one main action
   [   |  See the timetable               ]   small secondary link
   ```
-- **Home, top to bottom:** hero; classes and fees; how the free trial class works (a real 1-2-3
-  sequence); teachers; for parents (pickup, parking, missed classes, sick days, payment, snacks, progress);
+- **Home, top to bottom:** hero; classes and fees; work out your fees; how the free trial class works (a real
+  1-2-3 sequence, pinned, then the tutor photo with the main action); teachers; for parents (pickup, parking, missed classes, sick days, payment, snacks, progress);
   term dates and PA-day / March Break camps; find us (map, directions, phone); cover footer.
 - **Timetable:** short heading; filters (grade numbers, subject, day); live count; the ruled timetable
   (week grid on desktop, day-by-day ruled list on phones); seats legend; "not sure which class" ending with
@@ -153,11 +162,27 @@ colour of the school pencil; it is now reserved for "do this" so it always means
 
 ## 8. Motion
 
-- **The one moment:** the three red ticks in the hero are drawn once, one after another (about 1 second
-  in total), after the text is already on screen.
-- **Interaction feedback:** the burger menu opens instantly; filter changes re-render instantly and the
-  count is announced; the form confirmation appears with a red tick (no animation).
-- **Reduced motion:** ticks appear already drawn; smooth scrolling is off.
+Bright, sharp and organised: quick pen strokes with crisp ease-out curves (`power3.out`, short cubic-beziers),
+nothing that bounces. Every movement is either ruling the page or marking it in red pen.
+
+- **Intro (once per visit, this tab only, skippable by tap, scroll or key, ~1.4 s):** a full-screen sheet of
+  loose-leaf. The blue rules are ruled left to right, the red margin line drops, the three holes punch in,
+  the red pen draws one large tick, then the page turns away on its binder holes (rotateY on the left edge)
+  to reveal the hero. CSS only, so it never waits for a library. Never shown with reduced motion.
+- **Hero:** the teacher marks the sheet after the intro: tick, the 6 is circled (conic-gradient sweep), tick,
+  tick. Text is readable from the first frame. On scroll the sheet slides up over the photo.
+- **Section openings:** every ruled strip above an H2 is ruled left to right, then its margin line drops.
+- **Showpiece, pinned (GSAP ScrollTrigger):** "How the free trial class works" pins for about 2.4 screens.
+  The worksheet on the blue stage follows the three steps: grade and subject written in pencil (step 1),
+  the five answers written in (step 2), then the red pen ticks four, strikes 22 cm² and writes 28 cm²,
+  circles 4/5 and writes the suggested class (step 3). Phones show one step at a time above the sheet.
+- **Red pen as you read:** the fee note tick, OCT circled beside three teachers, closed days struck through,
+  the phone number circled, a last tick beside "Want to see a class first?". Each draws once.
+- **Photos:** the tutor and homework photos drift a few percent inside their frames while scrolling.
+- **Fee sum (interactive):** a new line gets its margin tick drawn; a new total gets its red circle redrawn.
+- **Fallback:** without GSAP (blocked CDN) the page is a normal page: steps listed, worksheet shown marked,
+  every mark drawn. GSAP loads with `defer` from cdnjs (3.12.5, SRI), so hours and the fee sum never wait.
+- **Reduced motion:** no intro, no pin, no scroll motion, no CSS animation; every mark already drawn.
 
 ## 9. Language notes
 
@@ -226,3 +251,16 @@ Don't:
   other topics, so the button always says exactly what happens.
 - Homework Club fee row: name alone in the first column, the 3:30 to 6:30 pm hours in "each class", so the row
   stays readable on a phone.
+
+## Showpiece pass (2026-11-11, tutoring only)
+
+- Added the page-turn intro, the pinned trial worksheet, the fee sum, the red-pen scroll marks and GSAP
+  ScrollTrigger motion (section 8). All content, translations, photos, the timetable and the form are unchanged.
+- The trial section's photo moved under the pinned worksheet, beside the main action and the "free, nothing to
+  sign" line, so the pinned screen holds only the steps and the sheet.
+- Cover blue now also fills the trial stage (right half on desktop, full width on phones): one generous band of
+  the exercise-book colour, with red only on the white paper so the pen keeps its contrast.
+- The fee sum applies the 10% second-child discount to the second child's classes and Homework Club, and adds
+  the $40 registration once. Homework Club is shown as a monthly line, not in the term total.
+- Removed while finishing: the hero photo's slow zoom on scroll. Only the sheet moves now; the photo zoom was
+  movement for its own sake and pulled the eye off the marked sheet.

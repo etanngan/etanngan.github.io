@@ -3,6 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+/* The page-turn intro plays once per visit (this tab), never with reduced motion. */
+(function () { try {
+  var seen = sessionStorage.getItem('mb-intro'), calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!seen && !calm) { document.documentElement.classList.add('intro'); sessionStorage.setItem('mb-intro', '1'); }
+} catch (e) {} })();
+</script>
 <script src="../shared/i18n.js"></script>
 <script>(function(){function hk(){if(window.MPi18n&&MPi18n.lang==='zh-Hant')document.documentElement.lang='zh-Hant-HK';}hk();document.addEventListener('mp:langchange',hk);})();</script>
 <title data-i18n="home.title">Maple Bridge Learning Centre | After-school tutoring in Markham, Grades 1 to 12</title>
@@ -21,6 +28,13 @@
 <script src="assets/i18n-dict.js"></script>
 </head>
 <body class="page-home">
+<div class="intro-layer" aria-hidden="true">
+  <div class="intro-page">
+    <i class="ip-rules"></i><i class="ip-margin"></i><i class="ip-holes"></i>
+    <svg class="ip-tick" viewBox="0 0 400 300" focusable="false"><path pathLength="1" d="M52 166 C 80 192, 110 224, 138 256 C 196 166, 276 76, 362 22"/></svg>
+    <i class="ip-shade"></i>
+  </div>
+</div>
 <a class="skip" href="#main" data-i18n="a11y.skip">Skip to content</a>
 
 <header class="site-head">
@@ -50,7 +64,9 @@
 <main id="main">
   <section class="hero" aria-labelledby="hero-name">
     <div class="hero-grid">
-      <img class="hero-photo" src="assets/img/hero-girl-800.webp" srcset="assets/img/hero-girl-800.webp 800w, assets/img/hero-girl-1200.webp 1200w, assets/img/hero-girl-1800.webp 1800w" sizes="(min-width: 1100px) 50vw, 100vw" width="1800" height="1014" alt="A young student writing in her exercise book during class" data-i18n-attr="alt:hero.alt" fetchpriority="high">
+      <div class="hero-ph">
+        <img class="hero-photo" src="assets/img/hero-girl-800.webp" srcset="assets/img/hero-girl-800.webp 800w, assets/img/hero-girl-1200.webp 1200w, assets/img/hero-girl-1800.webp 1800w" sizes="(min-width: 1100px) 50vw, 100vw" width="1800" height="1014" alt="A young student writing in her exercise book during class" data-i18n-attr="alt:hero.alt" fetchpriority="high">
+      </div>
       <div class="sheet holes hero-sheet">
         <p class="today" id="today" data-i18n="today.static">Mon to Fri 3:30 – 8:30 pm, Sat 9 am – 3:30 pm</p>
         <h1 class="hero-name" id="hero-name" data-i18n="brand.name">Maple Bridge Learning Centre</h1>
@@ -89,7 +105,7 @@
             <tr><th scope="row" data-i18n="fees.r6">Homework Club</th><td data-i18n="fees.r6g">1 to 8</td><td data-i18n="len.club">Weekdays 3:30 to 6:30 pm</td><td class="fee" data-i18n-html="fee.club">$420 a month<small>5 days a week</small><small>3 days: $280</small></td></tr>
           </tbody>
         </table>
-        <p class="fee-pen pen"><svg class="tick" viewBox="0 0 24 22" aria-hidden="true" focusable="false"><path d="M3 12.5l5.5 6.5L21.5 2.5"/></svg><span data-i18n="fees.pen">Books and worksheets included. No extra charges.</span></p>
+        <p class="fee-pen pen"><svg class="tick" viewBox="0 0 24 22" aria-hidden="true" focusable="false"><path pathLength="1" d="M3 12.5l5.5 6.5L21.5 2.5"/></svg><span data-i18n="fees.pen">Books and worksheets included. No extra charges.</span></p>
       </div>
       <div class="fees-after">
         <p data-i18n="fees.curr">Every class follows the Ontario curriculum for that grade. High school classes go by course code (MTH1W, MCR3U, SCH3U and so on), the same codes as on the report card.</p>
@@ -99,23 +115,66 @@
     </div>
   </section>
 
-  <section class="sec sec-tint" id="trial" aria-labelledby="trial-h">
+  <section class="sec sec-tint cost" id="cost" aria-labelledby="cost-h">
     <div class="wrap">
       <div class="sec-head">
-        <h2 id="trial-h" data-i18n="trial.h">How the free trial class works</h2>
+        <h2 id="cost-h" data-i18n="cost.h">Work out your fees</h2>
+        <p data-i18n="cost.p">Pick a grade and the classes. We add it up the same way the front desk does.</p>
       </div>
-      <div class="trial-grid">
-        <div>
+      <div class="cost-grid">
+        <div class="sheet cost-sheet" id="cost-kids"></div>
+        <div class="sheet sum-sheet">
+          <ul class="sum" id="cost-sum"></ul>
+          <p class="sum-empty" id="cost-empty" hidden data-i18n="cost.empty">Tick a class to see the fee.</p>
+          <p class="sum-total" id="cost-total-row"><span data-i18n="cost.total">Winter term total</span> <span class="amt" id="cost-total" aria-live="polite"></span></p>
+          <p class="sum-club" id="cost-club" hidden></p>
+          <div class="acts">
+            <a class="btn-main" href="inquiry.html?topic=trial" data-i18n="cta">Book a free trial class</a>
+            <a class="link-sec" id="cost-link" href="schedule.html" data-i18n="cost.link">See these classes in the timetable</a>
+          </div>
+          <p class="small" data-i18n="cost.fine">Books and worksheets included. The $40 registration is paid once per family each school year.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="trial" id="trial" data-step="0" aria-labelledby="trial-h">
+    <div class="trial-pin">
+      <div class="wrap trial-grid">
+        <div class="trial-text">
+          <div class="sec-head">
+            <h2 id="trial-h" data-i18n="trial.h">How the free trial class works</h2>
+          </div>
           <ol class="steps">
-            <li><span class="num" aria-hidden="true"><span class="ring">1</span></span><h3 data-i18n="trial.1h">Tell us the grade and the subject</h3><p data-i18n="trial.1p">Send the form or call (905) 555-0162. We reply within one business day, in English, Cantonese or Mandarin.</p></li>
+            <li class="on"><span class="num" aria-hidden="true"><span class="ring">1</span></span><h3 data-i18n="trial.1h">Tell us the grade and the subject</h3><p data-i18n="trial.1p">Send the form or call (905) 555-0162. We reply within one business day, in English, Cantonese or Mandarin.</p></li>
             <li><span class="num" aria-hidden="true"><span class="ring">2</span></span><h3 data-i18n="trial.2h">Your child joins a real class, free</h3><p data-i18n="trial.2p">Same class, same teacher, same worksheet as everyone else. The teacher spends the first 15 minutes seeing where your child is.</p></li>
             <li><span class="num" aria-hidden="true"><span class="ring">3</span></span><h3 data-i18n="trial.3h">You see the marked work</h3><p data-i18n="trial.3p">At pickup, the teacher shows you the marked page and suggests a class. Register only if it fits.</p></li>
           </ol>
-          <div class="acts">
-            <a class="btn-main" href="inquiry.html?topic=trial" data-i18n="cta">Book a free trial class</a>
+        </div>
+        <div class="ws-stage" aria-hidden="true">
+          <div class="sheet holes ws">
+            <p class="ws-head"><span class="ws-lbl" data-i18n="ws.grade">Grade</span> <span class="hw w-in">5</span> <span class="ws-lbl" data-i18n="ws.subj">Subject</span> <span class="hw w-in" data-i18n="ws.math">Math</span></p>
+            <span class="score"><span class="pen">4/5</span><svg class="mk" viewBox="0 0 100 60" preserveAspectRatio="none" focusable="false"><path pathLength="1" d="M60 6C33 2 6 13 6 31s27 24 50 23 39-12 38-28S71 4 46 6c-9 1-17 4-23 9"/></svg></span>
+            <ol class="ws-q">
+              <li><span>48 × 6 =</span> <span class="hw a">288</span> <svg class="mk tk" viewBox="0 0 24 22" focusable="false"><path pathLength="1" d="M3 12.5l5.5 6.5L21.5 2.5"/></svg></li>
+              <li><span>3/4 + 1/8 =</span> <span class="hw a">7/8</span> <svg class="mk tk" viewBox="0 0 24 22" focusable="false"><path pathLength="1" d="M3 12.5l5.5 6.5L21.5 2.5"/></svg></li>
+              <li><span>0.6 + 0.25 =</span> <span class="hw a">0.85</span> <svg class="mk tk" viewBox="0 0 24 22" focusable="false"><path pathLength="1" d="M3 12.5l5.5 6.5L21.5 2.5"/></svg></li>
+              <li><span>144 ÷ 12 =</span> <span class="hw a">12</span> <svg class="mk tk" viewBox="0 0 24 22" focusable="false"><path pathLength="1" d="M3 12.5l5.5 6.5L21.5 2.5"/></svg></li>
+              <li><span data-i18n="ws.area">Area: 7 cm × 4 cm =</span> <span class="wrong"><span class="hw a">22 cm²</span><svg class="mk x" viewBox="0 0 100 20" preserveAspectRatio="none" focusable="false"><path pathLength="1" d="M2 13 C 30 9, 62 12, 98 6"/></svg></span> <span class="pen fix">28 cm²</span></li>
+            </ol>
+            <p class="pen ws-note" data-i18n-html="ws.note">Try Junior Math, <span class="nw">Mon 4:00 pm</span></p>
           </div>
         </div>
-        <img class="trial-photo" src="assets/img/tutor-700.webp" srcset="assets/img/tutor-700.webp 700w, assets/img/tutor-1100.webp 1100w" sizes="(min-width: 760px) 45vw, 100vw" width="1100" height="806" loading="lazy" alt="A teacher and a student working through a problem together" data-i18n-attr="alt:trial.alt">
+      </div>
+    </div>
+    <div class="wrap trial-foot">
+      <div class="ph"><img src="assets/img/tutor-700.webp" srcset="assets/img/tutor-700.webp 700w, assets/img/tutor-1100.webp 1100w" sizes="(min-width: 760px) 56vw, 100vw" width="1100" height="806" loading="lazy" alt="A teacher and a student working through a problem together" data-i18n-attr="alt:trial.alt"></div>
+      <div>
+        <p data-i18n="end.p">The trial class is free and there is nothing to sign. We reply within one business day.</p>
+        <div class="acts">
+          <a class="btn-main" href="inquiry.html?topic=trial" data-i18n="cta">Book a free trial class</a>
+          <a class="link-sec" href="tel:+19055550162" data-i18n="call">Call (905) 555-0162</a>
+        </div>
       </div>
     </div>
   </section>
@@ -129,10 +188,10 @@
       <div class="teach-grid">
         <img class="teach-photo" src="assets/img/group-700.webp" srcset="assets/img/group-700.webp 700w, assets/img/group-1100.webp 1100w" sizes="(min-width: 760px) 42vw, 100vw" width="1100" height="763" loading="lazy" alt="A teacher points to a line in a student’s exercise book while another student writes" data-i18n-attr="alt:teach.alt">
         <ul class="staff">
-          <li><h3 data-i18n="t.lau.n">Ms. Lau</h3><p class="role" data-i18n="t.lau.r">Math, Grades 7 to 12</p><p data-i18n="t.lau.p">Ontario Certified Teacher. Taught high school math for 11 years.</p><p class="speaks" data-i18n="t.lau.l">Speaks English and Cantonese</p></li>
-          <li><h3 data-i18n="t.oka.n">Mr. Okafor</h3><p class="role" data-i18n="t.oka.r">English, OSSLT and French, Grades 7 to 12</p><p data-i18n="t.oka.p">Ontario Certified Teacher in English and French. Marks practice OSSLT tests the way the real test is marked.</p><p class="speaks" data-i18n="t.oka.l">Speaks English and French</p></li>
+          <li><h3><span data-i18n="t.lau.n">Ms. Lau</span> <span class="oct" aria-hidden="true">OCT<svg class="mk" viewBox="0 0 100 60" preserveAspectRatio="none" focusable="false"><path pathLength="1" d="M60 6C33 2 6 13 6 31s27 24 50 23 39-12 38-28S71 4 46 6c-9 1-17 4-23 9"/></svg></span></h3><p class="role" data-i18n="t.lau.r">Math, Grades 7 to 12</p><p data-i18n="t.lau.p">Ontario Certified Teacher. Taught high school math for 11 years.</p><p class="speaks" data-i18n="t.lau.l">Speaks English and Cantonese</p></li>
+          <li><h3><span data-i18n="t.oka.n">Mr. Okafor</span> <span class="oct" aria-hidden="true">OCT<svg class="mk" viewBox="0 0 100 60" preserveAspectRatio="none" focusable="false"><path pathLength="1" d="M60 6C33 2 6 13 6 31s27 24 50 23 39-12 38-28S71 4 46 6c-9 1-17 4-23 9"/></svg></span></h3><p class="role" data-i18n="t.oka.r">English, OSSLT and French, Grades 7 to 12</p><p data-i18n="t.oka.p">Ontario Certified Teacher in English and French. Marks practice OSSLT tests the way the real test is marked.</p><p class="speaks" data-i18n="t.oka.l">Speaks English and French</p></li>
           <li><h3 data-i18n="t.zhao.n">Ms. Zhao</h3><p class="role" data-i18n="t.zhao.r">Science, Grade 4 to 6 math, Mandarin</p><p data-i18n="t.zhao.p">Chemistry degree and 8 years of tutoring.</p><p class="speaks" data-i18n="t.zhao.l">Speaks English and Mandarin</p></li>
-          <li><h3 data-i18n="t.wong.n">Ms. Wong</h3><p class="role" data-i18n="t.wong.r">Reading, writing and math, Grades 1 to 6</p><p data-i18n="t.wong.p">Ontario Certified Teacher for the primary grades.</p><p class="speaks" data-i18n="t.wong.l">Speaks English, Cantonese and Mandarin</p></li>
+          <li><h3><span data-i18n="t.wong.n">Ms. Wong</span> <span class="oct" aria-hidden="true">OCT<svg class="mk" viewBox="0 0 100 60" preserveAspectRatio="none" focusable="false"><path pathLength="1" d="M60 6C33 2 6 13 6 31s27 24 50 23 39-12 38-28S71 4 46 6c-9 1-17 4-23 9"/></svg></span></h3><p class="role" data-i18n="t.wong.r">Reading, writing and math, Grades 1 to 6</p><p data-i18n="t.wong.p">Ontario Certified Teacher for the primary grades.</p><p class="speaks" data-i18n="t.wong.l">Speaks English, Cantonese and Mandarin</p></li>
           <li><h3 data-i18n="t.ip.n">Mr. Ip</h3><p class="role" data-i18n="t.ip.r">Director, Homework Club</p><p data-i18n="t.ip.p">Opened Maple Bridge in 2012. Runs the Homework Club and the school pickups.</p><p class="speaks" data-i18n="t.ip.l">Speaks English and Cantonese</p></li>
         </ul>
       </div>
@@ -146,7 +205,7 @@
         <p data-i18n="par.p">Pickup, parking, missed classes and the other things parents ask us about most.</p>
       </div>
       <div class="par-grid">
-        <img class="par-photo" src="assets/img/homework-700.webp" srcset="assets/img/homework-700.webp 700w, assets/img/homework-1100.webp 1100w" sizes="(min-width: 760px) 36vw, 100vw" width="1100" height="744" loading="lazy" alt="A student doing her homework at a table" data-i18n-attr="alt:par.alt">
+        <div class="ph par-ph"><img class="par-photo" src="assets/img/homework-700.webp" srcset="assets/img/homework-700.webp 700w, assets/img/homework-1100.webp 1100w" sizes="(min-width: 760px) 36vw, 100vw" width="1100" height="744" loading="lazy" alt="A student doing her homework at a table" data-i18n-attr="alt:par.alt"></div>
         <dl class="par-list">
           <div id="pickup"><dt data-i18n="par.pick.h">Drop-off and pickup</dt><dd data-i18n="par.pick.p">Pull into the six 10-minute spots by the main door, not the fire lane. Grades 1 to 3 wait inside until an adult signs them out at the front desk. Grade 4 and up can walk out to your car once you have told us in writing.</dd></div>
           <div><dt data-i18n="par.school.h">School pickup for Homework Club</dt><dd data-i18n="par.school.p">Our staff walk students over from three nearby elementary schools at 3:20 pm. Call us to check if your child’s school is one of them.</dd></div>
@@ -168,11 +227,11 @@
       </div>
       <table class="dates">
         <tbody>
-          <tr><th scope="row" data-i18n="dt.break.d">December 24 to January 3</th><td data-i18n="dt.break">Winter break, closed</td></tr>
+          <tr class="is-closed"><th scope="row"><span class="xd"><span data-i18n="dt.break.d">December 24 to January 3</span><svg class="mk strike" viewBox="0 0 400 20" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M2 12 C 112 8, 256 12, 398 7"/></svg></span></th><td data-i18n="dt.break">Winter break, closed</td></tr>
           <tr><th scope="row" data-i18n="dt.start.d">Monday, January 4</th><td data-i18n="dt.start">First day of winter term</td></tr>
-          <tr><th scope="row" data-i18n="dt.family.d">Monday, February 15</th><td data-i18n="dt.family">Family Day, closed</td></tr>
+          <tr class="is-closed"><th scope="row"><span class="xd"><span data-i18n="dt.family.d">Monday, February 15</span><svg class="mk strike" viewBox="0 0 400 20" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M2 12 C 112 8, 256 12, 398 7"/></svg></span></th><td data-i18n="dt.family">Family Day, closed</td></tr>
           <tr class="is-camp"><th scope="row" data-i18n="dt.march.d">March 15 to 19</th><td data-i18n="dt.march">March Break: no regular classes. Day camp 9:00 am to 4:00 pm, $300 for the week or $70 a day.</td></tr>
-          <tr><th scope="row" data-i18n="dt.good.d">Friday, March 26</th><td data-i18n="dt.good">Good Friday, closed</td></tr>
+          <tr class="is-closed"><th scope="row"><span class="xd"><span data-i18n="dt.good.d">Friday, March 26</span><svg class="mk strike" viewBox="0 0 400 20" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M2 12 C 112 8, 256 12, 398 7"/></svg></span></th><td data-i18n="dt.good">Good Friday, closed</td></tr>
           <tr><th scope="row" data-i18n="dt.end.d">Saturday, March 27</th><td data-i18n="dt.end">Last day of winter term</td></tr>
           <tr class="is-camp"><th scope="row" data-i18n="dt.pa.d">PA days</th><td data-i18n="dt.pa">Day camp 8:30 am to 5:30 pm, $75. Book by the Friday before.</td></tr>
         </tbody>
@@ -199,7 +258,7 @@
           </table>
           <p class="small" data-i18n="visit.holiday">Closed on statutory holidays and over winter break. See the term dates above.</p>
           <h3 data-i18n="visit.phone">Phone and email</h3>
-          <p class="big-phone"><a href="tel:+19055550162" data-lang-neutral>(905) 555-0162</a></p>
+          <p class="big-phone"><a href="tel:+19055550162" data-lang-neutral>(905) 555-0162<svg class="mk phone-ring" viewBox="0 0 300 70" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M180 7C99 2.3 18 15.2 18 36.2s81 28 150 26.8 117-14 114-32.7S213 4.7 138 7c-27 1.2-51 4.7-69 10.5"/></svg></a></p>
           <p><a href="mailto:office@maplebridge.example" data-lang-neutral>office@maplebridge.example</a></p>
           <p class="small" data-i18n="visit.office">The front desk answers the phone from 1:00 pm on weekdays, in English, Cantonese and Mandarin.</p>
           <h3 data-i18n="visit.getting">Getting here</h3>
@@ -220,6 +279,7 @@
   <section class="end" aria-labelledby="end-h">
     <div class="wrap">
       <div class="sheet end-sheet">
+        <svg class="mk end-tick" viewBox="0 0 400 300" aria-hidden="true" focusable="false"><path pathLength="1" d="M52 166 C 80 192, 110 224, 138 256 C 196 166, 276 76, 362 22"/></svg>
         <h2 id="end-h" data-i18n="end.h">Want to see a class first?</h2>
         <p data-i18n="end.p">The trial class is free and there is nothing to sign. We reply within one business day.</p>
         <div class="acts">
@@ -263,6 +323,9 @@
   </div>
 </footer>
 
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="assets/schedule-data.js"></script>
 <script src="assets/site.js"></script>
 </body>
 </html>

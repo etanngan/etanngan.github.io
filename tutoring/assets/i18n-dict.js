@@ -221,6 +221,39 @@
   D('end.h', 'Want to see a class first?', '想先試一堂？', '想先试听一节课？');
   D('end.p', 'The trial class is free and there is nothing to sign. We reply within one business day.', '試堂免費，不用簽任何文件。我們會在一個工作天內回覆。', '试听课免费，不用签任何协议。我们会在一个工作日内回复。');
 
+  /* ---------- home: work out your fees (the worked sum) ---------- */
+  D('cost.h', 'Work out your fees', '計一計學費', '算一算学费');
+  D('cost.p', 'Pick a grade and the classes. We add it up the same way the front desk does.',
+    '選好年級和課程，即時計出一個學期的學費，計法和前台一樣。',
+    '选好年级和课程，马上算出一个学期的学费，算法和前台一样。');
+  D('cost.kid1', 'First child', '第一個孩子', '第一个孩子');
+  D('cost.kid2', 'Second child', '第二個孩子', '第二个孩子');
+  D('cost.grade', 'Grade', '年級', '年级');
+  D('cost.classes', 'Classes, one a week', '課程（每星期一堂）', '课程（每周一节）');
+  D('cost.club', 'Homework Club', '功課班', '作业辅导班');
+  D('cost.club.0', 'No', '不用', '不需要');
+  D('cost.club.3', '3 days a week', '每星期 3 天', '每周3天');
+  D('cost.club.5', '5 days a week', '每星期 5 天', '每周5天');
+  D('cost.add', 'Add a second child (10% off)', '加第二個孩子（九折）', '添加第二个孩子（九折）');
+  D('cost.rm', 'Remove', '移除', '删除');
+  D('cost.nogr', 'Pick a grade to see the classes.', '請先選擇年級。', '请先选择年级。');
+  D('cost.line', '{s}, {g}', '{g}{s}', '{g}{s}');
+  D('cost.reg', 'Registration, once a school year', '報名費（每學年一次）', '报名费（每学年一次）');
+  D('cost.sib', 'Second child, 10% off', '第二個孩子九折', '第二个孩子九折');
+  D('cost.total', 'Winter term total', '冬季學期合共', '冬季学期合计');
+  D('cost.clubm', 'Homework Club, paid monthly: {m} a month', '功課班按月繳交：每月 {m}', '作业辅导班按月支付：每月 {m}');
+  D('cost.empty', 'Tick a class to see the fee.', '選好課程，就會計出學費。', '选好课程，就会算出学费。');
+  D('cost.fine', 'Books and worksheets included. The $40 registration is paid once per family each school year.',
+    '已包書簿及練習。報名費 $40，每個家庭每學年交一次。', '含教材和练习。报名费 $40，每个家庭每学年交一次。');
+  D('cost.link', 'See these classes in the timetable', '在時間表查看這些課程', '在课程表里查看这些课程');
+
+  /* ---------- home: the trial-class worksheet (decorative, the steps carry the words) ---------- */
+  D('ws.grade', 'Grade', '年級', '年级');
+  D('ws.subj', 'Subject', '科目', '科目');
+  D('ws.math', 'Math', '數學', '数学');
+  D('ws.area', 'Area: 7 cm × 4 cm =', '面積：7 cm × 4 cm =', '面积：7 cm × 4 cm =');
+  D('ws.note', 'Try Junior Math, <span class="nw">Mon 4:00 pm</span>', '建議：高小數學，<span class="nw">星期一下午4:00</span>', '建议：高年级数学，<span class="nw">周一16:00</span>');
+
   /* ---------- timetable ---------- */
   D('sch.title', 'Winter 2027 timetable | Maple Bridge Learning Centre', '2027 年冬季學期時間表｜楓橋教育中心', '2027年冬季学期课程表｜枫桥教育中心');
   D('sch.desc', 'Every class in the Winter 2027 term (January 4 to March 27), with grade, time, teacher, room and seats left. Filter by grade, subject and day.',
