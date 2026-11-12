@@ -285,10 +285,8 @@ html[lang^="zh"] .band p { max-width: 30em; }
   .band-grid { grid-template-columns: auto minmax(0, 1fr); gap: 48px; padding: 48px var(--gut); }
 }
 
-/* first time at yum cha: a plain list, or pinned scenes when GSAP runs */
+/* first time at yum cha: a plain list, or a sticky stage whose scene follows the step being read (nothing pins) */
 .story { background: var(--paper); padding: var(--sec) 0; }
-html.gsap .story { padding: 0; }
-html.gsap .story-pin { height: calc(100svh - var(--head-h)); display: flex; align-items: center; overflow: hidden; }
 .story-grid { display: grid; gap: 16px; width: 100%; padding: 0 var(--gut); }
 .story h2 { line-height: 1; color: var(--text); margin-bottom: 16px; }
 html[lang^="zh"] .story h2 { line-height: 1.2; }
@@ -297,15 +295,18 @@ html[lang^="zh"] .story h2 { line-height: 1.2; }
 .steps li b { display: block; font-size: 18px; color: var(--text); }
 .steps li p { color: var(--muted); max-width: 40ch; margin: 0px 0 0; }
 .steps .n { font-family: "Archivo", sans-serif; font-weight: 900; color: var(--chop); margin-right: 8px; }
-html.gsap .steps li { opacity: .5; }
+html.gsap .steps li { opacity: .8; } /* .8 keeps the grey step text above 4.5:1 */
 html.gsap .steps li.on { opacity: 1; border-left-color: var(--chop); }
 .stage { display: none; }
 html.gsap .stage { display: block; position: relative; width: 100%; height: 36vh; border-radius: var(--radius-lg); background: var(--paper); box-shadow: inset 0 0 0 10px #fff, inset 0 0 0 12px var(--jade-rule); }
 .scene { position: absolute; inset: 0; display: grid; place-items: center; opacity: 0; transform: translateY(24px) scale(.95); transition: opacity .4s ease, transform .5s cubic-bezier(.2, .8, .2, 1); }
 .story[data-active="0"] .s0, .story[data-active="1"] .s1, .story[data-active="2"] .s2, .story[data-active="3"] .s3 { opacity: 1; transform: none; }
 @media (max-width: 860px) {
-  html.gsap .steps li p { display: none; }
-  html.gsap .steps li.on p { display: block; }
+  /* phones: heading, then the stage stuck under the header, then the steps scrolling beneath it */
+  html.gsap .story-text { display: contents; }
+  html.gsap .story h2 { order: 0; }
+  html.gsap .stage { order: 1; position: sticky; top: calc(var(--head-h) + 8px); z-index: 2; outline: 8px solid var(--paper); }
+  html.gsap .steps { order: 2; }
 }
 .ticket { position: relative; background: var(--chop); color: #fff; width: min(260px, 72%); padding: 24px 24px; border-radius: var(--radius); text-align: center; transform: rotate(calc(-6deg + var(--sp, 0) * 8deg)); box-shadow: var(--shadow); }
 .ticket::before, .ticket::after { content: ""; position: absolute; top: 50%; width: 22px; height: 22px; margin-top: -8px; border-radius: 50%; background: var(--paper); }
@@ -327,7 +328,8 @@ html[lang^="zh-Hans"] .thanks { font-family: "Noto Serif SC", serif; }
   .story h2 { margin-bottom: 32px; }
   .steps li { padding: 16px 0 16px 24px; }
   .steps li b { font-size: 22px; }
-  html.gsap .stage { height: auto; aspect-ratio: 1; max-height: 62vh; max-width: 62vh; margin-inline: auto; border-radius: 50%; }
+  html.gsap .story-grid { align-items: start; }
+  html.gsap .stage { position: sticky; top: calc(var(--head-h) + 48px); height: auto; aspect-ratio: 1; max-height: 62vh; max-width: 62vh; margin-inline: auto; border-radius: 50%; }
   .minisheet { width: 64%; }
   .minisheet .dish small { display: block; }
   .pot { width: 62%; height: auto; }
@@ -336,7 +338,6 @@ html[lang^="zh-Hans"] .thanks { font-family: "Noto Serif SC", serif; }
 /* what every table orders: the dim sum cart and your sheet */
 .cart { background: var(--paper-2); overflow: hidden; }
 .cart-pin { padding: var(--sec) 0 32px; }
-html.gsap .cart-pin { height: calc(100svh - var(--head-h)); display: flex; flex-direction: column; justify-content: center; padding: 24px 0; }
 .cart-head { display: grid; gap: 16px; align-items: start; margin-bottom: 8px; }
 .cart h2 { line-height: 1; color: var(--text); margin-bottom: 8px; }
 html[lang^="zh"] .cart h2 { line-height: 1.2; }
@@ -346,10 +347,13 @@ html[lang^="zh"] .cart h2 { line-height: 1.2; }
 .mysheet .list { min-height: 2.8em; margin: 0; padding: 8px 0; font-size: 16px; line-height: 1.4; color: var(--muted); }
 .total { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0 16px; margin: 0 -16px; padding: 8px 16px; background: var(--ink); color: var(--paper); font-weight: 700; font-size: 16px; }
 .total a { color: var(--gold); display: inline-flex; align-items: center; min-height: 44px; }
-.cart-view { overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; }
-html.gsap .cart-view { overflow: visible; }
-/* phones: keep pinned scenes clear of the bottom call bar */
-@media (max-width: 759px) { html.gsap .has-callbar .cart-pin, html.gsap .has-callbar .story-pin { padding-bottom: 64px; } }
+/* a real sideways scroller: swipe, trackpad or the arrows; dishes snap to the container's left edge */
+.cart-view { overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scroll-padding-inline: max(var(--gut), calc((100vw - 1240px) / 2)); scrollbar-width: thin; scrollbar-color: var(--ink) transparent; }
+.cart-nav { display: none; }
+@media (hover: hover) and (pointer: fine) { .cart-nav { display: flex; justify-content: flex-end; gap: 8px; } }
+.cart-arrow { display: grid; place-items: center; width: 48px; height: 48px; padding: 0; border: 2px solid var(--ink); border-radius: 999px; background: var(--paper); color: var(--ink); cursor: pointer; }
+.cart-arrow svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.cart-arrow:hover { background: var(--ink); color: #fff; }
 .cart-track { position: relative; width: max-content; padding: 16px max(var(--gut), calc((100vw - 1240px) / 2)) 64px; }
 .cart-track::after { content: ""; position: absolute; left: max(0px, calc((100vw - 1240px) / 2 - 28px)); right: -28px; bottom: 36px; height: 16px; border-radius: 8px; background: linear-gradient(#eef2f3, #aab5b9 55%, #76838a); box-shadow: var(--shadow); }
 .cards { position: relative; z-index: 1; display: flex; gap: 24px; }
@@ -357,7 +361,7 @@ html.gsap .cart-view { overflow: visible; }
 .wheel::after { content: ""; position: absolute; inset: 16px; border-radius: 50%; background: #1d2123; }
 .wheel.w1 { left: max(30px, calc((100vw - 1240px) / 2 + 30px)); }
 .wheel.w2 { right: 60px; }
-.dcard { flex: 0 0 170px; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; scroll-snap-align: center; }
+.dcard { flex: 0 0 170px; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; scroll-snap-align: start; }
 .bowl { width: 100%; aspect-ratio: 1; border-radius: 50%; padding: 16px; background: repeating-conic-gradient(#c9a062 0 2.5deg, #b5874a 2.5deg 5deg); box-shadow: 0 0 0 2px #8a5f2a, var(--shadow); transition: transform .25s; }
 .bowl img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
 .closed { width: 100%; height: 100%; border-radius: 50%; display: grid; place-items: center;

@@ -1,5 +1,14 @@
 # Dim sum site: state notes
 
+## 2026-11-12 no more stuck scrolling
+- User: the scroll motion was smooth but "First time at yum cha?" made you feel stuck, and "What every table orders" should really scroll left and right instead of being driven by page scroll.
+- Story: the 300% pin is gone. The steps scroll normally; a sticky stage (beside on desktop, under the header on phones) shows the scene for the step being read (ScrollTrigger on `.steps`, top 60% to bottom 50%). All step text stays visible; inactive steps sit at opacity .8 so grey text keeps 4.5:1.
+- Cart: the pin and the scroll-driven sideways timeline are gone. `.cart-view` is a native scroller (snap to the container edge, thin jade scrollbar, overscroll contained); mouse users get previous/next arrows (translated aria-labels, disabled at the ends); the wheels rotate with scrollLeft (still under reduced motion). Works without GSAP too.
+- Desktop page is about 4,000px shorter (7,617px at 1440).
+- Audit script: phones now emulate touch (hover none), and disabled controls are skipped in the focus test.
+- Checked: audit passes (8 sizes, 3 weights, 0 off-scale spacing, 0 errors, no overflow, reduced motion clean); no pin spacers; scenes 0-3 play at 390 and 1440; arrows scroll the cart and roll the wheels; page scroll never moves the cart; screenshots at both widths.
+- Not committed.
+
 ## 2026-11-11 Supabase style tokens (AnimatedWebs)
 - The user asked for "jade green with crisp whites, charcoal grays or deep blacks". The AnimatedWebs library has 43 tech-brand styles and no jade match, so the closest 3 were offered (Supabase, Shopify, Vercel) and the user picked Supabase.
 - Applied as tokens in `site.css :root`, not one-off values: white canvas (`--paper` #fff), light charcoal alternate sections (`--paper-2` #f4f4f4: the cart, holiday hours, wait-bar tracks), Void text and headings (`--text` #111), Ash secondary text (`--muted` #525252), `--radius` 8px and `--radius-lg` 16px, one shadow (`--shadow`, `--shadow-dark` on jade). The story section moved from warm paper to white.

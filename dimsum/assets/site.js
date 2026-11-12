@@ -230,14 +230,11 @@
   /* ---------- scroll motion with GSAP ScrollTrigger (3.12.5, loaded with defer) ----------
      Without GSAP, or with reduced motion, the page stays a normal page: a plain story list,
      a cart you swipe sideways, full wait bars and a plain sign-off. */
-  var cartST = null;
   function initMotion() {
     if (!window.gsap || !window.ScrollTrigger) return;
     gsap.registerPlugin(ScrollTrigger);
-    var head = document.querySelector('.site-head'), track = $('cart-track'), story = $('how');
+    var story = $('how');
     var steps = story ? [].slice.call(story.querySelectorAll('.steps li')) : [];
-    var top = function () { return 'top ' + (head ? head.offsetHeight : 68) + 'px'; };
-    var maxX = function () { return track ? Math.max(0, track.scrollWidth - document.documentElement.clientWidth) : 0; };
     gsap.matchMedia().add({ mobile: '(max-width: 900px)', motion: '(prefers-reduced-motion: no-preference)' }, function (ctx) {
       if (!ctx.conditions.motion) return;
       var mobile = ctx.conditions.mobile;
@@ -252,8 +249,8 @@
       /* $5.50 slides as the band passes (leftwards only, so it never runs into its heading) */
       gsap.fromTo('.band .price', { xPercent: 0 }, { xPercent: mobile ? -6 : -14, ease: 'none', scrollTrigger: { trigger: '.band', start: 'top bottom', end: 'bottom top', scrub: 0.6 } });
 
-      /* first visit story: pin and step through four scenes */
-      if (story) ScrollTrigger.create({ trigger: '.story-pin', start: top, end: '+=300%', pin: true, scrub: true, invalidateOnRefresh: true,
+      /* first visit story: nothing pins. The steps scroll normally past a sticky stage, and the scene follows the step being read */
+      if (story) ScrollTrigger.create({ trigger: story.querySelector('.steps'), start: 'top 60%', end: 'bottom 50%', invalidateOnRefresh: true,
         onUpdate: function (self) {
           var p = self.progress, step = Math.min(3, Math.floor(p * 4));
           story.setAttribute('data-active', String(step));
@@ -261,32 +258,32 @@
           steps.forEach(function (li, i) { li.classList.toggle('on', i === step); });
         } });
 
-      /* the cart: pin and roll the dishes sideways, wheels turning */
-      if (track) {
-        var tl = gsap.timeline({ scrollTrigger: { trigger: '.cart-pin', start: top, end: function () { return '+=' + maxX(); }, pin: true, scrub: 0.5, invalidateOnRefresh: true } });
-        tl.to(track, { x: function () { return -maxX(); }, ease: 'none' }, 0)
-          .to('.wheel', { rotation: function () { return maxX() / (Math.PI * 46) * 360; }, ease: 'none' }, 0);
-        cartST = tl.scrollTrigger;
-      }
-
       /* weekend waits grow in; the weekend photo drifts in its frame; 翠籠軒 is stamped one character at a time */
       gsap.from('.bar i', { scaleX: 0, duration: 0.9, ease: 'power2.out', stagger: 0.12, scrollTrigger: { trigger: '.waits', start: 'top 80%' } });
       gsap.fromTo('.visit-photo img', { yPercent: 0 }, { yPercent: -12, ease: 'none', scrollTrigger: { trigger: '.visit-photo', start: 'top bottom', end: 'bottom top', scrub: 0.6 } });
       gsap.from('.signoff span', { opacity: 0, scale: 1.6, rotation: -6, duration: 0.42, ease: 'back.out(2.5)', stagger: 0.16, scrollTrigger: { trigger: '.signoff', start: 'top 88%' } });
 
-      return function () { root.classList.remove('gsap'); cartST = null; };
+      return function () { root.classList.remove('gsap'); };
     });
     /* fonts change text heights; measure again once they are in */
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { ScrollTrigger.refresh(); });
   }
-  /* keyboard users: bring a focused dish into view while the cart is pinned (never for mouse or touch) */
-  if (cardBox) cardBox.addEventListener('focusin', function (e) {
-    var card = e.target.closest('.dcard'); if (!card || !cartST || !e.target.matches(':focus-visible')) return;
-    var r = card.getBoundingClientRect(); if (r.left >= 0 && r.right <= window.innerWidth) return;
-    var track = $('cart-track'), max = Math.max(1, track.scrollWidth - document.documentElement.clientWidth);
-    var p = Math.min(1, Math.max(0, (card.offsetLeft - 60) / max));
-    window.scrollTo(0, cartST.start + p * (cartST.end - cartST.start));
-  });
+  /* the cart is a real sideways scroller (swipe, trackpad, shift+wheel, the arrows); page scrolling never moves it. The wheels roll with it. */
+  var view = $('cart-view');
+  if (view) {
+    var wheels = [].slice.call(view.querySelectorAll('.wheel')), arrows = [].slice.call(document.querySelectorAll('.cart-arrow'));
+    var rolled = function () {
+      var x = view.scrollLeft, max = view.scrollWidth - view.clientWidth;
+      if (!calm.matches) wheels.forEach(function (w) { w.style.transform = 'rotate(' + (x / (Math.PI * 46) * 360).toFixed(1) + 'deg)'; });
+      arrows.forEach(function (b) { b.disabled = Number(b.getAttribute('data-dir')) < 0 ? x <= 2 : x >= max - 2; });
+    };
+    view.addEventListener('scroll', rolled, { passive: true });
+    window.addEventListener('resize', rolled);
+    rolled();
+    arrows.forEach(function (b) {
+      b.addEventListener('click', function () { view.scrollBy({ left: Number(b.getAttribute('data-dir')) * view.clientWidth * 0.8, behavior: calm.matches ? 'auto' : 'smooth' }); });
+    });
+  }
   /* GSAP is deferred: it runs after this file, just before DOMContentLoaded */
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initMotion); else initMotion();
 })();

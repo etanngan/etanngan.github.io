@@ -117,7 +117,7 @@
   <section class="story" id="how" data-active="0" aria-labelledby="how-h">
     <div class="story-pin">
       <div class="wrap story-grid">
-        <div>
+        <div class="story-text">
           <h2 class="display" id="how-h" data-i18n="how.h">First time at yum cha?</h2>
           <ol class="steps">
             <li class="on"><b><span class="n" aria-hidden="true">1</span><span data-i18n="how.1t">Take a number</span></b><p data-i18n="how.1d">On weekends, get a number at the front desk. We text you when your table is ready.</p></li>
@@ -159,7 +159,11 @@
           <div class="total"><span id="pick-total" aria-live="polite">Nothing ticked yet</span><a href="menu.html" data-i18n="fav.link">See the full menu</a></div>
         </div>
       </div>
-      <div class="cart-view">
+      <div class="wrap cart-nav">
+        <button type="button" class="cart-arrow" data-dir="-1" aria-controls="cart-view" aria-label="Previous dishes" data-i18n-attr="aria-label:cart.prev"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button type="button" class="cart-arrow" data-dir="1" aria-controls="cart-view" aria-label="More dishes" data-i18n-attr="aria-label:cart.next"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+      <div class="cart-view" id="cart-view">
         <div class="cart-track" id="cart-track">
           <div class="cards" id="cart-cards" role="list" aria-labelledby="order-h"></div>
           <span class="wheel w1" aria-hidden="true"></span><span class="wheel w2" aria-hidden="true"></span>
