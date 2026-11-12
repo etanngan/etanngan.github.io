@@ -143,13 +143,7 @@
   function endIntro() { root.classList.add('intro-done'); EV.forEach(function (t) { window.removeEventListener(t, endIntro); }); }
   if (intro) { setTimeout(endIntro, 1600); EV.forEach(function (t) { window.addEventListener(t, endIntro, { passive: true }); }); }
   // the pen marks on the hero card draw once; after that a language switch shows them already drawn
-  setTimeout(function () { root.classList.add('drawn'); }, intro ? 3200 : 2000);
-
-  /* ---------- the window light pauses when the hero is off screen ---------- */
-  var hero = doc.querySelector('.hero');
-  if (hero && 'IntersectionObserver' in window) {
-    new IntersectionObserver(function (es) { hero.classList.toggle('is-away', !es[0].isIntersecting); }).observe(hero);
-  }
+  setTimeout(function () { root.classList.add('drawn'); }, intro ? 3800 : 3000);
 
   /* ---------- the fill-in card: circle a service, a day and a time ---------- */
   var pick = doc.getElementById('pick');
@@ -240,10 +234,8 @@
       var mobile = ctx.conditions.mobile;
       root.classList.add('gsap'); // before the pin is measured: switches the room to its pinned layout
 
-      /* hero: the card lifts a little and the window light slides as you leave */
-      gsap.timeline({ scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1.2 } })
-        .to('.hero-card', { y: mobile ? -20 : -56, ease: 'none' }, 0)
-        .to('.hero .sun', { xPercent: mobile ? 6 : 10, ease: 'none' }, 0);
+      /* hero: the card lifts a little as you leave (on its wrapper: GSAP would bake the card's own set-down rotation into its transform) */
+      gsap.to('.hero-wrap', { y: mobile ? -20 : -56, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1.2 } });
 
       /* service photos open like blinds */
       gsap.utils.toArray('.svc .pic').forEach(function (el, i) {
@@ -270,6 +262,31 @@
         gsap.fromTo(c[0], { x: mobile ? 14 : 60, rotation: mobile ? c[1] / 2 : c[1] }, { x: 0, rotation: 0, ease: 'none',
           scrollTrigger: { trigger: c[0], start: 'top bottom', end: 'top 40%', scrub: 1.2 } });
       });
+      /* ...onto a pile of blank cards that fans out to the left on the same stretch of scroll */
+      [['.b1', 3], ['.b2', 6]].forEach(function (b) {
+        gsap.fromTo(b[0], { rotation: 0 }, { rotation: mobile ? -b[1] / 2 : -b[1], ease: 'none',
+          scrollTrigger: { trigger: '.pick-card', start: 'top bottom', end: 'top 40%', scrub: 1.2 } });
+      });
+
+      /* created after the pin, so their start points include its spacing */
+      /* hero: the room photo drifts a little slower than the page as you leave */
+      gsap.fromTo('.hero-photo img', { scale: 1.1, yPercent: -4 }, { scale: 1.1, yPercent: 4, ease: 'none',
+        scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1.2 } });
+
+      /* the printed double rule at the top of each section is ruled across as the section arrives */
+      gsap.utils.toArray('.dbl').forEach(function (el) {
+        gsap.fromTo(el, { '--dbl': 0 }, { '--dbl': 1, duration: 1.3, ease: 'power2.inOut', scrollTrigger: { trigger: el, start: 'top 88%' } });
+      });
+
+      /* then the ruled lines of each list (practitioners, getting here, good to know), one after another */
+      gsap.utils.toArray('.team, .info').forEach(function (list) {
+        gsap.fromTo(list.children, { '--ln': 0 }, { '--ln': 1, duration: 1.1, ease: 'power2.inOut', stagger: 0.12,
+          scrollTrigger: { trigger: list, start: 'top 85%' } });
+      });
+
+      /* the spruce billing band opens out from a card to the full width */
+      gsap.fromTo('.band', { clipPath: mobile ? 'inset(0% 3% round 6px)' : 'inset(0% 7% round 8px)' }, { clipPath: 'inset(0% 0% round 0px)', ease: 'none',
+        scrollTrigger: { trigger: '.band', start: 'top bottom', end: 'top 30%', scrub: 1.2 } });
 
       return function () { root.classList.remove('gsap'); setHour(0, true); };
     });

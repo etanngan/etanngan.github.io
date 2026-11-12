@@ -61,10 +61,8 @@
       <source media="(max-width: 999px)" type="image/webp" srcset="assets/img/room-wide-800.webp 800w, assets/img/room-wide-1200.webp 1200w" sizes="100vw" width="800" height="400">
       <img src="assets/img/room-1200.webp" srcset="assets/img/room-800.webp 800w, assets/img/room-1200.webp 1200w, assets/img/room-1800.webp 1800w" sizes="58vw" width="1200" height="800" fetchpriority="high" alt="One of our treatment rooms: a massage table made up with a white sheet, in daylight" data-i18n-attr="alt:hero.alt">
     </picture>
-    <div class="sun" aria-hidden="true"></div>
     <div class="wrap hero-wrap">
       <div class="appt-card hero-card">
-        <i class="card-light" aria-hidden="true"></i>
         <div class="card-head">
           <h1 class="card-name" id="hero-name"><span class="n1" data-i18n="card.n1">Stillwater Wellness Clinic</span> <span class="n2" data-i18n="card.n2" data-other-lang lang="zh-Hant-HK">靜水堂</span></h1>
           <p class="card-what" data-i18n="card.what">Physiotherapy, massage therapy and acupuncture in Markham</p>
@@ -239,7 +237,6 @@
   </section>
 
   <section class="page-end" id="ask" aria-labelledby="end-h">
-    <div class="sun" aria-hidden="true"></div>
     <div class="wrap end-grid">
       <div class="end-box dbl">
         <h2 id="end-h" data-i18n="end.h">Ask for a time that suits you</h2>
@@ -247,6 +244,8 @@
         <p data-i18n="pick.p">Circle a service, a day and a time on the card. We copy them onto the request form for you.</p>
         <p class="call-line"><span data-i18n="call.or">Or call</span> <a href="tel:+19055550117" lang="en">(905) 555-0117</a></p>
       </div>
+      <div class="pick-wrap">
+      <i class="blank b2" aria-hidden="true"></i><i class="blank b1" aria-hidden="true"></i>
       <form class="appt-card pick-card" id="pick" action="book.html" method="get">
         <div class="card-head">
           <p class="card-name"><span class="n1" data-i18n="card.n1">Stillwater Wellness Clinic</span> <span class="n2" data-i18n="card.n2" data-other-lang lang="zh-Hant-HK">靜水堂</span></p>
@@ -279,6 +278,7 @@
         <button class="btn btn-main" type="submit" data-i18n="cta">Request an appointment</button>
         <p class="card-note" data-i18n="note.24">Please give 24 hours’ notice to change or cancel.</p>
       </form>
+      </div>
     </div>
   </section>
 </main>

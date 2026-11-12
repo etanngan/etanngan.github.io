@@ -392,7 +392,7 @@ html[lang^="zh"] .done-card .card-row { grid-template-columns: 5.4em 1fr; }
   .hero-photo { position: absolute; top: 0; right: 0; bottom: 0; width: 62%; }
   .hero-photo img { height: 100%; object-position: 40% 70%; }
   .hero-wrap { margin-top: 0; padding: 56px 0 64px; }
-  .hero-card { max-width: 560px; padding: 34px 36px 24px; transform: rotate(-.8deg); }
+  .hero-card { max-width: 560px; padding: 34px 36px 24px; rotate: -.8deg; --set-rot: -3.2deg; }
   .hero-card .card-name { font-size: 48px; }
   .hero-card .card-name .n2 { font-size: 24px; }
   .card-what { font-size: 19px; }
@@ -442,23 +442,21 @@ html.intro-done .intro-layer { animation: blinds-out .3s ease forwards; }
 @keyframes blinds-out { to { opacity: 0; visibility: hidden; } }
 @keyframes fade-out { to { opacity: 0; } }
 
-/* hero: window light across the counter, the photo's edge and the card */
-.hero { overflow: hidden; background: #e5e2d9; }
+/* hero, once on load (after the blinds when they play): the room's light comes up, the card is set down
+   on the counter, then the pen fills it in. Slow ease-outs, no overshoot, nothing loops. Uses the
+   individual translate/rotate properties so GSAP's scroll transform still composes on top. */
+.hero { --hero-at: .1s; }
+html.intro .hero { --hero-at: .85s; }
 .hero-wrap { z-index: 1; }
-.sun { position: absolute; inset: 0; pointer-events: none; overflow: hidden;
-  -webkit-mask-image: linear-gradient(112deg, transparent 4%, #000 20%, #000 56%, transparent 76%); mask-image: linear-gradient(112deg, transparent 4%, #000 20%, #000 56%, transparent 76%); }
-.sun::before, .card-light::before { content: ""; position: absolute; inset: -60% -40%; transform: rotate(-21deg); animation: sun-drift 40s ease-in-out infinite alternate;
-  background: repeating-linear-gradient(180deg, rgba(255, 248, 232, 0) 0, rgba(255, 248, 232, .7) 8px, rgba(255, 248, 232, .7) 30px, rgba(255, 248, 232, 0) 38px, rgba(84, 70, 44, .1) 44px, rgba(84, 70, 44, .1) 50px, rgba(255, 248, 232, 0) 56px); }
-/* on the card the light can only warm and shade (multiply), so the button and text never lose contrast */
-.hero-card { position: relative; }
-.card-light { position: absolute; inset: 0; z-index: 1; overflow: hidden; pointer-events: none; border-radius: inherit; mix-blend-mode: multiply; }
-.card-light::before { background: repeating-linear-gradient(180deg, #fff 0, #fffaf1 8px, #fffaf1 30px, #fff 38px, #efe9de 44px, #efe9de 50px, #fff 56px); }
-@keyframes sun-drift { from { transform: rotate(-22deg) translate3d(-24px, -8px, 0); } to { transform: rotate(-19.5deg) translate3d(30px, 14px, 0); } }
-.hero.is-away .sun::before, .hero.is-away .card-light::before { animation-play-state: paused; }
-
-/* the pen: circles today, then underlines today's hours, once */
-.hero-card { --pen-at: .4s; }
-html.intro .hero-card { --pen-at: 1.35s; }
+@media (max-width: 999px) { .hero-photo { position: relative; } }
+.hero-photo { overflow: hidden; }
+.hero-photo::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: #39435c; mix-blend-mode: multiply; opacity: 0;
+  animation: lights-up 1.8s var(--hero-at) cubic-bezier(.4, 0, .2, 1) backwards; }
+@keyframes lights-up { from { opacity: .5; } }
+.hero-card { position: relative; --set-rot: -1.6deg; animation: set-down 1.2s calc(var(--hero-at) + .15s) cubic-bezier(.22, .61, .36, 1) backwards; }
+@keyframes set-down { from { translate: 0 -22px; rotate: var(--set-rot); box-shadow: 0 2px 4px rgba(29, 40, 40, .05), 0 46px 60px -24px rgba(31, 74, 76, .32); } }
+/* the pen: circles today, then underlines today's hours, once, after the card has settled */
+.hero-card { --pen-at: calc(var(--hero-at) + 1.1s); }
 .hero-card .ring path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw .9s var(--pen-at) cubic-bezier(.45, 0, .25, 1) forwards; }
 .hero-card .ink { position: relative; display: inline-block; }
 .hero-card .ink::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 9px; clip-path: inset(0 100% 0 0);
@@ -574,21 +572,36 @@ html[lang^="zh-Hans"] .gsap .clock { font-family: var(--sc); }
   .team-wrap .team, .team-wrap .demo-people { grid-column: 2; }
   .team-wrap .team { grid-row: 1 / span 2; }
   .team h3 { font-size: 22px; }
-  .pick-card { max-width: 540px; justify-self: end; width: 100%; }
+  .pick-wrap { max-width: 540px; justify-self: end; width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .sun::before, .card-light::before { animation: none; }
+  .hero-card, .hero-photo::after { animation: none; }
   .hero-card .ring path, .opt input:checked ~ .ring path { animation: none; stroke-dashoffset: 0; }
   .hero-card .ink::after { animation: none; clip-path: none; }
   .inking { animation: none; }
 }
 
-/* pass 2: the page ends where it began, on the counter in window light (still, no drift) */
-.page-end { position: relative; background: #e5e2d9; }
-.page-end .sun::before { animation: none; transform: rotate(-21deg) translate3d(12px, 0, 0); }
-.end-grid { position: relative; z-index: 1; }
 .svc-opts { margin-left: -12px; }
 .svc-opts .opt { padding: 4px 14px; }
 @media (min-width: 1000px) { .gsap .day-grid { flex: 1 1 auto; min-width: 0; } }
 .info dt { font-size: 19px; }
 .info .info-emerg { border-left: 4px solid var(--err); padding-left: 14px; }
+
+/* page end: a small pile of blank appointment cards behind the fill-in card. GSAP fans it out to the left
+   as the top card slides across onto it; without GSAP or with reduced motion it simply sits fanned. */
+.pick-wrap { position: relative; }
+.end-box { position: relative; z-index: 1; }
+.blank { position: absolute; inset: 0; border-radius: 4px; transform-origin: 100% 100%; pointer-events: none;
+  background: linear-gradient(var(--spruce), var(--spruce)) 20px 92px / calc(100% - 40px) 2px no-repeat,
+    linear-gradient(var(--spruce), var(--spruce)) 20px 97px / calc(100% - 40px) 1px no-repeat,
+    repeating-linear-gradient(transparent 0 63px, var(--rule) 63px 64px) 20px 120px / calc(100% - 40px) calc(100% - 200px) no-repeat, #fff;
+  box-shadow: 0 1px 2px rgba(29, 40, 40, .06), 0 14px 28px -18px rgba(31, 74, 76, .4); }
+.b1 { transform: rotate(-1.5deg); }
+.b2 { transform: rotate(-3deg); background-color: #fbfaf7; }
+@media (min-width: 1000px) { .b1 { transform: rotate(-3deg); } .b2 { transform: rotate(-6deg); } }
+
+/* GSAP hooks: the printed double rule (--dbl) and the list rules (--ln) are drawn across from the left.
+   Both default to 1, so without GSAP or with reduced motion every line is simply there. */
+.dbl, .band .dbl { background-size: calc(var(--dbl, 1) * 100%) 2px, calc(var(--dbl, 1) * 100%) 1px; }
+.team li, .info > div { position: relative; border-bottom: 0; }
+.team li::after, .info > div::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--rule); transform-origin: 0 50%; transform: scaleX(var(--ln, 1)); }
