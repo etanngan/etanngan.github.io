@@ -106,6 +106,8 @@
     'order.kept': T('Your ticks stay on this phone for 6 hours and show up on the full menu.',
       '剔選會在這部手機保留六小時，在全部餐牌也看得到。',
       '勾选会在这部手机上保留 6 小时，在完整菜单里也能看到。'),
+    'cart.prev': T('Previous dishes', '上一批點心', '上一组点心'),
+    'cart.next': T('More dishes', '更多點心', '更多点心'),
     'total.none': T('Nothing ticked yet', '未剔選任何點心', '还没有选点心'),
     'total.one': T('1 dish, {s}', '已剔 1 款，共 {s}', '已选 1 样，共 {s}'),
     'total.many': T('{n} dishes, {s}', '已剔 {n} 款，共 {s}', '已选 {n} 样，共 {s}'),

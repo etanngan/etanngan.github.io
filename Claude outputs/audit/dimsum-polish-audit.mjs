@@ -168,7 +168,7 @@ function measure(cfg) {
     const cs = css(el), n = name(el);
     const durs = cs.transitionDuration.split(',').map((d) => parseFloat(d) * (d.includes('ms') ? 0.001 : 1));
     const smooth = cs.transitionProperty !== 'none' && durs.some((d) => d >= 0.15 && d <= 0.25);
-    const b4 = snap(el); el.focus({ preventScroll: true }); const ring = document.activeElement === el && el.matches(':focus-visible') && snap(el) !== b4; el.blur();
+    const b4 = snap(el); el.focus({ preventScroll: true }); const ring = el.matches(':disabled') || (document.activeElement === el && el.matches(':focus-visible') && snap(el) !== b4); el.blur(); // a disabled control can't take focus
     const st = { hover: has(el, 'hover'), active: has(el, 'active'), focus: ring, smooth };
     const formy = /^(button|input|select|textarea)$/i.test(el.tagName);
     if (formy) { tally.canDisable++; st.disabled = has(el, 'disabled'); }
@@ -235,6 +235,7 @@ async function connect() {
 let c, initId = null, errs = [];
 async function open(url, { w, h, lang, reduce }) {
   await c.send('Emulation.setDeviceMetricsOverride', { width: w, height: h, deviceScaleFactor: 1, mobile: w < 768 });
+  await c.send('Emulation.setTouchEmulationEnabled', w < 768 ? { enabled: true, maxTouchPoints: 5 } : { enabled: false }); // phones: hover none, pointer coarse
   await c.send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: reduce ? 'reduce' : 'no-preference' }] });
   if (initId) await c.send('Page.removeScriptToEvaluateOnNewDocument', { identifier: initId });
   ({ identifier: initId } = await c.send('Page.addScriptToEvaluateOnNewDocument', { source: `try{localStorage.setItem('mp-lang',${JSON.stringify(lang)});localStorage.removeItem('jb-sheet');sessionStorage.setItem('jb-intro','1')}catch(e){}` }));
