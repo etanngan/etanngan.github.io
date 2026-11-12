@@ -1,0 +1,139 @@
+page	lang	w	sizes	weights	maxCh	maxEm	longN	spaceVals	offScale	relative	inter	noHover	noActive	noFocus	notSmooth	noDisabled	ulAnim	nums	headBad	overflow	errors	btn	fams
+index.html	en	390	23	6	38	0	0	39	407	3	38	1	35	0	38	13	0/14	0/55	1	0	0	593	Archivo+Noto Serif HK
+index.html	en	1440	21	6	77.6	0	1	46	422	3	37	0	34	0	37	12	0/14	0/56	1	0	0	704	Archivo+Noto Serif HK
+index.html	zh-Hant	390	24	6	27	21.7	0	39	407	3	38	1	35	0	38	13	0/14	0/54	2	0	0	485	Noto Sans HK+Noto Serif HK+Archivo
+index.html	zh-Hant	1440	22	6	32.1	37	1	46	422	3	37	0	34	0	37	12	0/14	0/55	2	0	0	633	Noto Sans HK+Noto Serif HK+Archivo
+index.html	zh-Hans	390	24	6	27	21.7	0	39	407	3	38	1	35	0	38	13	0/14	0/54	2	0	0	432	Noto Sans SC+Noto Serif HK+Archivo+Noto Serif SC
+index.html	zh-Hans	1440	21	6	32.1	39.1	1	46	422	3	37	0	34	0	37	12	0/14	0/55	2	0	0	585	Noto Sans SC+Noto Serif HK+Archivo+Noto Serif SC
+menu.html	en	390	12	5	38	0	0	20	809	0	96	1	94	0	96	71	0/10	28/34	1	0	0		Archivo+Noto Serif HK
+menu.html	en	1440	15	5	78.8	0	1	23	867	0	102	2	101	0	102	78	0/10	34/41	1	0	0		Archivo+Noto Serif HK
+menu.html	zh-Hant	390	12	4	30	20.8	0	20	809	0	96	1	94	0	96	71	0/10	28/33	0	0	0		Noto Sans HK+Noto Serif HK+Archivo
+menu.html	zh-Hant	1440	15	4	33.5	44.9	1	23	867	0	102	2	101	0	102	78	0/10	34/40	0	0	0		Noto Sans HK+Noto Serif HK+Archivo
+menu.html	zh-Hans	390	12	4	30	21	0	20	809	0	96	1	94	0	96	71	0/10	28/33	0	0	0		Noto Sans SC+Noto Serif HK+Archivo+Noto Serif SC
+menu.html	zh-Hans	1440	15	4	33.5	45.9	1	23	867	0	102	2	101	0	102	78	0/10	34/40	0	0	0		Noto Sans SC+Noto Serif HK+Archivo+Noto Serif SC
+qr.html	en	390	14	4	38.6	0	0	18	899	0	88	3	88	0	88	76	0/4	65/69	0	0	0		Archivo+Noto Serif HK
+qr.html	en	1440	14	4	53.3	0	0	19	901	0	88	3	88	0	88	76	0/4	65/69	0	0	0		Archivo+Noto Serif HK
+qr.html	zh-Hant	390	14	4	32.1	20.4	0	18	899	0	88	3	88	0	88	76	0/4	65/68	0	0	0		Noto Sans HK+Noto Serif HK+Archivo
+qr.html	zh-Hant	1440	14	4	35.1	29.6	0	19	901	0	88	3	88	0	88	76	0/4	65/68	0	0	0		Noto Sans HK+Noto Serif HK+Archivo
+qr.html	zh-Hans	390	14	4	32.1	22.1	0	18	899	0	88	3	88	0	88	76	0/4	65/68	0	0	0		Noto Sans SC+Noto Serif HK+Archivo+Noto Serif SC
+qr.html	zh-Hans	1440	14	4	35.1	29.6	0	19	901	0	88	3	88	0	88	76	0/4	65/68	0	0	0		Noto Sans SC+Noto Serif HK+Archivo+Noto Serif SC
+
+SUMMARY
+font sizes: max 24 per page view (limit 8); 41 across the site: 14 15 16 17 17.6 18 18.4 19 20 20.8 21 22 22.4 24 25.5 25.6 26 28 30 30.4 34 35.1 36 38 40 41.6 42.9 44 60 64 66 66.3 70 74.9 76 90 110 128 136.8 150 288
+  off the scale [16 18 22 40 64 96 144 288]: 14 15 17 17.6 18.4 19 20 20.8 21 22.4 24 25.5 25.6 26 28 30 30.4 34 35.1 36 38 41.6 42.9 44 60 66 66.3 70 74.9 76 90 110 128 136.8 150
+font weights: max 6 per page view (limit 3); site: 400 600 700 800 850 900
+line length: widest Latin line 78.8ch (limit 65), widest Chinese line 45.9em (limit 36); 6 over the limit
+spacing: 52 off-scale values in 12915 uses; distinct per view max 46
+interactive (worst view): no hover 3, no pressed 101, no focus ring 0, no 150-250ms transition 102, no disabled style 78
+tabular numbers: 384 price/time texts without tabular-nums
+headings with issues: 8; overflow worst 0px; console/network errors 0; links bad 0 of 32
+reduced motion:
+  index.html@390: running=0 gsap=false overflow=0 errors=0
+  index.html@1440: running=0 gsap=false overflow=0 errors=0
+  menu.html@390: running=0 gsap=false overflow=0 errors=0
+  menu.html@1440: running=0 gsap=false overflow=0 errors=0
+  qr.html@390: running=0 gsap=false overflow=0 errors=0
+  qr.html@1440: running=0 gsap=false overflow=0 errors=0
+
+font sizes off the scale
+  17 x1274: a.skip | #nav>a.btn-call | p#h-hours | .actions>a.link-gold | li>span.num | div>p
+  19 x774: .actions>a.btn-call | .where>span.num | div>p | div>a.btn-call | div>p.lede | .row-main>span.row-name
+  14 x492: .dish>small | .srow>span.tier | .row-meta>span.mk.mk-v | .row-meta>span.mk.mk-p | .row-meta>span.mk.mk-s | .row-meta>span.mk.mk-g
+  20 x219: div>dt | div>p.addr | .hero-text>p.what | .nm>b | .tier-box>span.cn | .tier-box>span.num
+  24 x132: .sheet-head>b | div>h3 | .foot-brand>span.brand-sign | span#h-now | .tally>button.t-less | .tsec-h>h2
+  15 x123: .brand>span.brand-en | .lang>button.is-active | .lang>button | .sheet-head>span.tbl
+  17.6 x48: .small-print>h2 | div>h2 | .contact>h2
+  26 x27: .brand>span.brand-sign | span#chop | h2#band-h
+  25.5 x18: h2#info-h | h2#hol-h | h2#room-h
+  30 x12: div>a.phone | .dlg-head>button.dlg-x
+  36 x10: h2#hours-h | h2#band-h | div>h1
+  90 x9: #signoff>span
+  25.6 x9: h2#sheet-h
+  18.4 x8: div>h3
+  66 x7: h2#how-h | h2#order-h | h1#hero-h
+  20.8 x6: .menu-foot>h2
+  44 x5: div>a.phone | div>h1
+  28 x4: .title-row>h1
+  21 x3: span#h-now
+  38 x3: h2#how-h
+  60 x3: h2#hours-h
+  70 x3: .scene>div.thanks
+  76 x3: p#early-price
+  110 x3: .ticket>b
+  128 x3: .scene>div.thanks
+  150 x3: p#early-price
+  66.3 x3: .wrap>p.sign
+  35.1 x3: h2#order-h
+  136.8 x3: .wrap>p.sign
+  34 x2: .title-row>h1
+
+weights
+  700 x3487: a.skip | .lang>button.is-active | .lang>button | span#h-status | #nav>a.btn-call | div>h1
+  400 x2354: .hero-text>p.what | p#h-hours | .where>a | .dish>small | div>p | div>p.lead
+  600 x195: .brand>span.brand-en | li>a | .sheet-head>span.tbl | .sheet-head>span | li>span.num
+  900 x70: .brand>span.brand-sign | .wrap>p.sign | span#chop | p#early-price | .foot-brand>span.brand-sign
+  800 x39: #nav>a.btn-call | .actions>a.btn-call | h2#band-h | b>span.n | .callbar>a.btn-call
+  850 x20: h1#hero-h | h2#how-h | h2#order-h | h2#info-h | div>a.phone
+
+spacing off the scale
+  4 x4275: nav#nav padding-top | nav#nav row-gap | nav#nav column-gap | li>a padding-right | .hero-text>p.today-line margin-bottom | span#chop padding-top
+  10 x2691: .hero-text>div.actions margin-bottom | span#chop padding-right | span#chop padding-left | #hero-rows>div.srow row-gap | #nav>a.btn-call margin-left | div>h1 margin-bottom
+  12 x1287: a.skip padding-top | a.skip padding-bottom | .hero-text>div.actions row-gap | .plate>div.steamer padding-top | .sheet>div.sheet-head row-gap | div>ul.tier-key margin-top
+  6 x1074: #nav>a.btn-call padding-top | #nav>a.btn-call padding-bottom | .sheet>div.sheet-head padding-bottom | div>ol.steps row-gap | li>a.is-active row-gap | li>a.is-active column-gap
+  3 x798: .closed>span padding-top | .tier-key>li padding-top | .row-main>p.row-desc margin-top
+  5 x741: #story-rows>div.srow padding-top | #story-rows>div.srow padding-bottom | .row-main>div.row-meta margin-top | .row-main>span.row-meta margin-top
+  2 x642: .wrap>div.lang padding-top | .wrap>div.lang padding-right | .wrap>div.lang padding-bottom | .wrap>div.lang padding-left | #nav>ul row-gap | #nav>ul column-gap
+  14 x360: .site-head>div.wrap.head-row row-gap | .site-head>div.wrap.head-row column-gap | .hero>div.wrap.hero-grid row-gap | .hero>div.wrap.hero-grid column-gap | .hero-text>p.today-line column-gap | span#h-status padding-right
+  18 x270: #nav>a.btn-call padding-right | #nav>a.btn-call padding-left | .hero-text>p.what margin-bottom | .plate>div.sheet.hero-sheet padding-right | .plate>div.sheet.hero-sheet padding-left | .wrap>div.filters margin-top
+  9 x126: .closed>span padding-right | .closed>span padding-left | li>a padding-right | li>a padding-left
+  12.75 x120: div>p.note margin-bottom | div>p margin-bottom | div>p.dinner margin-bottom | div>p.sub margin-bottom | .menu-foot>p margin-bottom | .side-box>p margin-bottom
+  22 x90: .hero>div.wrap.hero-grid padding-top | .scene>div.ticket padding-top | .scene>div.ticket padding-bottom | div#map row-gap | h1#hero-h margin-bottom | .plate>div.steamer padding-top
+  20 x69: p#h-hours margin-bottom | .pin-spacer>div.cart-pin padding-top | .wrap>div.small-print padding-top | .wrap>div.foot-base column-gap | .pin-spacer>div.cart-pin padding-bottom | .cart-pin>div.wrap.cart-head margin-bottom
+  28 x51: .actions>a.btn-call padding-right | .actions>a.btn-call padding-left | h2#info-h margin-bottom | .small-print>ul column-gap | .hero-text>p.what margin-bottom | p#h-hours margin-bottom
+  56 x51: section#info padding-top | section#info padding-bottom | section#holidays padding-top | section#holidays padding-bottom | .hero>div.wrap.hero-grid padding-top | .band>div.wrap.band-grid padding-top
+  7 x36: #hero-rows>div.srow padding-top | #hero-rows>div.srow padding-bottom
+  1 x30: .closed>span padding-bottom
+  40 x15: #order>div.wrap.cart-foot padding-bottom | p#signoff margin-top | div#map row-gap | div#map column-gap | #main>div.wrap.menu-head padding-top
+  14.25 x12: div>p margin-bottom
+  86.4 x12: .wrap>div.visit-grid row-gap | .wrap>div.visit-grid column-gap | .wrap>div.find-grid row-gap | .wrap>div.find-grid column-gap
+
+missing interactive states
+  smooth x1347: a.skip | .wrap>a.brand | li>a | #nav>a.btn-call | #top>a.brand | .lang>button.is-active
+  active x1320: a.skip | .wrap>a.brand | li>a | .lang>button.is-active | .lang>button | #top>a.brand
+  disabled x978: .lang>button.is-active | .lang>button | .wrap>button.burger | .dcard>button.cart-tick | .filters>button | .tally>button.t-less
+  underline x168: a.skip | .actions>a.link-gold | .where>a | .total>a | li>a | p>a
+  hover x30: .wrap>button.burger | input#sh-table | button#sheet-clear | input#q
+
+prices/times without tabular-nums
+  div>p x54: Small, medium and large  | Set dinners start at $38 | Weekdays from 9:00 am | Weekends from 8:30 am | 星期一至五，小點、中點、大點一律$5.50，公眾 | 晚宴套餐每席（十位）$388 起，訂金 $100
+  .dcard>div.pr x54: 大點 $7.50 | 中點 $6.50 | 特點 $8.50 | 頂點 $9.80 | 大点 $7.50 | 中点 $6.50
+  .srow>span.tier x42: 大點 $7.50 | 中點 $6.50 | 特點 $8.50 | 大点 $7.50 | 中点 $6.50 | 特点 $8.50
+  td>span.nw x42: 8:30 am – 8:00 pm | 10:00 am – 8:00 pm | 9:00 am – 10:00 pm | 10:00 am – 9:30 pm | 上午8:30 – 晚上8:00 | 上午10:00 – 晚上8:00
+  td>span.sub x42: Dim sum until 4:00 pm | Dim sum until 8:00 pm | Dim sum until 3:00 pm | 點心至下午4:00 | 點心至晚上8:00 | 點心至下午3:00
+  span>span.nw x24: 9:00 am – 9:30 pm | 9:00 am – 10:00 pm | 8:30 am – 10:00 pm | 8:30 am – 9:30 pm | 上午9:00 – 晚上9:30 | 上午9:00 – 晚上10:00
+  span>small x24: Dim sum until 3:00 pm | Dim sum until 4:00 pm | 點心至下午3:00 | 點心至下午4:00 | 点心到15:00 | 点心到16:00
+  ul>li x24: Tea $2.00 per person, se | 茶芥每位 $2.00，長者 $1.50。 | 茶位费每人 $2.00，老人 $1.50。 | $2.00 per person, $1.50  | Monday to Friday before  | 每位 $2.00，65 歲或以上長者 $1.50
+  li>span.when x18: 8:30 – 10:30 am | 10:30 am – 1:30 pm | 1:30 – 4:00 pm | 上午8:30 – 10:30 | 上午10:30 – 下午1:30 | 下午1:30 – 4:00
+  .sum-row>span x9: Tea, 2 × $2.00 | 茶芥 2 位 × $2.00 | 茶位费 2 人 × $2.00
+  span#h-now x6: Dim sum tomorrow from 9: | 明日上午9:00起供應點心 | 明天9:00起供应点心
+  p#h-hours x6: Today 9:00 am – 9:30 pm | 今日上午9:00 – 晚上9:30 | 今天9:00–21:30
+  p#early-price x6: $5.50
+  span#pick-total x6: 1 dish, $7.50 | 已剔 1 款，共 $7.50 | 已选 1 样，共 $7.50
+
+lines over the limit
+  en@1440 .wrap>p.fine 77.6ch
+  zh-Hant@1440 .wrap>p.fine 37.0em
+  zh-Hans@1440 .wrap>p.fine 39.1em
+  en@1440 .menu-foot>p 78.8ch
+  zh-Hant@1440 .menu-foot>p 44.9em
+  zh-Hans@1440 .menu-foot>p 45.9em
+
+headings
+  en@390 h1#hero-h lh 0.98
+  en@1440 h1#hero-h lh 0.98
+  zh-Hant@390 div>h3 lh 1.30
+  zh-Hant@1440 div>h3 lh 1.30
+  zh-Hans@390 div>h3 lh 1.30
+  zh-Hans@1440 div>h3 lh 1.30
+  en@390 div>h1 tracking normal
+  en@1440 div>h1 tracking normal

@@ -1,5 +1,26 @@
 # Dim sum site: state notes
 
+## 2026-11-11 Supabase style tokens (AnimatedWebs)
+- The user asked for "jade green with crisp whites, charcoal grays or deep blacks". The AnimatedWebs library has 43 tech-brand styles and no jade match, so the closest 3 were offered (Supabase, Shopify, Vercel) and the user picked Supabase.
+- Applied as tokens in `site.css :root`, not one-off values: white canvas (`--paper` #fff), light charcoal alternate sections (`--paper-2` #f4f4f4: the cart, holiday hours, wait-bar tracks), Void text and headings (`--text` #111), Ash secondary text (`--muted` #525252), `--radius` 8px and `--radius-lg` 16px, one shadow (`--shadow`, `--shadow-dark` on jade). The story section moved from warm paper to white.
+- Kept on purpose: jade for bands, links and controls; red for the main button and chop; gold for the sign and big numbers; Archivo and the 8-step type scale; printed parts square. Not used: Supabase's purple and orange, its fonts, logo, copy or imagery.
+- Checked: polish audit passes (8 sizes, 3 weights, 0 off-scale spacing, 0 errors, no overflow); contrast lowest pair Ash on #f4f4f4 7.1:1; screenshots EN desktop and phone, 繁 menu on phone.
+- Not committed.
+
+## 2026-11-11 hero steam (AnimatedWebs)
+- Took only the steam technique from the AnimatedWebs template "Steaming Ramen Noodle Bar" (free; commercial use allowed, don't resell the prompt). The rest of that template (ramen bowl, bowl builder, Rubik fonts, cream palette) was not used.
+- Hero steam: 5 SVG wisps (3 under 768px) curled by feTurbulence + feDisplacementMap (baseFrequency 0.012 0.04, scale 18, one octave; two looked like rippled rope). The template animates the noise seed, which jumps; here the base frequency drifts smoothly over 10s instead. Mouse hover on the steamer puffs it for 1s. The filter's SMIL animation pauses off screen and with reduced motion; reduced motion shows the wisps still at 50%.
+- Checked: polish audit still passes (8 sizes, 3 weights, 0 off-scale spacing, 0 errors, no overflow, reduced motion leaves nothing running); 3 wisps at 390, 5 at 1440; puff on and off after 1s. Not checked on a real phone for frame rate.
+- Not committed.
+
+## 2026-11-11 polish pass (this session: dim sum only)
+- Goal: premium detail without changing content, features, i18n or motion. Audit script: `Claude outputs/audit/dimsum-polish-audit.mjs`; reports `dimsum-before.txt`, `dimsum-pass1.txt` to `dimsum-pass3.txt`, `dimsum-after.txt` beside it.
+- Before → after (all 3 pages x 3 languages x 390/1440): font sizes 24 per page view / 41 site-wide → 8 / 8 (16 18 22 28 40 64 144 288); weights 6 → 3; widest line 78.8ch / 45.9em → 65ch / 32.6em; off-scale spacing 52 values in 12,915 uses → 0; controls with no pressed state up to 101 per view → 0, no transition 102 → 0, no disabled style 78 → 0, no hover 3 → 0; prices and times without tabular numbers 384 → 0; heading issues 8 → 0. Overflow, console errors, broken links and reduced-motion leftovers were 0 before and after.
+- Fluid clamp() sizes and spacing replaced by fixed steps at 901px and 1200px. Section headings that were 25px (Before you visit, Holiday hours, Private room) now match the others (40 / 64).
+- Fixed from screenshots: burger lines overflowing its box, private room heading touching its text, peak wait-bar chip taller than the bar, the takeout phone link breaking its line. 繁/简: phrase-level line breaks for paragraphs; the hero address breaks before its bracket.
+- Hero unchanged: it already has its own layout (vertical sign | text | steamer with the order sheet), not a card over a photo.
+- Not committed.
+
 ## 2026-11-11 personality pass (this session: dim sum only)
 - Goal: the order sheet (點心紙) as the full-scale hero, red ticks and a stamp landing, one bold colour, no thin boxes. Content, photos and features unchanged.
 - DESIGN.md updated first (hero, jade bands, no boxes, layout diagrams, motion, removed decoration).

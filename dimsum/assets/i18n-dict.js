@@ -52,7 +52,7 @@
     'today.today': T('Today', '今日', '今天'),
     'today.now': T('Now', '現在', '现在'),
     'today.where': T('Where', '地址', '地址'),
-    'today.whereval': T('3150 Ellesworth Rd, at Kennedy and Hwy 7', '3150 Ellesworth Rd（近 Kennedy 路與 7 號公路）', '3150 Ellesworth Rd（Kennedy 路和 7 号公路路口）'),
+    'today.whereval': T('3150 Ellesworth Rd, at Kennedy and Hwy 7', '3150 Ellesworth\u00a0Rd（近\u00a0Kennedy\u00a0路與\u00a07\u00a0號公路）', '3150 Ellesworth\u00a0Rd（Kennedy\u00a0路和\u00a07\u00a0号公路路口）'),
     'today.aria': T('Today at Jade Basket', '翠籠軒今日營業資料', '翠笼轩今天的营业信息'),
     'st.open': T('Open now', '營業中', '营业中'),
     'st.closed': T('Closed now', '休息中', '休息中'),
