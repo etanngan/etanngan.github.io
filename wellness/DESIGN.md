@@ -22,6 +22,12 @@ Demo site for a made-up clinic. The address (Unit 4, 410 Tamsworth Drive), the 5
   - Hours and location: the back of the card (opening hours, holiday hours, address, map).
   - Dividers: the card's printed double rule (a 2px line over a 1px line) at the top of each section.
   - Footer: the card's printed bottom line, the 24-hour note, set above the address and hours.
+- The room it lives in: a daylit treatment room. Daylight comes through window blinds, so the light always arrives in soft bands. That gives the site its second, quieter material, used in four places only:
+  - Intro: the blinds open on the page (once per visit).
+  - Hero: bands of window light lie across the linen counter and the card, drifting very slowly.
+  - "Open until 8 pm on weekdays": one treatment room from 9 am to 8 pm, pinned while you scroll. The light moves, warms, fades, and the lamp comes on. Each part of the day says something true (opening time, lunch-hour massage, who works evenings, Saturday and Sunday hours).
+  - Service photos open like blinds as they come into view.
+- The hands-on piece is the card itself: at the end of the home page you circle a service, a day and a time on a blank appointment card, the pen writes who you would see and the fee, and the main button carries those choices into the request form.
 - What stays quiet: no icons apart from the menu bars and the calendar arrows, no cards for anything except the appointment card itself, no tinted section boxes, one shadow on the whole site (the appointment card lying on the photo/linen), photos with square corners.
 
 ## 3. Colour
@@ -70,7 +76,7 @@ Why not the previous lake blue: blue-on-white with blue buttons everywhere is th
      └─────────────────────────────────┘
   ```
 - Desktop: the photo fills the right 58% of the hero; the card sits on the left, overlapping the photo edge as if laid on the table.
-- Home section order: hero card; services and fees (price list); who you'll see (practitioners, credentials, languages, evenings); insurance and direct billing + your first visit (a real 1-2-3-4 sequence); hours and location (card back: hours, holiday hours, address, parking, step-free access, map); good to know (cancelling, payment, languages, under 16, gift cards, emergencies); page end with the main action.
+- Home section order: hero card in window light; services and fees (price list); a day in the room (pinned, 9 am to 8 pm); who you'll see (practitioners, credentials, languages, evenings); direct billing + your first visit on a full-width spruce band (the one bold colour block); hours and location (card back: hours, holiday hours, address, parking, step-free access, map); good to know (cancelling, payment, languages, under 16, gift cards, emergencies); page end: the fill-in card with the main action.
 - Services page: page head with jump links; one block per service (photo, plain description, price list, who you see, main button that preselects the service); questions; direct billing; page end.
 - Booking page: page head; the "we don't ask about your health online" note directly above the form; the form as the appointment card; aside (desktop) or after the form (phone) with call, hours, emergency note.
 - Alignment: left-aligned text everywhere; container 1160px on desktop with 32px gutters, 16px gutters on phone.
@@ -91,9 +97,13 @@ Why not the previous lake blue: blue-on-white with blue buttons everywhere is th
 - Alt text written in all 3 languages: yes.
 
 ## 8. Motion
-- The one moment: on the booking confirmation, the ballpoint circle draws itself round the weekday you asked for (0.6s stroke). Content is readable before it starts.
-- Interaction feedback: button press moves 1px; the menu and calendar open instantly; errors appear at once.
-- Reduced motion: the circle is drawn already, nothing moves, scrolling is instant.
+- Character: slow, calm, warm. Long sine and power2 eases, scroll scrubbing with a 1 to 1.5 s lag, cross-fades instead of slides. Nothing bounces, overshoots, stamps or snaps.
+- Intro (CSS only, so it never waits for a CDN): 12 linen blind slats over the page turn open top to bottom, then fade. About 1.5 s, once per visit (sessionStorage), skipped by any tap, scroll or key, never with reduced motion.
+- Hero: the pen circles today's weekday (0.9 s) and underlines today's hours (0.7 s), once, after the intro. The window light drifts on a 40 s loop and pauses off screen. All text is readable from the first frame.
+- Scroll (GSAP 3.12.5 + ScrollTrigger from cdnjs with SRI, deferred so hours never wait): hero card and photo part slowly; service photos open like blinds; the room is pinned while the clock runs 9:00 am to 8:00 pm (light moves and warms, the room dims, the lamp comes on, the caption cross-fades between the four parts of the day); the card back slides square on the counter; the fill-in card slides across the counter.
+- Fallback: without GSAP, or with reduced motion, it is a normal page: the room is a still photo with the four parts of the day as a plain list, every photo is visible, nothing is pinned.
+- Interaction: circling an option on the fill-in card draws the pen ring (0.6 s); button press moves 1px; menu and calendar open instantly; errors appear at once. On the booking confirmation the ring draws round your day.
+- Reduced motion: no intro, no drift, rings and underline drawn already, nothing pinned, scrolling instant.
 
 ## 9. Language notes
 - HK wording for 繁: 物理治療, 按摩治療 (註冊按摩治療師 in each RMT's credential), 針灸, 拔罐, 整骨手法治療, 申請預約, 覆診, 直接向保險公司收費 (nav label 保險直接收費), 泊車, 洗手間, 醫生紙, 廣東話, 普通話, 電郵, 短訊, 公眾假期, 應診時間, 輪椅. Times written 上午9:00 – 晚上8:00.
@@ -128,3 +138,8 @@ Don't:
 - Between 1000 and 1239px wide the header nav shows only "Services and fees" and "Hours and location" so the toggle and the main button never get pushed off screen; the header phone number shows from 1520px. Everything else is still one tap away on the page.
 - Removed one more decoration while finishing: the "Day" prefix printed in the weekday strip on the completed card (星期 / 周 was printed twice next to the row label). The hero card keeps it because there the row label is "Today".
 - Restored the footer's "since 2015" line from the original site: years open is the one piece of trust a made-up clinic can honestly carry.
+- (Craft pass) No handwriting font for the pen. The card is read by people in their 60s, so written values stay in Atkinson Hyperlegible; the pen shows through ballpoint blue and drawn marks (rings, underline).
+- (Craft pass) The big clock in the day-in-the-room scene is display type, so it uses Noto Sans HK/SC 400 with a plain zero (Atkinson's slashed zero looked technical at 88px). 52px on phones, 88px on desktop: every value from 9:00 am to 8:00 pm, including 下午12:00, fits its column at 1000px.
+- (Craft pass) The day-in-the-room scene reuses the hero's room photo on purpose: it is the same room through the day. Its notes about who works evenings come straight from the practitioner list, nothing new is claimed.
+- (Craft pass) The fill-in card only warns about what the practitioner list states (Jonathan Lau's evenings, Wen Zhao weekdays only, Sofia Marchetti's three days, massage evenings Mon, Wed, Fri). It never asks about health; it sends service, date and time of day to the request form, which still asks for name and phone there.
+- (Craft pass) Removed decoration: the hero photo's slow zoom idea and a sign-off line under the footer; the window light already does that job.

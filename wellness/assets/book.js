@@ -388,6 +388,16 @@
   if (q && svc(q)) fService.value = q;
   renderLength(); renderPrac();
   [1, 2].forEach(function (n) { setDate(slots[n], ''); });
+  /* the home page's fill-in card can hand over a day and a time of day: ?date=YYYY-MM-DD&win=am|pm|eve */
+  var qp = new URLSearchParams(location.search), qd = qp.get('date'), qw = qp.get('win');
+  if (qd && /^\d{4}-\d{2}-\d{2}$/.test(qd) && selectable(parse(qd))) {
+    setDate(slots[1], qd);
+    slots[1].view = new Date(parse(qd).getFullYear(), parse(qd).getMonth(), 1);
+  }
+  if (qw && /^(am|pm|eve)$/.test(qw)) {
+    var qbox = slots[1].el.querySelector('input[value="' + qw + '"]');
+    if (qbox && !qbox.disabled) qbox.checked = true;
+  }
   applyLang();
   doc.addEventListener('mp:langchange', applyLang);
 })();

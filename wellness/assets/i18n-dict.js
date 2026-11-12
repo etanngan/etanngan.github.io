@@ -276,5 +276,33 @@
   D('ok.again', 'Make another request', '再申請一次', '再申请一次');
   D('ok.home', 'Back to home', '返回主頁', '返回首页');
 
+  /* ---------- home: a day in the room ---------- */
+  D('day.h', 'Open until 8 pm on weekdays', '平日應診至晚上8時', '工作日营业到晚上8点');
+  D('day.p', 'Morning, lunch hour or after work, there is a time that fits.', '早上、午飯時間或者放工後，都有時間預約。', '上午、午休或者下班以后，都有时间可以约。');
+  D('day.0t', 'Mornings, from 9:00 am', '上午9時開門', '上午9:00开门');
+  D('day.0p', 'We open at 9:00 am, Monday to Saturday.', '星期一至六，上午9時開門。', '周一到周六，上午9:00开门。');
+  D('day.1t', 'Lunch hour and afternoons', '午飯時間及下午', '午休和下午');
+  D('day.1p', 'A 30-minute massage fits in a lunch hour. Acupuncture is Monday to Friday.', '30分鐘按摩，午飯時間做得完。針灸逢星期一至五。', '30分钟按摩，午休时间就能做完。针灸周一到周五都有。');
+  D('day.2t', 'Evenings until 8:00 pm', '晚上應診至8時', '晚上营业到20:00');
+  D('day.2p', 'Monday to Friday. Evenings with Mei-Ling Cheung (Mon, Wed), Jonathan Lau (Tue, Thu) and Daniel Ho (Fri).', '星期一至五。晚上有張美玲（星期一、三）、劉卓賢（星期二、四）及何俊文（星期五）。', '周一到周五。晚上有张美玲（周一、周三）、刘卓贤（周二、周四）和何俊文（周五）。');
+  D('day.3t', '8:00 pm, closed for the night', '晚上8時休息', '20:00 关门');
+  D('day.3p', 'Saturdays 9:00 am to 4:00 pm. Closed Sundays and statutory holidays.', '星期六上午9時至下午4時。星期日及公眾假期休息。', '周六9:00–16:00。周日和法定节假日休息。');
+
+  /* ---------- home: the fill-in card ---------- */
+  D('pick.p', 'Circle a service, a day and a time on the card. We copy them onto the request form for you.', '在預約卡上圈選服務、日子及時間，我們會幫你填入預約表格。', '在预约卡上圈出服务、日期和时间，我们帮您填进预约表。');
+  D('pick.card', 'Appointment card', '預約卡', '预约卡');
+  D('pick.for', 'For', '服務', '服务');
+  D('pick.day', 'Day', '日子', '日期');
+  D('pick.time', 'Time', '時間', '时间');
+  D('pick.with', 'With', '治療師', '治疗师');
+  D('pick.fee', 'Fee', '收費', '费用');
+  D('pick.ost', 'Osteopathy', '整骨治療', '整骨治疗');
+  D('pick.or', ' or ', ' 或 ', ' 或 ');
+  D('pick.first', 'Circle a service first', '先圈選服務', '先圈出服务');
+  D('pick.n.phy', 'Jonathan Lau’s evenings are Tuesday and Thursday.', '劉卓賢晚上應診的日子是星期二及四。', '刘卓贤晚上出诊是周二和周四。');
+  D('pick.n.mas', 'Massage evenings are Monday, Wednesday and Friday.', '按摩治療晚上時段逢星期一、三、五。', '按摩晚上时段在周一、周三、周五。');
+  D('pick.n.acu', 'Wen Zhao works Monday to Friday.', '趙雯逢星期一至五應診。', '赵雯周一到周五出诊。');
+  D('pick.n.ost', 'Sofia Marchetti works Mondays, Wednesdays and Saturdays.', 'Sofia Marchetti 逢星期一、三、六應診。', 'Sofia Marchetti 周一、周三、周六出诊。');
+
   window.MPi18n.init(d);
 })();

@@ -3,6 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+/* The blinds intro plays once per visit (this tab), never with reduced motion. */
+(function () { try {
+  var seen = sessionStorage.getItem('sw-intro'), calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!seen && !calm) { document.documentElement.classList.add('intro'); sessionStorage.setItem('sw-intro', '1'); }
+} catch (e) {} })();
+</script>
 <script src="../shared/i18n.js"></script>
 <script>(function(){var h=document.documentElement;function f(){if(h.lang==='zh-Hant')h.lang='zh-Hant-HK';}f();document.addEventListener('mp:langchange',f);})();</script>
 <title data-i18n="home.title">Stillwater Wellness Clinic | Physiotherapy, massage and acupuncture in Markham</title>
@@ -18,7 +25,12 @@
 <link rel="stylesheet" href="assets/site.css">
 <script src="assets/i18n-dict.js"></script>
 </head>
-<body>
+<body class="page-home">
+<div class="intro-layer" aria-hidden="true">
+  <i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i><i style="--i:5"></i>
+  <i style="--i:6"></i><i style="--i:7"></i><i style="--i:8"></i><i style="--i:9"></i><i style="--i:10"></i><i style="--i:11"></i>
+  <p class="mark"><b lang="en">Stillwater</b><b lang="zh-Hant-HK">靜水堂</b></p>
+</div>
 <a class="skip" href="#main" data-i18n="a11y.skip">Skip to content</a>
 
 <header class="site-head">
@@ -49,8 +61,10 @@
       <source media="(max-width: 999px)" type="image/webp" srcset="assets/img/room-wide-800.webp 800w, assets/img/room-wide-1200.webp 1200w" sizes="100vw" width="800" height="400">
       <img src="assets/img/room-1200.webp" srcset="assets/img/room-800.webp 800w, assets/img/room-1200.webp 1200w, assets/img/room-1800.webp 1800w" sizes="58vw" width="1200" height="800" fetchpriority="high" alt="One of our treatment rooms: a massage table made up with a white sheet, in daylight" data-i18n-attr="alt:hero.alt">
     </picture>
+    <div class="sun" aria-hidden="true"></div>
     <div class="wrap hero-wrap">
       <div class="appt-card hero-card">
+        <i class="card-light" aria-hidden="true"></i>
         <div class="card-head">
           <h1 class="card-name" id="hero-name"><span class="n1" data-i18n="card.n1">Stillwater Wellness Clinic</span> <span class="n2" data-i18n="card.n2" data-other-lang lang="zh-Hant-HK">靜水堂</span></h1>
           <p class="card-what" data-i18n="card.what">Physiotherapy, massage therapy and acupuncture in Markham</p>
@@ -73,25 +87,25 @@
       </div>
       <ul class="svc-list">
         <li class="svc">
-          <img src="assets/img/physio-600.webp" width="600" height="450" loading="lazy" alt="A physiotherapist guiding a patient through an arm exercise with light weights" data-i18n-attr="alt:alt.physio">
+          <span class="pic"><img src="assets/img/physio-600.webp" width="600" height="450" loading="lazy" alt="A physiotherapist guiding a patient through an arm exercise with light weights" data-i18n-attr="alt:alt.physio"></span>
           <h3><a href="services.html#physio" data-i18n="svc.phy.h">Physiotherapy</a></h3>
           <p data-i18n="svc.phy.p">Assessment and exercises for back and neck pain, injuries and recovery after surgery.</p>
           <p class="from" data-i18n="svc.phy.f">First visit $130, then from $80</p>
         </li>
         <li class="svc">
-          <img src="assets/img/massage-600.webp" width="600" height="450" loading="lazy" alt="A massage therapist working on a patient’s upper back" data-i18n-attr="alt:alt.massage">
+          <span class="pic"><img src="assets/img/massage-600.webp" width="600" height="450" loading="lazy" alt="A massage therapist working on a patient’s upper back" data-i18n-attr="alt:alt.massage"></span>
           <h3><a href="services.html#massage" data-i18n="svc.mas.h">Massage therapy</a></h3>
           <p data-i18n="svc.mas.p">For sore muscles and a stiff neck, back or shoulders. Prenatal massage too.</p>
           <p class="from" data-i18n="svc.mas.f">From $70 for 30 minutes</p>
         </li>
         <li class="svc">
-          <img src="assets/img/acupuncture-600.webp" width="600" height="450" loading="lazy" alt="An acupuncturist placing thin needles in a patient’s upper back and neck" data-i18n-attr="alt:alt.acu">
+          <span class="pic"><img src="assets/img/acupuncture-600.webp" width="600" height="450" loading="lazy" alt="An acupuncturist placing thin needles in a patient’s upper back and neck" data-i18n-attr="alt:alt.acu"></span>
           <h3><a href="services.html#acupuncture" data-i18n="svc.acu.h">Acupuncture</a></h3>
           <p data-i18n="svc.acu.p">Traditional Chinese acupuncture with sterile, single-use needles. Cupping too.</p>
           <p class="from" data-i18n="svc.acu.f">First visit $125, then from $85</p>
         </li>
         <li class="svc">
-          <img src="assets/img/osteo-600.webp" width="600" height="450" loading="lazy" alt="A practitioner checking how a patient’s shoulder moves" data-i18n-attr="alt:alt.osteo">
+          <span class="pic"><img src="assets/img/osteo-600.webp" width="600" height="450" loading="lazy" alt="A practitioner checking how a patient’s shoulder moves" data-i18n-attr="alt:alt.osteo"></span>
           <h3><a href="services.html#osteo" data-i18n="svc.ost.h">Osteopathic manual therapy</a></h3>
           <p data-i18n="svc.ost.p">Gentle hands-on treatment for posture, back and joint problems. You stay fully clothed.</p>
           <p class="from" data-i18n-html="svc.ost.f">First visit $125, then from $75, <span class="nowrap">plus HST</span></p>
@@ -101,8 +115,30 @@
     </div>
   </section>
 
+  <section class="day" id="day" aria-labelledby="day-h">
+    <div class="day-pin">
+      <div class="wrap day-grid">
+        <div class="day-copy dbl">
+          <h2 id="day-h" data-i18n="day.h">Open until 8 pm on weekdays</h2>
+          <p class="day-lede" data-i18n="day.p">Morning, lunch hour or after work, there is a time that fits.</p>
+          <p class="clock" aria-hidden="true"><span id="clock">9:00 am</span></p>
+          <ol class="parts">
+            <li class="on"><b data-i18n="day.0t">Mornings, from 9:00 am</b><p data-i18n="day.0p">We open at 9:00 am, Monday to Saturday.</p></li>
+            <li><b data-i18n="day.1t">Lunch hour and afternoons</b><p data-i18n="day.1p">A 30-minute massage fits in a lunch hour. Acupuncture is Monday to Friday.</p></li>
+            <li><b data-i18n="day.2t">Evenings until 8:00 pm</b><p data-i18n="day.2p">Monday to Friday. Evenings with Mei-Ling Cheung (Mon, Wed), Jonathan Lau (Tue, Thu) and Daniel Ho (Fri).</p></li>
+            <li><b data-i18n="day.3t">8:00 pm, closed for the night</b><p data-i18n="day.3p">Saturdays 9:00 am to 4:00 pm. Closed Sundays and statutory holidays.</p></li>
+          </ol>
+        </div>
+        <div class="room" aria-hidden="true">
+          <img src="assets/img/room-1200.webp" srcset="assets/img/room-800.webp 800w, assets/img/room-1200.webp 1200w, assets/img/room-1800.webp 1800w" sizes="(min-width: 1000px) 56vw, 100vw" width="1200" height="800" loading="lazy" alt="">
+          <i class="r-sun"></i><i class="r-warm"></i><i class="r-dusk"></i><i class="r-lamp"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="sec" id="team" aria-labelledby="team-h">
-    <div class="wrap">
+    <div class="wrap team-wrap">
       <div class="sec-h dbl">
         <h2 id="team-h" data-i18n="team.h">Who you’ll see</h2>
         <p data-i18n="team.p">Our physiotherapist, massage therapists and acupuncturist are registered with their Ontario colleges. Tell us when you book if you would rather see a man or a woman.</p>
@@ -118,10 +154,11 @@
     </div>
   </section>
 
-  <section class="sec" id="insurance" aria-labelledby="ins-h">
+  <section class="sec band" id="insurance" aria-labelledby="ins-h">
     <div class="wrap two">
       <div class="ins">
         <div class="sec-h dbl"><h2 id="ins-h" data-i18n="ins.h">Direct billing</h2></div>
+        <ul class="insurers" lang="en"><li>Sun Life</li><li>Manulife</li><li>Canada Life</li><li>Green Shield</li></ul>
         <p data-i18n="ins.p1">We bill most group insurance plans directly, including Sun Life, Manulife, Canada Life and Green Shield. You pay only the part your plan does not cover.</p>
         <p data-i18n="ins.p2">Bring your insurance card to your first visit.</p>
         <p data-i18n="ins.p3">If we can’t bill your plan, you get a receipt with your practitioner’s registration number so you can claim it yourself.</p>
@@ -196,19 +233,52 @@
         <div><dt data-i18n="info.lang.h">Languages</dt><dd data-i18n="info.lang.p">The front desk speaks English, Cantonese and Mandarin. Each practitioner’s languages are listed above.</dd></div>
         <div><dt data-i18n="info.kids.h">Under 16</dt><dd data-i18n="info.kids.p">Patients under 16 need a parent or guardian with them.</dd></div>
         <div><dt data-i18n="info.gift.h">Gift cards</dt><dd data-i18n="info.gift.p">Sold at the front desk in any amount.</dd></div>
-        <div><dt data-i18n="info.emerg.h">Emergencies</dt><dd data-i18n="info.emerg.p">We do not treat emergencies. If it is urgent, call 911 or go to the nearest emergency department.</dd></div>
+        <div class="info-emerg"><dt data-i18n="info.emerg.h">Emergencies</dt><dd data-i18n="info.emerg.p">We do not treat emergencies. If it is urgent, call 911 or go to the nearest emergency department.</dd></div>
       </dl>
     </div>
   </section>
 
-  <section class="page-end" aria-labelledby="end-h">
-    <div class="wrap">
+  <section class="page-end" id="ask" aria-labelledby="end-h">
+    <div class="sun" aria-hidden="true"></div>
+    <div class="wrap end-grid">
       <div class="end-box dbl">
         <h2 id="end-h" data-i18n="end.h">Ask for a time that suits you</h2>
         <p data-i18n="end.p">Tell us the service and two times that work for you. We call back within one business day to confirm.</p>
-        <a class="btn btn-main" href="book.html" data-i18n="cta">Request an appointment</a>
+        <p data-i18n="pick.p">Circle a service, a day and a time on the card. We copy them onto the request form for you.</p>
         <p class="call-line"><span data-i18n="call.or">Or call</span> <a href="tel:+19055550117" lang="en">(905) 555-0117</a></p>
       </div>
+      <form class="appt-card pick-card" id="pick" action="book.html" method="get">
+        <div class="card-head">
+          <p class="card-name"><span class="n1" data-i18n="card.n1">Stillwater Wellness Clinic</span> <span class="n2" data-i18n="card.n2" data-other-lang lang="zh-Hant-HK">靜水堂</span></p>
+          <p class="card-sub" data-i18n="pick.card">Appointment card</p>
+        </div>
+        <div class="card-row pick-row" role="radiogroup" aria-labelledby="pk-for">
+          <span class="lbl" id="pk-for" data-i18n="pick.for">For</span>
+          <div class="opts svc-opts">
+            <label class="opt"><input type="radio" name="service" value="physio"><span data-i18n="svc.phy.h">Physiotherapy</span></label>
+            <label class="opt"><input type="radio" name="service" value="massage"><span data-i18n="svc.mas.h">Massage therapy</span></label>
+            <label class="opt"><input type="radio" name="service" value="acupuncture"><span data-i18n="svc.acu.h">Acupuncture</span></label>
+            <label class="opt"><input type="radio" name="service" value="osteo"><span data-i18n="pick.ost">Osteopathy</span></label>
+          </div>
+        </div>
+        <div class="card-row pick-row" role="radiogroup" aria-labelledby="pk-day">
+          <span class="lbl" id="pk-day" data-i18n="pick.day">Day</span>
+          <div class="opts day-opts" id="pick-days"></div>
+          <p class="written" id="pick-date"></p>
+        </div>
+        <div class="card-row pick-row" role="radiogroup" aria-labelledby="pk-time">
+          <span class="lbl" id="pk-time" data-i18n="pick.time">Time</span>
+          <div class="opts time-opts">
+            <label class="opt"><input type="radio" name="win" value="am"><span><span data-i18n="bk.am">Morning</span> <small data-i18n="bk.am.s">9 to 12</small></span></label>
+            <label class="opt"><input type="radio" name="win" value="pm"><span><span data-i18n="bk.pm">Afternoon</span> <small data-i18n="bk.pm.s">12 to 5</small></span></label>
+            <label class="opt"><input type="radio" name="win" value="eve"><span><span data-i18n="bk.eve">Evening</span> <small data-i18n="bk.eve.s">5 to 8</small></span></label>
+          </div>
+        </div>
+        <div class="card-row"><span class="lbl" data-i18n="pick.with">With</span><span class="val" id="pick-with" aria-live="polite"></span></div>
+        <div class="card-row"><span class="lbl" data-i18n="pick.fee">Fee</span><span class="val" id="pick-fee"></span></div>
+        <button class="btn btn-main" type="submit" data-i18n="cta">Request an appointment</button>
+        <p class="card-note" data-i18n="note.24">Please give 24 hours’ notice to change or cancel.</p>
+      </form>
     </div>
   </section>
 </main>
@@ -244,6 +314,8 @@
   </div>
 </footer>
 
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="assets/site.js"></script>
 </body>
 </html>
