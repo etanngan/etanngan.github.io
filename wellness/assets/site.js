@@ -76,7 +76,8 @@
       }
     }
     out.innerHTML = '';
-    out.appendChild(doc.createTextNode(main));
+    var ink = doc.createElement('span'); ink.className = 'ink'; ink.textContent = main; // the pen underlines it on the home card
+    out.appendChild(ink);
     if (next) { var s = doc.createElement('small'); s.textContent = next; out.appendChild(s); }
   }
 
@@ -133,4 +134,151 @@
   function all() { renderToday(); markHours(); otherLang(); mapLang(); }
   all();
   doc.addEventListener('mp:langchange', all);
+
+  if (!doc.body.classList.contains('page-home')) return;
+  var root = doc.documentElement;
+
+  /* ---------- blinds intro: ends by itself, or on a tap, scroll or key ---------- */
+  var intro = root.classList.contains('intro'), EV = ['wheel', 'touchmove', 'keydown', 'pointerdown'];
+  function endIntro() { root.classList.add('intro-done'); EV.forEach(function (t) { window.removeEventListener(t, endIntro); }); }
+  if (intro) { setTimeout(endIntro, 1600); EV.forEach(function (t) { window.addEventListener(t, endIntro, { passive: true }); }); }
+  // the pen marks on the hero card draw once; after that a language switch shows them already drawn
+  setTimeout(function () { root.classList.add('drawn'); }, intro ? 3200 : 2000);
+
+  /* ---------- the window light pauses when the hero is off screen ---------- */
+  var hero = doc.querySelector('.hero');
+  if (hero && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) { hero.classList.toggle('is-away', !es[0].isIntersecting); }).observe(hero);
+  }
+
+  /* ---------- the fill-in card: circle a service, a day and a time ---------- */
+  var pick = doc.getElementById('pick');
+  var PRAC = { physio: ['p.jl.n'], massage: ['p.mc.n', 'p.dh.n'], acupuncture: ['p.wz.n'], osteo: ['p.sm.n'] };
+  var FEE = { physio: 'svc.phy.f', massage: 'svc.mas.f', acupuncture: 'svc.acu.f', osteo: 'svc.ost.f' };
+  function fmtDay(d) {
+    try { return new Intl.DateTimeFormat({ en: 'en-CA', 'zh-Hant': 'zh-HK', 'zh-Hans': 'zh-CN' }[I.lang], { weekday: 'long', month: 'long', day: 'numeric' }).format(d); }
+    catch (e) { return keyOf(d); }
+  }
+  // the next open day with this weekday, from tomorrow on (the request form's own rule)
+  function nextDate(dow) {
+    var n = torontoNow(), d = new Date(n.getFullYear(), n.getMonth(), n.getDate() + 1);
+    for (var i = 0; i < 21; i++, d.setDate(d.getDate() + 1)) if (d.getDay() === dow && hoursFor(d)) return new Date(d);
+    return null;
+  }
+  function picked(name) { var c = pick.querySelector('input[name="' + name + '"]:checked'); return c ? c.value : ''; }
+  function write(el, nodes, animate) {
+    el.textContent = '';
+    nodes.forEach(function (n) { el.appendChild(n); });
+    if (animate) { el.classList.remove('inking'); void el.offsetWidth; el.classList.add('inking'); }
+  }
+  function txt(s, cls) { var e = doc.createElement(cls ? 'small' : 'span'); if (cls) e.className = cls; e.textContent = s; return e; }
+  function buildDays() {
+    var box = doc.getElementById('pick-days');
+    if (!box.children.length) {
+      for (var i = 1; i <= 6; i++) box.insertAdjacentHTML('beforeend', '<label class="opt"><input type="radio" name="date" value=""><span></span></label>');
+      pick.querySelectorAll('.opt').forEach(function (l) { l.insertAdjacentHTML('beforeend', RING); });
+    }
+    box.querySelectorAll('input').forEach(function (inp, k) {
+      var d = nextDate(k + 1);
+      if (!d && inp.checked) inp.checked = false;
+      inp.value = d ? keyOf(d) : ''; inp.disabled = !d;
+      inp.nextElementSibling.textContent = SHORT[I.lang][k + 1];
+      inp.setAttribute('aria-label', d ? fmtDay(d) : DAYS[I.lang][k + 1]);
+    });
+  }
+  function update(e) {
+    var svc = picked('service'), key = picked('date');
+    var d = key ? new Date(+key.slice(0, 4), +key.slice(5, 7) - 1, +key.slice(8, 10)) : null, dow = d ? d.getDay() : -1, hrs = d ? hoursFor(d) : null;
+    var eve = pick.querySelector('input[value="eve"]'), noEve = !!(hrs && hrs[1] < 18);
+    eve.disabled = noEve; if (noEve) eve.checked = false;
+    var ev = picked('win') === 'eve', who = e && e.target && e.target.name;
+    write(doc.getElementById('pick-date'), d ? [txt(fmtDay(d))] : [], who === 'date');
+    var withNodes = [], fee = doc.getElementById('pick-fee');
+    if (!svc) withNodes.push(txt(I.t('pick.first'), 'hint'));
+    else {
+      var names = PRAC[svc];
+      if (svc === 'massage' && ev && (dow === 1 || dow === 3)) names = ['p.mc.n'];
+      else if (svc === 'massage' && ((ev && dow === 5) || dow === 6)) names = ['p.dh.n'];
+      withNodes.push(txt(names.map(function (k) { return I.t(k); }).join(I.t('pick.or'))));
+      var note = svc === 'physio' && ev && dow > 0 && dow !== 2 && dow !== 4 ? I.t('pick.n.phy')
+        : svc === 'massage' && ev && (dow === 2 || dow === 4) ? I.t('pick.n.mas')
+        : svc === 'acupuncture' && dow === 6 ? I.t('pick.n.acu')
+        : svc === 'osteo' && (dow === 2 || dow === 4 || dow === 5) ? I.t('pick.n.ost')
+        : noEve ? I.t('bk.close.note').replace('{time}', fmtTime(hrs[1])) : '';
+      if (note) withNodes.push(txt(note, 'note'));
+    }
+    write(doc.getElementById('pick-with'), withNodes, !!who);
+    fee.innerHTML = svc ? I.t(FEE[svc]) : ''; // trusted, author-written string (osteo carries a nowrap span)
+    if (who === 'service') { fee.classList.remove('inking'); void fee.offsetWidth; fee.classList.add('inking'); }
+  }
+  if (pick) {
+    buildDays(); update();
+    pick.addEventListener('change', update);
+    doc.addEventListener('mp:langchange', function () { buildDays(); update(); });
+  }
+
+  /* ---------- scroll motion with GSAP ScrollTrigger (3.12.5, loaded with defer) ----------
+     Without GSAP, or with reduced motion, the page stays a normal page: a still room with the
+     day as a plain list, every photo open, nothing pinned. Slow eases and scrub lag only. */
+  var dayP = 0, lastHour = -1;
+  function setHour(p, force) {
+    dayP = p;
+    var h = 9 + Math.round(p * 11), clock = doc.getElementById('clock');
+    if (h === lastHour && !force) return;
+    lastHour = h;
+    if (clock) clock.textContent = fmtTime(h);
+    var part = h < 12 ? 0 : h < 17 ? 1 : h < 20 ? 2 : 3;
+    doc.querySelectorAll('.parts li').forEach(function (li, i) { li.classList.toggle('on', i === part); });
+  }
+  function initMotion() {
+    if (!window.gsap || !window.ScrollTrigger) return;
+    gsap.registerPlugin(ScrollTrigger);
+    var head = doc.querySelector('.site-head');
+    var top = function () { return 'top ' + (head ? head.offsetHeight : 61) + 'px'; };
+    gsap.matchMedia().add({ mobile: '(max-width: 999px)', motion: '(prefers-reduced-motion: no-preference)' }, function (ctx) {
+      if (!ctx.conditions.motion) return;
+      var mobile = ctx.conditions.mobile;
+      root.classList.add('gsap'); // before the pin is measured: switches the room to its pinned layout
+
+      /* hero: the card lifts a little and the window light slides as you leave */
+      gsap.timeline({ scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1.2 } })
+        .to('.hero-card', { y: mobile ? -20 : -56, ease: 'none' }, 0)
+        .to('.hero .sun', { xPercent: mobile ? 6 : 10, ease: 'none' }, 0);
+
+      /* service photos open like blinds */
+      gsap.utils.toArray('.svc .pic').forEach(function (el, i) {
+        gsap.fromTo(el, { '--slat': '16px' }, { '--slat': '0px', duration: 1.6, ease: 'power2.inOut', delay: mobile ? 0 : (i % 2) * 0.18,
+          scrollTrigger: { trigger: el, start: 'top 90%' } });
+      });
+
+      /* a day in the room: pinned while the clock runs from 9 am to 8 pm */
+      if (doc.getElementById('day')) {
+        gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { trigger: '.day-pin', start: top, end: mobile ? '+=200%' : '+=240%',
+          pin: true, scrub: 1, invalidateOnRefresh: true, onUpdate: function (self) { setHour(self.progress); } } })
+          .fromTo('.r-sun', { xPercent: -16 }, { xPercent: 22, duration: 1 }, 0)
+          .to('.r-sun', { opacity: 0.45, duration: 0.2 }, 0.2)
+          .to('.r-sun', { opacity: 0.9, duration: 0.2 }, 0.48)
+          .to('.r-sun', { opacity: 0, duration: 0.16 }, 0.7)
+          .fromTo('.r-warm', { opacity: 0 }, { opacity: 1, duration: 0.25 }, 0.45)
+          .to('.r-warm', { opacity: 0.3, duration: 0.2 }, 0.75)
+          .fromTo('.r-dusk', { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0.68)
+          .fromTo('.r-lamp', { opacity: 0 }, { opacity: 1, duration: 0.22 }, 0.74);
+      }
+
+      /* the back of the card, then the fill-in card, slide square on the counter */
+      [['.back-card', 2.2], ['.pick-card', 3]].forEach(function (c) {
+        gsap.fromTo(c[0], { x: mobile ? 14 : 60, rotation: mobile ? c[1] / 2 : c[1] }, { x: 0, rotation: 0, ease: 'none',
+          scrollTrigger: { trigger: c[0], start: 'top bottom', end: 'top 40%', scrub: 1.2 } });
+      });
+
+      return function () { root.classList.remove('gsap'); setHour(0, true); };
+    });
+    /* fonts change text heights; measure again once they are in */
+    if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(function () { ScrollTrigger.refresh(); });
+  }
+  doc.addEventListener('mp:langchange', function () {
+    setHour(dayP, true);
+    if (window.ScrollTrigger && root.classList.contains('gsap')) ScrollTrigger.refresh(); // text lengths changed
+  });
+  if (doc.readyState === 'loading') doc.addEventListener('DOMContentLoaded', initMotion); else initMotion();
 })();
